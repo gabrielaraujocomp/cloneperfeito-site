@@ -79,22 +79,21 @@ export default function LandingPage() {
           <div className="max-w-5xl mx-auto text-center">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 mb-8">
               <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight md:text-7xl">
-                Transforme fotos simples em imagens profissionais
+                Domine o método para criar seu clone e fotos de alto impacto com IA — mesmo sendo iniciante
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl mx-auto md:text-2xl">
-                Use IA para gerar retratos hiper-realistas de você em estilo profissional, lifestyle ou viagem — em
-                poucos minutos e sem nenhuma experiência, perfeitos para redes sociais, projetos e portfólio.
+                Um método passo a passo para você criar retratos hiper-realistas com Inteligência Artificial — em estilo profissional, lifestyle ou viagem, em poucos minutos e sem nenhuma experiência.
               </p>
 
               {/* CTA Block */}
               <div className="flex flex-col lg:flex-row items-center justify-center gap-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
                 <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
                   <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                    Quero criar meu clone agora
+                    Quero aprender agora!
                   </Button>
                 </Link>
                 <p className="text-lg font-semibold text-gray-700 text-center">
-                  R$47 à vista ou até 12x — desconto exclusivo só em julho
+                  De R$157 por R$47 à vista ou até 12x — desconto até 08/07!
                 </p>
               </div>
             </div>
@@ -326,7 +325,7 @@ export default function LandingPage() {
               </div>
               <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-8 mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  O Clone Perfeito é um mini-treinamento onde você aprende a criar um clone realista com IA. Em menos de
+                  O Clone Perfeito é um método prático e direto ao ponto, em formato de minicurso, que ensina como você pode usar uma ferramenta moderna de IA para criar retratos realistas e impressionantes. Em menos de
                   2h, você vai:
                 </p>
 
@@ -645,8 +644,8 @@ export default function LandingPage() {
                 <h2 className="text-3xl font-bold text-gray-900">Preço</h2>
               </div>
               <p className="text-lg text-gray-700 mb-8">
-                Você pode pagar caro por ensaios — ou investir R$47 para dominar uma ferramenta poderosa, e gerar suas
-                imagens com liberdade.
+                Um ensaio profissional pode custar de R$300 a R$1.200.
+                Com o Clone Perfeito, você aprende a gerar imagens incríveis com IA por apenas R$47 — e ainda leva um minicurso, um agente de prompts, atualizações e suporte vitalício.
               </p>
               <h3 className="text-4xl font-bold text-gray-900 mb-4">R$47 à vista</h3>
               <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
@@ -655,7 +654,7 @@ export default function LandingPage() {
                   size="lg"
                   className="text-xl px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
                 >
-                  Quero meu clone agora
+                  Quero aprender agora
                 </Button>
               </Link>
               <div className="text-center">
@@ -712,15 +711,15 @@ export default function LandingPage() {
                 <AccordionItem value="item-2" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">Funciona com qualquer pessoa?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim! Basta seguir as instruções. Você vai se surpreender com o que consegue gerar.
+                    Sim, funciona com qualquer pessoa — homens, mulheres, qualquer idade ou estilo.
+                    Durante o curso, eu explico exatamente quais fotos tirar (com exemplos e modelos) para que o resultado fique o melhor possível, sem complicação.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim. Usamos uma ferramenta paga de IA, com custo médio de 10 dólares (cerca de R$50). Muito mais
-                    acessível que outras como Krea ou Freepik, com qualidade muito superior. E você gera mais de 60
-                    imagens direto do celular.
+                    Sim, para gerar suas fotos você precisa usar uma ferramenta profissional externa (que ensino no curso). O valor é acessível: em torno de R$50 você já consegue gerar mais de 50 imagens profissionais.
+                    Essa mesma produção, se feita com fotógrafo, figurino, viagem e edição, sairia por centenas de reais — aqui você faz direto de casa.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="border-gray-200">
@@ -735,6 +734,33 @@ export default function LandingPage() {
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
                     Basta seguir os passos do curso. A preparação ideal está explicada lá dentro.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Em quanto tempo eu vejo resultado?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Você pode gerar suas primeiras fotos em menos de 2 horas após assistir às aulas. O processo é extremamente rápido, prático e automatizado.
+                    Você não precisa dominar nada técnico — só seguir o que eu mostro no passo a passo.
+                  </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-6" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Preciso saber algo sobre IA, edição ou fotografia?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Não. O curso foi criado para iniciantes.
+                    Tudo é explicado com clareza, com exemplos visuais e orientações diretas. Se você sabe usar o celular, consegue aplicar o método sem problema.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Eu tenho suporte se travar em alguma parte?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Sim. Você terá acesso ao suporte por e-mail e WhatsApp.
+                    Qualquer dúvida, você pode mandar mensagem e te ajudarei a resolver o que for necessário.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
