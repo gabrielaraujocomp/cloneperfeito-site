@@ -745,7 +745,7 @@ export default function LandingPage() {
                     Você não precisa dominar nada técnico — só seguir o que eu mostro no passo a passo.
                   </AccordionContent>
                 </AccordionItem>
-                 <AccordionItem value="item-6" className="border-gray-200">
+                 <AccordionItem value="item-7" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">
                     Preciso saber algo sobre IA, edição ou fotografia?
                   </AccordionTrigger>
@@ -754,7 +754,7 @@ export default function LandingPage() {
                     Tudo é explicado com clareza, com exemplos visuais e orientações diretas. Se você sabe usar o celular, consegue aplicar o método sem problema.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-6" className="border-gray-200">
+                <AccordionItem value="item-8" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">
                     Eu tenho suporte se travar em alguma parte?
                   </AccordionTrigger>
