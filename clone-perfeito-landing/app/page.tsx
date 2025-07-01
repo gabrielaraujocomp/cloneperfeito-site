@@ -660,10 +660,17 @@ export default function LandingPage() {
               </Link>
               <div className="text-center">
                 <p className="text-gray-600 mb-4">Tem dúvidas sobre o Clone Perfeito?</p>
-                <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Falar no WhatsApp
-                </Button>
+                <a
+  href="https://api.whatsapp.com/send?phone=5511978610717"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
+    <MessageCircle className="w-4 h-4 mr-2" />
+    Falar no WhatsApp
+  </Button>
+</a>
+
               </div>
             </div>
           </div>
