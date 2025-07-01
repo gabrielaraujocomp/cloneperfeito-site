@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-export const metadata = {
-  title: "Clone Perfeito",
-  description: "Crie fotos profissionais com IA sem sair de casa",
+export const metadata: Metadata = {
+  title: 'Clone Perfeito',
+  description: 'Crie fotos profissionais com IA sem sair de casa',
+  icons: {
+    icon: '/images/fav-clone.png',
+  },
 }
+
 
 
 export default function RootLayout({
