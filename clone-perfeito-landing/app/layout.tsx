@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+export const metadata = {
+  title: "Clone Perfeito",
+  description: "Crie fotos profissionais com IA sem sair de casa",
 }
+
 
 export default function RootLayout({
   children,
