@@ -526,23 +526,23 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start space-x-4 p-4 bg-blue-50/50 rounded-lg border border-blue-100">
                   <User className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Quem quer melhorar sua imagem pessoal online</span>
+                  <span className="text-lg text-gray-700">Quem quer uma imagem mais profissional e convincente nas redes</span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-purple-50/50 rounded-lg border border-purple-100">
                   <Users className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Criadores de conteúdo</span>
+                  <span className="text-lg text-gray-700">Criadores de conteúdo que precisam se destacar no feed</span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-green-50/50 rounded-lg border border-green-100">
                   <Briefcase className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Profissionais autônomos e freelancers</span>
+                  <span className="text-lg text-gray-700">Profissionais autônomos, freelancers e empreendedores</span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-orange-50/50 rounded-lg border border-orange-100">
                   <Star className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Pessoas que querem ser notadas, em qualquer rede</span>
+                  <span className="text-lg text-gray-700">Pessoas comuns que querem se destacar de forma simples e inteligente</span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-pink-50/50 rounded-lg border border-pink-100 md:col-span-2">
                   <Heart className="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Até quem quer se destacar nos apps de relacionamento</span>
+                  <span className="text-lg text-gray-700">Até quem quer impressionar nos apps de relacionamento</span>
                 </div>
               </div>
             </CardContent>
@@ -563,22 +563,22 @@ export default function LandingPage() {
                 <div className="flex items-start space-x-4 p-6 bg-blue-50/50 rounded-lg border border-blue-100">
                   <Target className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-lg font-semibold text-gray-800 mb-2">Como criar seu clone realista com IA</p>
-                    <p className="text-gray-600">Mesmo sendo leigo, com instruções simples e diretas</p>
+                    <p className="text-lg font-semibold text-gray-800 mb-2">Criar seu próprio clone com IA, do zero</p>
+                    <p className="text-gray-600">Você vai aprender a subir suas fotos corretamente, escolher o modelo ideal e configurar o treinamento do seu clone com clareza, mesmo sem saber nada de IA.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-purple-50/50 rounded-lg border border-purple-100">
                   <Lightbulb className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-lg font-semibold text-gray-800 mb-2">Como gerar ensaios com uma frase</p>
-                    <p className="text-gray-600">Aprenda a usar prompts certeiros para guiar a IA</p>
+                    <p className="text-lg font-semibold text-gray-800 mb-2">Usar prompts prontos para gerar ensaios completos</p>
+                    <p className="text-gray-600">Vou te mostrar como usar frases simples (já testadas) que geram resultados incríveis — e ainda como adaptar para diferentes estilos e objetivos (profissional, lifestyle, divertido, etc).</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-green-50/50 rounded-lg border border-green-100">
                   <Film className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-lg font-semibold text-gray-800 mb-2">
-                      Como escolher ângulos, estilos, expressões
+                      Selecionar os melhores ângulos, poses e estilos
                     </p>
                     <p className="text-gray-600">Entenda o que valoriza você em imagem</p>
                   </div>
@@ -589,16 +589,16 @@ export default function LandingPage() {
                     <p className="text-lg font-semibold text-gray-800 mb-2">
                       Como usar as fotos para atrair atenção e autoridade
                     </p>
-                    <p className="text-gray-600">Em redes sociais, sites, portfólios</p>
+                    <p className="text-gray-600">Você vai aprender onde e como usar as imagens geradas: para causar impacto no Instagram, se destacar no LinkedIn, impressionar num currículo, ou até para gerar mais matches nos apps.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-orange-50/50 rounded-lg border border-orange-100">
                   <Settings className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-lg font-semibold text-gray-800 mb-2">
-                      Como repetir o processo sempre que quiser
+                      Repetir o processo sempre que quiser
                     </p>
-                    <p className="text-gray-600">Um conhecimento seu pra vida inteira</p>
+                    <p className="text-gray-600">O método é seu. Sempre que quiser atualizar seu visual, fazer um novo ensaio ou testar novos estilos, você saberá como fazer — sem depender de ninguém.</p>
                   </div>
                 </div>
               </div>
