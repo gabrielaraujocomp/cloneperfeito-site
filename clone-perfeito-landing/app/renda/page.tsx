@@ -67,39 +67,38 @@ export default function LandingPage() {
       <header>
         {/* Imagem para Mobile (será escondida no desktop) */}
         <img
-          src="/images/header-banner-mobile.jpeg" // Assumindo que você criará esta imagem
+          src="/images/header-banner-mobile.jpeg"
           alt="Banner do Clone Perfeito para mobile"
           className="block w-full h-auto md:hidden"
         />
         {/* Imagem para Desktop (será escondida no mobile) */}
         <img
-          src="/images/header-banner-desktop.jpeg" // Assumindo que você criará esta imagem
+          src="/images/header-banner-desktop.jpeg"
           alt="Banner do Clone Perfeito para desktop"
           className="hidden w-full h-auto md:block"
         />
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (COM CAMINHOS CORRIGIDOS) ================= */}
+      {/* ================   SEÇÃO HERO (REESTRUTURADA)   ================= */}
       {/* ======================================================================= */}
       <section
-        className="relative bg-cover bg-center bg-no-repeat 
-                   bg-[url('/images/bg-cp-mobile.jpg')] 
+        className="relative bg-gray-900 md:bg-cover md:bg-center md:bg-no-repeat 
                    md:bg-[url('/images/bg-cp-desk.jpg')]"
       >
-        {/* Overlay para legibilidade */}
-        <div className="absolute inset-0 bg-black/70" />
+        {/* Overlay (apenas para desktop, onde há imagem de fundo) */}
+        <div className="absolute inset-0 bg-black/70 hidden md:block" />
 
         <div
           className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 
-                     md:py-24"
+                     md:min-h-[600px] md:flex md:items-center md:py-24"
         >
           {/* Coluna de Texto Principal */}
           <div className="text-center md:text-left md:max-w-3xl">
-            <h1 className="text-2xl font-bold text-white mb-3 leading-tight md:text-5xl">
+            <h1 className="text-2xl font-bold text-white mb-3 leading-tight md:text-6xl">
               Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
             </h1>
-            <p className="text-sm text-gray-300 leading-normal mb-6 md:text-lg md:leading-relaxed">
+            <p className="text-sm text-gray-300 leading-normal mb-6 md:text-xl md:leading-relaxed">
               Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
             </p>
             <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
@@ -109,7 +108,7 @@ export default function LandingPage() {
             </Link>
           </div>
 
-          {/* Bloco do Mockup (APENAS PARA MOBILE) */}
+          {/* Bloco do Mockup (APENAS PARA MOBILE e agora sem fundo de imagem) */}
           <div className="mt-8 text-center md:hidden">
             <p className="text-xs text-gray-200 mb-4 max-w-sm mx-auto">
               O Clone Perfeito é um método prático e direto, em formato de minicurso, que ensina como transformar uma ferramenta de IA em um negócio lucrativo. Você aprende não só a criar os retratos, mas a monetizar essa habilidade. Em menos de 2h, você vai:
