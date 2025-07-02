@@ -67,25 +67,25 @@ export default function LandingPage() {
       <header>
         {/* Imagem para Mobile (será escondida no desktop) */}
         <img
-          src="/images/header-banner-mobile.jpeg"
+          src="/images/header-banner-mobile.jpeg" // Assumindo que você criará esta imagem
           alt="Banner do Clone Perfeito para mobile"
           className="block w-full h-auto md:hidden"
         />
         {/* Imagem para Desktop (será escondida no mobile) */}
         <img
-          src="/images/header-banner-desktop.jpeg"
+          src="/images/header-banner-desktop.jpeg" // Assumindo que você criará esta imagem
           alt="Banner do Clone Perfeito para desktop"
           className="hidden w-full h-auto md:block"
         />
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (CONTEÚDO OTIMIZADO)   ================= */}
+      {/* ================   SEÇÃO HERO (COM CAMINHOS CORRIGIDOS) ================= */}
       {/* ======================================================================= */}
       <section
         className="relative bg-cover bg-center bg-no-repeat 
-                   bg-[url('/images/bg-cp-mobile.jpeg')] 
-                   md:bg-[url('/images/bg-cp-desk.jpeg')]"
+                   bg-[url('/images/bg-cp-mobile.jpg')] 
+                   md:bg-[url('/images/bg-cp-desk.jpg')]"
       >
         {/* Overlay para legibilidade */}
         <div className="absolute inset-0 bg-black/70" />
