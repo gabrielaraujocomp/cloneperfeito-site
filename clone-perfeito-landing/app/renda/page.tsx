@@ -84,22 +84,22 @@ export default function LandingPage() {
       {/* ======================================================================= */}
       <section
         className="relative bg-cover bg-center bg-no-repeat 
-                   bg-[url('/images/bg-gabriel-mobile.jpeg')] 
-                   md:bg-[url('/images/bg-gabriel-desktop.jpeg')]"
+                   bg-[url('/images/bg-cp-mobile.jpeg')] 
+                   md:bg-[url('/images/bg-cp-desk.jpeg')]"
       >
         {/* Overlay para legibilidade */}
         <div className="absolute inset-0 bg-black/70" />
 
         <div
-          className="relative max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 
+          className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 
                      md:py-24"
         >
           {/* Coluna de Texto Principal */}
           <div className="text-center md:text-left md:max-w-3xl">
-            <h1 className="text-3xl font-bold text-white mb-4 leading-tight md:text-5xl">
+            <h1 className="text-2xl font-bold text-white mb-3 leading-tight md:text-5xl">
               Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
             </h1>
-            <p className="text-base text-gray-300 leading-relaxed mb-8 md:text-lg">
+            <p className="text-sm text-gray-300 leading-normal mb-6 md:text-lg md:leading-relaxed">
               Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
             </p>
             <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
@@ -110,14 +110,14 @@ export default function LandingPage() {
           </div>
 
           {/* Bloco do Mockup (APENAS PARA MOBILE) */}
-          <div className="mt-12 text-center md:hidden">
-            <p className="text-sm text-gray-200 mb-6 max-w-sm mx-auto">
+          <div className="mt-8 text-center md:hidden">
+            <p className="text-xs text-gray-200 mb-4 max-w-sm mx-auto">
               O Clone Perfeito é um método prático e direto, em formato de minicurso, que ensina como transformar uma ferramenta de IA em um negócio lucrativo. Você aprende não só a criar os retratos, mas a monetizar essa habilidade. Em menos de 2h, você vai:
             </p>
             <img 
               src="/images/phone-mockup.png" 
               alt="Mockup do Clone Perfeito no celular" 
-              className="max-w-[250px] mx-auto"
+              className="max-w-[200px] mx-auto"
             />
           </div>
         </div>
