@@ -79,7 +79,7 @@ export default function LandingPage() {
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (TOTALMENTE CORRIGIDA)   ================= */}
+      {/* ================   SEÇÃO HERO (FINALMENTE CORRIGIDA)  ================= */}
       {/* ======================================================================= */}
       <section
         className="relative bg-black md:bg-cover md:bg-center md:bg-no-repeat 
