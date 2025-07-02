@@ -84,8 +84,8 @@ export default function LandingPage() {
       {/* ======================================================================= */}
       <section
         className="relative bg-cover bg-center bg-no-repeat 
-                   bg-[url('/images/bg-cp-mobile.jpeg')] 
-                   md:bg-[url('/images/bg-cp-desk.jpeg')]"
+                   bg-[url('/public/images/bg-cp-mobile.jpeg')] 
+                   md:bg-[url('/public/images/bg-cp-desk.jpeg')]"
       >
         {/* Overlay para legibilidade */}
         <div className="absolute inset-0 bg-black/70" />
