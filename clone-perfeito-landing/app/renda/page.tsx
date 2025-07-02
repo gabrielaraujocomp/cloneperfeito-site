@@ -60,46 +60,44 @@ export default function LandingPage() {
         />
       </noscript>
       {/* End Meta Pixel Code */}
-      {/* Header Section */}
-      <section className="relative">
-        {/* Cover Image */}
-        <div className="h-64 md:h-80 bg-gradient-to-r from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden border-b border-gray-100">
-          <div className="absolute inset-0">
-            <img
-              src="/images/header-cover.jpg"
-              alt="Clone Perfeito - Transforme IA em Renda"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20"></div>
-          </div>
-        </div>
 
-        {/* Header Content */}
-        <div className="relative -mt-32 md:-mt-40 px-4 pb-20">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight md:text-7xl">
-                Transforme IA em Renda: Aprenda a Criar e Vender Imagens Profissionais com seu Clone Digital
-              </h1>
-              <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl mx-auto md:text-2xl">
-                Descubra o método passo a passo para gerar uma nova fonte de renda criando retratos hiper-realistas com Inteligência Artificial para clientes e projetos — em poucos minutos e sem nenhuma experiência prévia.
+      {/* ======================================================================= */}
+      {/* ===================   NOVO HEADER SECTION   =========================== */}
+      {/* ======================================================================= */}
+      <section
+        className="relative flex items-center bg-cover bg-center bg-no-repeat min-h-[600px] md:min-h-[700px]"
+        style={{ backgroundImage: "url('/images/bg-gabriel.jpeg')" }}
+      >
+        {/* Overlay para legibilidade do texto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
+
+        {/* Conteúdo do Header */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-3xl text-left">
+            <h1 className="text-4xl font-bold text-white mb-6 leading-tight md:text-6xl">
+              Transforme IA em Renda: Aprenda a Criar e Vender Imagens Profissionais com seu Clone Digital
+            </h1>
+            <p className="text-lg text-gray-200 leading-relaxed mb-10 md:text-xl">
+              Descubra o método passo a passo para gerar uma nova fonte de renda criando retratos hiper-realistas com Inteligência Artificial para clientes e projetos — em poucos minutos e sem nenhuma experiência prévia.
+            </p>
+
+            {/* CTA Block */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
+                  Quero criar meu negócio com IA!
+                </Button>
+              </Link>
+              <p className="text-base font-semibold text-gray-300">
+                De R$157 por R$47 à vista ou até 12x — comece a lucrar agora!
               </p>
-
-              {/* CTA Block */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
-                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                    Quero criar meu negócio com IA!
-                  </Button>
-                </Link>
-                <p className="text-lg font-semibold text-gray-700 text-center">
-                  De R$157 por R$47 à vista ou até 12x — comece a lucrar agora!
-                </p>
-              </div>
             </div>
           </div>
         </div>
       </section>
+      {/* ======================================================================= */}
+      {/* ===================   FIM DO NOVO HEADER   ============================ */}
+      {/* ======================================================================= */}
 
       {/* Antes e Depois Section */}
       <section className="py-20 px-4">
@@ -402,9 +400,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Tudo o que você leva */}
-      {/* REMOVED */}
-
       {/* Aplicações reais */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-6xl mx-auto">
@@ -648,15 +643,15 @@ export default function LandingPage() {
               <div className="text-center">
                 <p className="text-gray-600 mb-4">Tem dúvidas sobre como gerar renda com o método?</p>
                 <a
-  href="https://api.whatsapp.com/send?phone=5511978610717"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
-    <MessageCircle className="w-4 h-4 mr-2" />
-    Falar no WhatsApp
-  </Button>
-</a>
+                  href="https://api.whatsapp.com/send?phone=5511978610717"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Falar no WhatsApp
+                  </Button>
+                </a>
 
               </div>
             </div>
