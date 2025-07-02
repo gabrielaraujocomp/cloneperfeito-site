@@ -64,7 +64,7 @@ export default function LandingPage() {
       {/* ======================================================================= */}
       {/* ===================   HEADER - BANNER RESPONSIVO   ==================== */}
       {/* ======================================================================= */}
-      <header className="bg-black">
+      <header>
         {/* Imagem do banner responsivo */}
         <img
           src="/images/header-banner-mobile.jpg"
@@ -79,7 +79,7 @@ export default function LandingPage() {
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (TOTALMENTE REFEITA)   ================= */}
+      {/* ================   SEÇÃO HERO (TOTALMENTE CORRIGIDA)   ================= */}
       {/* ======================================================================= */}
       <section
         className="relative bg-black md:bg-cover md:bg-center md:bg-no-repeat 
@@ -87,15 +87,15 @@ export default function LandingPage() {
       >
         <div
           className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 
-                     md:min-h-[650px] md:flex md:items-center"
+                     md:min-h-[600px] md:flex md:items-center"
         >
           {/* Coluna de Texto Principal */}
-          <div className="text-center md:text-left md:max-w-3xl">
+          <div className="text-center md:text-left md:max-w-2xl">
             <h1 className="text-2xl font-bold text-white mb-4 leading-tight 
                            md:text-6xl md:drop-shadow-lg">
               Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
             </h1>
-            <p className="text-base text-gray-300 leading-normal mb-8 
+            <p className="text-base text-white leading-normal mb-8 
                           md:text-xl md:leading-relaxed md:drop-shadow-lg">
               Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
             </p>
