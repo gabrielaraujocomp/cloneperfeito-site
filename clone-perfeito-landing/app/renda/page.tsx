@@ -79,33 +79,51 @@ export default function LandingPage() {
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (FINALMENTE CORRIGIDA)  ================= */}
+      {/* ============   SEÇÃO HERO (COM FUNDO CORRIGIDO NO MOBILE)   ============ */}
       {/* ======================================================================= */}
       <section
-        className="relative bg-black md:bg-cover md:bg-center md:bg-no-repeat 
+        className="relative bg-cover bg-center bg-no-repeat 
+                   bg-[url('/images/bg-cp-mobile.jpg')] 
                    md:bg-[url('/images/bg-cp-desk.jpg')]"
       >
-        <div
-          className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 
-                     md:min-h-[600px] md:flex md:items-center"
-        >
-          {/* Coluna de Texto Principal */}
-          <div className="text-center md:text-left md:max-w-2xl">
-            <h1 className="text-2xl font-bold text-white mb-4 leading-tight 
-                           md:text-6xl md:drop-shadow-lg">
-              Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
-            </h1>
-            <p className="text-base text-white leading-normal mb-8 
-                          md:text-xl md:leading-relaxed md:drop-shadow-lg">
-              Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
-            </p>
-            <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
-              <Button size="lg" className="text-base px-10 py-3 bg-emerald-500 hover:bg-emerald-600 text-black shadow-lg font-bold 
-                                         md:text-lg md:px-12 md:py-4">
-                Quero criar meu negócio com IA
-              </Button>
-            </Link>
+        {/* Overlay para legibilidade */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="relative">
+          <div
+            className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 
+                       md:min-h-[600px] md:flex md:items-center"
+          >
+            {/* Coluna de Texto Principal */}
+            <div className="text-center md:text-left md:max-w-2xl">
+              <h1 className="text-2xl font-bold text-white mb-4 leading-tight 
+                             md:text-6xl md:drop-shadow-lg">
+                Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
+              </h1>
+              <p className="text-base text-white leading-normal mb-8 
+                            md:text-xl md:leading-relaxed md:drop-shadow-lg">
+                Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
+              </p>
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
+                <Button size="lg" className="text-base px-10 py-3 bg-emerald-500 hover:bg-emerald-600 text-black shadow-lg font-bold 
+                                           md:text-lg md:px-12 md:py-4">
+                  Quero criar meu negócio com IA
+                </Button>
+              </Link>
+            </div>
           </div>
+          
+          {/* Bloco do Mockup (APENAS PARA MOBILE) */}
+          <div className="pb-10 text-center md:hidden">
+              <p className="text-xs text-gray-400 mb-4 max-w-sm mx-auto px-4">
+                O Clone Perfeito é um método prático e direto, em formato de minicurso, que ensina como transformar uma ferramenta de IA em um negócio lucrativo. Você aprende não só a criar os retratos, mas a monetizar essa habilidade. Em menos de 2h, você vai:
+              </p>
+              <img 
+                src="/images/phone-mockup.png" 
+                alt="Mockup do Clone Perfeito no celular" 
+                className="max-w-[200px] mx-auto"
+              />
+            </div>
         </div>
       </section>
 
