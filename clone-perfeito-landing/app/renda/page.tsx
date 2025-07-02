@@ -64,60 +64,47 @@ export default function LandingPage() {
       {/* ======================================================================= */}
       {/* ===================   HEADER - BANNER RESPONSIVO   ==================== */}
       {/* ======================================================================= */}
-      <header>
-        {/* Imagem para Mobile (será escondida no desktop) */}
+      <header className="bg-black">
+        {/* Imagem do banner responsivo */}
         <img
-          src="/images/header-banner-mobile.jpeg"
+          src="/images/header-banner-mobile.jpg"
           alt="Banner do Clone Perfeito para mobile"
           className="block w-full h-auto md:hidden"
         />
-        {/* Imagem para Desktop (será escondida no mobile) */}
         <img
-          src="/images/header-banner-desktop.jpeg"
+          src="/images/header-banner-desktop.jpg"
           alt="Banner do Clone Perfeito para desktop"
           className="hidden w-full h-auto md:block"
         />
       </header>
 
       {/* ======================================================================= */}
-      {/* ================   SEÇÃO HERO (REESTRUTURADA)   ================= */}
+      {/* ================   SEÇÃO HERO (TOTALMENTE REFEITA)   ================= */}
       {/* ======================================================================= */}
       <section
-        className="relative bg-gray-900 md:bg-cover md:bg-center md:bg-no-repeat 
+        className="relative bg-black md:bg-cover md:bg-center md:bg-no-repeat 
                    md:bg-[url('/images/bg-cp-desk.jpg')]"
       >
-        {/* Overlay (apenas para desktop, onde há imagem de fundo) */}
-        <div className="absolute inset-0 bg-black/70 hidden md:block" />
-
         <div
-          className="relative max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 
-                     md:min-h-[600px] md:flex md:items-center md:py-24"
+          className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 
+                     md:min-h-[650px] md:flex md:items-center"
         >
           {/* Coluna de Texto Principal */}
           <div className="text-center md:text-left md:max-w-3xl">
-            <h1 className="text-2xl font-bold text-white mb-3 leading-tight md:text-6xl">
+            <h1 className="text-2xl font-bold text-white mb-4 leading-tight 
+                           md:text-6xl md:drop-shadow-lg">
               Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
             </h1>
-            <p className="text-sm text-gray-300 leading-normal mb-6 md:text-xl md:leading-relaxed">
+            <p className="text-base text-gray-300 leading-normal mb-8 
+                          md:text-xl md:leading-relaxed md:drop-shadow-lg">
               Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
             </p>
             <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
-              <Button size="lg" className="text-base px-10 py-3 bg-emerald-500 hover:bg-emerald-600 text-black shadow-lg font-bold md:text-lg md:px-12 md:py-4">
+              <Button size="lg" className="text-base px-10 py-3 bg-emerald-500 hover:bg-emerald-600 text-black shadow-lg font-bold 
+                                         md:text-lg md:px-12 md:py-4">
                 Quero criar meu negócio com IA
               </Button>
             </Link>
-          </div>
-
-          {/* Bloco do Mockup (APENAS PARA MOBILE e agora sem fundo de imagem) */}
-          <div className="mt-8 text-center md:hidden">
-            <p className="text-xs text-gray-200 mb-4 max-w-sm mx-auto">
-              O Clone Perfeito é um método prático e direto, em formato de minicurso, que ensina como transformar uma ferramenta de IA em um negócio lucrativo. Você aprende não só a criar os retratos, mas a monetizar essa habilidade. Em menos de 2h, você vai:
-            </p>
-            <img 
-              src="/images/phone-mockup.png" 
-              alt="Mockup do Clone Perfeito no celular" 
-              className="max-w-[200px] mx-auto"
-            />
           </div>
         </div>
       </section>
@@ -330,6 +317,75 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-gray-200 shadow-sm bg-white">
+            <CardContent className="p-8 md:p-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Perguntas Frequentes</h2>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">Preciso saber mexer com IA ou negócios?</AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Não. O curso ensina o passo a passo técnico para criar as imagens e o passo a passo de negócio para começar a vender, mesmo que você seja 100% iniciante nos dois.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">O método funciona para criar imagens de qualquer pessoa?</AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Sim. Você aprenderá a criar imagens de alta qualidade para qualquer cliente. Inclusive, o curso ensina como orientar seus futuros clientes a tirar as fotos certas para um resultado perfeito.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta para trabalhar?</AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Sim, a ferramenta de IA profissional tem um custo por uso. O valor é baixo (cerca de R$50 para um lote grande de imagens) e você vai incluir esse custo no preço do seu serviço, garantindo uma excelente margem de lucro.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">Consigo gerenciar esse negócio pelo celular?</AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Sim. Todo o processo, desde a criação das imagens até a comunicação com clientes, pode ser feito 100% pelo celular.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-5" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Como vou conseguir meus primeiros clientes?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    O curso foca em te dar a habilidade técnica e a confiança para começar. O primeiro passo é criar seu próprio portfólio (com suas fotos), que já será sua maior ferramenta de vendas para mostrar o que você é capaz de fazer.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-6" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Em quanto tempo eu posso começar a ganhar dinheiro?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Você pode ter seu portfólio de serviços pronto em menos de 2 horas. O retorno financeiro dependerá do seu esforço em divulgar seu novo negócio, mas o método te dá o produto pronto para vender. Com um ou dois clientes, você já recupera o investimento do curso.
+                  </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-7" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Preciso de conhecimento técnico em design ou fotografia?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Não. O método foi criado para iniciantes. A IA faz todo o trabalho pesado de fotografia e iluminação. Seu papel será seguir o passo a passo para guiar a ferramenta e entregar o resultado ao cliente.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-8" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Terei suporte se tiver dúvidas sobre o negócio?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 text-base">
+                    Sim. Você terá acesso ao nosso suporte por e-mail e WhatsApp para tirar dúvidas tanto da parte técnica quanto de como estruturar e vender seu serviço.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         </div>
