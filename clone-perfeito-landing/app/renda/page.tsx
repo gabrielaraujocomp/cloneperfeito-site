@@ -95,7 +95,7 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
       
-      {/* Header Section [NEW ANGLE] */}
+      {/* Header Section [REFINED HEADLINE] */}
       <section
         className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
         style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
@@ -103,18 +103,18 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-          <div className="max-w-2xl text-center md:text-left">
+          <div className="max-w-3xl text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
-              Aprenda a Criar Ensaios com IA e Fature até R$300 por Cliente
+              Domine o Método para Criar seu Clone com IA e Transforme sua Imagem em Lucro.
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
-              O método prático para você dominar uma nova habilidade lucrativa: criar imagens profissionais para clientes e iniciar um negócio de baixo custo com Inteligência Artificial.
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
+              Aprenda a criar retratos hiper-realistas para você ou para clientes. Uma nova habilidade de alto valor para alavancar sua carreira, seu negócio ou iniciar uma nova fonte de renda.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
                 <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                  Quero faturar com IA
+                  Quero dominar essa habilidade
                 </Button>
               </Link>
               <p className="text-lg font-semibold text-white text-center md:text-left">
@@ -125,7 +125,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Seu Estúdio de IA no Bolso [REBRANDED] */}
+      {/* Seu Estúdio de IA no Bolso */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -179,7 +179,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Modelos de Negócio Lucrativos [NEW SECTION] */}
+      {/* Modelos de Negócio Lucrativos */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -281,7 +281,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Preço [ROI FOCUSED] */}
+      {/* Preço */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
