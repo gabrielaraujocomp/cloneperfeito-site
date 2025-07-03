@@ -45,7 +45,7 @@ export default function LandingPage() {
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Meta Pixel Code */}
       <Script id="meta-pixel" strategy="afterInteractive">
         {`
