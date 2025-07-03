@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import {
   Quote,
   MessageCircle,
   Sparkles,
@@ -29,11 +36,38 @@ import {
   DollarSign,
   Star,
   ArrowRight,
+  TrendingUp,
 } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
 
 export default function LandingPage() {
+  const testimonials = [1, 2, 3, 4, 5, 6, 7]
+  const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
+  
+  const businessModels = [
+    {
+      icon: Briefcase,
+      title: "Social Medias & Agências",
+      description: "Ofereça pacotes de imagens profissionais para seus clientes e nunca mais dependa de fotos ruins. Agregue valor e aumente seu faturamento.",
+    },
+    {
+      icon: Target,
+      title: "Gestores de Tráfego",
+      description: "Crie criativos de alto impacto para seus anúncios em minutos. Aumente a performance das campanhas com visuais que convertem.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Empreendedores Iniciantes",
+      description: "Comece um negócio de criação de conteúdo com baixíssimo investimento. Venda ensaios de IA para negócios locais, amigos e online.",
+    },
+    {
+      icon: User,
+      title: "Criadores e Influencers",
+      description: "Tenha um feed profissional e de alto padrão sem gastar rios de dinheiro com fotógrafos. Crie conteúdo visual ilimitado.",
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Meta Pixel Code */}
@@ -60,262 +94,272 @@ export default function LandingPage() {
         />
       </noscript>
       {/* End Meta Pixel Code */}
-
-      {/* ======================================================================= */}
-      {/* ===================   HEADER - BANNER RESPONSIVO   ==================== */}
-      {/* ======================================================================= */}
-      <header>
-        {/* Imagem do banner responsivo */}
-        <img
-          src="/images/header-banner-mobile.jpg"
-          alt="Banner do Clone Perfeito para mobile"
-          className="block w-full h-auto md:hidden"
-        />
-        <img
-          src="/images/header-banner-desktop.jpg"
-          alt="Banner do Clone Perfeito para desktop"
-          className="hidden w-full h-auto md:block"
-        />
-      </header>
-
-      {/* ======================================================================= */}
-      {/* ==============   SEÇÃO HERO (ESTRUTURA CORRIGIDA)   ================= */}
-      {/* ======================================================================= */}
-      <section
-        className="relative bg-black 
-                   md:bg-cover md:bg-center md:bg-no-repeat md:bg-[url('/images/bg-cp-desk.jpg')]"
-      >
-        <div
-          className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 
-                     md:min-h-[600px] md:flex md:items-center"
-        >
-          {/* Coluna de Texto Principal */}
-          <div className="text-center md:text-left md:max-w-2xl">
-            <h1 className="text-2xl font-bold text-white mb-4 leading-tight 
-                           md:text-5xl">
-              Gere imagens que parecem feitas por fotógrafos profissionais — e venda por R$300, R$500 ou mais, usando Inteligência Artificial
-            </h1>
-            <p className="text-base text-white leading-normal mb-8 
-                          md:text-lg md:leading-relaxed">
-              Você aprende um método completo pra gerar retratos hiper-realistas com IA — e transformar isso em uma fonte de renda. Faça ensaios para outras pessoas, entregue como serviço e cobre caro por isso.
-            </p>
-            <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="inline-block">
-              <Button size="lg" className="text-base px-10 py-3 bg-emerald-500 hover:bg-emerald-600 text-black shadow-lg font-bold 
-                                         md:text-lg md:px-12 md:py-4">
-                Quero criar meu negócio com IA
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================================= */}
-      {/* ==============   O RESTO DA PÁGINA CONTINUA ABAIXO   =================== */}
-      {/* ======================================================================= */}
       
-      {/* Antes e Depois Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* Antes */}
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-200 p-8 rounded-r-xl">
-              <p className="text-xl font-semibold text-gray-800">
-                <strong>ANTES:</strong> fotos comuns de clientes, sem apelo profissional, que não geram autoridade nem vendas.
+      {/* Header Section [NEW ANGLE] */}
+      <section
+        className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
+        style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-2xl text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
+              Aprenda a Criar Ensaios com IA e Fature até R$300 por Cliente
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
+              O método prático para você dominar uma nova habilidade lucrativa: criar imagens profissionais para clientes e iniciar um negócio de baixo custo com Inteligência Artificial.
+            </p>
+
+            <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
+                  Quero faturar com IA
+                </Button>
+              </Link>
+              <p className="text-lg font-semibold text-white text-center md:text-left">
+                De R$157 por R$47. O investimento se paga no primeiro serviço.
               </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/antes-1.jpg"
-                  alt="Foto antes - selfie casual de um possível cliente"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/antes-2.jpg"
-                  alt="Foto antes - selfie de baixa qualidade"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/antes-3.jpg"
-                  alt="Foto antes - imagem amadora"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/antes-4.jpg"
-                  alt="Foto antes - selfie sem tratamento"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/antes-5.jpg"
-                  alt="Foto antes - selfie no espelho"
-                  className="w-full h-full object-cover"
-                />
-              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Depois */}
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-200 p-8 rounded-r-xl">
-              <p className="text-xl font-semibold text-gray-800">
-                <strong>DEPOIS:</strong> seu serviço. Imagens de alto valor que geram autoridade, engajamento e vendas para seus clientes.
+      {/* Seu Estúdio de IA no Bolso [REBRANDED] */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Bot className="w-10 h-10 text-indigo-500 flex-shrink-0" />
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Seu Estúdio de IA no Bolso
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                O Clone Perfeito não é só sobre criar fotos suas. É sobre dominar uma ferramenta para **produzir imagens de alta qualidade para qualquer pessoa**. Nós te entregamos o método para transformar simples selfies em ensaios profissionais que clientes pagariam caro para ter.
               </p>
+              <div className="bg-indigo-50/50 border-l-4 border-indigo-200 p-6 rounded-r-lg">
+                <p className="font-semibold text-gray-800">
+                  Aprenda uma vez, lucre para sempre. Você terá uma nova fonte de renda nas mãos.
+                </p>
+              </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/depois-1.jpg"
-                  alt="Foto depois - retrato profissional que você pode vender"
-                  className="w-full h-full object-cover"
-                />
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <Camera className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Clone Qualquer Pessoa</h3>
+                  <p className="text-gray-600">
+                    Aprenda a treinar a IA com as fotos de qualquer cliente para gerar um clone hiper-realista dele.
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/depois-2.jpg"
-                  alt="Foto depois - imagem lifestyle para campanhas de marketing"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <Target className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Crie Qualquer Ensaio</h3>
+                  <p className="text-gray-600">
+                    Use nosso guia de prompts para criar o estilo que seu cliente desejar: corporativo, lifestyle, casual ou artístico.
+                  </p>
+                </div>
               </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/depois-3.jpg"
-                  alt="Foto depois - imagem corporativa para empresas"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/depois-4.png"
-                  alt="Foto depois - conteúdo para redes sociais de clientes"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img
-                  src="/images/depois-5.jpg"
-                  alt="Foto depois - retrato profissional para portfólios"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <DollarSign className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Venda o Serviço</h3>
+                  <p className="text-gray-600">
+                    Entregue um produto final de alto valor percebido que impressiona e gera resultados para seus clientes.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Vamos falar a real */}
+      {/* Modelos de Negócio Lucrativos [NEW SECTION] */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-gradient-to-br from-white to-gray-50/30">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <MessageCircle className="w-8 h-8 text-blue-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">Vamos falar a real sobre o mercado?</h2>
-              </div>
-              <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-8">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Hoje, toda empresa e profissional precisa de uma imagem forte online. Mas a maioria não tem tempo ou dinheiro para ensaios fotográficos caros. Aí que você entra: oferecendo um serviço rápido, acessível e de altíssima qualidade, você resolve um problema real e cria uma oportunidade de negócio lucrativa.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <TrendingUp className="w-8 h-8 text-purple-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Modelos de Negócio Lucrativos</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Esta não é uma habilidade qualquer. É um ativo que pode ser monetizado de várias formas. Veja como profissionais estão usando o método:
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {businessModels.map((model, index) => (
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow bg-white">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <model.icon className="w-8 h-8 text-purple-600" />
+                    <h3 className="text-xl font-bold text-gray-800">{model.title}</h3>
+                  </div>
+                  <p className="text-gray-700">{model.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
-
-      {/* Elemento de transição */}
-      <div className="flex justify-center py-8">
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full"></div>
-      </div>
-
-      {/* Agora imagine isso */}
+      
+      {/* Depoimentos Section */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Sparkles className="w-8 h-8 text-purple-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">Agora imagine sua nova rotina</h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Users className="w-8 h-8 text-yellow-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Aprovação de quem já está aplicando</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Pessoas como você que investiram no método e já estão vendo o potencial de transformação e renda.
+            </p>
+          </div>
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {testimonials.map((num) => (
+                <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl">
+                    <CardContent className="flex justify-center items-center bg-gray-50 p-2">
+                      <img
+                        src={`/images/d${num}.jpg`}
+                        alt={`Depoimento de aluno ${num}`}
+                        className="w-full h-auto rounded-lg"
+                      />
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          <p className="text-center text-gray-500 text-sm mt-4 md:hidden">Arraste para o lado para ver mais</p>
+        </div>
+      </section>
+      
+      {/* Student Creations Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Sparkles className="w-8 h-8 text-purple-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Portfolio de Possibilidades</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Estes são exemplos reais de ensaios que você será capaz de produzir e vender para seus clientes. A qualidade e a variedade falam por si.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {studentCreations.map((num) => (
+              <div key={num} className="aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                <img
+                  src={`/images/gerada-${num}.jpg`}
+                  alt={`Imagem gerada por aluno ${num}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="bg-purple-50/50 border border-purple-100 rounded-lg p-8">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Seu cliente te envia algumas selfies. Em poucos minutos, você usa a IA para transformar essas fotos em retratos profissionais, conteúdo para redes sociais ou imagens para campanhas. Você entrega um trabalho incrível, seu cliente fica satisfeito, e você é pago por isso — tudo sem sair de casa.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
+
+          <div className="mt-16 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 shadow-lg">
+              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+                <p className="text-xl font-semibold text-gray-800">Pronto para ter um novo serviço lucrativo?</p>
+                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
+                    Quero iniciar meu negócio
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Frase de Impacto */}
-      <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
-            <CardContent className="p-8 md:p-12 text-center">
-              <Quote className="w-12 h-12 text-pink-400 mx-auto mb-8" />
-              <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed">
-                "Seus clientes vão perguntar qual agência fez as fotos. E só você vai saber que foi com o seu serviço de Inteligência Artificial."
-              </blockquote>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* O que é o Clone Perfeito */}
+      {/* Preço [ROI FOCUSED] */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Bot className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">O que é o Clone Perfeito?</h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-48 mx-auto mb-6" />
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-gray-900">Uma oferta que se paga sozinha</h2>
+              <p className="text-lg text-gray-700">Um único ensaio de IA pode ser vendido por R$100, R$200, ou até R$500. Você está investindo em uma habilidade que traz retorno financeiro imediato. O acesso ao método completo é seu por um valor que você recupera — e multiplica — já no primeiro cliente.</p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">Acesso vitalício ao método completo</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">Agente GPT exclusivo para criar prompts</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">Suporte por e-mail e WhatsApp</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700">Atualizações futuras incluídas</span>
+                </div>
               </div>
-              <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-8 mb-8">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  O Clone Perfeito é um método prático e direto, em formato de minicurso, que ensina como transformar uma ferramenta de IA em um negócio lucrativo. Você aprende não só a criar os retratos, mas a monetizar essa habilidade. Em menos de 2h, você vai:
+            </div>
+
+            <div className="text-center bg-gray-50 p-8 rounded-2xl shadow-xl border">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <Gem className="w-8 h-8 text-green-500" />
+                <h2 className="text-3xl font-bold text-gray-900">Investimento Único</h2>
+              </div>
+              <p className="text-lg text-gray-700 mb-4">
+                 De <span className="line-through">R$157</span> por apenas:
+              </p>
+              <h3 className="text-5xl font-bold text-gray-900 mb-4">R$47</h3>
+              <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                <Button
+                  size="lg"
+                  className="text-xl w-full px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
+                >
+                  Garantir meu acesso lucrativo
+                </Button>
+              </Link>
+              <div className="text-center">
+                <p className="text-gray-600 mb-4">Tem alguma dúvida?</p>
+                <a
+                  href="https://api.whatsapp.com/send?phone=5511978610717"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Falar no WhatsApp
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Garantia */}
+      <section className="py-20 px-4 bg-gradient-to-b from-green-50/30 to-white">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-green-200 shadow-sm bg-white">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex items-start gap-4 mb-6">
+                <Shield className="w-8 h-8 text-green-500 mt-1 flex-shrink-0" />
+                <h2 className="text-3xl font-bold text-gray-900">Sua Garantia de Risco Zero</h2>
+              </div>
+              <div className="bg-green-50/50 border border-green-100 rounded-lg p-8">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Você tem 7 dias para testar o método. Se você não vir o potencial de retorno ou simplesmente não gostar, basta pedir seu dinheiro de volta. Simples assim. O risco é todo nosso.
                 </p>
-
-                {/* Flow visual com setas */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Camera className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Gerar imagens com qualidade de estúdio para vender</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Target className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Dominar os estilos que os clientes mais procuram</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Star className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Estruturar e oferecer seu serviço de criação</span>
-                  </div>
-                </div>
-
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">E ainda conta com:</p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Aulas passo a passo para criar e vender</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Suporte via e-mail e WhatsApp para suas dúvidas de negócio</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">
-                      Um agente GPT que cria os prompts ideais para os projetos dos seus clientes
-                    </span>
-                  </div>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -330,59 +374,37 @@ export default function LandingPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Perguntas Frequentes</h2>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">Preciso saber mexer com IA ou negócios?</AccordionTrigger>
+                  <AccordionTrigger className="text-left text-lg">Preciso saber mexer com IA ou design?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Não. O curso ensina o passo a passo técnico para criar as imagens e o passo a passo de negócio para começar a vender, mesmo que você seja 100% iniciante nos dois.
+                    Não. O curso foi feito para iniciantes. Se você sabe usar um celular, consegue aplicar o método para atender clientes.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">O método funciona para criar imagens de qualquer pessoa?</AccordionTrigger>
+                  <AccordionTrigger className="text-left text-lg">Posso usar para os meus clientes?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim. Você aprenderá a criar imagens de alta qualidade para qualquer cliente. Inclusive, o curso ensina como orientar seus futuros clientes a tirar as fotos certas para um resultado perfeito.
+                    Sim! O objetivo principal do curso é te capacitar a oferecer isso como um serviço. Você pode criar imagens para quantos clientes quiser.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta para trabalhar?</AccordionTrigger>
+                  <AccordionTrigger className="text-left text-lg">Precisa pagar alguma outra ferramenta?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim, a ferramenta de IA profissional tem um custo por uso. O valor é baixo (cerca de R$50 para um lote grande de imagens) e você vai incluir esse custo no preço do seu serviço, garantindo uma excelente margem de lucro.
+                    Sim, para gerar as fotos você usa uma ferramenta profissional externa (que ensinamos no curso). O custo é baixo (cerca de R$50 por um pacote grande de imagens), e você pode embutir esse valor no preço que cobra do seu cliente, garantindo sempre o lucro.
                   </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-4" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">Consigo gerenciar esse negócio pelo celular?</AccordionTrigger>
+                 <AccordionItem value="item-4" className="border-gray-200">
+                  <AccordionTrigger className="text-left text-lg">
+                    Em quanto tempo eu consigo meu primeiro cliente?
+                  </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim. Todo o processo, desde a criação das imagens até a comunicação com clientes, pode ser feito 100% pelo celular.
+                    O processo de aprendizado é rápido. Em menos de 2 horas você já domina a técnica. Muitos alunos conseguem o primeiro cliente na mesma semana, oferecendo para amigos, conhecidos ou negócios locais.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">
-                    Como vou conseguir meus primeiros clientes?
+                    Eu tenho suporte se travar em alguma parte?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    O curso foca em te dar a habilidade técnica e a confiança para começar. O primeiro passo é criar seu próprio portfólio (com suas fotos), que já será sua maior ferramenta de vendas para mostrar o que você é capaz de fazer.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-6" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">
-                    Em quanto tempo eu posso começar a ganhar dinheiro?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 text-base">
-                    Você pode ter seu portfólio de serviços pronto em menos de 2 horas. O retorno financeiro dependerá do seu esforço em divulgar seu novo negócio, mas o método te dá o produto pronto para vender. Com um ou dois clientes, você já recupera o investimento do curso.
-                  </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-7" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">
-                    Preciso de conhecimento técnico em design ou fotografia?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 text-base">
-                    Não. O método foi criado para iniciantes. A IA faz todo o trabalho pesado de fotografia e iluminação. Seu papel será seguir o passo a passo para guiar a ferramenta e entregar o resultado ao cliente.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-8" className="border-gray-200">
-                  <AccordionTrigger className="text-left text-lg">
-                    Terei suporte se tiver dúvidas sobre o negócio?
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-700 text-base">
-                    Sim. Você terá acesso ao nosso suporte por e-mail e WhatsApp para tirar dúvidas tanto da parte técnica quanto de como estruturar e vender seu serviço.
+                    Sim. Você terá acesso ao suporte por e-mail e WhatsApp para tirar qualquer dúvida, seja técnica ou sobre como abordar clientes.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -390,10 +412,11 @@ export default function LandingPage() {
           </Card>
         </div>
       </section>
-      
+
       {/* Footer */}
       <footer className="py-12 px-4 text-center border-t border-gray-200 bg-gradient-to-b from-gray-50/30 to-white">
         <div className="max-w-4xl mx-auto">
+          <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-40 mx-auto mb-6" />
           <p className="text-gray-600 mb-2">© 2025 Clone Perfeito</p>
           <p className="text-gray-500 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
           <div className="flex justify-center space-x-6 text-sm text-gray-500">
