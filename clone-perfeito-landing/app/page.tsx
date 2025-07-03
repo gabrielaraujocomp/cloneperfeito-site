@@ -61,41 +61,33 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
       {/* Header Section */}
-      <section className="relative">
-        {/* Cover Image */}
-        <div className="h-64 md:h-80 bg-gradient-to-r from-slate-50 via-blue-50 to-purple-50 relative overflow-hidden border-b border-gray-100">
-          <div className="absolute inset-0">
-            <img
-              src="/images/header-cover.jpg"
-              alt="Clone Perfeito - Transformação com IA"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/20"></div>
-          </div>
-        </div>
+      <section
+        className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
+        style={{ backgroundImage: "url('/public/images/bgcpdesk.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
         {/* Header Content */}
-        <div className="relative -mt-32 md:-mt-40 px-4 pb-20">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-12 mb-8">
-              <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight md:text-7xl">
-                Domine o método para criar seu clone e fotos de alto impacto com IA — mesmo sendo iniciante
-              </h1>
-              <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl mx-auto md:text-2xl">
-                Um método passo a passo para você criar retratos hiper-realistas com Inteligência Artificial — em estilo profissional, lifestyle ou viagem, em poucos minutos e sem nenhuma experiência.
-              </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-2xl text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
+              Domine o método para criar seu clone e fotos de alto impacto com IA — mesmo sendo iniciante
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
+              Um método passo a passo para você criar retratos hiper-realistas com Inteligência Artificial — em estilo
+              profissional, lifestyle ou viagem, em poucos minutos e sem nenhuma experiência.
+            </p>
 
-              {/* CTA Block */}
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-8 border border-green-100">
-                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                    Quero aprender agora!
-                  </Button>
-                </Link>
-                <p className="text-lg font-semibold text-gray-700 text-center">
-                  De R$157 por R$47 à vista ou até 12x — desconto até 08/07!
-                </p>
-              </div>
+            {/* CTA Block */}
+            <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
+                  Quero aprender agora!
+                </Button>
+              </Link>
+              <p className="text-lg font-semibold text-white text-center md:text-left">
+                De R$157 por R$47 à vista ou até 12x — desconto até 08/07!
+              </p>
             </div>
           </div>
         </div>
