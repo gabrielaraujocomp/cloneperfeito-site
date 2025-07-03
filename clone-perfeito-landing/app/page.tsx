@@ -92,7 +92,7 @@ export default function LandingPage() {
             {/* CTA Block */}
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                <Button size="lg" className="text-lg px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
+                <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
                   QUERO TRANSFORMAR IA EM RENDA
                 </Button>
               </Link>
@@ -594,7 +594,7 @@ export default function LandingPage() {
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
                 <Button
                   size="lg"
-                  className="text-xl px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
+                  className="text-lg sm:text-xl px-8 sm:px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
                 >
                   GARANTIR MINHA VAGA E COMEÇAR
                 </Button>
