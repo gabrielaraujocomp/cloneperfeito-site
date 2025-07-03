@@ -42,6 +42,7 @@ import Script from "next/script"
 
 export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
+  const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
 
   return (
     <div className="min-h-screen bg-white">
@@ -294,102 +295,43 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Vamos falar a real */}
+      {/* Student Creations Section [NEW] */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-gradient-to-br from-white to-gray-50/30">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <MessageCircle className="w-8 h-8 text-blue-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">Vamos falar a real?</h2>
-              </div>
-              <div className="bg-blue-50/50 border border-blue-100 rounded-lg p-8">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Hoje, todo mundo está online. E se a sua imagem não convence, você está perdendo oportunidades. Seja
-                  num feed, num perfil, num portfólio — a verdade é que quem se apresenta melhor, ganha mais atenção. E
-                  atenção é poder.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Elemento de transição */}
-      <div className="flex justify-center py-8">
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full"></div>
-      </div>
-
-      {/* Agora imagine isso */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Sparkles className="w-8 h-8 text-purple-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">Agora imagine isso</h2>
-              </div>
-              <div className="bg-purple-50/50 border border-purple-100 rounded-lg p-8">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Você envia algumas selfies simples. Em poucos minutos, a inteligência artificial devolve retratos
-                  profissionais que transmitem presença, estilo, iluminação perfeita. Fotos que fazem as pessoas pararem
-                  o scroll e pensarem: "uau" — tudo sem sair de casa.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Ou gere só por diversão */}
-      <section className="py-20 px-4 bg-gradient-to-b from-yellow-50/30 to-orange-50/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <Sparkles className="w-8 h-8 text-orange-500" />
-              <h2 className="text-3xl font-bold text-gray-900">Ou gere só por diversão</h2>
+              <Sparkles className="w-8 h-8 text-purple-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Veja o que é possível criar</h2>
             </div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Crie versões suas em qualquer cenário que imaginar. Aventura, viagem, lifestyle — sem limites para sua
-              criatividade.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Nossos alunos estão gerando imagens incríveis para todos os tipos de situação. A criatividade não tem
+              limites.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="/images/diversao-1.jpg"
-                alt="Diversão - cenário com dinheiro e efeito fisheye"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="/images/diversao-2.jpg"
-                alt="Diversão - Times Square com grillz"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="/images/diversao-3.jpg"
-                alt="Diversão - festa na piscina lifestyle"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="/images/diversao-4.jpg"
-                alt="Diversão - executivo com grillz dourado"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-              <img
-                src="/images/diversao-5.jpg"
-                alt="Diversão - cenário fantástico com asas e magia"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {studentCreations.map((num) => (
+              <div key={num} className="aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                <img
+                  src={`/images/gerada-${num}.jpg`}
+                  alt={`Imagem gerada por aluno ${num}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Block 1 [NEW] */}
+          <div className="mt-16 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 shadow-lg">
+              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+                <p className="text-xl font-semibold text-gray-800">Sua vez de impressionar está a um clique.</p>
+                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
+                    Quero criar também
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -409,49 +351,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Por que vale mais */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Gem className="w-8 h-8 text-purple-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">
-                  Por que o Clone Perfeito vale mais do que você paga
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4 p-4 bg-red-50 rounded-lg border border-red-100">
-                    <Camera className="w-6 h-6 text-red-500" />
-                    <span className="text-gray-700">Ensaio profissional: R$300 a R$1200</span>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                    <Clock className="w-6 h-6 text-orange-500" />
-                    <span className="text-gray-700">Agenda, deslocamento, fotógrafo, edição</span>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-red-50 rounded-lg border border-red-100">
-                    <X className="w-6 h-6 text-red-500" />
-                    <span className="text-gray-700">Sem controle do estilo ou resultado final</span>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center">
-                  <div className="p-6 bg-green-50 rounded-lg border border-green-200 text-center">
-                    <Check className="w-8 h-8 text-green-600 mx-auto mb-4" />
-                    <p className="text-lg font-semibold text-gray-800">
-                      Clone Perfeito: imagens de alta qualidade, no seu estilo, feitas em minutos por IA — direto da sua
-                      casa, com liberdade total
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* Aplicações reais */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -547,11 +448,25 @@ export default function LandingPage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* CTA Block 2 [NEW] */}
+          <div className="mt-16 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 shadow-lg">
+              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+                <p className="text-xl font-semibold text-gray-800">Pronto para ter uma imagem que gera resultados?</p>
+                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
+                    Sim, quero aprender
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Para quem é isso */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
           <Card className="border-gray-200 shadow-sm bg-white">
             <CardContent className="p-8 md:p-12">
@@ -664,6 +579,9 @@ export default function LandingPage() {
       {/* Preço */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-48 mx-auto mb-6" />
+          </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Tudo o que você leva */}
             <div>
@@ -830,6 +748,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="py-12 px-4 text-center border-t border-gray-200 bg-gradient-to-b from-gray-50/30 to-white">
         <div className="max-w-4xl mx-auto">
+          <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-40 mx-auto mb-6" />
           <p className="text-gray-600 mb-2">© 2025 Clone Perfeito</p>
           <p className="text-gray-500 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
           <div className="flex justify-center space-x-6 text-sm text-gray-500">
