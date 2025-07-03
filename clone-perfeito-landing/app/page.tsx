@@ -102,64 +102,65 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* O que é o Clone Perfeito [MOVED UP] */}
+      {/* O que é o Clone Perfeito [REDESIGNED] */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Bot className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">O que é o Clone Perfeito</h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Title and Description */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <Bot className="w-10 h-10 text-indigo-500 flex-shrink-0" />
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Sua Identidade Visual, Reinventada com IA
+                </h2>
               </div>
-              <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-8 mb-8">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  O Clone Perfeito é um método prático e direto ao ponto, em formato de minicurso, que ensina como você
-                  pode usar uma ferramenta moderna de IA para criar retratos realistas e impressionantes. Em menos de
-                  2h, você vai:
+              <p className="text-lg text-gray-700 leading-relaxed">
+                O Clone Perfeito é um minicurso prático que te transforma em um mestre da sua própria imagem. Esqueça
+                ensaios caros e complicados. Aqui, você aprende a usar a inteligência artificial para criar retratos
+                impressionantes que refletem sua melhor versão — com qualidade de estúdio, direto da sua casa.
+              </p>
+              <div className="bg-indigo-50/50 border-l-4 border-indigo-200 p-6 rounded-r-lg">
+                <p className="font-semibold text-gray-800">
+                  Em menos de 2 horas, você domina o método completo, do zero ao resultado final.
                 </p>
+              </div>
+            </div>
 
-                {/* Flow visual com setas */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Camera className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Gerar imagens com qualidade de estúdio</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Target className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Dominar os estilos, poses e ângulos ideais</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Star className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Usar seu clone para brilhar onde quiser</span>
-                  </div>
-                </div>
-
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">E ainda conta com:</p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Aulas passo a passo</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Suporte via e-mail e WhatsApp</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">
-                      Um agente GPT que cria os prompts ideais pra você usar seu clone
-                    </span>
-                  </div>
+            {/* Right Column: Key Learnings */}
+            <div className="space-y-4">
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <Camera className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Crie seu Clone do Zero</h3>
+                  <p className="text-gray-600">
+                    Aprenda a treinar a IA com suas fotos para gerar um clone hiper-realista.
+                  </p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <Target className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Domine os Prompts</h3>
+                  <p className="text-gray-600">
+                    Use nosso guia de prompts para criar qualquer estilo: profissional, casual, artístico ou de viagem.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <Star className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-semibold text-gray-800 text-lg">Brilhe Onde Quiser</h3>
+                  <p className="text-gray-600">
+                    Use suas novas fotos para impactar no LinkedIn, Instagram, Tinder ou em seu portfólio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Depoimentos Section [NEW] */}
+      {/* Depoimentos Section [IMPROVED] */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -175,24 +176,23 @@ export default function LandingPage() {
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
               {testimonials.map((num) => (
-                <CarouselItem key={num} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="overflow-hidden shadow-md rounded-2xl">
-                      <CardContent className="p-0">
-                        <img
-                          src={`/images/d${num}.jpg`}
-                          alt={`Depoimento de aluno ${num}`}
-                          className="w-full h-auto object-cover aspect-[9/16]"
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
+                <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
+                  <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl">
+                    <CardContent className="flex justify-center items-center bg-gray-50 p-2">
+                      <img
+                        src={`/images/d${num}.jpg`}
+                        alt={`Depoimento de aluno ${num}`}
+                        className="w-full h-auto rounded-lg"
+                      />
+                    </CardContent>
+                  </Card>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex" />
-            <CarouselNext className="hidden sm:flex" />
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
           </Carousel>
+          <p className="text-center text-gray-500 text-sm mt-4 md:hidden">Arraste para o lado para ver mais</p>
         </div>
       </section>
 
