@@ -63,7 +63,7 @@ export default function LandingPage() {
       {/* Header Section */}
       <section
         className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
-        style={{ backgroundImage: "url('/public/images/bgcpdesk.jpg')" }}
+        style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
 
