@@ -325,6 +325,112 @@ export default function LandingPage() {
         </div>
       </section>
 
+ {/* Frase de Impacto */}
+      <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
+            <CardContent className="p-8 md:p-12 text-center">
+              <Quote className="w-12 h-12 text-pink-400 mx-auto mb-8" />
+              <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed">
+                "Seus clientes vão se surpreender com a qualidade. E só você saberá que não precisou de uma câmera, estúdio ou fotógrafo."
+              </blockquote>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Aplicações reais */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Puzzle className="w-8 h-8 text-purple-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Mercados que Compram este Serviço</h2>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Social Media */}
+            <Card className="border-pink-200 shadow-sm bg-gradient-to-br from-white to-pink-50/30">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Smartphone className="w-6 h-6 text-pink-500" />
+                  <h3 className="text-xl font-semibold text-gray-800">Social Media e Criadores de Conteúdo</h3>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  Ofereça pacotes de imagens para manter o feed de seus clientes sempre atualizado, com estética profissional e sem depender de sessões de fotos caras.
+                </p>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img src="/images/instagram-mountain.jpg" alt="Foto estilo Instagram - aventura nas montanhas" className="w-full h-full object-cover" />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Corporativo */}
+            <Card className="border-blue-200 shadow-sm bg-gradient-to-br from-white to-blue-50/30">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Briefcase className="w-6 h-6 text-blue-500" />
+                  <h3 className="text-xl font-semibold text-gray-800">Profissionais e Marcas Corporativas</h3>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  Venda retratos profissionais para LinkedIn, sites e materiais de apresentação. Uma imagem de autoridade é crucial e muitas empresas pagam por isso.
+                </p>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img src="/images/linkedin-professional.jpg" alt="Foto profissional para LinkedIn" className="w-full h-full object-cover" />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Anúncios */}
+            <Card className="border-green-200 shadow-sm bg-gradient-to-br from-white to-green-50/30">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Target className="w-6 h-6 text-green-500" />
+                  <h3 className="text-xl font-semibold text-gray-800">Anúncios e Criativos de Venda</h3>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  Gestores de tráfego e agências precisam de criativos que convertem. Crie imagens com o rosto do cliente em cenários de venda para testar e escalar campanhas.
+                </p>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img src="/images/portfolio-casual.jpg" alt="Foto para currículo e portfólio" className="w-full h-full object-cover" />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Fotógrafos */}
+            <Card className="border-orange-200 shadow-sm bg-gradient-to-br from-white to-orange-50/30">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Camera className="w-6 h-6 text-orange-500" />
+                  <h3 className="text-xl font-semibold text-gray-800">Fotógrafos e Videomakers</h3>
+                </div>
+                <p className="text-gray-700 mb-6">
+                  Adicione um braço digital ao seu negócio. Ofereça ensaios de IA como um produto de entrada ou um complemento aos seus pacotes, expandindo seu leque de serviços.
+                </p>
+                <div className="aspect-square rounded-xl overflow-hidden">
+                  <img src="/images/tinder-lifestyle.png" alt="Foto estilo lifestyle para apps de relacionamento" className="w-full h-full object-cover" />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* CTA Block 2 [NEW] */}
+          <div className="mt-16 max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 shadow-lg">
+              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+                <p className="text-xl font-semibold text-gray-800">Pronto para atender esses mercados?</p>
+                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
+                    Sim, quero começar
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
 
       {/* O que você vai aprender */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
