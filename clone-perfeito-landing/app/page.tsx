@@ -81,7 +81,6 @@ export default function LandingPage() {
 
         {/* Header Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-          {/* AQUI ESTÁ A ALTERAÇÃO: Aumentei o max-w-2xl para max-w-3xl para o texto não ficar apertado no desktop */}
           <div className="max-w-3xl text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
               Aprenda a Criar Clones Digitais em Horas e Fature Alto Oferecendo Ensaios com IA para Clientes
@@ -197,209 +196,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Antes e Depois Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
-          {/* Antes */}
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-200 p-8 rounded-r-xl">
-              <p className="text-xl font-semibold text-gray-800">
-                <strong>O PONTO DE PARTIDA:</strong> fotos comuns que não vendem e não passam profissionalismo.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/antes-1.jpg" alt="Foto antes - selfie casual no quarto" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/antes-2.jpg" alt="Foto antes - selfie ao ar livre" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/antes-3.jpg" alt="Foto antes - selfie no jardim" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/antes-4.jpg" alt="Foto antes - selfie close-up" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/antes-5.jpg" alt="Foto antes - selfie no espelho" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-
-          {/* Depois */}
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-200 p-8 rounded-r-xl">
-              <p className="text-xl font-semibold text-gray-800">
-                <strong>O RESULTADO FINAL:</strong> imagens de nível profissional que clientes pagam para ter. Versatilidade, qualidade e impacto para qualquer nicho.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/depois-1.jpg" alt="Foto depois - retrato profissional corporativo" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/depois-2.jpg" alt="Foto depois - lifestyle em Paris" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/depois-3.jpg" alt="Foto depois - executivo no escritório" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/depois-4.png" alt="Foto depois - lifestyle com carro" className="w-full h-full object-cover" />
-              </div>
-              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
-                <img src="/images/depois-5.jpg" alt="Foto depois - casual profissional no café" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Student Creations Section [NEW] */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <Sparkles className="w-8 h-8 text-purple-500" />
-              <h2 className="text-3xl font-bold text-gray-900">O Tipo de Trabalho que Você Poderá Vender</h2>
-            </div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Veja o que nossos alunos estão criando para eles e para seus clientes. De fotos para redes sociais a criativos para anúncios.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {studentCreations.map((num) => (
-              <div key={num} className="aspect-[3/4] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
-                <img
-                  src={`/images/gerada-${num}.jpg`}
-                  alt={`Imagem gerada por aluno ${num}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Block 1 [NEW] */}
-          <div className="mt-16 max-w-3xl mx-auto">
-            <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 shadow-lg">
-              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                <p className="text-xl font-semibold text-gray-800">Sua vez de lucrar com essa habilidade está a um clique.</p>
-                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
-                    Quero começar a vender
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Frase de Impacto */}
-      <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
-            <CardContent className="p-8 md:p-12 text-center">
-              <Quote className="w-12 h-12 text-pink-400 mx-auto mb-8" />
-              <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed">
-                "Seus clientes vão se surpreender com a qualidade. E só você saberá que não precisou de uma câmera, estúdio ou fotógrafo."
-              </blockquote>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Aplicações reais */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <Puzzle className="w-8 h-8 text-purple-500" />
-              <h2 className="text-3xl font-bold text-gray-900">Mercados que Compram este Serviço</h2>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Social Media */}
-            <Card className="border-pink-200 shadow-sm bg-gradient-to-br from-white to-pink-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Smartphone className="w-6 h-6 text-pink-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Social Media e Criadores de Conteúdo</h3>
-                </div>
-                <p className="text-gray-700 mb-6">
-                  Ofereça pacotes de imagens para manter o feed de seus clientes sempre atualizado, com estética profissional e sem depender de sessões de fotos caras.
-                </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/instagram-mountain.jpg" alt="Foto estilo Instagram - aventura nas montanhas" className="w-full h-full object-cover" />
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Corporativo */}
-            <Card className="border-blue-200 shadow-sm bg-gradient-to-br from-white to-blue-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Briefcase className="w-6 h-6 text-blue-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Profissionais e Marcas Corporativas</h3>
-                </div>
-                <p className="text-gray-700 mb-6">
-                  Venda retratos profissionais para LinkedIn, sites e materiais de apresentação. Uma imagem de autoridade é crucial e muitas empresas pagam por isso.
-                </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/linkedin-professional.jpg" alt="Foto profissional para LinkedIn" className="w-full h-full object-cover" />
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Anúncios */}
-            <Card className="border-green-200 shadow-sm bg-gradient-to-br from-white to-green-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-green-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Anúncios e Criativos de Venda</h3>
-                </div>
-                <p className="text-gray-700 mb-6">
-                  Gestores de tráfego e agências precisam de criativos que convertem. Crie imagens com o rosto do cliente em cenários de venda para testar e escalar campanhas.
-                </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/portfolio-casual.jpg" alt="Foto para currículo e portfólio" className="w-full h-full object-cover" />
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Fotógrafos */}
-            <Card className="border-orange-200 shadow-sm bg-gradient-to-br from-white to-orange-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Camera className="w-6 h-6 text-orange-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Fotógrafos e Videomakers</h3>
-                </div>
-                <p className="text-gray-700 mb-6">
-                  Adicione um braço digital ao seu negócio. Ofereça ensaios de IA como um produto de entrada ou um complemento aos seus pacotes, expandindo seu leque de serviços.
-                </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/tinder-lifestyle.png" alt="Foto estilo lifestyle para apps de relacionamento" className="w-full h-full object-cover" />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA Block 2 [NEW] */}
-          <div className="mt-16 max-w-3xl mx-auto">
-            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 shadow-lg">
-              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
-                <p className="text-xl font-semibold text-gray-800">Pronto para atender esses mercados?</p>
-                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
-                    Sim, quero começar
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Para quem é isso */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
@@ -439,6 +235,96 @@ export default function LandingPage() {
           </Card>
         </div>
       </section>
+
+      {/* [NOVA SEÇÃO] Estimativa de Ganhos */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Seu Caminho para Faturar com Ensaios de IA
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+              Não se trata de ficar rico da noite para o dia, mas de construir uma fonte de renda sólida com um serviço inovador. Veja um plano realista.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Coluna da Esquerda: O Roadmap */}
+            <div className="space-y-8">
+              <h3 className="text-2xl font-bold text-gray-800 text-center lg:text-left">Seu Plano de Ação</h3>
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">1</div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 text-lg">Aprenda o Método</h4>
+                  <p className="text-gray-600">
+                    Em menos de 2 horas, conclua o curso e domine a técnica para criar clones e gerar imagens de alta qualidade.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">2</div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 text-lg">Crie seu Portfólio</h4>
+                  <p className="text-gray-600">
+                    Use o método em si mesmo para criar um portfólio impressionante. Essas serão suas primeiras peças de venda.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-5">
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">3</div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 text-lg">Defina seus Pacotes</h4>
+                  <p className="text-gray-600">
+                    Use nossos exemplos para criar suas próprias ofertas. Comece com pacotes simples para ganhar confiança e seus primeiros clientes.
+                  </p>
+                </div>
+              </div>
+               <div className="flex items-start gap-5">
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">4</div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 text-lg">Divulgue e Venda</h4>
+                  <p className="text-gray-600">
+                    Ofereça para sua rede de contatos, clientes atuais (se for social media/designer) e em grupos de freelancers. Seu primeiro "sim" virá rápido.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Coluna da Direita: Estimativa de Ganhos */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-800 text-center lg:text-left">Potencial de Faturamento</h3>
+              <Card className="bg-green-50/70 border border-green-200">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg text-green-800">Pacote Essencial (1 Cliente)</h4>
+                  <p className="text-gray-700 mt-2 mb-4">Ideal para um profissional que precisa de fotos para o LinkedIn. (Ex: 15 imagens em alta resolução).</p>
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 197,00</strong></p>
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00</p>
+                  <p className="font-bold text-green-700 mt-2">Seu Lucro Estimado: ~R$ 147,00</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-blue-50/70 border border-blue-200">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg text-blue-800">Pacote Conteúdo (1 Cliente)</h4>
+                  <p className="text-gray-700 mt-2 mb-4">Perfeito para um criador de conteúdo que precisa de variedade para o Instagram. (Ex: 40 imagens, 2 estilos diferentes).</p>
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 347,00</strong></p>
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00</p>
+                  <p className="font-bold text-blue-700 mt-2">Seu Lucro Estimado: ~R$ 297,00</p>
+                </CardContent>
+              </Card>
+              <Card className="bg-purple-50/70 border border-purple-200">
+                <CardContent className="p-6">
+                  <h4 className="font-bold text-lg text-purple-800">Retainer Mensal (Agências/Social Media)</h4>
+                  <p className="text-gray-700 mt-2 mb-4">O jogo real. Fornecer imagens sob demanda para um cliente fixo. (Ex: 20 novas imagens por mês).</p>
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 400 a R$ 900 / mês</strong></p>
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00 / mês</p>
+                  <p className="font-bold text-purple-700 mt-2">Seu Lucro Estimado: R$ 350 a R$ 850 / mês (por cliente)</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* O que você vai aprender */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
