@@ -325,6 +325,63 @@ export default function LandingPage() {
         </div>
       </section>
 
+{/* Antes e Depois Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Antes */}
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-200 p-8 rounded-r-xl">
+              <p className="text-xl font-semibold text-gray-800">
+                <strong>O PONTO DE PARTIDA:</strong> fotos comuns que não vendem e não passam profissionalismo.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/antes-1.jpg" alt="Foto antes - selfie casual no quarto" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/antes-2.jpg" alt="Foto antes - selfie ao ar livre" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/antes-3.jpg" alt="Foto antes - selfie no jardim" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/antes-4.jpg" alt="Foto antes - selfie close-up" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/antes-5.jpg" alt="Foto antes - selfie no espelho" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+
+          {/* Depois */}
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-200 p-8 rounded-r-xl">
+              <p className="text-xl font-semibold text-gray-800">
+                <strong>O RESULTADO FINAL:</strong> imagens de nível profissional que clientes pagam para ter. Versatilidade, qualidade e impacto para qualquer nicho.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/depois-1.jpg" alt="Foto depois - retrato profissional corporativo" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/depois-2.jpg" alt="Foto depois - lifestyle em Paris" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/depois-3.jpg" alt="Foto depois - executivo no escritório" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/depois-4.png" alt="Foto depois - lifestyle com carro" className="w-full h-full object-cover" />
+              </div>
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+                <img src="/images/depois-5.jpg" alt="Foto depois - casual profissional no café" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
  {/* Frase de Impacto */}
       <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
         <div className="max-w-4xl mx-auto">
