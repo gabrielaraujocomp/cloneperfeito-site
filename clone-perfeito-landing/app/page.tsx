@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import {
   Quote,
   MessageCircle,
   Sparkles,
@@ -34,6 +41,8 @@ import Link from "next/link"
 import Script from "next/script"
 
 export default function LandingPage() {
+  const testimonials = [1, 2, 3, 4, 5, 6, 7]
+
   return (
     <div className="min-h-screen bg-white">
       {/* Meta Pixel Code */}
@@ -90,6 +99,100 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* O que é o Clone Perfeito [MOVED UP] */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-gray-200 shadow-sm bg-white">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex items-start gap-4 mb-8">
+                <Bot className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
+                <h2 className="text-3xl font-bold text-gray-900">O que é o Clone Perfeito</h2>
+              </div>
+              <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-8 mb-8">
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  O Clone Perfeito é um método prático e direto ao ponto, em formato de minicurso, que ensina como você
+                  pode usar uma ferramenta moderna de IA para criar retratos realistas e impressionantes. Em menos de
+                  2h, você vai:
+                </p>
+
+                {/* Flow visual com setas */}
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
+                    <Camera className="w-6 h-6 text-indigo-500 flex-shrink-0" />
+                    <span className="font-semibold text-gray-800">Gerar imagens com qualidade de estúdio</span>
+                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
+                    <Target className="w-6 h-6 text-indigo-500 flex-shrink-0" />
+                    <span className="font-semibold text-gray-800">Dominar os estilos, poses e ângulos ideais</span>
+                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
+                    <Star className="w-6 h-6 text-indigo-500 flex-shrink-0" />
+                    <span className="font-semibold text-gray-800">Usar seu clone para brilhar onde quiser</span>
+                  </div>
+                </div>
+
+                <p className="text-lg text-gray-700 leading-relaxed mb-4">E ainda conta com:</p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                    <span className="text-gray-700">Aulas passo a passo</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                    <span className="text-gray-700">Suporte via e-mail e WhatsApp</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-600" />
+                    <span className="text-gray-700">
+                      Um agente GPT que cria os prompts ideais pra você usar seu clone
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Depoimentos Section [NEW] */}
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Users className="w-8 h-8 text-yellow-500" />
+              <h2 className="text-3xl font-bold text-gray-900">Aprovação de quem já fez o curso</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Veja o que nossos alunos estão dizendo sobre o método Clone Perfeito e a transformação em suas imagens.
+            </p>
+          </div>
+
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {testimonials.map((num) => (
+                <CarouselItem key={num} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="overflow-hidden shadow-md rounded-2xl">
+                      <CardContent className="p-0">
+                        <img
+                          src={`/images/d${num}.jpg`}
+                          alt={`Depoimento de aluno ${num}`}
+                          className="w-full h-auto object-cover aspect-[9/16]"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </div>
       </section>
 
@@ -306,62 +409,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* O que é o Clone Perfeito */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Card className="border-gray-200 shadow-sm bg-white">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start gap-4 mb-8">
-                <Bot className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">O que é o Clone Perfeito</h2>
-              </div>
-              <div className="bg-indigo-50/50 border border-indigo-100 rounded-lg p-8 mb-8">
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  O Clone Perfeito é um método prático e direto ao ponto, em formato de minicurso, que ensina como você pode usar uma ferramenta moderna de IA para criar retratos realistas e impressionantes. Em menos de
-                  2h, você vai:
-                </p>
-
-                {/* Flow visual com setas */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Camera className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Gerar imagens com qualidade de estúdio</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Target className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Dominar os estilos, poses e ângulos ideais</span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 ml-auto" />
-                  </div>
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-indigo-100">
-                    <Star className="w-6 h-6 text-indigo-500 flex-shrink-0" />
-                    <span className="font-semibold text-gray-800">Usar seu clone para brilhar onde quiser</span>
-                  </div>
-                </div>
-
-                <p className="text-lg text-gray-700 leading-relaxed mb-4">E ainda conta com:</p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Aulas passo a passo</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">Suporte via e-mail e WhatsApp</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-700">
-                      Um agente GPT que cria os prompts ideais pra você usar seu clone
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* Por que vale mais */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
@@ -402,9 +449,6 @@ export default function LandingPage() {
           </Card>
         </div>
       </section>
-
-      {/* Tudo o que você leva */}
-      {/* REMOVED */}
 
       {/* Aplicações reais */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
@@ -518,7 +562,9 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start space-x-4 p-4 bg-blue-50/50 rounded-lg border border-blue-100">
                   <User className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Quem quer uma imagem mais profissional e convincente nas redes</span>
+                  <span className="text-lg text-gray-700">
+                    Quem quer uma imagem mais profissional e convincente nas redes
+                  </span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-purple-50/50 rounded-lg border border-purple-100">
                   <Users className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
@@ -530,7 +576,9 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-orange-50/50 rounded-lg border border-orange-100">
                   <Star className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
-                  <span className="text-lg text-gray-700">Pessoas comuns que querem se destacar de forma simples e inteligente</span>
+                  <span className="text-lg text-gray-700">
+                    Pessoas comuns que querem se destacar de forma simples e inteligente
+                  </span>
                 </div>
                 <div className="flex items-start space-x-4 p-4 bg-pink-50/50 rounded-lg border border-pink-100 md:col-span-2">
                   <Heart className="w-6 h-6 text-pink-600 mt-1 flex-shrink-0" />
@@ -556,14 +604,22 @@ export default function LandingPage() {
                   <Target className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-lg font-semibold text-gray-800 mb-2">Criar seu próprio clone com IA, do zero</p>
-                    <p className="text-gray-600">Você vai aprender a subir suas fotos corretamente, escolher o modelo ideal e configurar o treinamento do seu clone com clareza, mesmo sem saber nada de IA.</p>
+                    <p className="text-gray-600">
+                      Você vai aprender a subir suas fotos corretamente, escolher o modelo ideal e configurar o
+                      treinamento do seu clone com clareza, mesmo sem saber nada de IA.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-purple-50/50 rounded-lg border border-purple-100">
                   <Lightbulb className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-lg font-semibold text-gray-800 mb-2">Usar prompts prontos para gerar ensaios completos</p>
-                    <p className="text-gray-600">Vou te mostrar como usar frases simples (já testadas) que geram resultados incríveis — e ainda como adaptar para diferentes estilos e objetivos (profissional, lifestyle, divertido, etc).</p>
+                    <p className="text-lg font-semibold text-gray-800 mb-2">
+                      Usar prompts prontos para gerar ensaios completos
+                    </p>
+                    <p className="text-gray-600">
+                      Vou te mostrar como usar frases simples (já testadas) que geram resultados incríveis — e ainda
+                      como adaptar para diferentes estilos e objetivos (profissional, lifestyle, divertido, etc).
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-green-50/50 rounded-lg border border-green-100">
@@ -581,7 +637,10 @@ export default function LandingPage() {
                     <p className="text-lg font-semibold text-gray-800 mb-2">
                       Como usar as fotos para atrair atenção e autoridade
                     </p>
-                    <p className="text-gray-600">Você vai aprender onde e como usar as imagens geradas: para causar impacto no Instagram, se destacar no LinkedIn, impressionar num currículo, ou até para gerar mais matches nos apps.</p>
+                    <p className="text-gray-600">
+                      Você vai aprender onde e como usar as imagens geradas: para causar impacto no Instagram, se
+                      destacar no LinkedIn, impressionar num currículo, ou até para gerar mais matches nos apps.
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 p-6 bg-orange-50/50 rounded-lg border border-orange-100">
@@ -590,7 +649,10 @@ export default function LandingPage() {
                     <p className="text-lg font-semibold text-gray-800 mb-2">
                       Repetir o processo sempre que quiser
                     </p>
-                    <p className="text-gray-600">O método é seu. Sempre que quiser atualizar seu visual, fazer um novo ensaio ou testar novos estilos, você saberá como fazer — sem depender de ninguém.</p>
+                    <p className="text-gray-600">
+                      O método é seu. Sempre que quiser atualizar seu visual, fazer um novo ensaio ou testar novos
+                      estilos, você saberá como fazer — sem depender de ninguém.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -636,8 +698,9 @@ export default function LandingPage() {
                 <h2 className="text-3xl font-bold text-gray-900">Preço</h2>
               </div>
               <p className="text-lg text-gray-700 mb-8">
-                Um ensaio profissional pode custar de R$300 a R$1.200.
-                Com o Clone Perfeito, você aprende a gerar imagens incríveis com IA por apenas R$47 — e ainda leva um minicurso, um agente de prompts, atualizações e suporte vitalício.
+                Um ensaio profissional pode custar de R$300 a R$1.200. Com o Clone Perfeito, você aprende a gerar
+                imagens incríveis com IA por apenas R$47 — e ainda leva um minicurso, um agente de prompts,
+                atualizações e suporte vitalício.
               </p>
               <h3 className="text-4xl font-bold text-gray-900 mb-4">R$47 à vista</h3>
               <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
@@ -652,16 +715,15 @@ export default function LandingPage() {
               <div className="text-center">
                 <p className="text-gray-600 mb-4">Tem dúvidas sobre o Clone Perfeito?</p>
                 <a
-  href="https://api.whatsapp.com/send?phone=5511978610717"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
-    <MessageCircle className="w-4 h-4 mr-2" />
-    Falar no WhatsApp
-  </Button>
-</a>
-
+                  href="https://api.whatsapp.com/send?phone=5511978610717"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Falar no WhatsApp
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -703,15 +765,18 @@ export default function LandingPage() {
                 <AccordionItem value="item-2" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">Funciona com qualquer pessoa?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim, funciona com qualquer pessoa — homens, mulheres, qualquer idade ou estilo.
-                    Durante o curso, eu explico exatamente quais fotos tirar (com exemplos e modelos) para que o resultado fique o melhor possível, sem complicação.
+                    Sim, funciona com qualquer pessoa — homens, mulheres, qualquer idade ou estilo. Durante o curso, eu
+                    explico exatamente quais fotos tirar (com exemplos e modelos) para que o resultado fique o melhor
+                    possível, sem complicação.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim, para gerar suas fotos você precisa usar uma ferramenta profissional externa (que ensino no curso). O valor é acessível: em torno de R$50 você já consegue gerar mais de 50 imagens profissionais.
-                    Essa mesma produção, se feita com fotógrafo, figurino, viagem e edição, sairia por centenas de reais — aqui você faz direto de casa.
+                    Sim, para gerar suas fotos você precisa usar uma ferramenta profissional externa (que ensino no
+                    curso). O valor é acessível: em torno de R$50 você já consegue gerar mais de 50 imagens
+                    profissionais. Essa mesma produção, se feita com fotógrafo, figurino, viagem e edição, sairia por
+                    centenas de reais — aqui você faz direto de casa.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="border-gray-200">
@@ -733,17 +798,18 @@ export default function LandingPage() {
                     Em quanto tempo eu vejo resultado?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Você pode gerar suas primeiras fotos em menos de 2 horas após assistir às aulas. O processo é extremamente rápido, prático e automatizado.
-                    Você não precisa dominar nada técnico — só seguir o que eu mostro no passo a passo.
+                    Você pode gerar suas primeiras fotos em menos de 2 horas após assistir às aulas. O processo é
+                    extremamente rápido, prático e automatizado. Você não precisa dominar nada técnico — só seguir o que
+                    eu mostro no passo a passo.
                   </AccordionContent>
                 </AccordionItem>
-                 <AccordionItem value="item-7" className="border-gray-200">
+                <AccordionItem value="item-7" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">
                     Preciso saber algo sobre IA, edição ou fotografia?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Não. O curso foi criado para iniciantes.
-                    Tudo é explicado com clareza, com exemplos visuais e orientações diretas. Se você sabe usar o celular, consegue aplicar o método sem problema.
+                    Não. O curso foi criado para iniciantes. Tudo é explicado com clareza, com exemplos visuais e
+                    orientações diretas. Se você sabe usar o celular, consegue aplicar o método sem problema.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-8" className="border-gray-200">
@@ -751,8 +817,8 @@ export default function LandingPage() {
                     Eu tenho suporte se travar em alguma parte?
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Sim. Você terá acesso ao suporte por e-mail e WhatsApp.
-                    Qualquer dúvida, você pode mandar mensagem e te ajudarei a resolver o que for necessário.
+                    Sim. Você terá acesso ao suporte por e-mail e WhatsApp. Qualquer dúvida, você pode mandar mensagem e
+                    te ajudarei a resolver o que for necessário.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -760,9 +826,6 @@ export default function LandingPage() {
           </Card>
         </div>
       </section>
-
-      {/* Minha história */}
-      {/* REMOVED */}
 
       {/* Footer */}
       <footer className="py-12 px-4 text-center border-t border-gray-200 bg-gradient-to-b from-gray-50/30 to-white">
