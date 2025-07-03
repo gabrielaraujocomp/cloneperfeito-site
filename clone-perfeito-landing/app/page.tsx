@@ -38,7 +38,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-import Script from "next/script"
+import Script from "next/script" // O import já estava aqui, o que é ótimo!
 
 export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
@@ -72,17 +72,19 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
 
+      {/* Microsoft Clarity Code -- CÓDIGO ADICIONADO AQUI */}
+      <Script id="microsoft-clarity" strategy="afterInteractive">
+        {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "s98m9z0sda");
+        `}
+      </Script>
+      {/* End Microsoft Clarity Code */}
       
       {/* Header Section */}
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "s98m9z0sda");
-</script>
-
       <section
         className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
         style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
