@@ -81,11 +81,12 @@ export default function LandingPage() {
 
         {/* Header Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-          <div className="max-w-2xl text-center md:text-left">
+          {/* AQUI ESTÁ A ALTERAÇÃO: Aumentei o max-w-2xl para max-w-3xl para o texto não ficar apertado no desktop */}
+          <div className="max-w-3xl text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
               Aprenda a Criar Clones Digitais em Horas e Fature Alto Oferecendo Ensaios com IA para Clientes
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
               O método passo a passo para você dominar uma nova habilidade lucrativa e entregar ensaios fotográficos de alto impacto para seus clientes — mesmo que você seja um completo iniciante em IA.
             </p>
 
