@@ -72,6 +72,9 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
 
+      
+      {/* Header Section */}
+
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -80,8 +83,6 @@ export default function LandingPage() {
     })(window, document, "clarity", "script", "s98m9z0sda");
 </script>
 
-      
-      {/* Header Section */}
       <section
         className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
         style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
