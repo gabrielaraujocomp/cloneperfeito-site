@@ -38,7 +38,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-import Script from "next/script" // O import já estava aqui, o que é ótimo!
+import Script from "next/script"
 
 export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
@@ -72,7 +72,7 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
 
-      {/* Microsoft Clarity Code -- CÓDIGO ADICIONADO AQUI */}
+      {/* Microsoft Clarity Code */}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`
             (function(c,l,a,r,i,t,y){
@@ -84,32 +84,30 @@ export default function LandingPage() {
       </Script>
       {/* End Microsoft Clarity Code */}
       
-      {/* Header Section */}
+      {/* [NOVA] Header Section - VISUALMENTE REFORMULADA */}
       <section
-        className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
+        className="relative w-full min-h-screen bg-cover bg-center flex items-center"
         style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-
-        {/* Header Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-          <div className="max-w-3xl text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-2xl text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight [text-shadow:_2px_2px_6px_rgb(0_0_0_/_50%)]">
               Aprenda a Criar Ensaios com IA em Menos de 1 Hora e Venda por R$300, R$600, R$1000+
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
-              Em menos de uma hora, você aprende como transformar fotos amadoras em ensaios com aparência profissional, treinar a IA com qualquer rosto e começar a vender esse serviço sem depender de equipamento ou clientes fixos.
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 [text-shadow:_1px_1px_4px_rgb(0_0_0_/_50%)]">
+              Transforme fotos amadoras em ensaios profissionais, treine a IA com qualquer rosto e comece a vender esse serviço sem precisar de equipamento.
             </p>
 
-            {/* CTA Block */}
-            <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
-              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                  QUERO APRENDER A GERAR ENSAIOS COM IA
+            {/* CTA Block Reformulado */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="w-full md:w-auto">
+                <Button size="lg" className="w-full md:w-auto text-lg px-10 py-7 bg-green-600 hover:bg-green-700 text-white shadow-lg transform hover:scale-105 transition-transform">
+                  QUERO CRIAR ENSAIOS COM IA
                 </Button>
               </Link>
-              <p className="text-lg font-semibold text-white text-center md:text-left">
-                De R$157 por R$47 à vista ou até 12x — uma nova fonte de renda pelo preço de um lanche.
+              <p className="text-base font-medium text-white text-center md:text-left">
+                De <span className="line-through">R$157</span> por <span className="font-bold text-lg">R$47</span> à vista ou até 12x de R$5,22.
               </p>
             </div>
           </div>
@@ -248,7 +246,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* [NOVA SEÇÃO] Estimativa de Ganhos */}
+      {/* Estimativa de Ganhos */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -337,7 +335,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* [NOVA SEÇÃO - GALERIA] Criações dos Alunos */}
+      {/* Galeria de Criações dos Alunos */}
       <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
