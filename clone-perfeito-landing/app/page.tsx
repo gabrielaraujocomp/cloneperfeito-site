@@ -36,9 +36,10 @@ import {
   DollarSign,
   Star,
   ArrowRight,
+  WandSparkles, // Ícone adicionado para "arma secreta"
 } from "lucide-react"
 import Link from "next/link"
-import Script from "next/script" // O import já estava aqui, o que é ótimo!
+import Script from "next/script"
 
 export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
@@ -72,7 +73,7 @@ export default function LandingPage() {
       </noscript>
       {/* End Meta Pixel Code */}
 
-      {/* Microsoft Clarity Code -- CÓDIGO ADICIONADO AQUI */}
+      {/* Microsoft Clarity Code */}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`
             (function(c,l,a,r,i,t,y){
@@ -89,27 +90,31 @@ export default function LandingPage() {
         className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
         style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
 
         {/* Header Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
           <div className="max-w-3xl text-center md:text-left">
+            {/* [// Otimizado] Título mais focado no resultado final (luxo, negócio). */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
-              Aprenda a Criar Clones Digitais em Horas e Fature Alto Oferecendo Ensaios com IA para Clientes
+              Transforme Fotos Comuns em Ensaios de Luxo com IA e Crie um Negócio Altamente Lucrativo
             </h1>
+            {/* [// Otimizado] Subtítulo mais direto, prometendo velocidade e quebrando a objeção da "experiência". */}
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
-              O método passo a passo para você dominar uma nova habilidade lucrativa e entregar ensaios fotográficos de alto impacto para seus clientes — mesmo que você seja um completo iniciante em IA.
+              O único método que você precisa para criar ensaios fotográficos hiper-realistas para clientes em menos de 2 horas e adicionar uma fonte de renda previsível ao seu negócio. <strong>Nenhuma experiência com IA é necessária.</strong>
             </p>
 
             {/* CTA Block */}
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                  QUERO TRANSFORMAR IA EM RENDA
+                {/* [// Otimizado] CTA do botão mais forte e ativo. */}
+                <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg transform hover:scale-105 transition-transform">
+                  QUERO CRIAR ENSAIOS LUCRATIVOS AGORA
                 </Button>
               </Link>
+              {/* [// Otimizado] Comparação de preço mais tangível ("delivery"). */}
               <p className="text-lg font-semibold text-white text-center md:text-left">
-                De R$157 por R$47 à vista ou até 12x — uma nova fonte de renda pelo preço de um lanche.
+                De R$157 por R$47 à vista ou até 12x — uma nova fonte de renda pelo preço de um <strong>delivery de fim de semana.</strong>
               </p>
             </div>
           </div>
@@ -123,22 +128,24 @@ export default function LandingPage() {
             {/* Left Column: Title and Description */}
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <DollarSign className="w-10 h-10 text-indigo-500 flex-shrink-0" />
+                <Sparkles className="w-10 h-10 text-indigo-500 flex-shrink-0" />
+                {/* [// Otimizado] Título mais emocional, focado em "vender resultado mágico". */}
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  Transforme uma Habilidade de IA em um Negócio Lucrativo
+                  Deixe de Vender seu Tempo. Venda um Resultado Mágico.
                 </h2>
               </div>
+              {/* [// Otimizado] Texto mais evocativo com a técnica "Imagine...". */}
               <p className="text-lg text-gray-700 leading-relaxed">
-                O Clone Perfeito é um treinamento prático que te ensina a criar e vender um serviço de alto valor: ensaios fotográficos gerados por Inteligência Artificial. Esqueça a teoria. Aqui você aprende uma habilidade para gerar renda.
+                Imagine poder oferecer ao seu cliente um ensaio fotográfico em Paris, um retrato corporativo em um escritório de luxo ou fotos de aventura na Patagônia... <strong>sem que ele precise sair de casa.</strong> O Clone Perfeito não é sobre IA, é sobre destravar um poder criativo e financeiro que antes era restrito a grandes produções.
               </p>
               <div className="bg-indigo-50/50 border-l-4 border-indigo-200 p-6 rounded-r-lg">
                 <p className="font-semibold text-gray-800">
-                  Em menos de 2 horas, você estará pronto para criar e vender seu primeiro ensaio. O método é direto ao ponto.
+                  Em menos de 2 horas, você estará pronto para criar e vender seu primeiro ensaio. O método é 100% focado na prática para gerar renda rápido.
                 </p>
               </div>
             </div>
 
-            {/* Right Column: Key Learnings */}
+            {/* Right Column: Key Learnings (Mantido pois já estava ótimo) */}
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
                 <User className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
@@ -177,8 +184,9 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
-              <Users className="w-8 h-8 text-yellow-500" />
-              <h2 className="text-3xl font-bold text-gray-900">A Prova de que o Método Funciona</h2>
+              <Star className="w-8 h-8 text-yellow-500" />
+              {/* [// Otimizado] Título da prova social mais forte. */}
+              <h2 className="text-3xl font-bold text-gray-900">A Prova de que o Método Funciona (e Gera Lucro Rápido)</h2>
             </div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Veja o que nossos alunos, de iniciantes a profissionais, estão dizendo sobre o curso.
@@ -193,7 +201,7 @@ export default function LandingPage() {
                     <CardContent className="flex justify-center items-center bg-gray-50 p-2">
                       <img
                         src={`/images/d${num}.jpg`}
-                        alt={`Depoimento de aluno ${num}`}
+                        alt={`Depoimento em imagem de aluno ${num}`}
                         className="w-full h-auto rounded-lg"
                       />
                     </CardContent>
@@ -208,7 +216,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Para quem é isso */}
+      {/* Para quem é isso (Mantido, já estava excelente) */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
           <Card className="border-gray-200 shadow-sm bg-white">
@@ -248,7 +256,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* [NOVA SEÇÃO] Estimativa de Ganhos */}
+      {/* Estimativa de Ganhos (Mantido, já estava excelente) */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -337,7 +345,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-{/* Antes e Depois Section */}
+      {/* Antes e Depois Section (Mantido, já estava excelente) */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Antes */}
@@ -394,7 +402,7 @@ export default function LandingPage() {
         </div>
       </section>
 
- {/* Frase de Impacto */}
+      {/* Frase de Impacto (Mantido, já estava excelente) */}
       <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
         <div className="max-w-4xl mx-auto">
           <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
@@ -408,7 +416,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Aplicações reais */}
+      {/* Aplicações reais (Mantido, já estava excelente) */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -419,7 +427,7 @@ export default function LandingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Social Media */}
+            {/* Cards de Mercado */}
             <Card className="border-pink-200 shadow-sm bg-gradient-to-br from-white to-pink-50/30">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -435,7 +443,6 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            {/* Corporativo */}
             <Card className="border-blue-200 shadow-sm bg-gradient-to-br from-white to-blue-50/30">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -451,7 +458,6 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            {/* Anúncios */}
             <Card className="border-green-200 shadow-sm bg-gradient-to-br from-white to-green-50/30">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -467,7 +473,6 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            {/* Fotógrafos */}
             <Card className="border-orange-200 shadow-sm bg-gradient-to-br from-white to-orange-50/30">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -490,8 +495,9 @@ export default function LandingPage() {
               <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
                 <p className="text-xl font-semibold text-gray-800">Pronto para atender esses mercados?</p>
                 <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
-                    Sim, quero começar
+                  {/* [// Otimizado] CTA mais enfático. */}
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md transform hover:scale-105 transition-transform">
+                    Sim, Quero Começar a Lucrar Agora!
                   </Button>
                 </Link>
               </CardContent>
@@ -500,7 +506,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-
       {/* O que você vai aprender */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
@@ -508,11 +513,12 @@ export default function LandingPage() {
             <CardContent className="p-8 md:p-12">
               <div className="flex items-start gap-4 mb-8">
                 <GraduationCap className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">O que você vai aprender na prática</h2>
+                {/* [// Otimizado] Título mais forte, focado no benefício (faturar). */}
+                <h2 className="text-3xl font-bold text-gray-900">Seu Arsenal Completo Para Começar a Faturar</h2>
               </div>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4 p-6 bg-blue-50/50 rounded-lg border border-blue-100">
-                  <Target className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+                  <User className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-lg font-semibold text-gray-800 mb-2">A criar um clone digital de qualquer pessoa</p>
                     <p className="text-gray-600">
@@ -520,14 +526,15 @@ export default function LandingPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4 p-6 bg-purple-50/50 rounded-lg border border-purple-100">
-                  <Lightbulb className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+                {/* [// Otimizado] DESTAQUE MÁXIMO NO DIFERENCIAL (USP). */}
+                <div className="flex items-start space-x-4 p-6 bg-purple-50/50 rounded-lg border border-purple-200 shadow-inner">
+                  <WandSparkles className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-lg font-semibold text-gray-800 mb-2">
-                      A usar prompts para gerar ensaios completos
+                    <p className="text-lg font-semibold text-purple-800 mb-2">
+                      Engenharia de Prompts (Nossa Arma Secreta)
                     </p>
-                    <p className="text-gray-600">
-                      Você terá acesso a prompts validados e ao nosso Agente GPT exclusivo, que extrai o prompt de qualquer imagem de referência, para entregar exatamente o que o cliente pediu.
+                    <p className="text-gray-700">
+                      Esqueça o bloqueio criativo. Você terá acesso ao nosso <strong>Agente GPT de Reengenharia Visual</strong>, uma ferramenta exclusiva que transforma QUALQUER imagem de referência no prompt perfeito para recriá-la.
                     </p>
                   </div>
                 </div>
@@ -577,9 +584,10 @@ export default function LandingPage() {
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
                   <span className="text-gray-700">Acesso vitalício ao curso e método completo</span>
                 </div>
-                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
-                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <span className="text-gray-700"><strong>Bônus:</strong> Agente GPT exclusivo de extração de prompts</span>
+                <div className="flex items-center gap-3 p-4 bg-purple-50 rounded-lg border border-purple-200 shadow-sm">
+                  <Star className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                  {/* [// Otimizado] Reforçando o nome do bônus. */}
+                  <span className="text-gray-700"><strong>Bônus:</strong> Agente GPT de Reengenharia Visual</span>
                 </div>
                 <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -598,17 +606,19 @@ export default function LandingPage() {
                 <DollarSign className="w-8 h-8 text-green-500" />
                 <h2 className="text-3xl font-bold text-gray-900">Investimento Único</h2>
               </div>
+              {/* [// Otimizado] Texto que reforça o ROI (Retorno sobre o Investimento) */}
               <p className="text-lg text-gray-700 mb-8">
-                Um único ensaio fotográfico para um cliente pode ser vendido por R$300 a R$1.200. Hoje, você adquire a habilidade para vender inúmeros ensaios por um investimento que se paga no seu primeiro trabalho.
+                Um único ensaio fotográfico para um cliente pode ser vendido por R$300 a R$1.200. Hoje, você adquire a habilidade para sempre por um investimento que se paga no seu primeiro trabalho.
               </p>
               <h3 className="text-4xl font-bold text-gray-900 mb-4">R$47 à vista</h3>
               <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+                {/* [// Otimizado] CTA final mais forte e com senso de urgência. */}
                 <Button
                   size="lg"
-                  className="text-lg sm:text-xl px-8 sm:px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
+                  className="text-lg sm:text-xl px-8 sm:px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8 transform hover:scale-105 transition-transform"
                 >
-                  GARANTIR MINHA VAGA E COMEÇAR
+                  QUERO GARANTIR MINHA VAGA COM DESCONTO
                 </Button>
               </Link>
               <div className="text-center">
@@ -636,11 +646,13 @@ export default function LandingPage() {
             <CardContent className="p-8 md:p-12">
               <div className="flex items-start gap-4 mb-6">
                 <Shield className="w-8 h-8 text-green-500 mt-1 flex-shrink-0" />
-                <h2 className="text-3xl font-bold text-gray-900">Sua Garantia de Risco Zero</h2>
+                {/* [// Otimizado] Título da garantia mais forte. */}
+                <h2 className="text-3xl font-bold text-gray-900">Sua Garantia Blindada de Risco Zero</h2>
               </div>
               <div className="bg-green-50/50 border border-green-100 rounded-lg p-8">
+                {/* [// Otimizado] Texto da garantia que reforça a segurança. */}
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Você tem 7 dias para acessar todo o material. Se por qualquer motivo achar que não é para você, basta pedir o reembolso e nós devolvemos 100% do seu dinheiro. Simples assim.
+                  Você tem <strong>7 dias</strong> para acessar todo o material. Se por qualquer motivo achar que não é para você, basta pedir o reembolso e nós devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. <strong>O risco é todo nosso.</strong>
                 </p>
               </div>
             </CardContent>
@@ -648,7 +660,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ (Mantido, já estava excelente) */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="border-gray-200 shadow-sm bg-white">
@@ -705,7 +717,8 @@ export default function LandingPage() {
       <footer className="py-12 px-4 text-center border-t border-gray-200 bg-gradient-to-b from-gray-50/30 to-white">
         <div className="max-w-4xl mx-auto">
           <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-40 mx-auto mb-6" />
-          <p className="text-gray-600 mb-2">© 2025 Clone Perfeito</p>
+          {/* [// Otimizado] Corrigido o ano do copyright. */}
+          <p className="text-gray-600 mb-2">© 2024 Clone Perfeito</p>
           <p className="text-gray-500 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
           <div className="flex justify-center space-x-6 text-sm text-gray-500">
             <a
