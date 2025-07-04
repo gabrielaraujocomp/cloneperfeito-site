@@ -36,6 +36,7 @@ import {
   DollarSign,
   Star,
   ArrowRight,
+  BookOpen, // Ícone adicionado para a nova seção
 } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
@@ -43,6 +44,40 @@ import Script from "next/script"
 export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
+
+  // Dados para a nova seção de módulos
+  const modules = [
+    {
+      id: "item-1",
+      imageSrc: "/images/modulo-1.jpg",
+      title: "Módulo Bônus: Clone com ChatGPT (Grátis)",
+      description: "Comece com o pé direito! Neste módulo bônus, você aprende a criar seu primeiro clone e gerar um ensaio de forma 100% gratuita, usando apenas o ChatGPT. É o caminho ideal para construir seu portfólio sem nenhum custo inicial.",
+    },
+    {
+      id: "item-2",
+      imageSrc: "/images/modulo-2.jpg",
+      title: "Módulo 1: Início da Jornada",
+      description: "Aqui preparamos o terreno para o seu sucesso. Você vai entender a mentalidade correta, o potencial de mercado deste serviço e faremos as configurações iniciais das ferramentas, deixando tudo pronto para a ação.",
+    },
+    {
+      id: "item-3",
+      imageSrc: "/images/modulo-3.jpg",
+      title: "Módulo 2: Preparando o seu Clone",
+      description: "O coração do método. Você aprenderá o passo a passo detalhado para selecionar as fotos ideais do seu cliente, treinar a inteligência artificial e criar o 'ativo digital': um clone hiper-realista e de alta qualidade.",
+    },
+    {
+      id: "item-4",
+      imageSrc: "/images/modulo-4.jpg",
+      title: "Módulo 3: Criando com seu Clone",
+      description: "Hora de soltar a criatividade. Domine a arte de usar prompts para gerar ensaios incríveis em qualquer cenário. Você terá acesso ao nosso Agente GPT exclusivo para transformar qualquer imagem de referência em um prompt perfeito.",
+    },
+    {
+      id: "item-5",
+      imageSrc: "/images/modulo-5.jpg",
+      title: "Módulo 4: Encerramento e Próximos Passos",
+      description: "Com a técnica dominada, vamos transformar sua habilidade em dinheiro. Aprenda a empacotar, precificar e vender seu serviço. Mostraremos como encontrar seus primeiros clientes e transformar o Clone Perfeito em um negócio lucrativo.",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -532,7 +567,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-
       {/* O que você vai aprender */}
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
         <div className="max-w-4xl mx-auto">
@@ -591,6 +625,75 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ===== INÍCIO DA NOVA SEÇÃO DE MÓDULOS ===== */}
+      <section className="py-20 px-4 bg-gray-50/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <BookOpen className="w-8 h-8 text-indigo-500" />
+              <h2 className="text-3xl font-bold text-gray-900">A Estrutura Completa do Clone Perfeito</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Cada módulo foi desenhado para te levar do zero absoluto a um profissional capaz de vender esse serviço.
+            </p>
+          </div>
+          <Card className="border-gray-200 shadow-sm bg-white">
+            <CardContent className="p-4 md:p-6">
+              <Accordion type="single" collapsible className="w-full">
+                {modules.map((module) => (
+                  <AccordionItem key={module.id} value={module.id} className="border-b last:border-b-0 border-gray-200">
+                    <AccordionTrigger className="text-left text-lg hover:no-underline p-4">
+                      <div className="flex items-center gap-4 w-full">
+                        <img 
+                          src={module.imageSrc} 
+                          alt={`Capa do ${module.title}`}
+                          className="w-16 h-16 md:w-20 md:h-20 rounded-lg object-cover shadow-sm flex-shrink-0"
+                        />
+                        <span className="flex-1 font-semibold text-gray-800">{module.title}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-700 text-base leading-relaxed p-4 pt-0 pl-24 md:pl-28">
+                      {module.description}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+      {/* ===== FIM DA NOVA SEÇÃO DE MÓDULOS ===== */}
+      
+      {/* Bônus Especial */}
+      <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
+        <div className="max-w-4xl mx-auto">
+          <Card className="border-indigo-200 shadow-lg bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex items-start gap-4 mb-6">
+                <Gem className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
+                <div>
+                  <p className="text-indigo-600 font-semibold">BÔNUS ESPECIAL</p>
+                  <h2 className="text-3xl font-bold text-gray-900">Crie seu Primeiro Portfólio de Graça</h2>
+                </div>
+              </div>
+              <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Para acelerar seus primeiros resultados, adicionei uma <strong>aula bônus completa</strong> onde ensino duas formas de criar um clone e gerar um ensaio com IA de forma <strong>100% gratuita</strong>, usando apenas o ChatGPT.
+                </p>
+                <p>
+                  É a maneira perfeita de montar um portfólio inicial, praticar a técnica e até mesmo conseguir seu primeiro cliente sem gastar um único real com ferramentas.
+                </p>
+                <div className="mt-6 bg-indigo-100/70 border-l-4 border-indigo-300 p-4 rounded-r-lg">
+                  <p className="font-semibold text-gray-800">
+                    <strong>Importante:</strong> Este método bônus é uma excelente porta de entrada, mas não substitui a qualidade e o controle do método profissional definitivo ensinado no curso. Pense nele como seu "aquecimento" para começar a faturar.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Preço */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -607,7 +710,11 @@ export default function LandingPage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <span className="text-gray-700">Acesso vitalício ao curso e método completo</span>
+                  <span className="text-gray-700">Acesso vitalício ao curso e método completo (4 Módulos)</span>
+                </div>
+                 <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <span className="text-gray-700"><strong>Bônus:</strong> Aula de criação com ChatGPT (gratuito)</span>
                 </div>
                 <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
                   <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
@@ -702,7 +809,7 @@ export default function LandingPage() {
                 <AccordionItem value="item-3" className="border-gray-200">
                   <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta cara?</AccordionTrigger>
                   <AccordionContent className="text-gray-700 text-base">
-                    Não. A ferramenta que ensinamos tem um custo acessível (em torno de R$50) para gerar um grande volume de imagens. Este custo é facilmente repassado no valor que você cobra do seu cliente, garantindo sua margem de lucro.
+                    Não. A ferramenta que ensinamos tem um custo acessível (em torno de R$50) para gerar um grande volume de imagens. Este custo é facilmente repassado no valor que você cobra do seu cliente, garantindo sua margem de lucro. Além disso, no bônus, ensinamos um método 100% gratuito para começar.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4" className="border-gray-200">
