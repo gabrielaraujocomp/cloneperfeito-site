@@ -1,451 +1,1505 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Clone Perfeito | Crie Ensaios com IA e Fature Alto</title>
-    
-    <!-- Adicionando Font Awesome para os ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+import { Button } from "@/components/ui/button"
 
-    <!-- Estilos CSS (embutidos para facilitar a cópia) -->
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        h1, h2, h3 {
-            color: #1a1a1a;
-            line-height: 1.2;
-        }
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-            margin-top: 60px;
-            margin-bottom: 20px;
-            border-top: 1px solid #eee;
-            padding-top: 40px;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #28a745;
-            color: #fff;
-            padding: 18px 35px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
-        }
-        .cta-button:hover {
-            background-color: #218838;
-        }
-        .price-box {
-            background-color: #fff;
-            border: 2px solid #28a745;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .price-box .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 1.2rem;
-        }
-        .price-box .new-price {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin: 0;
-        }
-        .price-box .subtext {
-            font-size: 1.1rem;
-            color: #555;
-        }
-        .cta-support-text {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 10px;
-        }
-        .features-grid, .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            text-align: left;
-            margin-top: 40px;
-        }
-        .feature-card, .benefit-item {
-            background: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .feature-card i, .benefit-item i {
-            font-size: 2.5rem;
-            color: #28a745;
-            margin-bottom: 15px;
-        }
-        .testimonial-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .testimonial-card {
-            background: #fff;
-            border-left: 5px solid #28a745;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .testimonial-card img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            float: left;
-            margin-right: 15px;
-        }
-        .testimonial-card .author {
-            font-weight: bold;
-            margin-top: 15px;
-            color: #333;
-        }
-        .testimonial-card .author span {
-            display: block;
-            font-weight: normal;
-            color: #777;
-        }
-        .image-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .image-comparison img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .final-offer-box {
-            background: #f0fff4;
-            border: 1px solid #cce8d4;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        ul.checklist {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 400px;
-            margin: 20px auto;
-        }
-        ul.checklist li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        ul.checklist i {
-            color: #28a745;
-            margin-right: 10px;
-        }
-        .guarantee-box {
-            margin-top: 40px;
-            border: 2px dashed #f0ad4e;
-            padding: 20px;
-            border-radius: 8px;
-            background: #fffaf0;
-        }
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            background-color: #333;
-            color: #ccc;
-        }
-        footer a { color: #fff; text-decoration: none; }
+import { Card, CardContent } from "@/components/ui/card"
 
-        /* --- ESTILOS DA NOVA GALERIA --- */
-        .student-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-        .student-gallery-grid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .student-gallery-grid img:hover {
-            transform: scale(1.05);
-        }
-        /* --- FIM DOS ESTILOS DA GALERIA --- */
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-    </style>
-</head>
-<body>
+import {
 
-    <main class="container">
-        <!-- HERO SECTION -->
-        <header>
-            <h1>Transforme Fotos Comuns em Ensaios de Luxo com IA (e Crie um Negócio Lucrativo em Horas)</h1>
-            <p class="subtitle">
-                O único método que você precisa para criar ensaios fotográficos hiper-realistas para clientes em menos de 2 horas e adicionar uma fonte de renda previsível ao seu negócio. <strong>Nenhuma experiência com IA é necessária.</strong>
+  Carousel,
+
+  CarouselContent,
+
+  CarouselItem,
+
+  CarouselNext,
+
+  CarouselPrevious,
+
+} from "@/components/ui/carousel"
+
+import {
+
+  Quote,
+
+  MessageCircle,
+
+  Sparkles,
+
+  Bot,
+
+  Camera,
+
+  Clock,
+
+  X,
+
+  Check,
+
+  Puzzle,
+
+  Smartphone,
+
+  Briefcase,
+
+  FileText,
+
+  Heart,
+
+  User,
+
+  Users,
+
+  Target,
+
+  Lightbulb,
+
+  Film,
+
+  Brain,
+
+  Settings,
+
+  Shield,
+
+  GraduationCap,
+
+  Package,
+
+  Gem,
+
+  DollarSign,
+
+  Star,
+
+  ArrowRight,
+
+} from "lucide-react"
+
+import Link from "next/link"
+
+
+import Script from "next/script"
+
+
+import Script from "next/script" // O import já estava aqui, o que é ótimo!
+
+
+
+export default function LandingPage() {
+
+  const testimonials = [1, 2, 3, 4, 5, 6, 7]
+
+  const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+
+  return (
+
+    <div className="min-h-screen bg-white overflow-x-hidden">
+
+      {/* Meta Pixel Code */}
+
+      <Script id="meta-pixel" strategy="afterInteractive">
+
+        {`
+
+          !function(f,b,e,v,n,t,s)
+
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+          n.queue=[];t=b.createElement(e);t.async=!0;
+
+  
+
+          t.src=v;s=b.getElementsByTagName(e)[0];
+
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+
+          'https://connect.facebook.net/en_US/fbevents.js');
+
+          fbq('init', '1198526755291146');
+
+          fbq('track', 'PageView');
+
+        `}
+
+      </Script>
+
+      <noscript>
+
+        <img
+
+          height="1"
+
+          width="1"
+
+          style={{ display: "none" }}
+
+          src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1"
+
+        />
+
+      </noscript>
+
+      {/* End Meta Pixel Code */}
+
+
+
+
+      {/* Microsoft Clarity Code -- CÓDIGO ADICIONADO AQUI */}
+
+
+      <Script id="microsoft-clarity" strategy="afterInteractive">
+
+
+        {`
+
+
+            (function(c,l,a,r,i,t,y){
+
+
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+
+
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+
+
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+
+
+            })(window, document, "clarity", "script", "s98m9z0sda");
+
+
+        `}
+
+
+      </Script>
+
+
+      {/* End Microsoft Clarity Code */}
+
+
+
+      {/* Header Section */}
+
+
+
+
+
+<script type="text/javascript">
+
+
+    (function(c,l,a,r,i,t,y){
+
+
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+
+
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+
+
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+
+
+    })(window, document, "clarity", "script", "s98m9z0sda");
+
+
+</script>
+
+
+
+
+      <section
+
+        className="relative w-full h-auto min-h-[640px] md:min-h-[700px] bg-cover bg-center flex items-center py-20 md:py-0"
+
+        style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
+
+      >
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+
+
+
+        {/* Header Content */}
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+
+          <div className="max-w-3xl text-center md:text-left">
+
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
+
+              Aprenda a Criar Clones Digitais em Horas e Fature Alto Oferecendo Ensaios com IA para Clientes
+
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
+
+              O método passo a passo para você dominar uma nova habilidade lucrativa e entregar ensaios fotográficos de alto impacto para seus clientes — mesmo que você seja um completo iniciante em IA.
+
             </p>
-        </header>
 
-        <!-- PREÇO E CTA PRINCIPAL -->
-        <div class="price-box">
-            <p class="subtext">Acesso completo ao método e todos os bônus:</p>
-            <span class="old-price">De R$157</span>
-            <p class="new-price">por R$47</p>
-            <p class="subtext">à vista ou até 12x de R$ 5,22 — <strong>uma nova fonte de renda pelo preço de um delivery.</strong></p>
+
+
+            {/* CTA Block */}
+
+            <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
+
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+
+                <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
+
+                  QUERO TRANSFORMAR IA EM RENDA
+
+                </Button>
+
+              </Link>
+
+              <p className="text-lg font-semibold text-white text-center md:text-left">
+
+                De R$157 por R$47 à vista ou até 12x — uma nova fonte de renda pelo preço de um lanche.
+
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
-        <a href="#link-de-checkout" class="cta-button">QUERO CRIAR ENSAIOS LUCRATIVOS AGORA</a>
-        <p class="cta-support-text">Compra Segura | Acesso Imediato | Garantia de 7 Dias</p>
 
-        <!-- INTRODUÇÃO / CONEXÃO EMOCIONAL -->
-        <section>
-            <h2>Deixe de Vender seu Tempo. Venda um Resultado Mágico.</h2>
-            <p>
-                Imagine poder oferecer ao seu cliente um ensaio fotográfico em Paris, um retrato corporativo em um escritório de luxo ou fotos de aventura na Patagônia... <strong>sem que ele precise sair de casa.</strong> O Clone Perfeito não é só sobre IA. É sobre destravar um poder criativo e financeiro que antes era restrito a grandes produções. Aqui, você aprende a habilidade prática para transformar essa magia em lucro real.
+      </section>
+
+
+
+      {/* O que é o Clone Perfeito [REDESIGNED] */}
+
+      <section className="py-20 px-4">
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left Column: Title and Description */}
+
+            <div className="space-y-6">
+
+              <div className="flex items-center gap-4">
+
+                <DollarSign className="w-10 h-10 text-indigo-500 flex-shrink-0" />
+
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+
+                  Transforme uma Habilidade de IA em um Negócio Lucrativo
+
+                </h2>
+
+              </div>
+
+              <p className="text-lg text-gray-700 leading-relaxed">
+
+                O Clone Perfeito é um treinamento prático que te ensina a criar e vender um serviço de alto valor: ensaios fotográficos gerados por Inteligência Artificial. Esqueça a teoria. Aqui você aprende uma habilidade para gerar renda.
+
+              </p>
+
+              <div className="bg-indigo-50/50 border-l-4 border-indigo-200 p-6 rounded-r-lg">
+
+                <p className="font-semibold text-gray-800">
+
+                  Em menos de 2 horas, você estará pronto para criar e vender seu primeiro ensaio. O método é direto ao ponto.
+
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            {/* Right Column: Key Learnings */}
+
+            <div className="space-y-4">
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+
+                <User className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+
+                <div>
+
+                  <h3 className="font-semibold text-gray-800 text-lg">Crie o Ativo Principal: O Clone Digital</h3>
+
+                  <p className="text-gray-600">
+
+                    Aprenda a treinar a IA com fotos de qualquer pessoa para gerar um clone hiper-realista para seus clientes.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+
+                <Camera className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+
+                <div>
+
+                  <h3 className="font-semibold text-gray-800 text-lg">Produza Ensaios de Alto Nível</h3>
+
+                  <p className="text-gray-600">
+
+                    Gere imagens profissionais em qualquer cenário que seu cliente desejar, de fotos corporativas a posts para redes sociais.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+
+                <Briefcase className="w-8 h-8 text-indigo-500 flex-shrink-0 mt-1" />
+
+                <div>
+
+                  <h3 className="font-semibold text-gray-800 text-lg">Estruture e Venda o Serviço</h3>
+
+                  <p className="text-gray-600">
+
+                    Entenda como empacotar, precificar e oferecer essa nova habilidade para adicionar uma fonte de receita ao seu negócio.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Depoimentos Section [IMPROVED] */}
+
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-12">
+
+            <div className="flex items-center justify-center gap-4 mb-4">
+
+              <Users className="w-8 h-8 text-yellow-500" />
+
+              <h2 className="text-3xl font-bold text-gray-900">A Prova de que o Método Funciona</h2>
+
+            </div>
+
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+
+              Veja o que nossos alunos, de iniciantes a profissionais, estão dizendo sobre o curso.
+
             </p>
-            <p>Em menos de <strong>2 horas de curso</strong>, você estará pronto para criar e vender seu primeiro ensaio. O método é 100% focado na prática.</p>
-        </section>
 
-        <!-- PILARES DO MÉTODO -->
-        <section class="features-grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-robot"></i>
-                <h3>Crie o Ativo Principal: O Clone Digital</h3>
-                <p>Aprenda a treinar a IA com fotos comuns de qualquer pessoa para gerar um "clone" hiper-realista e versátil para seus clientes.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-camera-retro"></i>
-                <h3>Produza Ensaios de Alto Nível</h3>
-                <p>Gere imagens profissionais em qualquer cenário imaginável, de fotos corporativas a posts de lifestyle para redes sociais.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-sack-dollar"></i>
-                <h3>Estruture e Venda o Serviço</h3>
-                <p>Entenda como empacotar, precificar e oferecer essa nova habilidade para adicionar uma fonte de receita sólida ao seu negócio.</p>
-            </div>
-        </section>
+          </div>
 
-        <!-- PROVA SOCIAL (DEPOIMENTOS) -->
-        <section>
-            <h2>A Prova de que o Método Funciona (e Gera Lucro Rápido)</h2>
-            <p>Veja o que nossos alunos, de iniciantes a profissionais, estão conquistando.</p>
-            
-            <div class="testimonial-section">
-                <!-- NOTA: Substitua estes exemplos pelos seus depoimentos reais! -->
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/60" alt="Foto Aluno 1">
-                    <p>"Fechei meu primeiro pacote de R$350 na primeira semana! Os clientes ficam chocados com a qualidade. O curso se pagou em 2 dias."</p>
-                    <p class="author">Joana Silva <span>Social Media</span></p>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/60" alt="Foto Aluno 2">
-                    <p>"Como fotógrafo, eu tinha receio da IA. Agora, ofereço ensaios digitais como um extra e aumentei meu ticket médio em 30% sem sair de casa."</p>
-                    <p class="author">Marcos Andrade <span>Fotógrafo Profissional</span></p>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/60" alt="Foto Aluno 3">
-                    <p>"Simplesmente o melhor custo-benefício. O Agente GPT para extrair prompts vale 10x o preço do curso. É fácil e o resultado é incrível."</p>
-                    <p class="author">Carla Vianna <span>Designer Freelancer</span></p>
-                </div>
-            </div>
-        </section>
 
-        <!-- ======================================= -->
-        <!-- === NOVA SEÇÃO: GALERIA DOS ALUNOS === -->
-        <!-- ======================================= -->
-        <section>
-            <h2>Veja o que Nossos Alunos Estão Criando</h2>
-            <p class="subtitle">Imagens 100% geradas com o método Clone Perfeito, por alunos de todos os níveis. O próximo pode ser o seu!</p>
-            <div class="student-gallery-grid">
-                <!-- SUBSTITUA O CAMINHO E O ALT TEXT DAS IMAGENS -->
-                <img src="./gerada-1.jpg" alt="Ensaio profissional gerado por aluno do Clone Perfeito">
-                <img src="./gerada-2.jpg" alt="Retrato corporativo gerado por aluno do Clone Perfeito">
-                <img src="./gerada-3.jpg" alt="Foto lifestyle gerada por aluno do Clone Perfeito">
-                <img src="./gerada-4.jpg" alt="Imagem para rede social gerada por aluno do Clone Perfeito">
-                <img src="./gerada-5.jpg" alt="Foto de aventura gerada por aluno do Clone Perfeito">
-                <img src="./gerada-6.jpg" alt="Imagem artística gerada por aluno do Clone Perfeito">
-                <img src="./gerada-7.jpg" alt="Retrato em estúdio gerado por aluno do Clone Perfeito">
-                <img src="./gerada-8.jpg" alt="Foto casual profissional gerada por aluno do Clone Perfeito">
-            </div>
-        </section>
-        
-        <!-- PARA QUEM É -->
-        <section>
-            <h2>Esta Oportunidade é um Atalho Para Você que é...</h2>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <i class="fa-solid fa-pen-ruler"></i>
-                    <h3>Designer ou Social Media</h3>
-                    <p>Quer oferecer um banco de imagens infinito e personalizado para seus clientes, aumentando seu faturamento mensal.</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>Gestor de Tráfego ou Agência</h3>
-                    <p>Quer criar anúncios de alta conversão com o rosto dos clientes em qualquer cenário, com velocidade e custo imbatíveis.</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa-solid fa-camera"></i>
-                    <h3>Fotógrafo</h3>
-                    <p>Quer adicionar um serviço digital inovador ao seu portfólio, alcançando novos clientes e aumentando o ticket médio.</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa-solid fa-rocket"></i>
-                    <h3>Freelancer ou Empreendedor</h3>
-                    <p>Busca um novo negócio de baixo custo inicial, alta margem de lucro e altíssima demanda no mercado digital.</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- ANTES E DEPOIS -->
-        <section>
-            <h2>Do "Comum" ao "Impressionante"</h2>
-            <p class="subtitle">"Seus clientes vão se surpreender com a qualidade. E só você saberá que não precisou de uma câmera, estúdio ou fotógrafo."</p>
-            <div class="image-comparison">
-                <div>
-                    <h3>O PONTO DE PARTIDA</h3>
-                    <p>Fotos comuns, sem impacto e que não vendem.</p>
-                    <img src="https://via.placeholder.com/400x400.png?text=Foto+Antes+1" alt="Selfie casual no quarto">
-                </div>
-                <div>
-                    <h3>O RESULTADO FINAL</h3>
-                    <p>Imagens profissionais que seus clientes pagarão para ter.</p>
-                    <img src="https://via.placeholder.com/400x400.png?text=Foto+Depois+1" alt="Retrato profissional corporativo">
-                </div>
-            </div>
-        </section>
 
-        <!-- POTENCIAL DE FATURAMENTO -->
-        <section>
-            <h2>Seu Potencial de Faturamento (Sendo Conservador)</h2>
-            <p class="subtitle">Não se trata de ficar rico da noite para o dia, mas de construir uma fonte de renda sólida com um serviço inovador. Veja um plano realista.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Pacote Essencial (1 Cliente)</h3>
-                    <p>Ideal para um profissional que precisa de fotos para o LinkedIn. (Ex: 15 imagens).</p>
-                    <p><strong>Preço de venda: R$ 197,00</strong></p>
-                    <p><strong>Seu Lucro Estimado: ~R$ 147,00</strong></p>
-                </div>
-                <div class="feature-card">
-                    <h3>Pacote Conteúdo (1 Cliente)</h3>
-                    <p>Perfeito para um criador de conteúdo que precisa de variedade para o Instagram. (Ex: 40 imagens).</p>
-                    <p><strong>Preço de venda: R$ 347,00</strong></p>
-                    <p><strong>Seu Lucro Estimado: ~R$ 297,00</strong></p>
-                </div>
-                <div class="feature-card">
-                    <h3>Retainer Mensal (Cliente Fixo)</h3>
-                    <p>O jogo real. Fornecer imagens sob demanda para um cliente fixo. (Ex: 20 novas imagens/mês).</p>
-                    <p><strong>Preço: R$ 400 a R$ 900 / mês</strong></p>
-                    <p><strong>Seu Lucro: R$ 350 a R$ 850 / mês (por cliente)</strong></p>
-                </div>
-            </div>
-        </section>
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
 
-        <!-- O QUE VOCÊ VAI APRENDER -->
-        <section>
-            <h2>Seu Arsenal Completo Para Começar a Faturar</h2>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <i class="fa-solid fa-user-astronaut"></i>
-                    <h3>Criar um Clone Digital de Qualquer Pessoa</h3>
-                    <p>O passo a passo para treinar a IA com as fotos do seu cliente, garantindo um resultado hiper-realista e profissional, do zero.</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    <h3>Engenharia de Prompts (Nossa Arma Secreta)</h3>
-                    <p>Você terá acesso ao nosso <strong>Agente GPT de Reengenharia Visual</strong>, uma ferramenta exclusiva que transforma QUALQUER imagem de referência no prompt perfeito.</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa-solid fa-box-archive"></i>
-                    <h3>Empacotar e Precificar seu Serviço</h3>
-                    <p>Vou te mostrar como estruturar pacotes, quanto cobrar e como apresentar essa solução para seus clientes de forma irresistível.</p>
-                </div>
-                 <div class="benefit-item">
-                    <i class="fa-solid fa-repeat"></i>
-                    <h3>Repetir o Processo de Forma Escalável</h3>
-                    <p>O método é seu. Você saberá como replicar o processo para dezenas de clientes, transformando a habilidade em um negócio real.</p>
-                </div>
-            </div>
-        </section>
+            <CarouselContent className="-ml-4">
 
-        <!-- OFERTA FINAL E CTA -->
-        <section class="final-offer-box">
-            <h2>Seu Kit para Começar a Faturar Hoje</h2>
-            <ul class="checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Acesso vitalício ao curso e método completo</li>
-                <li><i class="fa-solid fa-circle-check"></i> <strong>Bônus:</strong> Agente GPT de Reengenharia Visual</li>
-                <li><i class="fa-solid fa-circle-check"></i> Suporte direto por e-mail e WhatsApp</li>
-                <li><i class="fa-solid fa-circle-check"></i> Todas as atualizações futuras do método</li>
-            </ul>
-            <p>Com um único cliente, você pode faturar 5x o valor deste curso. Hoje, você adquire a habilidade para sempre por um investimento que se paga no seu primeiro trabalho.</p>
-            <div class="price-box" style="border-color: #333; margin-top: 10px;">
-                 <span class="old-price">De R$157</span>
-                 <p class="new-price">por R$47</p>
-                 <p class="subtext">ou até 12x de R$ 5,22 no cartão</p>
-            </div>
-            <a href="#link-de-checkout" class="cta-button">GARANTIR MINHA VAGA COM DESCONTO</a>
-            <p class="cta-support-text">Vagas com este valor podem encerrar a qualquer momento.</p>
-        </section>
-        
-        <!-- GARANTIA -->
-        <section class="guarantee-box">
-            <h3>Sua Garantia Blindada de Risco Zero</h3>
-            <p>Você tem <strong>7 dias</strong> para acessar todo o material. Se por qualquer motivo achar que o Clone Perfeito não é para você, basta enviar um e-mail e nós devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo nosso.</p>
-        </section>
-        
-        <!-- FAQ (PERGUNTAS FREQUENTES) -->
-        <section>
-             <h2>Perguntas Frequentes</h2>
-             <!-- NOTA: Adicione suas perguntas e respostas aqui. O formato <details> cria um accordion clicável. -->
-             <details style="text-align: left; background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 5px; cursor: pointer;">
-                <summary style="font-weight: bold;">Preciso ter um computador potente?</summary>
-                <p style="margin-top: 10px;">Não! Ensinamos a usar ferramentas online que não exigem nada do seu computador. Você pode fazer tudo até mesmo de um notebook básico.</p>
-             </details>
-             <details style="text-align: left; background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 5px; cursor: pointer;">
-                <summary style="font-weight: bold;">É muito difícil aprender os prompts?</summary>
-                <p style="margin-top: 10px;">De forma alguma. Além de entregarmos prompts prontos, nosso Agente GPT exclusivo faz o trabalho pesado por você. Se você sabe descrever uma imagem, você consegue criar prompts.</p>
-             </details>
-        </section>
+              {testimonials.map((num) => (
 
-    </main>
+                <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
 
-    <footer>
-        <div class="container">
-            <p><strong>Clone Perfeito</strong></p>
-            <p>© 2025 Clone Perfeito - Todos os direitos reservados.</p>
-            <p>CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
-            <a href="#link-politica">Política de Privacidade</a> | <a href="#link-termos">Termos de Uso</a>
+                  <Card className="overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 rounded-2xl">
+
+                    <CardContent className="flex justify-center items-center bg-gray-50 p-2">
+
+                      <img
+
+                        src={`/images/d${num}.jpg`}
+
+                        alt={`Depoimento de aluno ${num}`}
+
+                        className="w-full h-auto rounded-lg"
+
+                      />
+
+                    </CardContent>
+
+                  </Card>
+
+                </CarouselItem>
+
+              ))}
+
+            </CarouselContent>
+
+            <CarouselPrevious className="hidden md:flex" />
+
+            <CarouselNext className="hidden md:flex" />
+
+          </Carousel>
+
+          <p className="text-center text-gray-500 text-sm mt-4 md:hidden">Arraste para o lado para ver mais</p>
+
         </div>
-    </footer>
 
-</body>
-</html>
+      </section>
+
+
+
+      {/* Para quem é isso */}
+
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+
+        <div className="max-w-4xl mx-auto">
+
+          <Card className="border-gray-200 shadow-sm bg-white">
+
+            <CardContent className="p-8 md:p-12">
+
+              <div className="flex items-start gap-4 mb-8">
+
+                <Users className="w-8 h-8 text-blue-500 mt-1 flex-shrink-0" />
+
+                <h2 className="text-3xl font-bold text-gray-900">Esta oportunidade é para você que é...</h2>
+
+              </div>
+
+              <div className="grid md:grid-cols-1 gap-6">
+
+                <div className="flex items-start space-x-4 p-4 bg-blue-50/50 rounded-lg border border-blue-100">
+
+                  <Briefcase className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+
+                  <span className="text-lg text-gray-700">
+
+                    <strong>Designer ou Social Media</strong> e quer oferecer um banco de imagens infinito e personalizado para seus clientes, aumentando seu faturamento mensal.
+
+                  </span>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-4 bg-purple-50/50 rounded-lg border border-purple-100">
+
+                  <Target className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+
+                  <span className="text-lg text-gray-700">
+
+                    <strong>Gestor de Tráfego ou Agência</strong> e quer criar anúncios de alta conversão com o rosto dos clientes em qualquer cenário, com velocidade e custo imbatíveis.
+
+                  </span>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-4 bg-green-50/50 rounded-lg border border-green-100">
+
+                  <Camera className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+
+                  <span className="text-lg text-gray-700">
+
+                    <strong>Fotógrafo</strong> e quer adicionar um serviço digital inovador ao seu portfólio, alcançando novos clientes e aumentando o ticket médio.
+
+                  </span>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-4 bg-orange-50/50 rounded-lg border border-orange-100">
+
+                  <Star className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
+
+                  <span className="text-lg text-gray-700">
+
+                    <strong>Freelancer ou Empreendedor</strong> e busca um novo negócio de baixo custo inicial, alta margem de lucro e altíssima demanda no mercado digital.
+
+                  </span>
+
+                </div>
+
+              </div>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </section>
+
+
+
+      {/* [NOVA SEÇÃO] Estimativa de Ganhos */}
+
+      <section className="py-20 px-4 bg-white">
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-16">
+
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+
+              Seu Caminho para Faturar com Ensaios de IA
+
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+
+              Não se trata de ficar rico da noite para o dia, mas de construir uma fonte de renda sólida com um serviço inovador. Veja um plano realista.
+
+            </p>
+
+          </div>
+
+
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+            {/* Coluna da Esquerda: O Roadmap */}
+
+            <div className="space-y-8">
+
+              <h3 className="text-2xl font-bold text-gray-800 text-center lg:text-left">Seu Plano de Ação</h3>
+
+              <div className="flex items-start gap-5">
+
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">1</div>
+
+                <div>
+
+                  <h4 className="font-semibold text-gray-800 text-lg">Aprenda o Método</h4>
+
+                  <p className="text-gray-600">
+
+                    Em menos de 2 horas, conclua o curso e domine a técnica para criar clones e gerar imagens de alta qualidade.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="flex items-start gap-5">
+
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">2</div>
+
+                <div>
+
+                  <h4 className="font-semibold text-gray-800 text-lg">Crie seu Portfólio</h4>
+
+                  <p className="text-gray-600">
+
+                    Use o método em si mesmo para criar um portfólio impressionante. Essas serão suas primeiras peças de venda.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="flex items-start gap-5">
+
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">3</div>
+
+                <div>
+
+                  <h4 className="font-semibold text-gray-800 text-lg">Defina seus Pacotes</h4>
+
+                  <p className="text-gray-600">
+
+                    Use nossos exemplos para criar suas próprias ofertas. Comece com pacotes simples para ganhar confiança e seus primeiros clientes.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+               <div className="flex items-start gap-5">
+
+                <div className="flex-shrink-0 bg-indigo-100 text-indigo-500 rounded-full h-12 w-12 flex items-center justify-center font-bold text-lg">4</div>
+
+                <div>
+
+                  <h4 className="font-semibold text-gray-800 text-lg">Divulgue e Venda</h4>
+
+                  <p className="text-gray-600">
+
+                    Ofereça para sua rede de contatos, clientes atuais (se for social media/designer) e em grupos de freelancers. Seu primeiro "sim" virá rápido.
+
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            {/* Coluna da Direita: Estimativa de Ganhos */}
+
+            <div className="space-y-6">
+
+              <h3 className="text-2xl font-bold text-gray-800 text-center lg:text-left">Potencial de Faturamento</h3>
+
+              <Card className="bg-green-50/70 border border-green-200">
+
+                <CardContent className="p-6">
+
+                  <h4 className="font-bold text-lg text-green-800">Pacote Essencial (1 Cliente)</h4>
+
+                  <p className="text-gray-700 mt-2 mb-4">Ideal para um profissional que precisa de fotos para o LinkedIn. (Ex: 15 imagens em alta resolução).</p>
+
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 197,00</strong></p>
+
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00</p>
+
+                  <p className="font-bold text-green-700 mt-2">Seu Lucro Estimado: ~R$ 147,00</p>
+
+                </CardContent>
+
+              </Card>
+
+              <Card className="bg-blue-50/70 border border-blue-200">
+
+                <CardContent className="p-6">
+
+                  <h4 className="font-bold text-lg text-blue-800">Pacote Conteúdo (1 Cliente)</h4>
+
+                  <p className="text-gray-700 mt-2 mb-4">Perfeito para um criador de conteúdo que precisa de variedade para o Instagram. (Ex: 40 imagens, 2 estilos diferentes).</p>
+
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 347,00</strong></p>
+
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00</p>
+
+                  <p className="font-bold text-blue-700 mt-2">Seu Lucro Estimado: ~R$ 297,00</p>
+
+                </CardContent>
+
+              </Card>
+
+              <Card className="bg-purple-50/70 border border-purple-200">
+
+                <CardContent className="p-6">
+
+                  <h4 className="font-bold text-lg text-purple-800">Retainer Mensal (Agências/Social Media)</h4>
+
+                  <p className="text-gray-700 mt-2 mb-4">O jogo real. Fornecer imagens sob demanda para um cliente fixo. (Ex: 20 novas imagens por mês).</p>
+
+                  <p className="text-gray-600">Preço de venda sugerido: <strong className="text-gray-900">R$ 400 a R$ 900 / mês</strong></p>
+
+                  <p className="text-sm text-gray-500">Custo da ferramenta: ~R$ 50,00 / mês</p>
+
+                  <p className="font-bold text-purple-700 mt-2">Seu Lucro Estimado: R$ 350 a R$ 850 / mês (por cliente)</p>
+
+                </CardContent>
+
+              </Card>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+{/* Antes e Depois Section */}
+
+      <section className="py-20 px-4">
+
+        <div className="max-w-6xl mx-auto space-y-16">
+
+          {/* Antes */}
+
+          <div className="space-y-8">
+
+            <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-200 p-8 rounded-r-xl">
+
+              <p className="text-xl font-semibold text-gray-800">
+
+                <strong>O PONTO DE PARTIDA:</strong> fotos comuns que não vendem e não passam profissionalismo.
+
+              </p>
+
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/antes-1.jpg" alt="Foto antes - selfie casual no quarto" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/antes-2.jpg" alt="Foto antes - selfie ao ar livre" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/antes-3.jpg" alt="Foto antes - selfie no jardim" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/antes-4.jpg" alt="Foto antes - selfie close-up" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/antes-5.jpg" alt="Foto antes - selfie no espelho" className="w-full h-full object-cover" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          {/* Depois */}
+
+          <div className="space-y-8">
+
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-200 p-8 rounded-r-xl">
+
+              <p className="text-xl font-semibold text-gray-800">
+
+                <strong>O RESULTADO FINAL:</strong> imagens de nível profissional que clientes pagam para ter. Versatilidade, qualidade e impacto para qualquer nicho.
+
+              </p>
+
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/depois-1.jpg" alt="Foto depois - retrato profissional corporativo" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/depois-2.jpg" alt="Foto depois - lifestyle em Paris" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/depois-3.jpg" alt="Foto depois - executivo no escritório" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/depois-4.png" alt="Foto depois - lifestyle com carro" className="w-full h-full object-cover" />
+
+              </div>
+
+              <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-sm">
+
+                <img src="/images/depois-5.jpg" alt="Foto depois - casual profissional no café" className="w-full h-full object-cover" />
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+ {/* Frase de Impacto */}
+
+      <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
+
+        <div className="max-w-4xl mx-auto">
+
+          <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
+
+            <CardContent className="p-8 md:p-12 text-center">
+
+              <Quote className="w-12 h-12 text-pink-400 mx-auto mb-8" />
+
+              <blockquote className="text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed">
+
+                "Seus clientes vão se surpreender com a qualidade. E só você saberá que não precisou de uma câmera, estúdio ou fotógrafo."
+
+              </blockquote>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Aplicações reais */}
+
+      <section className="py-20 px-4">
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-12">
+
+            <div className="flex items-center justify-center gap-4 mb-4">
+
+              <Puzzle className="w-8 h-8 text-purple-500" />
+
+              <h2 className="text-3xl font-bold text-gray-900">Mercados que Compram este Serviço</h2>
+
+            </div>
+
+          </div>
+
+
+
+          <div className="grid md:grid-cols-2 gap-12">
+
+            {/* Social Media */}
+
+            <Card className="border-pink-200 shadow-sm bg-gradient-to-br from-white to-pink-50/30">
+
+              <CardContent className="p-6">
+
+                <div className="flex items-center gap-3 mb-4">
+
+                  <Smartphone className="w-6 h-6 text-pink-500" />
+
+                  <h3 className="text-xl font-semibold text-gray-800">Social Media e Criadores de Conteúdo</h3>
+
+                </div>
+
+                <p className="text-gray-700 mb-6">
+
+                  Ofereça pacotes de imagens para manter o feed de seus clientes sempre atualizado, com estética profissional e sem depender de sessões de fotos caras.
+
+                </p>
+
+                <div className="aspect-square rounded-xl overflow-hidden">
+
+                  <img src="/images/instagram-mountain.jpg" alt="Foto estilo Instagram - aventura nas montanhas" className="w-full h-full object-cover" />
+
+                </div>
+
+              </CardContent>
+
+            </Card>
+
+
+
+            {/* Corporativo */}
+
+            <Card className="border-blue-200 shadow-sm bg-gradient-to-br from-white to-blue-50/30">
+
+              <CardContent className="p-6">
+
+                <div className="flex items-center gap-3 mb-4">
+
+                  <Briefcase className="w-6 h-6 text-blue-500" />
+
+                  <h3 className="text-xl font-semibold text-gray-800">Profissionais e Marcas Corporativas</h3>
+
+                </div>
+
+                <p className="text-gray-700 mb-6">
+
+                  Venda retratos profissionais para LinkedIn, sites e materiais de apresentação. Uma imagem de autoridade é crucial e muitas empresas pagam por isso.
+
+                </p>
+
+                <div className="aspect-square rounded-xl overflow-hidden">
+
+                  <img src="/images/linkedin-professional.jpg" alt="Foto profissional para LinkedIn" className="w-full h-full object-cover" />
+
+                </div>
+
+              </CardContent>
+
+            </Card>
+
+
+
+            {/* Anúncios */}
+
+            <Card className="border-green-200 shadow-sm bg-gradient-to-br from-white to-green-50/30">
+
+              <CardContent className="p-6">
+
+                <div className="flex items-center gap-3 mb-4">
+
+                  <Target className="w-6 h-6 text-green-500" />
+
+                  <h3 className="text-xl font-semibold text-gray-800">Anúncios e Criativos de Venda</h3>
+
+                </div>
+
+                <p className="text-gray-700 mb-6">
+
+                  Gestores de tráfego e agências precisam de criativos que convertem. Crie imagens com o rosto do cliente em cenários de venda para testar e escalar campanhas.
+
+                </p>
+
+                <div className="aspect-square rounded-xl overflow-hidden">
+
+                  <img src="/images/portfolio-casual.jpg" alt="Foto para currículo e portfólio" className="w-full h-full object-cover" />
+
+                </div>
+
+              </CardContent>
+
+            </Card>
+
+
+
+            {/* Fotógrafos */}
+
+            <Card className="border-orange-200 shadow-sm bg-gradient-to-br from-white to-orange-50/30">
+
+              <CardContent className="p-6">
+
+                <div className="flex items-center gap-3 mb-4">
+
+                  <Camera className="w-6 h-6 text-orange-500" />
+
+                  <h3 className="text-xl font-semibold text-gray-800">Fotógrafos e Videomakers</h3>
+
+                </div>
+
+                <p className="text-gray-700 mb-6">
+
+                  Adicione um braço digital ao seu negócio. Ofereça ensaios de IA como um produto de entrada ou um complemento aos seus pacotes, expandindo seu leque de serviços.
+
+                </p>
+
+                <div className="aspect-square rounded-xl overflow-hidden">
+
+                  <img src="/images/tinder-lifestyle.png" alt="Foto estilo lifestyle para apps de relacionamento" className="w-full h-full object-cover" />
+
+                </div>
+
+              </CardContent>
+
+            </Card>
+
+          </div>
+
+
+
+          {/* CTA Block 2 [NEW] */}
+
+          <div className="mt-16 max-w-3xl mx-auto">
+
+            <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 shadow-lg">
+
+              <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+
+                <p className="text-xl font-semibold text-gray-800">Pronto para atender esses mercados?</p>
+
+                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+
+                  <Button size="lg" className="text-lg px-10 py-3 bg-green-600 hover:bg-green-700 text-white shadow-md">
+
+                    Sim, quero começar
+
+                  </Button>
+
+                </Link>
+
+              </CardContent>
+
+            </Card>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+      {/* O que você vai aprender */}
+
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+
+        <div className="max-w-4xl mx-auto">
+
+          <Card className="border-gray-200 shadow-sm bg-white">
+
+            <CardContent className="p-8 md:p-12">
+
+              <div className="flex items-start gap-4 mb-8">
+
+                <GraduationCap className="w-8 h-8 text-indigo-500 mt-1 flex-shrink-0" />
+
+                <h2 className="text-3xl font-bold text-gray-900">O que você vai aprender na prática</h2>
+
+              </div>
+
+              <div className="space-y-6">
+
+                <div className="flex items-start space-x-4 p-6 bg-blue-50/50 rounded-lg border border-blue-100">
+
+                  <Target className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
+
+                  <div>
+
+                    <p className="text-lg font-semibold text-gray-800 mb-2">A criar um clone digital de qualquer pessoa</p>
+
+                    <p className="text-gray-600">
+
+                      O passo a passo para treinar a IA com as fotos do seu cliente, garantindo um resultado hiper-realista e profissional, do zero.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-6 bg-purple-50/50 rounded-lg border border-purple-100">
+
+                  <Lightbulb className="w-6 h-6 text-purple-600 mt-1 flex-shrink-0" />
+
+                  <div>
+
+                    <p className="text-lg font-semibold text-gray-800 mb-2">
+
+                      A usar prompts para gerar ensaios completos
+
+                    </p>
+
+                    <p className="text-gray-600">
+
+                      Você terá acesso a prompts validados e ao nosso Agente GPT exclusivo, que extrai o prompt de qualquer imagem de referência, para entregar exatamente o que o cliente pediu.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-6 bg-green-50/50 rounded-lg border border-green-100">
+
+                  <Package className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+
+                  <div>
+
+                    <p className="text-lg font-semibold text-gray-800 mb-2">
+
+                      A empacotar e precificar seu novo serviço
+
+                    </p>
+
+                    <p className="text-gray-600">
+
+                      Não basta a técnica. Vou te mostrar como estruturar pacotes de serviços, quanto cobrar e como apresentar essa solução para seus clientes de forma irresistível.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div className="flex items-start space-x-4 p-6 bg-orange-50/50 rounded-lg border border-orange-100">
+
+                  <Settings className="w-6 h-6 text-orange-600 mt-1 flex-shrink-0" />
+
+                  <div>
+
+                    <p className="text-lg font-semibold text-gray-800 mb-2">
+
+                      A repetir o processo de forma escalável
+
+                    </p>
+
+                    <p className="text-gray-600">
+
+                      O método é seu. Você saberá como replicar o processo para dezenas de clientes, transformando a habilidade em um negócio real e escalável.
+
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Preço */}
+
+      <section className="py-20 px-4">
+
+        <div className="max-w-6xl mx-auto">
+
+          <div className="text-center mb-12">
+
+            <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-48 mx-auto mb-6" />
+
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left Column - Tudo o que você leva */}
+
+            <div>
+
+              <div className="flex items-center gap-4 mb-8">
+
+                <Package className="w-8 h-8 text-green-500" />
+
+                <h2 className="text-3xl font-bold text-gray-900">Seu Kit para Começar a Faturar</h2>
+
+              </div>
+
+              <div className="space-y-4">
+
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+
+                  <span className="text-gray-700">Acesso vitalício ao curso e método completo</span>
+
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+
+                  <span className="text-gray-700"><strong>Bônus:</strong> Agente GPT exclusivo de extração de prompts</span>
+
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+
+                  <span className="text-gray-700">Suporte direto por e-mail e WhatsApp</span>
+
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+
+                  <Check className="w-5 h-5 text-green-600 flex-shrink-0" />
+
+                  <span className="text-gray-700">Todas as atualizações futuras do método</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            {/* Right Column - Preço */}
+
+            <div className="text-center">
+
+              <div className="flex items-center justify-center gap-4 mb-6">
+
+                <DollarSign className="w-8 h-8 text-green-500" />
+
+                <h2 className="text-3xl font-bold text-gray-900">Investimento Único</h2>
+
+              </div>
+
+              <p className="text-lg text-gray-700 mb-8">
+
+                Um único ensaio fotográfico para um cliente pode ser vendido por R$300 a R$1.200. Hoje, você adquire a habilidade para vender inúmeros ensaios por um investimento que se paga no seu primeiro trabalho.
+
+              </p>
+
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">R$47 à vista</h3>
+
+              <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
+
+              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
+
+                <Button
+
+                  size="lg"
+
+                  className="text-lg sm:text-xl px-8 sm:px-12 py-6 bg-green-600 hover:bg-green-700 text-white shadow-lg mb-8"
+
+                >
+
+                  GARANTIR MINHA VAGA E COMEÇAR
+
+                </Button>
+
+              </Link>
+
+              <div className="text-center">
+
+                <p className="text-gray-600 mb-4">Tem dúvidas se isso é para você?</p>
+
+                <a
+
+                  href="https://api.whatsapp.com/send?phone=5511978610717"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                >
+
+                  <Button variant="outline" className="text-green-600 border-green-600 hover:bg-green-50 bg-transparent">
+
+                    <MessageCircle className="w-4 h-4 mr-2" />
+
+                    Falar com o suporte no WhatsApp
+
+                  </Button>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Garantia */}
+
+      <section className="py-20 px-4 bg-gradient-to-b from-green-50/30 to-white">
+
+        <div className="max-w-4xl mx-auto">
+
+          <Card className="border-green-200 shadow-sm bg-white">
+
+            <CardContent className="p-8 md:p-12">
+
+              <div className="flex items-start gap-4 mb-6">
+
+                <Shield className="w-8 h-8 text-green-500 mt-1 flex-shrink-0" />
+
+                <h2 className="text-3xl font-bold text-gray-900">Sua Garantia de Risco Zero</h2>
+
+              </div>
+
+              <div className="bg-green-50/50 border border-green-100 rounded-lg p-8">
+
+                <p className="text-lg text-gray-700 leading-relaxed">
+
+                  Você tem 7 dias para acessar todo o material. Se por qualquer motivo achar que não é para você, basta pedir o reembolso e nós devolvemos 100% do seu dinheiro. Simples assim.
+
+                </p>
+
+              </div>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </section>
+
+
+
+      {/* FAQ */}
+
+      <section className="py-20 px-4">
+
+        <div className="max-w-4xl mx-auto">
+
+          <Card className="border-gray-200 shadow-sm bg-white">
+
+            <CardContent className="p-8 md:p-12">
+
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Perguntas Frequentes</h2>
+
+              <Accordion type="single" collapsible className="w-full">
+
+                <AccordionItem value="item-1" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">Preciso saber mexer com IA ou ser designer?</AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Não. O curso foi feito para iniciantes. Ensina o passo a passo de forma clara, sem termos técnicos complicados. Você só precisa seguir as aulas.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">Funciona com qualquer tipo de cliente?</AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Sim, o método funciona com qualquer pessoa — homens, mulheres, de qualquer idade ou etnia. O importante é seguir as orientações do curso para coletar as fotos certas do seu cliente.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">Precisa pagar alguma ferramenta cara?</AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Não. A ferramenta que ensinamos tem um custo acessível (em torno de R$50) para gerar um grande volume de imagens. Este custo é facilmente repassado no valor que você cobra do seu cliente, garantindo sua margem de lucro.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">Posso fazer todo o trabalho pelo celular?</AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Sim. Todo o processo, desde a criação do clone até a geração das imagens para o seu cliente, pode ser feito 100% pelo celular.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+                <AccordionItem value="item-6" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">
+
+                    Em quanto tempo eu consigo meu primeiro cliente?
+
+                  </AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Você termina o curso em menos de 2 horas. A partir daí, você já terá a habilidade e o conhecimento para prospectar e fechar seu primeiro cliente. O retorno sobre o investimento pode ser imediato.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+                <AccordionItem value="item-8" className="border-gray-200">
+
+                  <AccordionTrigger className="text-left text-lg">
+
+                    Terei suporte se eu ou meu cliente tivermos dúvidas?
+
+                  </AccordionTrigger>
+
+                  <AccordionContent className="text-gray-700 text-base">
+
+                    Sim. Você terá acesso ao nosso suporte prioritário por e-mail e WhatsApp. Qualquer dúvida técnica ou estratégica, estaremos lá para te ajudar a resolver.
+
+                  </AccordionContent>
+
+                </AccordionItem>
+
+              </Accordion>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </section>
+
+
+
+      {/* Footer */}
+
+      <footer className="py-12 px-4 text-center border-t border-gray-200 bg-gradient-to-b from-gray-50/30 to-white">
+
+        <div className="max-w-4xl mx-auto">
+
+          <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-40 mx-auto mb-6" />
+
+          <p className="text-gray-600 mb-2">© 2025 Clone Perfeito</p>
+
+          <p className="text-gray-500 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
+
+          <div className="flex justify-center space-x-6 text-sm text-gray-500">
+
+            <a
+
+              href="https://www.notion.so/Clone-Perfeito-2239d41a264b80c197ecf9e0fe11122c?source=copy_link"
+
+              target="_blank"
+
+              rel="noopener noreferrer"
+
+              className="hover:text-gray-700 transition-colors"
+
+            >
+
+              Política de Privacidade
+
+            </a>
+
+            <a
+
+              href="https://www.notion.so/Clone-Perfeito-2239d41a264b80c197ecf9e0fe11122c?source=copy_link"
+
+              target="_blank"
+
+              rel="noopener noreferrer"
+
+              className="hover:text-gray-700 transition-colors"
+
+            >
+
+              Termos de Uso
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </div>
+
+  )
+
+}
