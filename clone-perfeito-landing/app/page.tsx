@@ -95,17 +95,17 @@ export default function LandingPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
           <div className="max-w-3xl text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:_2px_2px_4px_rgb(0_0_0_/_60%)]">
-              Aprenda a Criar Clones Digitais em Horas e Fature Alto Oferecendo Ensaios com IA para Clientes
+              Aprenda a Criar Ensaios com IA em Menos de 1 Hora e Venda por R$300, R$600, R$1000+
             </h1>
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-3xl mx-auto md:mx-0 [text-shadow:_1px_1px_3px_rgb(0_0_0_/_60%)]">
-              O método passo a passo para você dominar uma nova habilidade lucrativa e entregar ensaios fotográficos de alto impacto para seus clientes — mesmo que você seja um completo iniciante em IA.
+              Em menos de uma hora, você aprende como transformar fotos amadoras em ensaios com aparência profissional, treinar a IA com qualquer rosto e começar a vender esse serviço sem depender de equipamento ou clientes fixos.
             </p>
 
             {/* CTA Block */}
             <div className="flex flex-col lg:flex-row items-center justify-center md:justify-start gap-6 bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/20">
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
                 <Button size="lg" className="text-lg px-8 sm:px-12 py-4 bg-green-600 hover:bg-green-700 text-white shadow-lg">
-                  QUERO TRANSFORMAR IA EM RENDA
+                  QUERO APRENDER A GERAR ENSAIOS COM IA
                 </Button>
               </Link>
               <p className="text-lg font-semibold text-white text-center md:text-left">
