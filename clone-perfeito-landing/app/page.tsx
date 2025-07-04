@@ -36,7 +36,7 @@ import {
   DollarSign,
   Star,
   ArrowRight,
-  BookOpen, // Ícone adicionado para a nova seção
+  BookOpen,
 } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
@@ -45,7 +45,6 @@ export default function LandingPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7]
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
 
-  // Dados para a nova seção de módulos
   const modules = [
     {
       id: "item-1",
@@ -475,83 +474,98 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Aplicações reais */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+      {/* ===== INÍCIO DA SEÇÃO REFORMULADA ===== */}
+      <section className="py-20 px-4 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
               <Puzzle className="w-8 h-8 text-purple-500" />
-              <h2 className="text-3xl font-bold text-gray-900">Mercados que Compram este Serviço</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Para Quem Você Pode Vender Este Serviço</h2>
             </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              A demanda por conteúdo visual de alta qualidade é enorme. Veja os mercados que mais precisam (e pagam) por essa solução.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Social Media */}
-            <Card className="border-pink-200 shadow-sm bg-gradient-to-br from-white to-pink-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Smartphone className="w-6 h-6 text-pink-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Social Media e Criadores de Conteúdo</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1: Social Media */}
+            <Card className="border-pink-200 shadow-sm hover:shadow-lg transition-shadow bg-white flex flex-col">
+              <CardContent className="p-6 flex-grow flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-pink-100 rounded-full"><Smartphone className="w-6 h-6 text-pink-600" /></div>
+                  <h3 className="text-xl font-semibold text-gray-800">Social Media e Criadores</h3>
                 </div>
-                <p className="text-gray-700 mb-6">
-                  Ofereça pacotes de imagens para manter o feed de seus clientes sempre atualizado, com estética profissional e sem depender de sessões de fotos caras.
+                <p className="text-gray-600">
+                  Ajude seus clientes a manter um feed profissional e atualizado sem o custo e a logística de sessões de fotos.
                 </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/instagram-mountain.jpg" alt="Foto estilo Instagram - aventura nas montanhas" className="w-full h-full object-cover" />
+                <div className="space-y-2 pt-2">
+                  <p className="text-sm font-semibold text-gray-700">Aplicações Práticas:</p>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Posts para Instagram e TikTok</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Atualização de fotos de perfil</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Imagens para carrosséis e Stories</span></div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Corporativo */}
-            <Card className="border-blue-200 shadow-sm bg-gradient-to-br from-white to-blue-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Briefcase className="w-6 h-6 text-blue-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Profissionais e Marcas Corporativas</h3>
+            {/* Card 2: Corporativo */}
+            <Card className="border-blue-200 shadow-sm hover:shadow-lg transition-shadow bg-white flex flex-col">
+              <CardContent className="p-6 flex-grow flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-100 rounded-full"><Briefcase className="w-6 h-6 text-blue-600" /></div>
+                  <h3 className="text-xl font-semibold text-gray-800">Marcas e Profissionais</h3>
                 </div>
-                <p className="text-gray-700 mb-6">
-                  Venda retratos profissionais para LinkedIn, sites e materiais de apresentação. Uma imagem de autoridade é crucial e muitas empresas pagam por isso.
+                <p className="text-gray-600">
+                  Forneça imagens de autoridade para sites, LinkedIn e materiais de marketing. Uma imagem profissional é crucial para negócios.
                 </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/linkedin-professional.jpg" alt="Foto profissional para LinkedIn" className="w-full h-full object-cover" />
+                <div className="space-y-2 pt-2">
+                  <p className="text-sm font-semibold text-gray-700">Aplicações Práticas:</p>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Fotos para LinkedIn e sites</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Imagens para apresentações</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Headshots para equipes inteiras</span></div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Anúncios */}
-            <Card className="border-green-200 shadow-sm bg-gradient-to-br from-white to-green-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-green-500" />
-                  <h3 className="text-xl font-semibold text-gray-800">Anúncios e Criativos de Venda</h3>
+            {/* Card 3: Anúncios */}
+            <Card className="border-green-200 shadow-sm hover:shadow-lg transition-shadow bg-white flex flex-col">
+              <CardContent className="p-6 flex-grow flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-green-100 rounded-full"><Target className="w-6 h-6 text-green-600" /></div>
+                  <h3 className="text-xl font-semibold text-gray-800">Anúncios e Vendas</h3>
                 </div>
-                <p className="text-gray-700 mb-6">
-                  Gestores de tráfego e agências precisam de criativos que convertem. Crie imagens com o rosto do cliente em cenários de venda para testar e escalar campanhas.
+                <p className="text-gray-600">
+                  Crie uma infinidade de criativos para campanhas de tráfego pago, testando variações para aumentar a conversão.
                 </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/portfolio-casual.jpg" alt="Foto para currículo e portfólio" className="w-full h-full object-cover" />
+                <div className="space-y-2 pt-2">
+                  <p className="text-sm font-semibold text-gray-700">Aplicações Práticas:</p>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Criativos para Facebook e Instagram Ads</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Testar ângulos e expressões</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Banners para Google Ads e Taboola</span></div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Fotógrafos */}
-            <Card className="border-orange-200 shadow-sm bg-gradient-to-br from-white to-orange-50/30">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Camera className="w-6 h-6 text-orange-500" />
+            {/* Card 4: Fotógrafos */}
+            <Card className="border-orange-200 shadow-sm hover:shadow-lg transition-shadow bg-white flex flex-col">
+              <CardContent className="p-6 flex-grow flex flex-col space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-orange-100 rounded-full"><Camera className="w-6 h-6 text-orange-600" /></div>
                   <h3 className="text-xl font-semibold text-gray-800">Fotógrafos e Videomakers</h3>
                 </div>
-                <p className="text-gray-700 mb-6">
-                  Adicione um braço digital ao seu negócio. Ofereça ensaios de IA como um produto de entrada ou um complemento aos seus pacotes, expandindo seu leque de serviços.
+                <p className="text-gray-600">
+                  Adicione um serviço digital inovador ao seu portfólio para atrair novos clientes e aumentar o valor dos seus pacotes atuais.
                 </p>
-                <div className="aspect-square rounded-xl overflow-hidden">
-                  <img src="/images/tinder-lifestyle.png" alt="Foto estilo lifestyle para apps de relacionamento" className="w-full h-full object-cover" />
+                 <div className="space-y-2 pt-2">
+                  <p className="text-sm font-semibold text-gray-700">Aplicações Práticas:</p>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Oferecer ensaios de IA como upsell</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Criar um produto de entrada acessível</span></div>
+                  <div className="flex items-center gap-2 text-gray-600"><Check className="w-4 h-4 text-green-500 flex-shrink-0" /><span>Expandir o portfólio com opções digitais</span></div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* CTA Block 2 [NEW] */}
+          {/* CTA Block 2 */}
           <div className="mt-16 max-w-3xl mx-auto">
             <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 shadow-lg">
               <CardContent className="p-8 flex flex-col md:flex-row items-center justify-center gap-6 text-center">
@@ -566,9 +580,10 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      {/* ===== FIM DA SEÇÃO REFORMULADA ===== */}
 
       {/* O que você vai aprender */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50/50 to-white">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <Card className="border-gray-200 shadow-sm bg-white">
             <CardContent className="p-8 md:p-12">
@@ -625,7 +640,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ===== INÍCIO DA NOVA SEÇÃO DE MÓDULOS ===== */}
+      {/* A Estrutura Completa do Clone Perfeito */}
       <section className="py-20 px-4 bg-gray-50/50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -662,7 +677,6 @@ export default function LandingPage() {
           </Card>
         </div>
       </section>
-      {/* ===== FIM DA NOVA SEÇÃO DE MÓDULOS ===== */}
       
       {/* Bônus Especial */}
       <section className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-white">
