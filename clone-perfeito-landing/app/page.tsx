@@ -337,7 +337,41 @@ export default function LandingPage() {
         </div>
       </section>
 
-{/* Antes e Depois Section */}
+      {/* [NOVA SEÇÃO - GALERIA] Criações dos Alunos */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Sparkles className="w-8 h-8 text-indigo-500" />
+              <h2 className="text-3xl font-bold text-gray-900">A Criatividade dos Nossos Alunos em Ação</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              De retratos corporativos a cenas de lifestyle, veja a qualidade e a versatilidade dos ensaios que você também poderá criar.
+            </p>
+          </div>
+
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {studentCreations.map((num) => (
+                <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img
+                      src={`/images/gerada-${num}.jpg`}
+                      alt={`Ensaio gerado por aluno ${num}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+          <p className="text-center text-gray-500 text-sm mt-4 md:hidden">Arraste para o lado para ver mais</p>
+        </div>
+      </section>
+
+      {/* Antes e Depois Section */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Antes */}
@@ -394,7 +428,7 @@ export default function LandingPage() {
         </div>
       </section>
 
- {/* Frase de Impacto */}
+      {/* Frase de Impacto */}
       <section className="py-20 px-4 bg-gradient-to-r from-pink-50 via-rose-50 to-pink-50">
         <div className="max-w-4xl mx-auto">
           <Card className="border-pink-200 bg-white/90 backdrop-blur-sm shadow-lg">
