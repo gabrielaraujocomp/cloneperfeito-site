@@ -141,7 +141,7 @@ export default function LandingPage() {
                 </Button>
               </Link>
               <p className="text-base font-medium text-white text-center md:text-left">
-                De <span className="line-through">R$157</span> por <span className="font-bold text-lg">R$97</span> à vista ou até 12x de R$5,22.
+                De <span className="line-through">R$157</span> por <span className="font-bold text-lg">R$97</span> à vista ou até 12x de R$10,03.
               </p>
             </div>
           </div>
@@ -755,7 +755,7 @@ export default function LandingPage() {
                 Um único ensaio fotográfico para um cliente pode ser vendido por R$300 a R$1.200. Hoje, você adquire a habilidade para vender inúmeros ensaios por um investimento que se paga no seu primeiro trabalho.
               </p>
               <h3 className="text-4xl font-bold text-gray-900 mb-4">R$97 à vista</h3>
-              <p className="text-lg text-gray-600 mb-8">ou até 12x de R$5,22 no cartão</p>
+              <p className="text-lg text-gray-600 mb-8">ou até 12x de R$10,03 no cartão</p>
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
                 <Button
                   size="lg"
