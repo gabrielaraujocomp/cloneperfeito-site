@@ -20,8 +20,6 @@ import {
   Briefcase,
   Target,
   Star,
-  BookOpen,
-  Bot
 } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
@@ -50,12 +48,12 @@ export default function LandingPage() {
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto text-lg font-bold px-10 py-7 bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-900/50 transform hover:scale-105 transition-transform">
+              <Button size="lg" className="w-full sm:w-auto text-lg font-bold px-10 py-7 bg-pink-600 hover:bg-pink-700 text-white shadow-lg shadow-pink-900/50 transform hover:scale-105 transition-transform">
                 Quero Acessar Agora
               </Button>
             </Link>
             <p className="font-medium text-white bg-black/50 px-4 py-2 rounded-lg">
-              De <span className="line-through text-red-400">R$157</span> por <span className="font-bold text-2xl text-cyan-400">R$47</span>
+              De <span className="line-through text-red-400">R$157</span> por <span className="font-bold text-2xl text-pink-400">R$47</span>
               <span className="text-sm text-gray-400"> ou 12x de R$5,22</span>
             </p>
           </div>
@@ -68,7 +66,7 @@ export default function LandingPage() {
             <div className="space-y-4">
                 <h2 className="text-3xl font-bold text-white">O Que É o Clone Perfeito?</h2>
                 <p className="text-lg text-gray-400 leading-relaxed">
-                    O <strong className="text-cyan-400">Clone Perfeito</strong> é um treinamento prático e direto ao ponto, onde você aprende a criar ensaios fotográficos ultra-realistas usando IA.
+                    O <strong className="text-pink-400">Clone Perfeito</strong> é um treinamento prático e direto ao ponto, onde você aprende a criar ensaios fotográficos ultra-realistas usando IA.
                 </p>
                 <p className="text-gray-400">Mesmo que você nunca tenha usado IA antes.</p>
             </div>
@@ -98,22 +96,22 @@ export default function LandingPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
-                <Briefcase className="h-10 w-10 mx-auto text-cyan-400 mb-4"/>
+                <Briefcase className="h-10 w-10 mx-auto text-pink-400 mb-4"/>
                 <h3 className="text-xl font-semibold text-white">Designers e Social Media</h3>
                 <p className="text-gray-400 mt-2">Crie bancos de imagens personalizados para seus clientes.</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
-                <Target className="h-10 w-10 mx-auto text-cyan-400 mb-4"/>
+                <Target className="h-10 w-10 mx-auto text-pink-400 mb-4"/>
                 <h3 className="text-xl font-semibold text-white">Gestores de Tráfego</h3>
                 <p className="text-gray-400 mt-2">Gere criativos ilimitados com o rosto do cliente.</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
-                <Camera className="h-10 w-10 mx-auto text-cyan-400 mb-4"/>
+                <Camera className="h-10 w-10 mx-auto text-pink-400 mb-4"/>
                 <h3 className="text-xl font-semibold text-white">Fotógrafos</h3>
                 <p className="text-gray-400 mt-2">Adicione um serviço digital com alta margem ao seu portfólio.</p>
             </div>
             <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center">
-                <Star className="h-10 w-10 mx-auto text-cyan-400 mb-4"/>
+                <Star className="h-10 w-10 mx-auto text-pink-400 mb-4"/>
                 <h3 className="text-xl font-semibold text-white">Freelancers e Empreendedores</h3>
                 <p className="text-gray-400 mt-2">Venda no Brasil, EUA, Europa e ganhe em múltiplas moedas.</p>
             </div>
@@ -124,12 +122,12 @@ export default function LandingPage() {
       {/* Vendas Globais */}
       <section className="py-20 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-            <Globe className="h-12 w-12 mx-auto text-cyan-400 mb-4" />
+            <Globe className="h-12 w-12 mx-auto text-pink-400 mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-white">Uma Nova Fonte de Renda, em Várias Moedas</h2>
             <p className="text-lg text-gray-400 mt-6 leading-relaxed">
                 Você não precisa ser expert nem saber falar inglês. No curso, <strong className="text-white">eu te dou o passo a passo completo</strong> para montar sua oferta e prospectar clientes no Brasil (em Real), na Europa (em Euro) e nos EUA (em Dólar). A IA faz o trabalho pesado. Você entrega o resultado e recebe o pagamento.
             </p>
-            <Card className="mt-12 bg-gray-950 border border-cyan-500/30 text-left p-8">
+            <Card className="mt-12 bg-gray-950 border border-pink-500/30 text-left p-8">
                 <p className="text-gray-300">Imagina isso:</p>
                 <ul className="space-y-4 mt-4">
                     <li className="flex items-center gap-4">
@@ -137,7 +135,7 @@ export default function LandingPage() {
                         <p className="text-gray-400">de um cliente no Brasil por um pacote de fotos.</p>
                     </li>
                     <li className="flex items-center gap-4">
-                        <span className="font-bold text-2xl text-cyan-400">€39</span>
+                        <span className="font-bold text-2xl text-pink-400">€39</span>
                         <p className="text-gray-400">de um cliente na Europa pelo mesmo serviço.</p>
                     </li>
                     <li className="flex items-center gap-4">
@@ -204,7 +202,7 @@ export default function LandingPage() {
             <CarouselContent className="-ml-4">
               {studentCreations.map((num) => (
                 <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition-shadow duration-300">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-pink-500/20 transition-shadow duration-300">
                     <img src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado ${num}`} className="w-full h-full object-cover"/>
                   </div>
                 </CarouselItem>
@@ -214,7 +212,7 @@ export default function LandingPage() {
             <CarouselNext className="hidden md:flex bg-gray-800 hover:bg-gray-700 text-white border-gray-600" />
           </Carousel>
            <div className="text-center mt-10 max-w-2xl mx-auto">
-                <p className="text-xl text-cyan-300 italic">“Mas essas imagens foram feitas com celular e IA mesmo?”</p>
+                <p className="text-xl text-pink-300 italic">“Mas essas imagens foram feitas com celular e IA mesmo?”</p>
                 <p className="text-lg text-gray-300 mt-2"><strong>Sim. E seus clientes vão jurar que você tem um estúdio fotográfico completo.</strong></p>
            </div>
         </div>
@@ -226,11 +224,11 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-1 flex justify-center">
                     {/* SUBSTITUA PELA SUA FOTO */}
-                    <img src="/images/sua-foto.jpg" alt="Gabriel Araújo, criador do Clone Perfeito" className="w-48 h-48 rounded-full object-cover border-4 border-cyan-500 shadow-lg"/>
+                    <img src="/images/sua-foto.jpg" alt="Gabriel Araújo, criador do Clone Perfeito" className="w-48 h-48 rounded-full object-cover border-4 border-pink-500 shadow-lg"/>
                 </div>
                 <div className="md:col-span-2 space-y-4 text-center md:text-left">
                     <h3 className="text-2xl font-bold text-white">Gabriel Araújo</h3>
-                    <p className="text-cyan-400 font-semibold">Criador do Método Clone Perfeito</p>
+                    <p className="text-pink-400 font-semibold">Criador do Método Clone Perfeito</p>
                     <p className="text-gray-400 leading-relaxed">
                         Trabalho com marketing, tecnologia e vendas há anos. Agora, ensino exatamente como estou faturando com IA — criando ensaios que parecem reais usando apenas selfies e comandos simples. Tudo o que você aprende aqui é o que eu aplico no meu dia a dia.
                     </p>
@@ -248,25 +246,25 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center relative">
                 {/* Linha conectora (para desktop) */}
                 <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-800 -translate-y-1/2 -z-10"></div>
-                <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-cyan-500/50 -translate-y-1/2 -z-10 animate-pulse"></div>
+                <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-pink-500/50 -translate-y-1/2 -z-10 animate-pulse"></div>
 
                 <div className="space-y-3">
-                    <div className="w-16 h-16 bg-gray-800 border-2 border-cyan-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-cyan-400">1</div>
+                    <div className="w-16 h-16 bg-gray-800 border-2 border-pink-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-pink-400">1</div>
                     <h4 className="text-xl font-semibold text-white">Aprenda o Processo</h4>
                     <p className="text-gray-400">Em menos de 2 horas, domine o método.</p>
                 </div>
                 <div className="space-y-3">
-                    <div className="w-16 h-16 bg-gray-800 border-2 border-cyan-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-cyan-400">2</div>
+                    <div className="w-16 h-16 bg-gray-800 border-2 border-pink-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-pink-400">2</div>
                     <h4 className="text-xl font-semibold text-white">Crie Seu Portfólio</h4>
                     <p className="text-gray-400">Use suas próprias fotos pra mostrar o que sabe fazer.</p>
                 </div>
                 <div className="space-y-3">
-                    <div className="w-16 h-16 bg-gray-800 border-2 border-cyan-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-cyan-400">3</div>
+                    <div className="w-16 h-16 bg-gray-800 border-2 border-pink-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-pink-400">3</div>
                     <h4 className="text-xl font-semibold text-white">Monte Seus Pacotes</h4>
                     <p className="text-gray-400">Use nossos modelos prontos para precificar.</p>
                 </div>
                 <div className="space-y-3">
-                    <div className="w-16 h-16 bg-gray-800 border-2 border-cyan-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-cyan-400">4</div>
+                    <div className="w-16 h-16 bg-gray-800 border-2 border-pink-500 rounded-full flex items-center justify-center mx-auto font-bold text-2xl text-pink-400">4</div>
                     <h4 className="text-xl font-semibold text-white">Venda no Brasil e Exterior</h4>
                     <p className="text-gray-400">Use as estratégias do curso para fechar suas primeiras vendas.</p>
                 </div>
@@ -277,7 +275,7 @@ export default function LandingPage() {
       {/* Oferta Final */}
       <section id="oferta" className="py-20 px-4 bg-gray-950">
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-gradient-to-br from-gray-900 to-black border-2 border-cyan-500 shadow-2xl shadow-cyan-900/30">
+          <Card className="bg-gradient-to-br from-gray-900 to-black border-2 border-pink-500 shadow-2xl shadow-pink-900/30">
             <CardContent className="p-8 md:p-12 text-center">
               <h2 className="text-3xl font-bold text-white mb-4">Comece Agora Por R$47</h2>
               <p className="text-lg text-gray-400 mb-8">Seu investimento se paga com a primeira venda.</p>
@@ -292,7 +290,7 @@ export default function LandingPage() {
               </div>
 
               <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="w-full mt-8 inline-block">
-                <Button size="lg" className="w-full text-lg font-bold px-10 py-7 bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-900/50 transform hover:scale-105 transition-transform">
+                <Button size="lg" className="w-full text-lg font-bold px-10 py-7 bg-pink-600 hover:bg-pink-700 text-white shadow-lg shadow-pink-900/50 transform hover:scale-105 transition-transform">
                   Quero Acessar Agora
                 </Button>
               </Link>
@@ -315,8 +313,8 @@ export default function LandingPage() {
           <p className="text-gray-500 mb-2">© 2025 Clone Perfeito. Todos os direitos reservados.</p>
           <p className="text-gray-600 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
           <div className="flex justify-center space-x-6 text-sm text-gray-500">
-            <Link href="https://..." target="_blank" className="hover:text-cyan-400 transition-colors">Política de Privacidade</Link>
-            <Link href="https://..." target="_blank" className="hover:text-cyan-400 transition-colors">Termos de Uso</Link>
+            <Link href="https://..." target="_blank" className="hover:text-pink-400 transition-colors">Política de Privacidade</Link>
+            <Link href="https://..." target="_blank" className="hover:text-pink-400 transition-colors">Termos de Uso</Link>
           </div>
         </div>
       </footer>
