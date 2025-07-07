@@ -180,19 +180,92 @@ export default function ClonePerfeitoFinalPage() {
         <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2"><Plus className="w-5 h-5 text-green-400" /><CardTitle className="text-xl text-neutral-100">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-12">{bonus.description}</CardContent></Card>))}</div>
         <div className="pt-8"><h2 className="text-2xl font-bold text-center text-neutral-100 mb-8 flex items-center justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
         
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
-        <Card className="bg-neutral-800/70 border-neutral-700">
-            <CardContent className="p-8 space-y-6">
-                <div className="space-y-3 text-neutral-300"><div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Curso Completo Clone Perfeito <span className="text-neutral-500 line-through">R$297</span></p></div><div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 1, 2 e 3 <span className="text-neutral-500 line-through">R$197</span></p></div></div>
-                <Separator className="bg-neutral-700"/>
-                <div className="text-center space-y-4">
-                    <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
-                    <p className="text-5xl font-bold text-white">R$ 97</p>
-                    <p className="text-neutral-300">ou 12x de R$9,74</p>
-                    <div id="checkout" className="pt-4"><Button size="lg" className="w-full text-lg px-10 py-7 bg-rose-600 hover:bg-rose-700 text-white shadow-lg transform hover:scale-105 transition-transform">QUERO GARANTIR MEU ACESSO COM DESCONTO <Flame className="w-5 h-5 ml-2" /></Button></div>
+        {/* ==================================================================== */}
+{/* ===== INÍCIO DO BLOCO DE OFERTA E PREÇO ===== */}
+{/* ==================================================================== */}
+
+<h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">
+    Sua Oferta Especial Hoje
+</h2>
+
+{/* Card de Preço com Efeito Glassmorphism e Glow */}
+<div className="relative">
+    {/* Efeito de Glow (Luz atrás) */}
+    <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-purple-600 rounded-xl blur-xl opacity-15"></div>
+    
+    <Card className="relative bg-neutral-800/60 backdrop-blur-sm border-neutral-700/50 shadow-2xl shadow-black/30">
+        <CardContent className="p-8 space-y-8">
+
+            {/* Lista Detalhada do que está Incluso */}
+            <div className="space-y-3 text-neutral-200">
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Curso Clone Perfeito Completo</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Acesso Vitalício e Atualizações Futuras</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Mapa Mental Exclusivo do Curso</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Suporte exclusivo e personalizado</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 1 - Agente GPT de Prompts</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 2 - Ensaios com ChatGPT (Grátis)</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 3 - Estratégia de Renda Rápida</p></div>
+            </div>
+
+            <Separator className="bg-neutral-700"/>
+
+            {/* Seção de Preço e Desconto */}
+            <div className="text-center space-y-4">
+                <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">
+                    ECONOMIZE R$397
                 </div>
-            </CardContent>
-        </Card>
+                <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
+                <p className="text-5xl font-bold text-white">R$ 97</p>
+                <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
+            </div>
+            
+            {/* Botão de CTA */}
+            <div id="checkout" className="pt-4">
+                <Button 
+                  size="lg" 
+                  className="w-full text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600"
+                >
+                    Quero garantir meu acesso com desconto
+                </Button>
+            </div>
+
+            {/* Pontos de Confiança */}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-6 text-center text-sm text-neutral-400">
+                <div className="flex items-center gap-2">
+                    <Shield className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span>Garantia sem risco</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span>Assista de qualquer lugar</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Rocket className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span>Acesso imediato</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Lock className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <span>Pagamento 100% seguro</span>
+                </div>
+            </div>
+        </CardContent>
+    </Card>
+</div>
+
+{/* Seção Dedicada da Garantia */}
+<div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
+    <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
+    <div>
+        <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
+        <p className="text-neutral-300 text-lg leading-relaxed">
+            Você tem 7 dias completos para explorar o curso. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e nós devolveremos todo o seu investimento na hora. <strong className="text-yellow-400">O risco é todo nosso.</strong>
+        </p>
+    </div>
+</div>
+
+{/* ==================================================================== */}
+{/* ===== FIM DO BLOCO DE OFERTA E PREÇO ===== */}
+{/* ==================================================================== */}
         
         <Separator className="bg-neutral-700 my-12" />
 
