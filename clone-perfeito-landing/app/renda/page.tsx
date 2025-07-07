@@ -114,7 +114,7 @@ export default function ClonePerfeitoFinalPage() {
                   <AlertTriangle className="w-12 h-12 sm:w-10 sm:h-10 text-yellow-400 mt-1 flex-shrink-0" />
                   <div>
                     <h1 className="text-2xl md:text-4xl font-bold text-yellow-100">
-                        Pessoas comuns estão faturando em dólar com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA.
+                        Pessoas comuns estão faturando em dólar, euro e real com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA.
                     </h1>
                     <p className="text-lg md:text-2xl font-bold text-neutral-50 mt-4">
                         E você pode ser o <span className="text-yellow-400">próximo.</span>
