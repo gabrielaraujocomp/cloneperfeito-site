@@ -197,23 +197,23 @@ export default function ClonePerfeitoFinalPage() {
           
           <div className="pt-8"><h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
 
-          {/* ===== NOVA SEÇÃO "SOBRE MIM" MOVIDA E ATUALIZADA ===== */}
-          <section className="pt-16 text-center">
+          {/* ===== NOVA SEÇÃO "SOBRE MIM" ATUALIZADA ===== */}
+          <section className="pt-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 mb-8 text-left">
+                  Prazer, sou o Gabriel. E eu criei o Clone Perfeito.
+              </h2>
               <Image
                   src="/images/eu-gabriel.jpg"
                   alt="Foto de Gabriel, criador do Clone Perfeito"
                   width={800}
                   height={500}
-                  className="w-full max-w-md mx-auto rounded-xl shadow-2xl shadow-black/40 mb-8"
+                  className="w-full max-w-lg rounded-xl shadow-2xl shadow-black/40 mb-8"
               />
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 mb-6">
-                  Prazer, sou o Gabriel. E eu criei o Clone Perfeito.
-              </h2>
-              <div className="max-w-2xl mx-auto space-y-4 text-lg text-neutral-300 leading-relaxed text-left md:text-center">
+              <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
                   <p>Comecei a faculdade de Engenharia da Computação duas semanas antes da pandemia. Mas com tudo parado, tranquei e fui atrás de algo mais prático.</p>
-                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas. Me encontrei mesmo na parte visual e criativa — e acabei gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas para um único cliente.</p>
+                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas: tráfego pago, copywriting, funil, design... Me encontrei mesmo na parte visual e criativa — e acabei trabalhando exclusivamente com um cliente durante esse tempo, gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas.</p>
                   <p>Foi aí que descobri o potencial da IA para criar imagens hiper-realistas.</p>
-                  <p>A princípio, minha ideia era só ensinar como gerar esses clones. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
+                  <p>A princípio, minha ideia era só ensinar como gerar esses clones e criar ensaios incríveis com IA. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
                   <p>O resultado? <strong className="text-white">Mais de R$10.000 em menos de 1 mês.</strong></p>
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
                   <p>Hoje, <strong className="text-yellow-400">ensino exatamente o que aplico</strong> — com método, clareza e foco total em resultado.</p>
