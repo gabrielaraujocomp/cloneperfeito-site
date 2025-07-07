@@ -1,334 +1,369 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import {
-  Quote,
-  Sparkles,
-  Bot,
-  Camera,
+import React from 'react';
+import Image from 'next/image'; // Usado para otimização de imagens
+import { 
+  Camera, 
+  Film, 
+  BookOpen, 
+  MessageSquare, 
+  HelpCircle, 
+  Shield, 
+  ChevronRight, 
+  CheckCircle,
+  ArrowRight,
+  BrainCircuit,
+  Mail,
   Globe,
-  Check,
-  Star,
-  Users,
-  Target,
-  Lightbulb,
-  Shield,
-  GraduationCap,
-  Package,
-  Gem,
-  DollarSign,
-  Euro,
-  BookOpen,
-  Palette,
-  Briefcase,
-} from "lucide-react"
-import Link from "next/link"
-import Script from "next/script"
+  Gift
+} from 'lucide-react';
 
-// Componente para os cards com efeito Glassmorphism
-const GlassCard = ({ children, className = "" }) => (
-  <div className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-lg ${className}`}>
-    {children}
+// --- COMPONENTES AUXILIARES PARA MANTER O CÓDIGO LIMPO ---
+
+// Componente para o Card de Depoimento
+const TestimonialCard = ({ name, role, quote, imgSrc }: { name: string, role: string, quote: string, imgSrc: string }) => (
+  <div className="bg-[#1A1A1A] p-6 rounded-xl border border-[#1F1F1F] flex flex-col">
+    <p className="text-gray-300 italic flex-grow">"{quote}"</p>
+    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-[#1F1F1F]">
+      <Image src={imgSrc} alt={name} width={48} height={48} className="rounded-full object-cover" />
+      <div>
+        <p className="font-semibold text-white">{name}</p>
+        <p className="text-sm text-gray-400">{role}</p>
+      </div>
+    </div>
   </div>
 );
 
-export default function LandingPageV2() {
-  const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; // Mais imagens para a galeria
-  
-  return (
-    <div className="min-h-screen bg-zinc-950 text-gray-300 font-sans overflow-x-hidden">
-      {/* Scripts (Meta Pixel, Clarity) */}
-      <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
-      <Script id="microsoft-clarity" strategy="afterInteractive">{`...`}</Script>
+// Componente para o Item do FAQ (usando <details> para não precisar de JS)
+const FaqItem = ({ question, children }: { question: string, children: React.ReactNode }) => (
+  <details className="group bg-[#1A1A1A] rounded-lg border border-[#1F1F1F] p-4 cursor-pointer">
+    <summary className="flex items-center justify-between font-semibold text-white list-none">
+      {question}
+      <ChevronRight className="transform transition-transform duration-300 group-open:rotate-90" />
+    </summary>
+    <div className="mt-4 text-gray-300">
+      {children}
+    </div>
+  </details>
+);
 
-      {/* Hero Section */}
-      <section
-        className="relative w-full min-h-screen bg-cover bg-center flex items-center"
-        style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight [text-shadow:_2px_2px_8px_rgb(0_0_0_/_60%)]">
-              Transforme Fotos Comuns em um Negócio de Ensaios com IA
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
-              Aprenda a criar avatares de IA hiper-realistas e venda ensaios fotográficos ilimitados para clientes no Brasil e no exterior, faturando em Reais, Dólar e Euro.
+// --- COMPONENTE PRINCIPAL DA PÁGINA ---
+
+export default function ClonePerfeitoPage() {
+  return (
+    <div className="bg-[#0D0D0D] text-white font-sans antialiased">
+      {/* 1. Navbar Fixa */}
+      <nav className="fixed top-0 left-0 right-0 z-50 h-[60px] bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1F1F1F]">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
+          <a href="#top" className="flex items-center gap-2 font-bold text-lg">
+            <Camera size={20} />
+            <span>Clone Perfeito</span>
+          </a>
+          <div className="hidden md:flex items-center gap-6 text-sm text-gray-300">
+            <a href="#apresentacao" className="hover:text-white transition-colors">🎥 Apresentação</a>
+            <a href="#ensaios" className="hover:text-white transition-colors">🖼️ Ensaios</a>
+            <a href="#metodo" className="hover:text-white transition-colors">📚 O que você aprende</a>
+            <a href="#depoimentos" className="hover:text-white transition-colors">💬 Depoimentos</a>
+            <a href="#faq" className="hover:text-white transition-colors">❓ FAQ</a>
+          </div>
+          <a href="#cta-final" className="hidden sm:inline-block border border-white text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors hover:bg-white hover:text-black">
+            Quero Começar
+          </a>
+        </div>
+      </nav>
+
+      <main id="top" className="pt-[60px]">
+
+        {/* 2. Hero Section */}
+        <section id="apresentacao" className="min-h-screen flex items-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1a1a]/30 to-[#0D0D0D]">
+          <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-left">
+              <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <span className="text-[#3DFF8D]">#</span> Crie Ensaios Profissionais com IA
+              </h1>
+              <p className="mt-4 text-lg sm:text-xl text-gray-300 max-w-lg mx-auto md:mx-0">
+                Venda por R$300, R$600 ou mais — direto do seu quarto, com IA.
+              </p>
+              <ul className="mt-6 space-y-2 text-left inline-block">
+                <li className="flex items-center gap-2"><CheckCircle size={20} className="text-[#3DFF8D]" /> Sem câmera</li>
+                <li className="flex items-center gap-2"><CheckCircle size={20} className="text-[#3DFF8D]" /> Sem estúdio</li>
+                <li className="flex items-center gap-2"><CheckCircle size={20} className="text-[#3DFF8D]" /> Sem seguidores</li>
+              </ul>
+              <div className="mt-8">
+                <a href="#cta-final" className="inline-block bg-[#3DFF8D] text-black font-bold py-3 px-6 rounded-xl text-lg w-full sm:w-auto max-w-[280px] text-center shadow-lg shadow-green-500/10 transition-transform hover:scale-105">
+                  Quero Começar Agora – R$47
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <Image 
+                src="https://images.unsplash.com/photo-1678484893901-b57ffa75b6a7?q=80&w=800&auto=format&fit=crop"
+                alt="Exemplo de ensaio gerado por IA"
+                width={450}
+                height={550}
+                className="rounded-xl object-cover shadow-2xl shadow-black/50"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Apresentação Pessoal */}
+        <section className="py-20 px-6">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="font-bold text-3xl sm:text-4xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Antes de tudo, deixa eu te mostrar o que tá rolando agora...
+            </h2>
+            <p className="text-lg text-gray-300">
+              Você provavelmente nunca ouviu falar de mim. Mas eu tô te mostrando algo que ainda pouca gente conhece:
             </p>
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank" className="w-full md:w-auto">
-                <Button size="lg" className="w-full md:w-auto text-lg px-10 py-7 bg-pink-600 hover:bg-pink-700 text-white font-bold shadow-lg shadow-pink-600/30 transform hover:scale-105 transition-all duration-300">
-                  QUERO CRIAR MEU NEGÓCIO COM IA
-                </Button>
-              </Link>
-              <p className="text-base font-medium text-white text-center md:text-left">
-                De <span className="line-through">R$157</span> por apenas <span className="font-bold text-xl text-pink-400">R$47</span>
+            <div className="bg-[#121212] p-8 rounded-2xl mt-10 text-left text-lg sm:text-xl border border-[#1F1F1F]">
+              <p>
+                👉 Pessoas comuns criando <strong>ensaios profissionais</strong> usando <strong>IA</strong>, e vendendo esses ensaios por <strong>R$300 a R$1000</strong> cada.
+              </p>
+              <p className="mt-4">
+                Sem estúdio, sem câmera, sem sair de casa.
               </p>
             </div>
           </div>
+        </section>
+        
+        <div className="max-w-7xl mx-auto px-6">
+          <hr className="border-t border-[#1F1F1F]" />
         </div>
-      </section>
 
-      {/* Seção Sobre Mim (Autoridade) */}
-      <section className="py-24 px-4 bg-zinc-900">
-        <div className="max-w-5xl mx-auto">
-          <GlassCard className="p-8 md:p-12">
-            <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
-              <div className="md:col-span-2">
-                <img src="/images/gabriel-autoridade.jpg" alt="Gabriel, criador do método Clone Perfeito" className="rounded-lg w-full max-w-sm mx-auto shadow-2xl shadow-black/50" />
-              </div>
-              <div className="md:col-span-3">
-                <p className="text-pink-400 font-bold mb-2 tracking-wider">QUEM VAI TE GUIAR</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Prazer, sou Gabriel.</h2>
-                <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
-                  <p>
-                    Cansado de fotos genéricas e do custo de sessões fotográficas, mergulhei em IA para criar imagens de alta qualidade para meus projetos de marketing. O resultado foi tão poderoso que transformei a técnica em um serviço.
-                  </p>
-                  <p className="font-semibold text-white">
-                    O Clone Perfeito não é teoria. É o exato passo a passo, simplificado e sem jargões, que eu uso para criar um negócio lucrativo do zero. E agora, vou te ensinar a fazer o mesmo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* Nova Seção: Galeria de Trabalhos de Alunos */}
-      <section className="py-24 px-4 bg-zinc-950">
+        {/* 4. Galeria de Prova Visual */}
+        <section id="ensaios" className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                  <Sparkles className="w-10 h-10 text-pink-500 mx-auto mb-4" />
-                  <h2 className="text-3xl md:text-4xl font-extrabold text-white">A Criatividade dos Nossos Alunos em Ação</h2>
-                  <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4">
-                      De fotos corporativas a avatares para redes sociais, veja a qualidade que você também poderá criar.
-                  </p>
-              </div>
-              <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-                  {studentCreations.map((num) => (
-                      <div key={num} className="overflow-hidden rounded-lg break-inside-avoid">
-                          <img
-                              src={`/images/gerada-${num < 9 ? num : 1}.jpg`} // Reutiliza imagens se não tiver 12
-                              alt={`Ensaio gerado por aluno`}
-                              className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
-                          />
-                      </div>
-                  ))}
-              </div>
+            <h2 className="text-center font-bold text-3xl sm:text-4xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Veja com seus olhos: Ensaios reais gerados com o Clone Perfeito
+            </h2>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { before: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400', after: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400', price: 247 },
+                { before: 'https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=400', after: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=400', price: 300 },
+                { before: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400', after: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400', price: 280 },
+              ].map((ensaio, index) => (
+                <div key={index} className="bg-[#1A1A1A] rounded-xl shadow-lg overflow-hidden group">
+                  <div className="relative aspect-[3/4]">
+                    {/* Imagem do "DEPOIS" */}
+                    <Image src={ensaio.after} alt={`Ensaio Depois ${index + 1}`} layout="fill" className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                    {/* Overlay do "ANTES" */}
+                    <div className="absolute top-2 left-2 bg-black/60 p-2 rounded-lg backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-xs font-semibold mb-1">ANTES</p>
+                      <Image src={ensaio.before} alt={`Ensaio Antes ${index + 1}`} width={80} height={100} className="rounded-md object-cover" />
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p className="text-white text-sm font-semibold">Transformado com IA</p>
+                    </div>
+                  </div>
+                  <div className="p-4 text-center bg-[#1F1F1F]">
+                    <p className="font-mono text-sm text-gray-300">vendido por R${ensaio.price}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <blockquote className="mt-16 text-center text-xl italic text-gray-300 max-w-3xl mx-auto">
+              "Se isso impressionou você, imagine o impacto nos seus futuros clientes."
+            </blockquote>
           </div>
-      </section>
+        </section>
 
-      {/* Nova Seção Global - Totalmente Reformulada */}
-      <section 
-        className="py-24 px-4 bg-zinc-900 bg-cover bg-center" 
-        style={{backgroundImage: "url('/images/world-map-dark.svg')"}}
-      >
-        <div className="max-w-6xl mx-auto text-center">
-            <Globe className="w-12 h-12 text-pink-500 mx-auto mb-4"/>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Seu Estúdio Fotográfico Sem Fronteiras</h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-16">
-                Aprenda a prospectar clientes no mundo todo e seja pago em moedas que valem 5x mais. Enquanto um serviço de R$300 é um investimento considerável no Brasil, $29 dólares é um valor irrisório para americanos e europeus.
+        {/* 5. Explicação do Método */}
+        <section id="metodo" className="py-20 px-6 bg-[#121212]">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center">
+                <h2 className="font-bold text-3xl sm:text-4xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>O que é o Clone Perfeito?</h2>
+                <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+                É um treinamento 100% prático, onde você aprende uma habilidade extremamente lucrativa:
+                </p>
+            </div>
+            <div className="mt-12 grid md:grid-cols-3 gap-6">
+                <div className="bg-[#1E1E1E] p-6 rounded-xl border border-[#2a2a2a]">
+                    <CheckCircle className="text-[#3DFF8D] mb-4" size={32} />
+                    <h3 className="font-semibold text-xl mb-2">Criar clones digitais realistas</h3>
+                    <p className="text-gray-400">Aprenda o passo a passo para treinar a IA com fotos simples e gerar um avatar digital idêntico.</p>
+                </div>
+                <div className="bg-[#1E1E1E] p-6 rounded-xl border border-[#2a2a2a]">
+                    <Film className="text-[#3DFF8D] mb-4" size={32} />
+                    <h3 className="font-semibold text-xl mb-2">Gerar ensaios com qualidade de estúdio</h3>
+                    <p className="text-gray-400">Domine os prompts e técnicas para criar qualquer estilo de ensaio: corporativo, casual, temático e mais.</p>
+                </div>
+                <div className="bg-[#1E1E1E] p-6 rounded-xl border border-[#2a2a2a]">
+                    <Globe className="text-[#3DFF8D] mb-4" size={32} />
+                    <h3 className="font-semibold text-xl mb-2">Vender para o Brasil, EUA e Europa</h3>
+                    <p className="text-gray-400">Receba scripts e estratégias prontas para prospectar clientes em qualquer lugar do mundo.</p>
+                </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Simulação de Ganhos */}
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center font-bold text-3xl sm:text-4xl mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>Agora vamos falar de grana? 💡</h2>
+            <div className="bg-[#1A1A1A] border-2 border-[#3DFF8D] rounded-2xl p-8 shadow-2xl shadow-green-900/20">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4 text-lg">
+                  <p>📦 <strong>Pacote com 15 fotos</strong> → vendido por <strong>R$300 a R$600</strong></p>
+                  <p>💰 <strong>Custo de geração:</strong> ~R$50</p>
+                  <p>⌛ <strong>Tempo de produção:</strong> menos de 1 hora</p>
+                  <p className="mt-4 pt-4 border-t border-[#1F1F1F]">Fazendo só <strong>3 por semana</strong> = <span className="text-[#3DFF8D] font-bold">R$3.000+/mês</span></p>
+                  <p>Fazendo <strong>1 por dia</strong> = <span className="text-[#3DFF8D] font-bold">R$5.000+/mês</span></p>
+                </div>
+                <div className="mt-8 md:mt-0">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left">
+                      <thead className="border-b border-[#1F1F1F]">
+                        <tr>
+                          <th className="p-2 font-semibold">N° Ensaios/Mês</th>
+                          <th className="p-2 font-semibold">Ganho Total</th>
+                          <th className="p-2 font-semibold">Tempo Total</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-gray-300">
+                        <tr>
+                          <td className="p-2">4</td>
+                          <td className="p-2">R$1.200</td>
+                          <td className="p-2">~4h</td>
+                        </tr>
+                        <tr className="bg-[#1F1F1F]/50">
+                          <td className="p-2">8</td>
+                          <td className="p-2">R$2.400</td>
+                          <td className="p-2">~8h</td>
+                        </tr>
+                        <tr>
+                          <td className="p-2">15</td>
+                          <td className="p-2">R$4.500</td>
+                          <td className="p-2">~15h</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Scripts + Estratégias */}
+        <section className="py-20 px-6 bg-[#121212]">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-center font-bold text-3xl sm:text-4xl mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Você recebe tudo pronto pra começar HOJE:
+            </h2>
+            <div className="space-y-4">
+              <FaqItem question="🧠 Estratégia de prospecção nacional e internacional">
+                <p>Receba o mapa completo para encontrar clientes no Instagram, LinkedIn e plataformas de freelancer, tanto no Brasil quanto no exterior.</p>
+              </FaqItem>
+              <FaqItem question="📩 Mensagens prontas (é só copiar e colar)">
+                <p>Templates de abordagem testados e validados para você apenas adaptar com o nome do cliente e enviar. Aumente sua taxa de resposta em até 70%.</p>
+              </FaqItem>
+              <FaqItem question="🌍 Tática para vender em dólar e euro">
+                <p>Aprenda como configurar pagamentos internacionais e adaptar sua oferta para o mercado estrangeiro, multiplicando seus ganhos.</p>
+              </FaqItem>
+              <FaqItem question="🎁 Truque de venda promocional para os 3 primeiros clientes">
+                <p>Uma estratégia simples para conseguir seus primeiros clientes pagantes em tempo recorde, construindo seu portfólio e gerando prova social.</p>
+              </FaqItem>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. Depoimentos */}
+        <section id="depoimentos" className="py-20 px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-center font-bold text-3xl sm:text-4xl mb-12" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Eles aplicaram. Eles lucraram.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <TestimonialCard 
+                name="João S., 22 anos"
+                role="Estudante"
+                quote="Fechei dois ensaios em 48h depois de maratonar o curso. Nunca tinha vendido nada online na vida. Surreal."
+                imgSrc="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200"
+              />
+              <TestimonialCard 
+                name="Marina F., 26 anos"
+                role="Autônoma"
+                quote="Transformei umas selfies minhas em um ensaio 'europeu' como teste. Postei no Instagram e uma amiga que mora na Irlanda comprou. Vendi meu primeiro pacote por 39 euros."
+                imgSrc="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* 9. Garantia */}
+        <section className="py-20 px-6">
+          <div className="max-w-3xl mx-auto bg-[#121212] rounded-2xl p-10 text-center border border-[#1F1F1F]">
+            <div className="inline-block p-4 border-2 border-[#3DFF8D] rounded-full">
+              <Shield size={48} className="text-[#3DFF8D]" />
+            </div>
+            <h2 className="mt-6 font-bold text-3xl sm:text-4xl text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>7 Dias de Garantia Total</h2>
+            <p className="mt-4 text-lg text-gray-300">
+              Se você entrar, assistir, e por qualquer motivo não achar que valeu cada centavo, eu devolvo 100% do seu dinheiro. Sem letras miúdas. Sem enrolação. O risco é todo meu.
             </p>
-            <div className="grid md:grid-cols-3 gap-8">
-                <GlassCard className="p-6">
-                    <img src="/flags/br.svg" alt="Bandeira do Brasil" className="w-10 h-10 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white">Brasil</h3>
-                    <p className="text-gray-400 mt-2">Venda ensaios por</p>
-                    <p className="text-4xl font-bold text-white my-3">R$ 300+</p>
-                    <p className="text-sm text-gray-500">Alta margem de lucro no mercado nacional.</p>
-                </GlassCard>
-
-                <div className="bg-pink-600/20 backdrop-blur-xl border-2 border-pink-500 rounded-2xl shadow-lg p-6 transform md:scale-110 shadow-pink-500/20">
-                    <img src="/flags/us.svg" alt="Bandeira dos EUA" className="w-10 h-10 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white">EUA</h3>
-                    <p className="text-gray-300 mt-2">Ofereça por</p>
-                    <p className="text-5xl font-bold text-pink-400 my-2">$29+</p>
-                    <p className="text-sm text-gray-400">Um preço de impulso para eles, um lucro gigante para você.</p>
-                </div>
-                
-                <GlassCard className="p-6">
-                    <img src="/flags/eu.svg" alt="Bandeira da Europa" className="w-10 h-10 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-white">Europa</h3>
-                    <p className="text-gray-400 mt-2">Atraia clientes por</p>
-                    <p className="text-4xl font-bold text-white my-3">€29+</p>
-                    <p className="text-sm text-gray-500">Receba em moeda forte e diversifique sua renda.</p>
-                </GlassCard>
-            </div>
-        </div>
-      </section>
-
-      {/* Seção de Bônus Dedicada */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-                <Gem className="w-10 h-10 text-pink-500 mx-auto mb-4" />
-                <h2 className="text-3xl md:text-4xl font-extrabold text-white">Leve 3 Bônus Para Acelerar Seus Resultados</h2>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4">
-                    Além do método completo, você receberá um arsenal de ferramentas para começar a faturar ainda mais rápido.
-                </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-                <GlassCard className="p-8 text-center flex flex-col items-center">
-                    <Bot className="w-12 h-12 text-pink-400 mb-4" />
-                    <h3 className="text-xl font-bold text-white mb-2">Bônus #1: Método Gratuito</h3>
-                    <p className="text-gray-400">Um módulo completo para criar seu primeiro ensaio usando ferramentas 100% gratuitas. Perfeito para montar seu portfólio sem gastar nada.</p>
-                </GlassCard>
-                <GlassCard className="p-8 text-center flex flex-col items-center">
-                    <Globe className="w-12 h-12 text-pink-400 mb-4" />
-                    <h3 className="text-xl font-bold text-white mb-2">Bônus #2: Prospecção Global</h3>
-                    <p className="text-gray-400">Aprenda onde e como encontrar clientes internacionais em plataformas de freelancers, e comece a faturar em Dólar e Euro.</p>
-                </GlassCard>
-                <GlassCard className="p-8 text-center flex flex-col items-center">
-                    <Lightbulb className="w-12 h-12 text-pink-400 mb-4" />
-                    <h3 className="text-xl font-bold text-white mb-2">Bônus #3: Agente de Prompts</h3>
-                    <p className="text-gray-400">Um Agente GPT exclusivo que transforma qualquer imagem de referência em um prompt detalhado. Copie o estilo que quiser com um clique.</p>
-                </GlassCard>
-            </div>
-        </div>
-      </section>
-
-      {/* Para quem é */}
-      <section className="py-24 px-4 bg-zinc-900">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">Uma Habilidade de Alto Valor Para...</h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-              <GlassCard className="p-6 flex items-start space-x-4">
-                  <Palette className="w-8 h-8 text-pink-400 mt-1 flex-shrink-0" />
-                  <div>
-                      <h3 className="text-lg font-bold text-white">Designers e Social Medias</h3>
-                      <p className="text-gray-400">Ofereça um banco de imagens infinito e personalizado, aumentando seu faturamento recorrente.</p>
-                  </div>
-              </GlassCard>
-              <GlassCard className="p-6 flex items-start space-x-4">
-                  <Target className="w-8 h-8 text-pink-400 mt-1 flex-shrink-0" />
-                  <div>
-                      <h3 className="text-lg font-bold text-white">Gestores de Tráfego e Agências</h3>
-                      <p className="text-gray-400">Crie anúncios de alta conversão com o rosto dos clientes em qualquer cenário, com velocidade e custo imbatíveis.</p>
-                  </div>
-              </GlassCard>
-              <GlassCard className="p-6 flex items-start space-x-4">
-                  <Camera className="w-8 h-8 text-pink-400 mt-1 flex-shrink-0" />
-                  <div>
-                      <h3 className="text-lg font-bold text-white">Fotógrafos</h3>
-                      <p className="text-gray-400">Adicione um serviço digital inovador ao seu portfólio como um produto de entrada ou um upsell valioso.</p>
-                  </div>
-              </GlassCard>
-              <GlassCard className="p-6 flex items-start space-x-4">
-                  <Star className="w-8 h-8 text-pink-400 mt-1 flex-shrink-0" />
-                  <div>
-                      <h3 className="text-lg font-bold text-white">Freelancers e Empreendedores</h3>
-                      <p className="text-gray-400">Comece um novo negócio de baixo custo, alta margem e demanda explosiva no mercado digital.</p>
-                  </div>
-              </GlassCard>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Estrutura do Curso (Módulos) */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <BookOpen className="w-10 h-10 text-pink-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white">A Estrutura Completa do Clone Perfeito</h2>
-            <p className="text-lg text-gray-400 mt-2">Cada módulo foi desenhado para te levar do zero à primeira venda.</p>
-          </div>
-          <GlassCard className="p-4 md:p-6">
-              <Accordion type="single" collapsible className="w-full">
-                {[{
-                    id: "item-1",
-                    title: "Módulo 1: A Base do Seu Negócio",
-                    description: "Preparamos o terreno para o sucesso. Você vai entender o potencial de mercado, ajustar sua mentalidade e configurar as ferramentas essenciais.",
-                  }, {
-                    id: "item-2",
-                    title: "Módulo 2: Criando o Avatar de IA",
-                    description: "O coração do método. Aprenda o passo a passo para selecionar as fotos ideais e treinar a IA para criar uma versão digital hiper-realista do seu cliente.",
-                  }, {
-                    id: "item-3",
-                    title: "Módulo 3: Geração de Ensaios de Alto Impacto",
-                    description: "Transforme o avatar em arte. Domine a criação de prompts para gerar ensaios em qualquer cenário e estilo que seu cliente desejar.",
-                  }, {
-                    id: "item-4",
-                    title: "Módulo 4: Vendas, Precificação e Escala",
-                    description: "Transforme sua habilidade em lucro. Aprenda a empacotar, precificar e vender seus serviços de forma irresistível para clientes no Brasil e no exterior.",
-                }].map((module) => (
-                  <AccordionItem key={module.id} value={module.id} className="border-b last:border-b-0 border-white/10">
-                    <AccordionTrigger className="text-left text-lg hover:no-underline p-4 text-white font-semibold">
-                      {module.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-300 text-base leading-relaxed p-4 pt-0">
-                      {module.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </GlassCard>
-        </div>
-      </section>
-
-      {/* Preço e Oferta Final */}
-      <section className="py-24 px-4 bg-zinc-900">
-        <div className="max-w-3xl mx-auto">
-            <GlassCard className="p-8 md:p-12 text-center">
-                <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-48 mx-auto mb-6 invert brightness-0" />
-                <h2 className="text-3xl font-bold text-white mb-4">Seu Acesso Completo ao Negócio do Futuro</h2>
-                <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-                  Com um único ensaio vendido a $29 para um cliente gringo, você já lucra 3x o valor do seu investimento hoje.
-                </p>
-                
-                <div className="bg-black/20 p-6 rounded-lg mb-8 max-w-md mx-auto">
-                  <p className="text-gray-400">De <span className="line-through">R$157</span> por um pagamento único de</p>
-                  <p className="text-5xl font-extrabold text-white my-2">R$47</p>
-                  <p className="text-gray-300">ou 12x de <span className="font-bold text-pink-400">R$5,22</span> no cartão</p>
-                </div>
-
-                <div className="space-y-3 text-left max-w-sm mx-auto mb-8 text-gray-300">
-                  <div className="flex items-center gap-3"><Check className="w-5 h-5 text-pink-500 flex-shrink-0"/><span>Método Completo com 4 Módulos</span></div>
-                  <div className="flex items-center gap-3"><Check className="w-5 h-5 text-pink-500 flex-shrink-0"/><span><strong>Bônus:</strong> Método Gratuito com ChatGPT</span></div>
-                  <div className="flex items-center gap-3"><Check className="w-5 h-5 text-pink-500 flex-shrink-0"/><span><strong>Bônus:</strong> Aula de Prospecção Global</span></div>
-                  <div className="flex items-center gap-3"><Check className="w-5 h-5 text-pink-500 flex-shrink-0"/><span><strong>Bônus:</strong> Agente de Prompts Exclusivo</span></div>
-                  <div className="flex items-center gap-3"><Check className="w-5 h-5 text-pink-500 flex-shrink-0"/><span>Acesso Vitalício e Atualizações</span></div>
-                </div>
-                
-                <Link href="https://pay.kiwify.com.br/0oD9zKC" target="_blank">
-                  <Button size="lg" className="w-full max-w-md text-lg px-10 py-7 bg-pink-600 hover:bg-pink-700 text-white font-bold shadow-lg shadow-pink-600/30 transform hover:scale-105 transition-all duration-300">
-                    QUERO GARANTIR MEU ACESSO AGORA
-                  </Button>
-                </Link>
-            </GlassCard>
-        </div>
-      </section>
-
-      {/* Garantia */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="max-w-3xl mx-auto">
-          <GlassCard className="p-8">
-            <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-              <Shield className="w-24 h-24 text-pink-500 flex-shrink-0" />
-              <div>
-                <h2 className="text-3xl font-bold text-white">Sua Garantia Blindada de 7 Dias</h2>
-                <p className="text-lg text-gray-400 mt-4">
-                  Acesse todo o material. Se em 7 dias você achar que não é para você, por qualquer motivo, basta pedir o reembolso. Devolveremos 100% do seu dinheiro, sem perguntas. O risco é todo meu.
-                </p>
-              </div>
+        {/* 10. FAQ */}
+        <section id="faq" className="py-20 px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-center font-bold text-3xl sm:text-4xl mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              Perguntas Frequentes
+            </h2>
+            <div className="space-y-4">
+              <FaqItem question="❓ Preciso saber mexer com IA?">
+                <p>Absolutamente não. O treinamento é desenhado para iniciantes. Mostramos o clique a clique em ferramentas intuitivas. Se você sabe usar um smartphone, você consegue aplicar o método.</p>
+              </FaqItem>
+              <FaqItem question="❓ Como gero as imagens?">
+                <p>Nós ensinamos você a usar as plataformas mais poderosas e custo-efetivas do mercado. Você terá um passo a passo para treinar o modelo e gerar as imagens com prompts que nós fornecemos.</p>
+              </FaqItem>
+              <FaqItem question="❓ Posso vender para gringo mesmo sem falar inglês?">
+                <p>Sim! Entregamos scripts de mensagem em inglês e mostramos como usar ferramentas de tradução para se comunicar. O trabalho é visual, o que quebra a barreira do idioma.</p>
+              </FaqItem>
+              <FaqItem question="❓ Em quanto tempo vejo resultado?">
+                <p>Isso depende da sua dedicação. Alunos dedicados conseguem os primeiros clientes na primeira semana, como você viu nos depoimentos. O método é rápido de aplicar.</p>
+              </FaqItem>
+              <FaqItem question="❓ E se eu não vender nada?">
+                <p>Se você aplicar o método de prospecção que ensinamos e não conseguir fechar nenhum cliente em 30 dias, nós oferecemos uma consultoria individual para analisar seu caso. E claro, você sempre tem a garantia de 7 dias para pedir o reembolso sem questionamentos.</p>
+              </FaqItem>
             </div>
-          </GlassCard>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-4 text-center border-t border-white/10 bg-zinc-950">
-        <div className="max-w-4xl mx-auto">
-          <img src="/images/logocp.svg" alt="Logo Clone Perfeito" className="w-40 mx-auto mb-6 invert brightness-0" />
-          <p className="text-gray-400 mb-2">© 2024 Clone Perfeito - Todos os direitos reservados.</p>
-          <p className="text-gray-500 text-sm mb-4">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
-          <div className="flex justify-center space-x-6 text-sm text-gray-500">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Política de Privacidade</a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Termos de Uso</a>
           </div>
+        </section>
+        
+        {/* 11. Chamada Final */}
+        <section id="cta-final" className="py-20 px-6 text-center bg-gradient-to-t from-[#121212] to-transparent">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="font-bold text-4xl sm:text-5xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>Está pronto pra começar?</h2>
+            <p className="mt-6 text-lg text-gray-300">
+              Você viu o método. Viu os resultados. Viu que é simples e possível. Agora só falta você decidir sair do zero e criar uma nova fonte de renda com a habilidade mais quente do momento.
+            </p>
+            <a href="#" className="mt-10 inline-block bg-[#3DFF8D] text-black font-bold py-4 px-8 rounded-xl text-xl w-full sm:w-auto shadow-lg shadow-green-500/20 transition-transform hover:scale-105">
+              ACESSAR O CLONE PERFEITO – R$47
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      {/* Botão Fixo no Rodapé */}
+      <div className="sticky bottom-0 left-0 right-0 z-40 bg-[#1A1A1A]/90 backdrop-blur-sm border-t border-[#1F1F1F] p-4">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="font-semibold text-center sm:text-left">🧠 Aprenda a lucrar com IA — Comece por R$47</p>
+          <a href="#cta-final" className="bg-[#3DFF8D] text-black font-bold py-2 px-6 rounded-lg text-md w-full sm:w-auto text-center flex-shrink-0">
+            Começar Agora
+          </a>
+        </div>
+      </div>
+
+      {/* 12. Rodapé */}
+      <footer className="bg-[#0A0A0A] py-8 px-6 text-center">
+        <div className="max-w-7xl mx-auto text-sm text-gray-400">
+          <div className="flex justify-center gap-6 mb-4">
+            <a href="#" className="hover:text-white">Política de Privacidade</a>
+            <a href="#" className="hover:text-white">Termos de Uso</a>
+            <a href="#" className="hover:text-white">Suporte</a>
+          </div>
+          <p>© 2025 Clone Perfeito™. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
