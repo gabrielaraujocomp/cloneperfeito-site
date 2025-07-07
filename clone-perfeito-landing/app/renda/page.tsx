@@ -179,6 +179,42 @@ export default function ClonePerfeitoFinalPage() {
           <blockquote className="border-l-4 border-neutral-700 pl-6 text-neutral-400 text-lg">…vender esses ensaios por <span className="text-white not-italic">R$200, R$300,</span> ou até <span className="bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded-md not-italic">39 dólares/euros</span> para pessoas do Brasil, da Europa ou dos EUA — <span className="text-red-400 not-italic">sem câmera, sem estúdio, sem fotógrafo e sem sair de casa.</span></blockquote>
           <p className="text-lg leading-relaxed">Eu sei que isso parece absurdo à primeira vista. Mas continua comigo. Você vai ver que tudo faz sentido. E vai entender como isso pode se tornar sua fonte de renda ainda esse mês.</p>
 
+          {/* ===== NOVA SEÇÃO "SOBRE MIM" INSERIDA AQUI ===== */}
+          <section className="pt-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pb-4 border-b border-neutral-800">
+                Sobre mim (e por que você pode confiar no que eu ensino aqui)
+            </h2>
+            <div className="flex flex-col md:flex-row items-center gap-8 mt-8">
+                <div className="md:w-1/3 w-2/3 flex-shrink-0">
+                    <Image
+                        src="/images/eu-gabriel.jpg"
+                        alt="Foto de Gabriel, criador do Clone Perfeito"
+                        width={250}
+                        height={250}
+                        className="rounded-full object-cover aspect-square mx-auto shadow-2xl shadow-black/40"
+                    />
+                </div>
+                <div className="md:w-2/3 space-y-4 text-lg text-neutral-300 leading-relaxed">
+                    <p>Em 2020, eu comecei a faculdade de Engenharia da Computação… Duas semanas depois, veio a pandemia.</p>
+                    <p>Tranquei.</p>
+                    <p>E sem muita direção, fui me virando. Me joguei no marketing digital e passei por tudo: tráfego pago, copywriting, funil, lançamento, design… Literalmente tudo.</p>
+                    <p>Depois de um tempo, encontrei onde realmente me sentia bem: no mundo visual, criativo, estético. <strong className="text-yellow-400">Arte + performance.</strong></p>
+                    <p>Acabei ficando 4 anos trabalhando exclusivamente para um único cliente, onde gerenciei campanhas que somaram mais de <strong className="text-white">1 milhão de reais</strong> investidos. Foi ali que aprendi tudo o que sei sobre como transformar ideias em produtos vendáveis, e como gerar resultado com criatividade real.</p>
+                    <p>Mas a grande virada veio quando descobri o poder da Inteligência Artificial para gerar imagens realistas, com aparência profissional, sem precisar de câmera, luz ou fotógrafo.</p>
+                </div>
+            </div>
+            <div className="space-y-4 text-lg text-neutral-300 leading-relaxed mt-4">
+                <p>No começo, minha ideia era só ensinar isso em um curso simples — como criar “clones” com IA e fazer imagens incríveis pra você mesmo ou pra redes sociais.</p>
+                <p>Mas um dia eu decidi testar algo: comecei a prospectar pessoas do mundo todo oferecendo esses ensaios gerados por IA como serviço.</p>
+                <p><strong className="text-yellow-400">E a resposta foi absurda.</strong></p>
+                <p>Em menos de 1 mês, fechei mais de <strong className="text-white">R$10.000 em vendas,</strong> recebendo pagamentos em real, dólar e euro.</p>
+                <p>Ali eu entendi que isso não era só uma “aula sobre IA”. Era uma nova forma de gerar renda real com criatividade e posicionamento.</p>
+                <p>E foi aí que nasceu o <strong className="text-yellow-400">Clone Perfeito.</strong> Um método direto, prático e sem enrolação — onde eu ensino o que funciona na vida real, inclusive com os mesmos scripts e estratégias que me fizeram fechar clientes do Brasil à Europa.</p>
+                <p>Se você curte liberdade, estética e quer aprender algo novo que te dá resultado de verdade, esse é o lugar certo.</p>
+            </div>
+          </section>
+          {/* ===== FIM DA NOVA SEÇÃO ===== */}
+          
           <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">O que você vai receber no Clone Perfeito</h2>
           <div className="space-y-4">
             {modules.map((module, index) => (
