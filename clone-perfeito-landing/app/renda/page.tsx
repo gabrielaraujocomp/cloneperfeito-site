@@ -24,7 +24,6 @@ import {
   Star,
   Gift,
   BookOpen,
-  Quote,
   Briefcase,
   Target,
   Cpu,
@@ -34,11 +33,6 @@ import Link from "next/link"
 import Script from "next/script"
 
 export default function LandingPage() {
-  const testimonials = [
-    { quote: "O método é direto ao ponto. Fechei meu primeiro cliente em 5 dias e o investimento já se pagou 5x. Incrível!", author: "Juliana R.", role: "Social Media" },
-    { quote: "Eu era cético, mas a qualidade das imagens é surreal. Meus clientes amaram e agora tenho um novo serviço de alta margem.", author: "Marcos V.", role: "Fotógrafo" },
-    { quote: "Vender pra fora parecia impossível. Com os scripts do Gabriel, fechei um pacote de $50 USD na primeira semana. Surreal.", author: "Beatriz L.", role: "Freelancer" },
-  ]
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
   const modules = [
     { imageSrc: "/images/modulo-1.jpg", title: "Módulo Bônus: Clone com ChatGPT (Grátis)", description: "Comece com o pé direito! Neste módulo bônus, você aprende a criar seu primeiro clone e gerar um ensaio de forma 100% gratuita, usando apenas o ChatGPT. É o caminho ideal para construir seu portfólio sem nenhum custo inicial." },
@@ -54,22 +48,23 @@ export default function LandingPage() {
       <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
       <Script id="microsoft-clarity" strategy="afterInteractive">{`...`}</Script>
 
-      {/* Hero Section [NOVO DESIGN] */}
-      <section className="w-full bg-[#1c1a1d] py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Hero Section */}
+      <section className="relative w-full bg-[#1c1a1d] py-20 lg:py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20">
+            <div className="absolute left-1/2 top-0 h-full w-full -translate-x-1/2 bg-gradient-to-tr from-pink-950/60 via-transparent to-transparent"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Coluna da Esquerda: Imagem de impacto */}
             <div className="md:col-span-1">
               <img 
                 src="/images/bgcp.jpg" 
                 alt="Exemplos de ensaios fotográficos gerados com Inteligência Artificial"
-                className="rounded-2xl shadow-2xl shadow-black/50 w-full"
+                className="rounded-2xl shadow-2xl shadow-black/50 w-full border-2 border-zinc-800"
               />
             </div>
-            {/* Coluna da Direita: Texto e CTA */}
             <div className="md:col-span-1 space-y-8 text-center md:text-left">
                 <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-                    Pessoas estão vendendo <span className="text-pink-500">Ensaios com IA</span> sem câmera, estúdio ou cliente fixo.
+                    Pessoas estão vendendo <span className="text-white">Ensaios com IA</span> sem câmera, estúdio ou cliente fixo.
                 </h1>
                 <p className="text-lg text-gray-400">
                     Aprenda em menos de 3 horas e comece a vender no mesmo dia para o mundo todo — em Reais, Dólares e Euros.
@@ -77,7 +72,7 @@ export default function LandingPage() {
                 <Link href="#oferta">
                     <Button 
                       size="lg"
-                      className="bg-teal-300 text-black font-bold hover:bg-teal-400 rounded-full px-8 py-4 text-base transition-all transform hover:scale-105"
+                      className="bg-white text-black font-bold hover:bg-gray-200 rounded-full px-8 py-4 text-base transition-all transform hover:scale-105"
                     >
                         Aprenda a Criar Ensaios com IA
                     </Button>
@@ -87,71 +82,57 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Depoimentos */}
+      {/* Provas Reais de Vendas [RESTAURADO E REDESENHADO] */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">Já são dezenas de alunos faturando com o método</h2></div>
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-8">
-              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
-                <CarouselItem key={num} className="pl-8 md:basis-1/2 lg:basis-1/3">
-                   <div className="bg-zinc-950 rounded-xl h-full border border-zinc-800 overflow-hidden">
-                     <img src={`/images/d${num}.jpg`} alt={`Depoimento ${num}`} className="w-full h-auto"/>
-                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex bg-zinc-800 hover:bg-zinc-700 text-white border-zinc-700" /><CarouselNext className="hidden md:flex bg-zinc-800 hover:bg-zinc-700 text-white border-zinc-700" />
-          </Carousel>
+            <div className="text-center mb-16">
+                <h2 className="text-3xl font-bold text-white">A Prova Irrefutável: Vendas em 3 Moedas</h2>
+                <p className="text-lg text-gray-400 mt-2">Nossos alunos não aprendem, eles faturam.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                {/* Venda em Real */}
+                <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:rotate-[-2deg] transition-all hover:rotate-0 hover:scale-105">
+                    <p className="text-sm font-semibold text-green-400">Venda em R$ (Brasil)</p>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
+                        <Wallet className="h-10 w-10 text-zinc-700"/>
+                    </div>
+                </div>
+                {/* Venda em Euro */}
+                <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:scale-105 z-10 transition-all hover:scale-110">
+                    <p className="text-sm font-semibold text-blue-400">Pagamento em € (Europa)</p>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
+                        <Euro className="h-10 w-10 text-zinc-700"/>
+                    </div>
+                </div>
+                {/* Venda em Dólar */}
+                <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:rotate-[2deg] transition-all hover:rotate-0 hover:scale-105">
+                    <p className="text-sm font-semibold text-yellow-400">Recebimento em $ (EUA)</p>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
+                        <DollarSign className="h-10 w-10 text-zinc-700"/>
+                    </div>
+                </div>
+            </div>
         </div>
       </section>
-      
+
       {/* O Que é o Clone Perfeito? */}
       <section className="py-24 px-4 bg-[#1c1a1d]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-4">
                 <h2 className="text-3xl font-bold text-white">Transforme uma Habilidade de IA em um Negócio Lucrativo</h2>
-                <p className="text-lg text-gray-400 leading-relaxed">
-                    O <strong>Clone Perfeito</strong> é um treinamento prático que te ensina a criar e vender um serviço de alto valor: ensaios fotográficos gerados por Inteligência Artificial. Esqueça a teoria. Aqui você aprende uma habilidade para gerar renda.
-                </p>
+                <p className="text-lg text-gray-400 leading-relaxed">O <strong>Clone Perfeito</strong> é um treinamento prático que te ensina a criar e vender um serviço de alto valor. Esqueça a teoria. Aqui você aprende uma habilidade para gerar renda.</p>
             </div>
             <div className="space-y-4">
-                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Cpu className="w-8 h-8 text-pink-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Crie o Ativo Principal: O Clone Digital</h4><p className="text-gray-400">Aprenda a treinar a IA com fotos de qualquer pessoa para gerar um clone hiper-realista.</p></div></div>
-                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Palette className="w-8 h-8 text-pink-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Produza Ensaios de Alto Nível</h4><p className="text-gray-400">Gere imagens profissionais em qualquer cenário que seu cliente desejar.</p></div></div>
-                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Wallet className="w-8 h-8 text-pink-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Estruture e Venda o Serviço</h4><p className="text-gray-400">Entenda como empacotar, precificar e oferecer essa nova habilidade como um negócio.</p></div></div>
+                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Cpu className="w-8 h-8 text-gray-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Crie o Clone Digital</h4><p className="text-gray-400">Aprenda a treinar a IA com fotos de qualquer pessoa.</p></div></div>
+                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Palette className="w-8 h-8 text-gray-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Produza Ensaios de Alto Nível</h4><p className="text-gray-400">Gere imagens profissionais em qualquer cenário.</p></div></div>
+                <div className="flex items-start gap-4 bg-black/30 p-4 rounded-lg"><Wallet className="w-8 h-8 text-gray-500 mt-1 flex-shrink-0" /><div><h4 className="font-semibold text-white">Estruture e Venda o Serviço</h4><p className="text-gray-400">Entenda como empacotar, precificar e oferecer.</p></div></div>
             </div>
-        </div>
-      </section>
-
-      {/* Para Quem é */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">Esta oportunidade é para você que é...</h2></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-zinc-950 p-6 rounded-lg flex items-start gap-4"><Briefcase className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0" /><div><strong className="text-white">Designer ou Social Media</strong><p className="text-gray-400">e quer oferecer um banco de imagens infinito e personalizado para seus clientes.</p></div></div>
-            <div className="bg-zinc-950 p-6 rounded-lg flex items-start gap-4"><Target className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0" /><div><strong className="text-white">Gestor de Tráfego ou Agência</strong><p className="text-gray-400">e quer criar anúncios de alta conversão com o rosto dos clientes em qualquer cenário.</p></div></div>
-            <div className="bg-zinc-950 p-6 rounded-lg flex items-start gap-4"><Camera className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0" /><div><strong className="text-white">Fotógrafo</strong><p className="text-gray-400">e quer adicionar um serviço digital inovador ao seu portfólio, com alta margem.</p></div></div>
-            <div className="bg-zinc-950 p-6 rounded-lg flex items-start gap-4"><Star className="w-6 h-6 text-gray-500 mt-1 flex-shrink-0" /><div><strong className="text-white">Freelancer ou Empreendedor</strong><p className="text-gray-400">e busca um novo negócio de baixo custo e altíssima demanda no mercado digital.</p></div></div>
-          </div>
-        </div>
-      </section>
-
-      {/* O Passo a Passo */}
-      <section className="py-24 px-4 bg-[#1c1a1d]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">Seu Caminho para Faturar com Ensaios de IA</h2></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-black/30 p-6 rounded-xl border border-zinc-800"><span className="text-5xl font-bold text-zinc-800">01</span><h4 className="text-xl font-semibold text-white mt-4">Aprenda o Método</h4><p className="text-gray-400 mt-2">Em menos de 2 horas, conclua o curso e domine a técnica.</p></div>
-            <div className="bg-black/30 p-6 rounded-xl border border-zinc-800"><span className="text-5xl font-bold text-zinc-800">02</span><h4 className="text-xl font-semibold text-white mt-4">Crie seu Portfólio</h4><p className="text-gray-400 mt-2">Use o método em si mesmo para criar suas primeiras peças de venda.</p></div>
-            <div className="bg-black/30 p-6 rounded-xl border border-zinc-800"><span className="text-5xl font-bold text-zinc-800">03</span><h4 className="text-xl font-semibold text-white mt-4">Defina seus Pacotes</h4><p className="text-gray-400 mt-2">Use nossos exemplos para criar suas ofertas no Brasil e no exterior.</p></div>
-            <div className="bg-black/30 p-6 rounded-xl border border-zinc-800"><span className="text-5xl font-bold text-zinc-800">04</span><h4 className="text-xl font-semibold text-white mt-4">Divulgue e Venda</h4><p className="text-gray-400 mt-2">Ofereça para sua rede de contatos, clientes e em grupos de freelancers.</p></div>
-          </div>
         </div>
       </section>
 
       {/* Qualidade dos Ensaios */}
       <section className="py-24 px-4 bg-black">
-        <div className="max-w-7xl mx-auto"><div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">Veja a Qualidade dos Ensaios</h2></div>
+        <div className="max-w-7xl mx-auto"><div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">A Qualidade dos Ensaios Fala por Si</h2></div>
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
               {studentCreations.map((num) => (<CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3"><div className="aspect-[3/4] rounded-xl overflow-hidden shadow-2xl shadow-black"><img src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado ${num}`} className="w-full h-full object-cover"/></div></CarouselItem>))}
@@ -167,7 +148,7 @@ export default function LandingPage() {
           <div className="text-center mb-16"><BookOpen className="h-12 w-12 mx-auto text-gray-600 mb-4"/><h2 className="text-3xl font-bold text-white">A Estrutura Completa</h2></div>
           <Accordion type="single" collapsible className="w-full space-y-4">
             {modules.map((module, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-black/50 border border-zinc-800 rounded-lg overflow-hidden">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-black/50 border border-zinc-800 rounded-lg overflow-hidden transition-all data-[state=open]:border-pink-500/30">
                 <AccordionTrigger className="text-left text-lg p-4 text-white hover:no-underline font-semibold w-full">
                     <div className="flex items-center gap-6 w-full"><img src={module.imageSrc} alt={module.title} className="w-20 h-20 rounded-md object-cover flex-shrink-0"/><span className="flex-1">{module.title}</span></div>
                 </AccordionTrigger>
