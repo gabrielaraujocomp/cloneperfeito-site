@@ -109,13 +109,60 @@ export default function ClonePerfeitoFinalPage() {
         
         <blockquote className="border-l-4 border-neutral-700 pl-6 italic text-neutral-400 text-lg">Porque se você entender o que vou te mostrar agora, sua vida pode <strong className="text-yellow-400 not-italic">mudar completamente</strong> — e não estou exagerando.</blockquote>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Deixa eu te perguntar…</h2>
-        <p className="text-lg leading-relaxed">Quantas vezes você já ficou com aquela sensação de:</p>
-        <blockquote className="border-l-4 border-neutral-700 pl-6 italic text-neutral-400 text-lg">“Se eu tivesse entrado nisso quando ainda era novidade… hoje estaria ganhando dinheiro fácil com isso.”</blockquote>
-        <p className="text-lg leading-relaxed">Lembra de quando começaram os primeiros vídeos no TikTok?<br/>Ou quando as pessoas começaram a vender produtos na Shopee e ganharam rios de dinheiro com dropshipping?<br/>Ou quando a galera começou a usar o ChatGPT antes de todo mundo e virou referência só porque aprendeu antes?</p>
-        <p className="text-lg leading-relaxed"><strong className="text-yellow-400">Pois é.</strong> Essa página aqui é exatamente esse momento.</p>
-        <p className="text-lg leading-relaxed"><strong className="text-yellow-400">A diferença?</strong> É que dessa vez você chegou a tempo.</p>
-        <p className="text-lg leading-relaxed">Eu vou te mostrar um método que pouquíssimas pessoas conhecem… E que permite que qualquer pessoa — mesmo leiga — consiga criar ensaios de fotos ultra-realistas, com aparência profissional, usando Inteligência Artificial...</p>
+        {/* O título da seção */}
+<h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">
+    Deixa eu te perguntar…
+</h2>
+
+<p className="text-lg leading-relaxed">
+    Quantas vezes você já ficou com aquela sensação de:
+</p>
+
+{/* Citação principal, com mais destaque */}
+<blockquote className="border-l-4 border-neutral-700 pl-6 my-6 text-xl italic text-neutral-400">
+    “Se eu tivesse entrado nisso quando ainda era novidade… hoje estaria ganhando dinheiro fácil com isso.”
+</blockquote>
+
+{/* Bloco de Exemplos Visuais */}
+<Card className="bg-neutral-800/50 border-neutral-700 my-8">
+    <CardContent className="p-6 space-y-4">
+        <p className="text-lg text-neutral-300">
+            Lembra de quando...
+        </p>
+        <div className="flex items-start gap-4">
+            <Users className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" />
+            <p className="text-neutral-400">
+                ...os primeiros vídeos explodiram no <strong className="font-medium text-white">TikTok?</strong>
+            </p>
+        </div>
+        <div className="flex items-start gap-4">
+            <Package className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" />
+            <p className="text-neutral-400">
+                ...as pessoas começaram a vender na <strong className="font-medium text-white">Shopee</strong> e ganharam rios de dinheiro com dropshipping?
+            </p>
+        </div>
+        <div className="flex items-start gap-4">
+            <Brain className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" />
+            <p className="text-neutral-400">
+                ...a galera começou a usar o <strong className="font-medium text-white">ChatGPT</strong> antes de todo mundo e virou referência só porque aprendeu antes?
+            </p>
+        </div>
+    </CardContent>
+</Card>
+
+{/* Transições com Ênfase */}
+<div className="space-y-6">
+    <p className="text-xl leading-relaxed">
+        <strong className="text-yellow-400">Pois é.</strong> Essa página aqui é exatamente esse momento.
+    </p>
+    <p className="text-xl leading-relaxed">
+        <strong className="text-yellow-400">A diferença?</strong> É que dessa vez você chegou a tempo.
+    </p>
+</div>
+
+<p className="text-lg leading-relaxed">
+    Eu vou te mostrar um método que pouquíssimas pessoas conhecem… E que permite que qualquer pessoa — mesmo leiga — consiga criar ensaios de fotos ultra-realistas, com aparência profissional, usando Inteligência Artificial...
+</p>
         <p className="text-xl font-medium text-neutral-100">E mais importante:</p>
         <blockquote className="border-l-4 border-neutral-700 pl-6 text-neutral-400 text-lg">…vender esses ensaios por <span className="text-white not-italic">R$200, R$300,</span> ou até <span className="bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded-md not-italic">39 dólares/euros</span> para pessoas do Brasil, da Europa ou dos EUA — <span className="text-red-400 not-italic">sem câmera, sem estúdio, sem fotógrafo e sem sair de casa.</span></blockquote>
         <p className="text-lg leading-relaxed">Eu sei que isso parece absurdo à primeira vista. Mas continua comigo. Você vai ver que tudo faz sentido. E vai entender como isso pode se tornar sua fonte de renda ainda esse mês.</p>
@@ -128,7 +175,6 @@ export default function ClonePerfeitoFinalPage() {
         <p className="text-lg leading-relaxed">E você não precisa pagar fotógrafo, estúdio, nem designer. <strong className="text-red-500">Só saber o método certo.</strong></p>
 
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">O que você vai receber no Clone Perfeito</h2>
-        <p className="text-neutral-500">(E aqui já entra a ancoragem de valor real👇)</p>
         <div className="space-y-4">{modules.map((module, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2"><span className="text-neutral-400">{module.icon}</span><CardTitle className="text-xl text-neutral-100">{module.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-14">{module.description}</CardContent></Card>))}</div>
         <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">E ainda leva 3 Bônus Especiais</h2>
         <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2"><Plus className="w-5 h-5 text-green-400" /><CardTitle className="text-xl text-neutral-100">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-12">{bonus.description}</CardContent></Card>))}</div>
