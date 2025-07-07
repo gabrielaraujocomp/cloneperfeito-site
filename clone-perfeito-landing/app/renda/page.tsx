@@ -1,10 +1,11 @@
+"use client"; // ESSENCIAL: Transforma este em um Client Component
+
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 // ========================================================================
 // Estilos Globais (Notion Look & Feel)
 // ========================================================================
-
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
@@ -22,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
 // ========================================================================
 // Componentes Estilizados (Blocos de Construção da Página)
 // ========================================================================
-
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -77,6 +77,7 @@ const Paragraph = styled.p`
 
 const Callout = styled.div<{ bgColor?: string }>`
   background-color: ${props => props.bgColor || 'rgba(55, 65, 81, 0.4)'};
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -92,6 +93,7 @@ const Callout = styled.div<{ bgColor?: string }>`
   span {
     font-size: 1.5rem;
     line-height: 1.6;
+    margin-top: -4px;
   }
 `;
 
@@ -122,6 +124,11 @@ const Highlight = styled.span`
   font-weight: 500;
 `;
 
+const List = styled.ul`
+  margin: 1.5em 0;
+  padding: 0;
+`;
+
 const ListItem = styled.li`
   list-style: none;
   padding-left: 2em;
@@ -144,11 +151,18 @@ const ModuleCard = styled.div`
   padding: 1.5rem;
   margin-bottom: 1rem;
   border: 1px solid #333;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #444;
+  }
 
   h3 {
     margin: 0 0 0.5rem 0;
     color: #fff;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
   }
 
   p {
@@ -159,7 +173,8 @@ const ModuleCard = styled.div`
 
   span {
     font-size: 1.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
+    margin-top: -2px;
   }
 `;
 
@@ -168,6 +183,7 @@ const PriceSection = styled.div`
   margin: 3rem 0;
   padding: 2rem;
   background-color: #202020;
+  border: 1px solid #333;
   border-radius: 8px;
 
   p {
@@ -198,7 +214,7 @@ const CtaButton = styled.button`
   width: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  margin-top: 2rem !important;
+  margin-top: 1rem !important;
 
   &:hover {
     transform: translateY(-3px);
@@ -241,8 +257,7 @@ const Footer = styled.footer`
 // ========================================================================
 // Componente Principal da Página
 // ========================================================================
-
-const ClonePerfeitoPage = () => {
+export default function ClonePerfeitoPage() {
   return (
     <>
       <GlobalStyle />
@@ -310,28 +325,28 @@ const ClonePerfeitoPage = () => {
 
           <H2>O que é o Clone Perfeito?</H2>
           <Paragraph>É um método completo, passo a passo, onde eu ensino você a:</Paragraph>
-          <ul>
+          <List>
             <ListItem data-icon="🧬">Criar ensaios de fotos ultra-realistas com IA (sem saber nada de design, prompt, ou tecnologia);</ListItem>
             <ListItem data-icon="⚙️">Usar configurações secretas que desbloqueiam qualidade absurda nas imagens (que a maioria nem sabe que existe);</ListItem>
             <ListItem data-icon="🎯"><strong>Prospecção ativa:</strong> Como oferecer seus ensaios no Instagram para brasileiros, americanos e europeus — com scripts prontos;</ListItem>
             <ListItem data-icon="📦">Como montar pacotes de ensaio (15, 30, 50 fotos) e precificar de forma inteligente;</ListItem>
             <ListItem data-icon="💸">Como vender em reais, dólares e euros — inclusive com uma técnica para usar o argumento de <Highlight>“promoção para os 3 primeiros”</Highlight> e fechar mais rápido;</ListItem>
             <ListItem data-icon="🚀">E principalmente: <strong>como transformar isso numa fonte de renda real.</strong></ListItem>
-          </ul>
+          </List>
           <Paragraph>Você não vai sair do curso com mais “informação” — <strong>você vai sair com um plano prático para lucrar.</strong></Paragraph>
 
           <H2>Mas dá dinheiro de verdade?</H2>
           <Paragraph>Dá. Vamos olhar com seriedade:</Paragraph>
-          <ul>
+          <List>
             <ListItem data-icon="🇧🇷">Um pacote com 15 fotos pode ser vendido por <strong>R$250 no Brasil</strong></ListItem>
             <ListItem data-icon="🇺🇸">Ou por <strong>$39 a $59 dólares</strong> no exterior</ListItem>
             <ListItem data-icon="🇪🇺">Ou por <strong>€39 a €69 euros</strong> na Europa</ListItem>
-          </ul>
+          </List>
           <Paragraph><strong>Agora imagina:</strong></Paragraph>
-          <ul>
+          <List>
             <ListItem data-icon="🔹"><strong>Vendendo 3 ensaios por semana:</strong><br/>3 x R$250 = R$750 por semana = <strong>R$3.000 por mês</strong></ListItem>
             <ListItem data-icon="🔹"><strong>Ou 2 pacotes para gringos por $59 cada:</strong><br/>$118 ≈ R$660 por semana = <strong>R$2.640 por mês</strong></ListItem>
-          </ul>
+          </List>
           <Paragraph>E você não precisa pagar fotógrafo, estúdio, nem designer. Só saber o método certo.</Paragraph>
 
           <H2>Mas por que alguém pagaria por isso?</H2>
@@ -341,12 +356,12 @@ const ClonePerfeitoPage = () => {
             <p>“Quanto você cobra pra fazer um ensaio meu assim?”</p>
           </Blockquote>
           <Paragraph>E o melhor: isso funciona mesmo que você tenha 0 seguidores. Você vai aprender exatamente como:</Paragraph>
-          <ul>
+          <List>
             <ListItem data-icon="✔️">Criar seu próprio ensaio</ListItem>
             <ListItem data-icon="✔️">Postar da forma certa</ListItem>
             <ListItem data-icon="✔️">Abordar as pessoas com mensagens prontas</ListItem>
             <ListItem data-icon="✔️">Fechar vendas rápidas — em real, dólar ou euro</ListItem>
-          </ul>
+          </List>
 
           <H2>O que você vai receber no Clone Perfeito:</H2>
           <Paragraph style={{color: "#aaa"}}>(E aqui já entra a ancoragem de valor real👇)</Paragraph>
@@ -356,13 +371,13 @@ const ClonePerfeitoPage = () => {
           <ModuleCard><h3><span>🎯</span>Aula 3 – Como gerar ensaios com qualidade absurda</h3><p>Você vai dominar cada detalhe para gerar pacotes com 15, 30 ou 50 fotos que vendem (valor de mercado: R$247)</p></ModuleCard>
           <ModuleCard><h3><span>🎨</span>Aula 4 – Edição, variações e estilos visuais</h3><p>Estilos cinematográficos, fashion, vintage, clean, conceitual e mais para encantar o cliente</p></ModuleCard>
           <ModuleCard><h3><span>💼</span>Aula 5 – Como montar pacotes e precificar</h3><p>Estrutura de pacotes, nomes atrativos, valores, ancoragem e margem de lucro</p></ModuleCard>
-          <ModuleCard><h3><span>📲</span>Aula 6 – Scripts prontos de prospecção</h3><p>Mensagens testadas que convertem para DMs (BR, EUA, Europa) e estratégia de promoção inicial (R$197 fácil)</p></ModuleCard>
-          <ModuleCard><h3><span>🌍</span>Aula 7 – Como vender em real, dólar e euro</h3><p>Plataformas, carteira digital, recebimento internacional, e estratégia de escassez</p></ModuleCard>
+          <ModuleCard><h3><span>📲</span>Aula 6 – Scripts prontos de prospecção (BR, EUA, Europa)</h3><p>Mensagens testadas que convertem, templates para DMs, estratégia de promoção inicial e fechamento (R$197 fácil)</p></ModuleCard>
+          <ModuleCard><h3><span>🌍</span>Aula 7 – Como vender em real, dólar e euro</h3><p>Plataformas, carteira digital, recibo, recebimento internacional, melhores práticas e estratégia de escassez para acelerar a venda</p></ModuleCard>
           
           <H2>Bônus Exclusivos</H2>
-          <ModuleCard><h3><span>🧠</span>Bônus 1 – Agente GPT de Prompts</h3><p>Gere prompts ultra detalhados com seu nome, estilo e iluminação com 1 clique</p></ModuleCard>
-          <ModuleCard><h3><span>🖼️</span>Bônus 2 – Clones com ChatGPT</h3><p>Como criar Clones e Ensaios com o ChatGPT</p></ModuleCard>
-          <ModuleCard><h3><span>💸</span>Bônus 3 – Estratégia de Renda Rápida</h3><p>Como fazer sua primeira venda em 72h com um perfil novo</p></ModuleCard>
+          <ModuleCard><h3><span>🧠</span>Bônus 1 – Agente GPT de Prompts para Ensaios</h3><p>Gere prompts ultra detalhados com seu nome, estilo e iluminação com 1 clique</p></ModuleCard>
+          <ModuleCard><h3><span>🖼️</span>Bônus 2 – Como criar Clones e Ensaios com o ChatGPT</h3><p>Como criar Clones e Ensaios com o ChatGPT</p></ModuleCard>
+          <ModuleCard><h3><span>💸</span>Bônus 3 – Estratégia Express de Renda Rápida com IA</h3><p>Como fazer sua primeira venda em 72h com um perfil novo</p></ModuleCard>
 
           <PriceSection>
             <p>Valor total real do pacote: <Strikethrough>R$1.497</Strikethrough></p>
@@ -396,7 +411,7 @@ const ClonePerfeitoPage = () => {
           <Paragraph style={{textAlign: "center", color: "#f6ad55"}}>Preço promocional de R$47 — por tempo limitado</Paragraph>
           
           <CtaButton id="checkout">
-            Quero Faturar em Dólar com IA 🔥
+            [Botão de checkout 🔥]
           </CtaButton>
 
           <Divider />
@@ -428,13 +443,11 @@ const ClonePerfeitoPage = () => {
           </FaqItem>
 
           <Footer>
-            Copyright © {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.
+            Footer
           </Footer>
 
         </Content>
       </PageContainer>
     </>
   );
-};
-
-export default ClonePerfeitoPage;
+}
