@@ -1,3 +1,5 @@
+// Adicionei useState e useEffect para controlar a barra de checkout
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -30,11 +32,33 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import Script from "next/script" // Importação do componente de Script
+import Script from "next/script"
 
 export default function ClonePerfeitoFinalPage() {
   const testimonials = [1, 2, 3, 4, 5, 6, 7];
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8];
+  
+  // ===== LÓGICA PARA A BARRA DE CHECKOUT FLUTUANTE =====
+  const [isBarVisible, setIsBarVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Aparece ao rolar pra cima, e se não estiver no topo
+      if (currentScrollY < lastScrollY && currentScrollY > 200) {
+        setIsBarVisible(true);
+      } else {
+        setIsBarVisible(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+  // ===== FIM DA LÓGICA =====
+
 
   const modules = [
     { icon: <LayoutDashboard className="text-sky-400"/>, title: "Módulo 1: Início da Jornada", description: "Boas-vindas, mentalidade correta e o que você vai aprender para ter resultados." },
@@ -98,7 +122,22 @@ export default function ClonePerfeitoFinalPage() {
         `}
       </Script>
 
-      <div className="bg-[#191919] text-neutral-300 font-sans antialiased">
+      {/* A classe overflow-x-hidden foi adicionada aqui para corrigir o problema no mobile */}
+      <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
+
+        {/* ===== BARRA DE CHECKOUT FLUTUANTE ===== */}
+        <div className={`fixed top-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-700/50 transition-transform duration-300 ${isBarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+          <div className="max-w-3xl mx-auto flex items-center justify-between p-3 px-4">
+            <span className="text-sm font-medium text-neutral-200 hidden sm:block">Garanta seu acesso com 80% OFF.</span>
+            <span className="text-sm font-medium text-neutral-200 sm:hidden">Acesso com 80% OFF</span>
+            <Link href="#checkout">
+              <Button size="sm" className="bg-rose-500 hover:bg-green-600 text-white font-semibold text-xs sm:text-sm">
+                QUERO MEU ACESSO
+              </Button>
+            </Link>
+          </div>
+        </div>
+        
         <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-10 md:space-y-12">
           
           <section className="space-y-8">
@@ -124,7 +163,7 @@ export default function ClonePerfeitoFinalPage() {
           </section>
           
           <div className="w-full flex justify-center">
-            <Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10">
+            <Link href="#checkout">
               <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-8 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
                   Quero garantir meu acesso com desconto
               </Button>
@@ -197,7 +236,6 @@ export default function ClonePerfeitoFinalPage() {
           
           <div className="pt-8"><h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
 
-          {/* ===== NOVA SEÇÃO "SOBRE MIM" ATUALIZADA ===== */}
           <section className="pt-16">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 mb-8 text-left">
                   Prazer, sou o Gabriel. E eu criei o Clone Perfeito.
@@ -211,15 +249,14 @@ export default function ClonePerfeitoFinalPage() {
               />
               <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
                   <p>Comecei a faculdade de Engenharia da Computação duas semanas antes da pandemia. Mas com tudo parado, tranquei e fui atrás de algo mais prático.</p>
-                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas: tráfego pago, copywriting, funil, design... Me encontrei mesmo na parte visual e criativa — e acabei trabalhando exclusivamente com um cliente durante esse tempo, gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas.</p>
+                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas. Me encontrei mesmo na parte visual e criativa — e acabei gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas para um único cliente.</p>
                   <p>Foi aí que descobri o potencial da IA para criar imagens hiper-realistas.</p>
-                  <p>A princípio, minha ideia era só ensinar como gerar esses clones e criar ensaios incríveis com IA. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
+                  <p>A princípio, minha ideia era só ensinar como gerar esses clones. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
                   <p>O resultado? <strong className="text-white">Mais de R$10.000 em menos de 1 mês.</strong></p>
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
                   <p>Hoje, <strong className="text-yellow-400">ensino exatamente o que aplico</strong> — com método, clareza e foco total em resultado.</p>
               </div>
           </section>
-          {/* ===== FIM DA SEÇÃO "SOBRE MIM" ===== */}
           
           <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
 
