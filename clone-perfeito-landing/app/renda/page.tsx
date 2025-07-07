@@ -22,6 +22,8 @@ import {
   Sparkles,
   Users,
   Film,
+  Shield,
+  Smartphone
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -180,39 +182,42 @@ export default function ClonePerfeitoFinalPage() {
         <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2"><Plus className="w-5 h-5 text-green-400" /><CardTitle className="text-xl text-neutral-100">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-12">{bonus.description}</CardContent></Card>))}</div>
         <div className="pt-8"><h2 className="text-2xl font-bold text-center text-neutral-100 mb-8 flex items-center justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
         
-        {/* ==================================================================== */}
-{/* ===== INÍCIO DO BLOCO DE OFERTA E PREÇO ===== */}
+  {/* ==================================================================== */}
+{/* ===== INÍCIO DO BLOCO CORRIGIDO DE OFERTA E PREÇO ===== */}
 {/* ==================================================================== */}
+
+{/* Adicione estes ícones à sua importação principal de lucide-react */}
+{/* import { Check, Shield, Smartphone, Rocket, Lock, Flame } from "lucide-react" */}
 
 <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">
     Sua Oferta Especial Hoje
 </h2>
 
 {/* Card de Preço com Efeito Glassmorphism e Glow */}
-<div className="relative">
+<div className="relative mt-8">
     {/* Efeito de Glow (Luz atrás) */}
-    <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-purple-600 rounded-xl blur-xl opacity-15"></div>
+    <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-purple-600 rounded-2xl blur-xl opacity-20 animate-pulse" style={{ animationDuration: '6s' }}></div>
     
-    <Card className="relative bg-neutral-800/60 backdrop-blur-sm border-neutral-700/50 shadow-2xl shadow-black/30">
+    <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
         <CardContent className="p-8 space-y-8">
 
             {/* Lista Detalhada do que está Incluso */}
-            <div className="space-y-3 text-neutral-200">
+            <div className="space-y-3 text-lg text-neutral-200">
                 <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Curso Clone Perfeito Completo</p></div>
-                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Acesso Vitalício e Atualizações Futuras</p></div>
-                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Mapa Mental Exclusivo do Curso</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Acesso Vitalício</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Mapa Mental do Curso</p></div>
                 <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Suporte exclusivo e personalizado</p></div>
                 <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 1 - Agente GPT de Prompts</p></div>
-                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 2 - Ensaios com ChatGPT (Grátis)</p></div>
+                <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 2 - Ensaios com ChatGPT</p></div>
                 <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p>Bônus 3 - Estratégia de Renda Rápida</p></div>
             </div>
 
-            <Separator className="bg-neutral-700"/>
+            <Separator className="bg-neutral-700/50"/>
 
             {/* Seção de Preço e Desconto */}
             <div className="text-center space-y-4">
                 <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">
-                    ECONOMIZE R$397
+                    DESCONTO DE 80%
                 </div>
                 <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
                 <p className="text-5xl font-bold text-white">R$ 97</p>
@@ -232,7 +237,7 @@ export default function ClonePerfeitoFinalPage() {
             {/* Pontos de Confiança */}
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 pt-6 text-center text-sm text-neutral-400">
                 <div className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-green-400 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
                     <span>Garantia sem risco</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -252,7 +257,16 @@ export default function ClonePerfeitoFinalPage() {
     </Card>
 </div>
 
-
+{/* Seção Dedicada da Garantia */}
+<div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
+    <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
+    <div>
+        <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
+        <p className="text-neutral-300 text-lg leading-relaxed">
+            Você totalmente satisfeito ou seu dinheiro de volta na hora. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e nós devolveremos todo o seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong>
+        </p>
+    </div>
+</div>
 
 {/* ==================================================================== */}
 {/* ===== FIM DO BLOCO DE OFERTA E PREÇO ===== */}
