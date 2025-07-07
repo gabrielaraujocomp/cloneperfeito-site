@@ -252,16 +252,7 @@ export default function ClonePerfeitoFinalPage() {
     </Card>
 </div>
 
-{/* Seção Dedicada da Garantia */}
-<div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
-    <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
-    <div>
-        <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
-        <p className="text-neutral-300 text-lg leading-relaxed">
-            Você tem 7 dias completos para explorar o curso. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e nós devolveremos todo o seu investimento na hora. <strong className="text-yellow-400">O risco é todo nosso.</strong>
-        </p>
-    </div>
-</div>
+
 
 {/* ==================================================================== */}
 {/* ===== FIM DO BLOCO DE OFERTA E PREÇO ===== */}
