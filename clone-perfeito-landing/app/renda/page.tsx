@@ -84,7 +84,7 @@ export default function ClonePerfeitoFinalPage() {
                 priority
             />
             <div className="flex items-start gap-4 p-6 rounded-lg bg-yellow-950/50 border border-yellow-800/30">
-                <AlertTriangle className="w-12 h-12 md:w-10 md:h-10 text-yellow-400 mt-1 flex-shrink-0" />
+                <AlertTriangle className="w-12 h-12 sm:w-10 sm:h-10 text-yellow-400 mt-1 flex-shrink-0" />
                 <div>
                   <h1 className="text-2xl md:text-4xl font-bold text-yellow-100">
                       Pessoas comuns estão faturando em dólar com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA.
@@ -105,7 +105,7 @@ export default function ClonePerfeitoFinalPage() {
         </div>
 
         <div className="pt-8">
-            <h2 className="text-2xl font-bold text-center text-neutral-100 mb-8 flex items-center justify-center gap-3"><Users className="text-yellow-400"/> A prova de que o método funciona</h2>
+            <h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Users className="text-yellow-400"/> A prova de que o método funciona</h2>
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
                 <CarouselContent className="-ml-4">
                     {testimonials.map((num) => (
@@ -118,7 +118,7 @@ export default function ClonePerfeitoFinalPage() {
             </Carousel>
         </div>
         
-        <Separator className="bg-neutral-700 my-12" />
+        <Separator className="bg-neutral-700 my-8 md:my-12" />
 
         <div className="flex items-start gap-4 p-6 rounded-lg bg-red-950/50 border border-red-800/30">
           <Flame className="w-8 h-8 md:w-6 md:h-6 text-red-500 mt-1 flex-shrink-0" />
@@ -127,7 +127,7 @@ export default function ClonePerfeitoFinalPage() {
         
         <blockquote className="border-l-4 border-neutral-700 pl-6 italic text-neutral-400 text-lg">Porque o que vou te mostrar agora tem o potencial de se tornar uma nova e empolgante <strong className="text-yellow-400 not-italic">fonte de renda na sua vida</strong> — e falo isso com total seriedade.</blockquote>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Deixa eu te perguntar…</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Deixa eu te perguntar…</h2>
 
         <p className="text-lg leading-relaxed">Quantas vezes você já ficou com aquela sensação de:</p>
         
@@ -152,7 +152,7 @@ export default function ClonePerfeitoFinalPage() {
         <blockquote className="border-l-4 border-neutral-700 pl-6 text-neutral-400 text-lg">…vender esses ensaios por <span className="text-white not-italic">R$200, R$300,</span> ou até <span className="bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded-md not-italic">39 dólares/euros</span> para pessoas do Brasil, da Europa ou dos EUA — <span className="text-red-400 not-italic">sem câmera, sem estúdio, sem fotógrafo e sem sair de casa.</span></blockquote>
         <p className="text-lg leading-relaxed">Eu sei que isso parece absurdo à primeira vista. Mas continua comigo. Você vai ver que tudo faz sentido. E vai entender como isso pode se tornar sua fonte de renda ainda esse mês.</p>
 
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">O que você vai receber no Clone Perfeito</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">O que você vai receber no Clone Perfeito</h2>
         <div className="space-y-4">
           {modules.map((module, index) => (
             <Card key={index} className="bg-neutral-800 border-neutral-700 border-l-4 border-l-yellow-400 overflow-hidden">
@@ -165,17 +165,18 @@ export default function ClonePerfeitoFinalPage() {
           ))}
         </div>
         
-        <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">E ainda leva 3 Bônus Especiais</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">E ainda leva 3 Bônus Especiais</h2>
         <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2"><Plus className="w-5 h-5 text-green-400" /><CardTitle className="text-xl text-left text-neutral-100">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-12 text-left">{bonus.description}</CardContent></Card>))}</div>
-        <div className="pt-8"><h2 className="text-2xl font-bold text-center text-neutral-100 mb-8 flex items-center justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
         
-        <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
+        <div className="pt-8"><h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
+        
+        <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
 
         <div className="relative mt-8">
             <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl blur-xl opacity-15"></div>
             <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
                 <CardContent className="p-6 md:p-8 space-y-6">
-                    <div className="space-y-4 text-lg text-neutral-200">
+                    <div className="space-y-4 text-neutral-200">
                       {offerItems.map((item, index) => (
                         <div key={index} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
@@ -192,7 +193,7 @@ export default function ClonePerfeitoFinalPage() {
                     <div className="text-center space-y-4">
                         <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">DESCONTO DE 80%</div>
                         <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
-                        <p className="text-5xl font-bold text-white">R$ 97</p>
+                        <p className="text-4xl sm:text-5xl font-bold text-white">R$ 97</p>
                         <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
                     </div>
                     
@@ -216,14 +217,14 @@ export default function ClonePerfeitoFinalPage() {
             <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
             <div>
                 <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
-                <p className="text-neutral-300 text-lg leading-relaxed">Você totalmente satisfeito ou seu dinheiro de volta na hora. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e eu devolvo todo o seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong></p>
+                <p className="text-neutral-300 text-lg leading-relaxed">Você totalmente satisfeito ou seu dinheiro de volta na hora. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e nós devolveremos todo o seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong></p>
             </div>
         </div>
         
         <Separator className="bg-neutral-700 my-12" />
 
         <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 text-center">❓ Perguntas Frequentes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center text-neutral-100">❓ Perguntas Frequentes</h2>
             <Accordion type="single" collapsible className="w-full text-lg">
               {faqItems.map(item => (
                 <AccordionItem key={item.value} value={item.value} className="border-b-neutral-800">
