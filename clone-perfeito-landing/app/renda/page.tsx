@@ -2,37 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { ReactNode } from 'react';
 
-// --- COMPONENTES DE UI REUTILIZÁVEIS (Estilo Notion) ---
+// --- COMPONENTES DE UI REUTILIZÁVEIS ---
 
 /**
- * Cria um título de seção padronizado com um ícone.
+ * Cria um título de seção padronizado para manter a consistência visual.
  * @param {string} icon - O emoji a ser usado como ícone.
  * @param {ReactNode} children - O texto do título.
  */
 const SectionTitle = ({ icon, children }: { icon: string; children: ReactNode }) => (
-  <h2 className="flex items-center gap-3 text-3xl md:text-4xl font-bold text-slate-100 mb-8 md:mb-12">
-    <span>{icon}</span>
+  <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-12">
+    <span className="mr-3">{icon}</span>
     {children}
   </h2>
 );
-
-/**
- * Renderiza o botão principal de Call-to-Action (CTA) da página.
- */
-const MainCTAButton = () => (
-    <Link href="#" className="block group w-full">
-        <div className="flex items-center justify-center gap-3 text-lg md:text-xl font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 rounded-lg px-6 py-4 transition-all duration-200 group-hover:border-slate-600 group-hover:text-slate-100">
-            <span>👉</span>
-            <div>
-                <span className="underline decoration-slate-500 group-hover:decoration-slate-400 transition-all">
-                    Quero criar meu clone!
-                </span>
-                <span className="text-slate-400"> [ Apenas R$97 no mês de julho ]</span>
-            </div>
-        </div>
-    </Link>
-);
-
 
 // --- DADOS DA PÁGINA (Centralizados para fácil manutenção) ---
 
@@ -65,108 +47,126 @@ const modules = [
   { src: '/images/modulo-5.jpg', alt: 'Módulo 5 do curso Clone Perfeito' },
 ];
 
-
 // --- COMPONENTE PRINCIPAL DA PÁGINA ---
 
-export default function NotionStylePage() {
+export default function GithubStylePage() {
   return (
-    <div className="bg-slate-950 text-slate-300 antialiased selection:bg-cyan-300/20">
-      <main className="max-w-4xl mx-auto px-6 py-16 md:py-24 space-y-24 md:space-y-32">
-        
-        {/* === Cabeçalho e CTA Principal === */}
-        <header className="flex flex-col items-center text-center space-y-8">
-          <Image
-            src="/images/logocp.svg"
-            alt="Logo Clone Perfeito"
-            width={80}
-            height={80}
-            className="h-16 w-16 md:h-20 md:w-20"
-            priority // Carrega o logo mais rápido
-          />
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-100 leading-tight tracking-tight">
-            Pessoas comuns estão faturando em dólar com IA.
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl text-slate-400 leading-relaxed">
-            E você pode ser o próximo, mesmo que não saiba nada de tecnologia. Aprenda a criar e vender ensaios fotográficos hiper-realistas para o mundo todo, sem sair de casa.
-          </p>
-          <div className="w-full max-w-2xl pt-4">
-             <MainCTAButton />
-          </div>
-        </header>
+    <div className="bg-gray-900 text-gray-300 font-sans antialiased">
+      <main className="relative isolate overflow-hidden">
+        {/* Efeito de fundo com gradiente */}
+        <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+          <div className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#8000ff] to-[#3300ff] opacity-20 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }} />
+        </div>
 
-        {/* === Seção de Depoimentos === */}
-        <section>
-          <SectionTitle icon="💬">O que eles dizem</SectionTitle>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="overflow-hidden rounded-lg border border-slate-800 hover:border-slate-700 transition-all">
-                <Image
-                  src={testimonial.src}
-                  alt={testimonial.alt}
-                  width={300}
-                  height={300}
-                  className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Container principal para centralizar o conteúdo */}
+        <div className="max-w-5xl mx-auto px-6">
 
-        {/* === Seção da Galeria de Alunos === */}
-        <section>
-          <SectionTitle icon="🖼️">O que você vai criar</SectionTitle>
-          <div className="columns-2 md:columns-3 gap-4 space-y-4">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="overflow-hidden rounded-lg border border-slate-800">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={500}
-                  height={700}
-                  className="w-full h-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* === Seção dos Módulos do Curso === */}
-        <section>
-          <SectionTitle icon="📚">O caminho, passo a passo</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {modules.map((module, index) => (
-              <Link href="#" key={index} className="block group">
-                 <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-900 group-hover:border-slate-700 transition-all shadow-md group-hover:shadow-xl group-hover:shadow-slate-900/50">
-                    <Image
-                      src={module.src}
-                      alt={module.alt}
-                      width={800}
-                      height={450}
-                      className="w-full h-auto"
-                    />
-                 </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* === CTA Final === */}
-        <section className="text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-100">Pronto para começar?</h2>
-            <p className="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
-                Essa é a sua chance de entrar em um mercado novo, com alta demanda e pouca concorrência. Chegue primeiro.
+          {/* === Cabeçalho e CTA Principal === */}
+          <header className="py-24 sm:py-32 text-center space-y-8">
+            <Image
+              src="/images/logocp.svg"
+              alt="Logo Clone Perfeito"
+              width={80}
+              height={80}
+              className="h-20 w-20 mx-auto"
+              priority
+            />
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+              Pessoas comuns faturando em <span className="text-cyan-400">dólar, euro e real</span> com IA.
+            </h1>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
+              Descubra o método inédito que ensina a criar e vender ensaios fotográficos hiper-realistas para o mundo todo, mesmo que você seja um completo iniciante.
             </p>
-            <div className="w-full max-w-2xl mx-auto pt-4">
-             <MainCTAButton />
-          </div>
-        </section>
+            <Link
+                href="#"
+                className="inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20"
+            >
+              Quero criar meu clone! [ Apenas R$97 ]
+            </Link>
+          </header>
 
+          {/* === Seção de Depoimentos === */}
+          <section className="py-16 md:py-24">
+            <SectionTitle icon="💬">Aprovação máxima. Veja o que dizem.</SectionTitle>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="bg-gray-800/50 p-1.5 rounded-xl border border-gray-700 hover:border-cyan-400/50 transition-all duration-300 shadow-lg">
+                  <div className="overflow-hidden rounded-lg">
+                    <Image
+                      src={testimonial.src}
+                      alt={testimonial.alt}
+                      width={500}
+                      height={500}
+                      className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* === Seção da Galeria de Alunos === */}
+          <section className="py-16 md:py-24">
+            <SectionTitle icon="🖼️">O que você vai ser capaz de criar</SectionTitle>
+            <div className="columns-2 md:columns-3 gap-4 space-y-4">
+              {galleryImages.map((image, index) => (
+                <div key={index} className="overflow-hidden rounded-lg border border-gray-800 shadow-md">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={500}
+                    height={700}
+                    className="w-full h-auto"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* === Seção dos Módulos do Curso === */}
+          <section className="py-16 md:py-24">
+            <SectionTitle icon="📚">O caminho completo, passo a passo</SectionTitle>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {modules.map((module, index) => (
+                <Link href="#" key={index} className="block group">
+                  <div className="overflow-hidden rounded-xl border border-gray-700 bg-gray-800/50 group-hover:border-cyan-400/50 transition-all shadow-lg group-hover:shadow-cyan-500/10">
+                      <Image
+                        src={module.src}
+                        alt={module.alt}
+                        width={800}
+                        height={450}
+                        className="w-full h-auto"
+                      />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* === CTA Final === */}
+          <section className="py-24 sm:py-32 text-center">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 md:p-12 rounded-2xl border border-green-500 space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">Pronto para começar?</h2>
+                <p className="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
+                    Essa é a sua chance de entrar em um mercado novo, com alta demanda e pouca concorrência. Chegue primeiro.
+                </p>
+                <div className="pt-4">
+                  <Link
+                      href="#"
+                      className="inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20"
+                  >
+                    🔥 Garanta seu acesso agora!
+                  </Link>
+                </div>
+            </div>
+          </section>
+        </div>
+
+        {/* === Rodapé === */}
+        <footer className="text-center py-12">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.</p>
+        </footer>
       </main>
-      
-      {/* === Rodapé === */}
-      <footer className="text-center py-12">
-        <p className="text-sm text-slate-600">© {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.</p>
-      </footer>
     </div>
   );
 }
