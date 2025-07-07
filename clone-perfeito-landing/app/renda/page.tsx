@@ -72,7 +72,7 @@ export default function ClonePerfeitoFinalPage() {
 
   return (
     <div className="bg-[#191919] text-neutral-300 font-sans antialiased">
-      <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-12">
+      <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-10 md:space-y-12">
         
         <section className="space-y-8">
             <Image 
@@ -96,7 +96,7 @@ export default function ClonePerfeitoFinalPage() {
             </div>
         </section>
         
-        <div className="w-full flex justify-center pt-4">
+        <div className="w-full flex justify-center">
           <Link href="#checkout" legacyBehavior>
             <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-8 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
                 Quero garantir meu acesso com desconto
@@ -118,7 +118,7 @@ export default function ClonePerfeitoFinalPage() {
             </Carousel>
         </div>
         
-        <Separator className="bg-neutral-700 my-8 md:my-12" />
+        <Separator className="bg-neutral-700 my-8" />
 
         <div className="flex items-start gap-4 p-6 rounded-lg bg-red-950/50 border border-red-800/30">
           <Flame className="w-8 h-8 md:w-6 md:h-6 text-red-500 mt-1 flex-shrink-0" />
@@ -198,7 +198,7 @@ export default function ClonePerfeitoFinalPage() {
                     </div>
                     
                     <div className="pt-4">
-                        <Button size="lg" className="w-full text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
+                        <Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
                             Quero garantir meu acesso com desconto
                         </Button>
                     </div>
@@ -213,7 +213,7 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-center md:text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
+        <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
             <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
             <div>
                 <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
