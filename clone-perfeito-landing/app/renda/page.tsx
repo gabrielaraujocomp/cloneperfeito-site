@@ -27,7 +27,9 @@ import {
   Briefcase,
   Target,
   Cpu,
-  Palette
+  Palette,
+  Clock,
+  Package
 } from "lucide-react"
 import Link from "next/link"
 import Script from "next/script"
@@ -48,41 +50,54 @@ export default function LandingPage() {
       <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
       <Script id="microsoft-clarity" strategy="afterInteractive">{`...`}</Script>
 
-      {/* Hero Section */}
-      <section className="relative w-full bg-[#1c1a1d] py-20 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-            <div className="absolute left-1/2 top-0 h-full w-full -translate-x-1/2 bg-gradient-to-tr from-pink-950/60 via-transparent to-transparent"></div>
+      {/* Hero Section [NOVO DESIGN PROFISSIONAL] */}
+      <section className="relative w-full bg-black py-24 lg:py-32 overflow-hidden">
+        {/* Fundo com Imagens Desfocadas */}
+        <div className="absolute inset-0 z-0 opacity-20 blur-md scale-110">
+          <div className="grid grid-cols-2 lg:grid-cols-4 h-full w-full">
+            <img src="/images/gerada-1.jpg" className="w-full h-full object-cover"/>
+            <img src="/images/gerada-2.jpg" className="w-full h-full object-cover"/>
+            <img src="/images/gerada-3.jpg" className="w-full h-full object-cover"/>
+            <img src="/images/gerada-4.jpg" className="w-full h-full object-cover"/>
+          </div>
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="md:col-span-1">
-              <img 
-                src="/images/bgcp.jpg" 
-                alt="Exemplos de ensaios fotográficos gerados com Inteligência Artificial"
-                className="rounded-2xl shadow-2xl shadow-black/50 w-full border-2 border-zinc-800"
-              />
-            </div>
-            <div className="md:col-span-1 space-y-8 text-center md:text-left">
-                <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-                    Pessoas estão vendendo <span className="text-white">Ensaios com IA</span> sem câmera, estúdio ou cliente fixo.
-                </h1>
-                <p className="text-lg text-gray-400">
-                    Aprenda em menos de 3 horas e comece a vender no mesmo dia para o mundo todo — em Reais, Dólares e Euros.
-                </p>
-                <Link href="#oferta">
-                    <Button 
-                      size="lg"
-                      className="bg-white text-black font-bold hover:bg-gray-200 rounded-full px-8 py-4 text-base transition-all transform hover:scale-105"
-                    >
-                        Aprenda a Criar Ensaios com IA
+        {/* Sobreposição de Gradiente */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#1c1a1d] via-[#1c1a1d]/70 to-transparent"></div>
+        
+        {/* Conteúdo Central */}
+        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Torne-se um <span className="text-white">Criador de Ensaios com IA</span> e construa um negócio lucrativo
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                Aprenda as técnicas para transformar qualquer rosto em ensaios profissionais e venda esse serviço no Brasil e no exterior.
+            </p>
+
+            <div className="flex flex-col items-center gap-6">
+                <Link href="#oferta" className="w-full max-w-sm">
+                    <Button size="lg" className="w-full bg-pink-600 text-white font-bold hover:bg-pink-700 rounded-lg py-7 text-lg shadow-lg shadow-pink-900/40 transition-all transform hover:scale-105">
+                        INSCREVA-SE NO CLONE PERFEITO
                     </Button>
                 </Link>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-gray-400 max-w-2xl w-full">
+                    <div className="flex items-center justify-center gap-2">
+                        <Clock className="w-4 h-4"/>
+                        <span>Ensaios prontos em minutos</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                        <Package className="w-4 h-4"/>
+                        <span>Sem necessidade de equipamento</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                        <Globe className="w-4 h-4"/>
+                        <span>Potencial de venda Global</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </section>
 
-      {/* Provas Reais de Vendas [RESTAURADO E REDESENHADO] */}
+      {/* Provas Reais de Vendas */}
       <section className="py-24 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -90,31 +105,22 @@ export default function LandingPage() {
                 <p className="text-lg text-gray-400 mt-2">Nossos alunos não aprendem, eles faturam.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                {/* Venda em Real */}
                 <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:rotate-[-2deg] transition-all hover:rotate-0 hover:scale-105">
                     <p className="text-sm font-semibold text-green-400">Venda em R$ (Brasil)</p>
-                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
-                        <Wallet className="h-10 w-10 text-zinc-700"/>
-                    </div>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center"><Wallet className="h-10 w-10 text-zinc-700"/></div>
                 </div>
-                {/* Venda em Euro */}
                 <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:scale-105 z-10 transition-all hover:scale-110">
                     <p className="text-sm font-semibold text-blue-400">Pagamento em € (Europa)</p>
-                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
-                        <Euro className="h-10 w-10 text-zinc-700"/>
-                    </div>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center"><Euro className="h-10 w-10 text-zinc-700"/></div>
                 </div>
-                {/* Venda em Dólar */}
                 <div className="bg-zinc-950 p-4 rounded-xl border border-zinc-800 space-y-3 transform lg:rotate-[2deg] transition-all hover:rotate-0 hover:scale-105">
                     <p className="text-sm font-semibold text-yellow-400">Recebimento em $ (EUA)</p>
-                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center">
-                        <DollarSign className="h-10 w-10 text-zinc-700"/>
-                    </div>
+                    <div className="aspect-[4/3] bg-zinc-900 rounded-md flex items-center justify-center"><DollarSign className="h-10 w-10 text-zinc-700"/></div>
                 </div>
             </div>
         </div>
       </section>
-
+      
       {/* O Que é o Clone Perfeito? */}
       <section className="py-24 px-4 bg-[#1c1a1d]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
