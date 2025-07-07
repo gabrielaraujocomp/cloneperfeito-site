@@ -97,14 +97,13 @@ export default function ClonePerfeitoFinalPage() {
         </section>
         
         <div className="w-full flex justify-center">
-          <Link href="#checkout" legacyBehavior>
+          <Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10">
             <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-8 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
                 Quero garantir meu acesso com desconto
             </Button>
           </Link>
         </div>
 
-        {/* ===== SEÇÃO DEPOIMENTOS CORRIGIDA ===== */}
         <div className="pt-8 mb-8 md:mb-12">
             <h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Users className="text-yellow-400"/> A prova de que o método funciona</h2>
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
@@ -199,9 +198,11 @@ export default function ClonePerfeitoFinalPage() {
                     </div>
                     
                     <div className="pt-4">
-                        <Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
-                            Quero garantir meu acesso com desconto
-                        </Button>
+                        <Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10">
+                            <Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
+                                Quero garantir meu acesso com desconto
+                            </Button>
+                        </Link>
                     </div>
 
                     <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
@@ -222,6 +223,23 @@ export default function ClonePerfeitoFinalPage() {
             </div>
         </div>
         
+        {/* ===== NOVA SEÇÃO WHATSAPP ===== */}
+        <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
+            <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
+            <div>
+                <h3 className="text-2xl font-bold text-white mb-2">Ainda tem alguma dúvida?</h3>
+                <p className="text-neutral-300 text-lg leading-relaxed mb-4">
+                    Se você precisa de mais alguma informação antes de decidir, clique no botão abaixo e fale diretamente com nossa equipe no WhatsApp. Estamos aqui para ajudar!
+                </p>
+                <Link href="https://api.whatsapp.com/send?phone=5511978610717" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300">
+                        <MessageSquare className="w-4 h-4 mr-2" />
+                        Chamar no WhatsApp
+                    </Button>
+                </Link>
+            </div>
+        </div>
+
         <Separator className="bg-neutral-700 my-12" />
 
         <div className="space-y-8">
