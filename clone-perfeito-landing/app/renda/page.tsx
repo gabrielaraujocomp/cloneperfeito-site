@@ -1,4 +1,5 @@
-// Adicionei useState e useEffect para controlar a barra de checkout
+'use client'; // Adiciona a diretiva para indicar que este é um Componente de Cliente
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -122,7 +123,6 @@ export default function ClonePerfeitoFinalPage() {
         `}
       </Script>
 
-      {/* A classe overflow-x-hidden foi adicionada aqui para corrigir o problema no mobile */}
       <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
 
         {/* ===== BARRA DE CHECKOUT FLUTUANTE ===== */}
@@ -249,9 +249,9 @@ export default function ClonePerfeitoFinalPage() {
               />
               <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
                   <p>Comecei a faculdade de Engenharia da Computação duas semanas antes da pandemia. Mas com tudo parado, tranquei e fui atrás de algo mais prático.</p>
-                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas. Me encontrei mesmo na parte visual e criativa — e acabei gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas para um único cliente.</p>
+                  <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas: tráfego pago, copywriting, funil, design... Me encontrei mesmo na parte visual e criativa — e acabei trabalhando exclusivamente com um cliente durante esse tempo, gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas.</p>
                   <p>Foi aí que descobri o potencial da IA para criar imagens hiper-realistas.</p>
-                  <p>A princípio, minha ideia era só ensinar como gerar esses clones. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
+                  <p>A princípio, minha ideia era só ensinar como gerar esses clones e criar ensaios incríveis com IA. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
                   <p>O resultado? <strong className="text-white">Mais de R$10.000 em menos de 1 mês.</strong></p>
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
                   <p>Hoje, <strong className="text-yellow-400">ensino exatamente o que aplico</strong> — com método, clareza e foco total em resultado.</p>
