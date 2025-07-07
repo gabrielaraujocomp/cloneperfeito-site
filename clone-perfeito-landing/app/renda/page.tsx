@@ -1,248 +1,440 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { ReactNode } from 'react';
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 
-// --- COMPONENTES DE UI REUTILIZÁVEIS ---
+// ========================================================================
+// Estilos Globais (Notion Look & Feel)
+// ========================================================================
 
-/**
- * Cria um título de seção padronizado para manter a consistência visual.
- */
-const SectionTitle = ({ children }: { children: ReactNode }) => (
-  <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-12">
-    {children}
-  </h2>
-);
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-// --- DADOS DA PÁGINA (Centralizados para fácil manutenção) ---
+  body {
+    background-color: #191919;
+    color: #E0E0E0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+`;
 
-const visualTestimonials = [
-  { src: '/images/d1.jpg', alt: 'Depoimento de aluno 1' },
-  { src: '/images/d2.jpg', alt: 'Depoimento de aluno 2' },
-  { src: '/images/d3.jpg', alt: 'Depoimento de aluno 3' },
-  { src: '/images/d4.jpg', alt: 'Depoimento de aluno 4' },
-  { src: '/images/d5.jpg', alt: 'Depoimento de aluno 5' },
-  { src: '/images/d6.jpg', alt: 'Depoimento de aluno 6' },
-  { src: '/images/d7.jpg', alt: 'Depoimento de aluno 7' },
-];
+// ========================================================================
+// Componentes Estilizados (Blocos de Construção da Página)
+// ========================================================================
 
-const galleryImages = [
-  { src: '/images/gerada-1.jpg', alt: 'Foto de ensaio gerada por IA 1' },
-  { src: '/images/gerada-2.jpg', alt: 'Foto de ensaio gerada por IA 2' },
-  { src: '/images/gerada-3.jpg', alt: 'Foto de ensaio gerada por IA 3' },
-  { src: '/images/gerada-4.jpg', alt: 'Foto de ensaio gerada por IA 4' },
-  { src: '/images/gerada-5.jpg', alt: 'Foto de ensaio gerada por IA 5' },
-  { src: '/images/gerada-6.jpg', alt: 'Foto de ensaio gerada por IA 6' },
-  { src: '/images/gerada-7.jpg', alt: 'Foto de ensaio gerada por IA 7' },
-  { src: '/images/gerada-8.jpg', alt: 'Foto de ensaio gerada por IA 8' },
-];
+const PageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
 
-const modules = [
-  { src: '/images/modulo-1.jpg', alt: 'Módulo 1 do curso Clone Perfeito' },
-  { src: '/images/modulo-2.jpg', alt: 'Módulo 2 do curso Clone Perfeito' },
-  { src: '/images/modulo-3.jpg', alt: 'Módulo 3 do curso Clone Perfeito' },
-  { src: '/images/modulo-4.jpg', alt: 'Módulo 4 do curso Clone Perfeito' },
-  { src: '/images/modulo-5.jpg', alt: 'Módulo 5 do curso Clone Perfeito' },
-];
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+`;
 
-// --- COMPONENTE PRINCIPAL DA PÁGINA ---
+const Content = styled.main`
+  width: 100%;
+  max-width: 720px;
+  font-size: 1.1rem;
+  line-height: 1.7;
 
-export default function CompletePage() {
+  & > * + * {
+    margin-top: 1.25em;
+  }
+`;
+
+const H1 = styled.h1`
+  font-size: 2.8rem;
+  color: #ffffff;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 1.5em 0;
+  
+  @media (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+`;
+
+const H2 = styled.h2`
+  font-size: 2rem;
+  color: #fafafa;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+
+  @media (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+`;
+
+const Paragraph = styled.p`
+  margin: 1em 0;
+`;
+
+const Callout = styled.div<{ bgColor?: string }>`
+  background-color: ${props => props.bgColor || 'rgba(55, 65, 81, 0.4)'};
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    color: #f0f0f0;
+    line-height: 1.6;
+  }
+
+  span {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+`;
+
+const Blockquote = styled.blockquote`
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+  border-left: 3px solid #555;
+  font-style: italic;
+  color: #b0b0b0;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const Divider = styled.hr`
+  border: 0;
+  height: 1px;
+  background-color: #333;
+  margin: 3em 0;
+`;
+
+const Highlight = styled.span`
+  background-color: rgba(235, 137, 50, 0.15);
+  color: #ffc999;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-weight: 500;
+`;
+
+const ListItem = styled.li`
+  list-style: none;
+  padding-left: 2em;
+  position: relative;
+  margin-bottom: 0.75em;
+  
+  &::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #888;
+    font-size: 1.1em;
+  }
+`;
+
+const ModuleCard = styled.div`
+  background-color: #222;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: #bbb;
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+`;
+
+const PriceSection = styled.div`
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: #202020;
+  border-radius: 8px;
+
+  p {
+    margin: 0;
+  }
+`;
+
+const Strikethrough = styled.span`
+  text-decoration: line-through;
+  color: #777;
+`;
+
+const MainPrice = styled.p`
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0.5rem 0 !important;
+`;
+
+const CtaButton = styled.button`
+  background: linear-gradient(90deg, #f56565, #e53e3e);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 2rem !important;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(229, 62, 62, 0.2);
+  }
+`;
+
+const FaqItem = styled.div`
+  border-bottom: 1px solid #333;
+  padding: 1.5rem 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  h4 {
+    margin: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  p {
+    margin: 0.75rem 0 0 0;
+    padding-left: 1.75rem;
+    color: #bbb;
+  }
+`;
+
+const Footer = styled.footer`
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 0.9rem;
+`;
+
+// ========================================================================
+// Componente Principal da Página
+// ========================================================================
+
+const ClonePerfeitoPage = () => {
   return (
-    <div className="bg-gray-900 text-gray-300 font-sans antialiased">
-      <main className="relative isolate overflow-hidden">
-        {/* Efeito de fundo com gradiente */}
-        <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-          <div className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#8000ff] to-[#3300ff] opacity-20 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }} />
-        </div>
+    <>
+      <GlobalStyle />
+      <PageContainer>
+        <Content>
+          <Callout bgColor="rgba(235, 137, 50, 0.15)">
+            <span>⚠️</span>
+            <p><strong>Pessoas comuns estão faturando em dólar com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA</strong></p>
+          </Callout>
 
-        {/* Container principal para centralizar o conteúdo */}
-        <div className="max-w-5xl mx-auto px-6 space-y-24 md:space-y-32">
-
-          {/* === Cabeçalho e CTA Principal === */}
-          <header className="pt-24 pb-12 sm:pt-32 text-center space-y-8">
-            <Image
-              src="/images/logocp.svg"
-              alt="Logo Clone Perfeito"
-              width={80}
-              height={80}
-              className="h-20 w-20 mx-auto"
-              priority
-            />
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
-              🚨 Se você busca uma forma <span className="text-cyan-400">rápida e prática</span> de fazer dinheiro com algo novo...
-            </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
-              ...então pare tudo e leia essa página até o fim. Porque se você entender o que vou te mostrar agora, sua vida pode mudar completamente — e não estou exagerando.
-            </p>
-            <Link
-                href="#"
-                className="inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20"
-            >
-              Quero criar meu clone! [ Apenas R$97 ]
-            </Link>
-          </header>
-
-          {/* === Seção de Depoimentos em Texto === */}
-          <section>
-            <SectionTitle>Dá uma olhada no que algumas pessoas estão fazendo 👇</SectionTitle>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-                <blockquote className="text-gray-300">
-                  “Fechei meu primeiro pacote com uma gringa por $49 usando só o script que ele dá. Nem precisei aparecer.”
-                </blockquote>
-                <footer className="mt-4 text-sm text-gray-500">— Lucas, 24 anos</footer>
-              </div>
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-                <blockquote className="text-gray-300">
-                  “Eu nunca editei uma imagem na vida. Mesmo assim gerei um ensaio meu, postei no Instagram e uma menina do Canadá me chamou. Fechei por $39 em dois dias.”
-                </blockquote>
-                <footer className="mt-4 text-sm text-gray-500">— Mari, 19 anos</footer>
-              </div>
-              <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
-                <blockquote className="text-gray-300">
-                  “Fiz 6 vendas no primeiro mês. Uma delas foi um pacote de €59. Tudo só usando os exemplos e mensagens do curso.”
-                </blockquote>
-                <footer className="mt-4 text-sm text-gray-500">— Caio, 27 anos</footer>
-              </div>
-            </div>
-          </section>
-
-          {/* === Seção da Oportunidade === */}
-          <section className="text-center">
-            <h2 className="text-3xl font-bold text-white">Deixa eu te perguntar…</h2>
-            <p className="mt-4 text-lg text-gray-400">
-              Quantas vezes você já ficou com aquela sensação de: “Se eu tivesse entrado nisso quando ainda era novidade… hoje estaria ganhando dinheiro fácil com isso.”
-            </p>
-            <div className="mt-8 max-w-2xl mx-auto text-gray-400 text-left space-y-3 border-l-2 border-cyan-500 pl-6">
-              <p>Lembra de quando começaram os primeiros vídeos no TikTok?</p>
-              <p>Ou quando as pessoas começaram a vender na Shopee e ganharam rios de dinheiro?</p>
-              <p>Ou quando a galera começou a usar o ChatGPT e virou referência só porque aprendeu antes?</p>
-            </div>
-            <p className="mt-8 text-2xl font-semibold text-white">
-              Pois é. <span className="text-cyan-400">Essa página aqui é exatamente esse momento.</span>
-            </p>
-            <p className="mt-2 text-xl font-semibold text-white">A diferença? É que dessa vez você chegou a tempo.</p>
-          </section>
-
-          {/* === Seção Quem Sou Eu === */}
-          <section>
-            <div className="flex flex-col md:flex-row items-center gap-8 bg-gray-800/50 p-8 rounded-2xl border border-gray-700">
-              <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-cyan-500 rounded-full flex items-center justify-center">
-                  <span className="text-4xl font-bold text-white">G</span>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">Antes de mais nada: quem sou eu para te falar isso?</h3>
-                <p className="mt-4 text-gray-400 leading-relaxed">
-                  Meu nome é Gabriel, e nos últimos meses, eu vivi uma obsessão silenciosa. Descobri uma ferramenta de IA que gera imagens fotográficas com realismo assustador. Mas não me contentei. Fucei cada configuração, testei, errei dezenas de vezes... até descobrir um conjunto de técnicas que transformam essas imagens em ensaios dignos de capa de revista.
-                </p>
-                <p className="mt-4 font-semibold text-white">Foi aí que nasceu o Clone Perfeito.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* === Seção O que é o Clone Perfeito === */}
-          <section>
-            <SectionTitle>O que é o <span className="bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">Clone Perfeito</span>?</SectionTitle>
-            <p className="mt-4 text-center text-lg text-gray-400 max-w-3xl mx-auto">É um método completo, passo a passo, onde eu ensino você a:</p>
-            <ul className="mt-10 max-w-2xl mx-auto space-y-4">
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>Criar ensaios de fotos ultra-realistas com IA (sem saber nada de design).</span></li>
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>Usar configurações secretas que desbloqueiam qualidade absurda nas imagens.</span></li>
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>Fazer prospecção ativa no Instagram, com scripts prontos.</span></li>
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>Montar pacotes de ensaio e precificar de forma inteligente.</span></li>
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>Vender em reais, dólares e euros.</span></li>
-              <li className="flex items-start"><span className="text-green-400 mr-3 mt-1">✅</span><span>E principalmente: transformar tudo isso numa fonte de renda real.</span></li>
-            </ul>
-          </section>
+          <H1>E você pode ser o próximo.</H1>
           
-          {/* === Seção dos Módulos do Curso === */}
-          <section>
-            <SectionTitle>📚 O caminho completo, passo a passo</SectionTitle>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {modules.map((module, index) => (
-                <Link href="#" key={index} className="block group">
-                  <div className="overflow-hidden rounded-xl border border-gray-700 bg-gray-800/50 group-hover:border-cyan-400/50 transition-all shadow-lg group-hover:shadow-cyan-500/10">
-                    <Image src={module.src} alt={module.alt} width={800} height={450} className="w-full h-auto" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
+          <Paragraph style={{textAlign: "center", fontSize: "1.2rem", color: "#ddd"}}>
+            <a href="#checkout" style={{ color: "#38bdf8", textDecoration: 'none' }}>→ Quero aprender a criar e vender ensaios!</a>
+          </Paragraph>
 
-          {/* === Seção da Galeria de Alunos === */}
-          <section>
-            <SectionTitle>🖼️ O que você vai ser capaz de criar</SectionTitle>
-            <div className="columns-2 md:columns-3 gap-4 space-y-4">
-              {galleryImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg border border-gray-800 shadow-md">
-                  <Image src={image.src} alt={image.alt} width={500} height={700} className="w-full h-auto" />
-                </div>
-              ))}
-            </div>
-          </section>
+          <Divider />
+
+          <Callout bgColor="rgba(229, 62, 62, 0.15)">
+            <span>🚨</span>
+            <p>Se você está procurando uma maneira <strong>real, prática e rápida</strong> de fazer dinheiro com algo novo, inovador e que poucas pessoas estão explorando (mas que tem demanda no mundo inteiro)... então pare tudo e leia essa página até o fim.</p>
+          </Callout>
+
+          <Blockquote>
+            <p>Porque se você entender o que vou te mostrar agora, sua vida pode mudar completamente — e não estou exagerando.</p>
+          </Blockquote>
+
+          <H2>Deixa eu te perguntar…</H2>
+          <Paragraph>Quantas vezes você já ficou com aquela sensação de:</Paragraph>
+          <Blockquote>
+            <p>“Se eu tivesse entrado nisso quando ainda era novidade… hoje estaria ganhando dinheiro fácil com isso.”</p>
+          </Blockquote>
+
+          <Paragraph>Lembra de quando começaram os primeiros vídeos no TikTok?<br />
+          Ou quando as pessoas começaram a vender produtos na Shopee e ganharam rios de dinheiro com dropshipping?<br />
+          Ou quando a galera começou a usar o ChatGPT antes de todo mundo e virou referência só porque aprendeu antes?</Paragraph>
           
-          {/* === Seção de Depoimentos Visuais === */}
-          <section>
-            <SectionTitle>💬 Mais provas de quem já está no campo de batalha</SectionTitle>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visualTestimonials.map((testimonial, index) => (
-                <div key={index} className="bg-gray-800/50 p-1.5 rounded-xl border border-gray-700 hover:border-cyan-400/50 transition-all duration-300 shadow-lg">
-                  <div className="overflow-hidden rounded-lg">
-                    <Image src={testimonial.src} alt={testimonial.alt} width={500} height={500} className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+          <Paragraph><strong>Pois é.</strong></Paragraph>
+          <Paragraph>Essa página aqui é exatamente esse momento.</Paragraph>
+          <Paragraph><strong>A diferença?</strong></Paragraph>
+          <Paragraph>É que dessa vez você chegou a tempo.<br />
+          Eu vou te mostrar um método que pouquíssimas pessoas conhecem…</Paragraph>
           
-          {/* === Seção de FAQ === */}
-          <section>
-            <SectionTitle>❓ Perguntas Frequentes</SectionTitle>
-            <div className="max-w-3xl mx-auto space-y-8">
-              <div>
-                  <h3 className="text-lg font-semibold text-white">Isso é um curso de inteligência artificial?</h3>
-                  <p className="mt-2 text-gray-400">Não. É um método prático de renda com IA. Você aprende a gerar ensaios e vender como serviço visual.</p>
-              </div>
-              <div>
-                  <h3 className="text-lg font-semibold text-white">Preciso saber programar, editar ou ser designer?</h3>
-                  <p className="mt-2 text-gray-400">Nada disso. Tudo é passo a passo. Qualquer pessoa consegue seguir.</p>
-              </div>
-              <div>
-                  <h3 className="text-lg font-semibold text-white">Tenho que aparecer ou ter seguidores?</h3>
-                  <p className="mt-2 text-gray-400">Não. Você pode usar um perfil anônimo e as estratégias de prospecção funcionam com 0 seguidores.</p>
-              </div>
-              <div>
-                  <h3 className="text-lg font-semibold text-white">Quanto eu gasto depois que compro?</h3>
-                  <p className="mt-2 text-gray-400">A única despesa é criar seu clone com IA, que custa $10 dólares (explicado no curso). Depois disso, só reinvestir das próprias vendas.</p>
-              </div>
-            </div>
-          </section>
+          <Paragraph>E que permite que qualquer pessoa — mesmo leiga — consiga criar ensaios de fotos ultra-realistas, com aparência profissional, usando Inteligência Artificial...</Paragraph>
 
-          {/* === CTA Final === */}
-          <section className="text-center pb-24 md:pb-32">
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 md:p-12 rounded-2xl border border-green-500 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">Agora é com você.</h2>
-                <p className="text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
-                    O Clone Perfeito é o tipo de oportunidade que daqui a 6 meses vai estar em todo lugar. Mas hoje, ainda é você quem chega primeiro.
-                </p>
-                <div className="pt-4">
-                  <Link
-                      href="#"
-                      className="inline-block bg-green-500 text-white font-bold py-4 px-8 rounded-lg text-xl hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20"
-                  >
-                    🔥 Garanta seu acesso por apenas R$97
-                  </Link>
-                </div>
-            </div>
-          </section>
-        </div>
+          <Paragraph><strong>E mais importante:</strong></Paragraph>
 
-        {/* === Rodapé === */}
-        <footer className="text-center py-12 border-t border-gray-800">
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.</p>
-        </footer>
-      </main>
-    </div>
+          <Blockquote>
+            <p>…vender esses ensaios por R$300, R$400, ou até <Highlight>39 dólares/euros</Highlight> para pessoas do Brasil, da Europa ou dos EUA — sem câmera, sem estúdio, sem fotógrafo e sem sair de casa.</p>
+          </Blockquote>
+
+          <Paragraph>Eu sei que isso parece absurdo à primeira vista. Mas continua comigo.<br/>
+          Você vai ver que tudo faz sentido. E vai entender como isso pode se tornar sua fonte de renda ainda esse mês.</Paragraph>
+          
+          <H2>Antes de mais nada: quem sou eu para te falar isso?</H2>
+          <Paragraph>Meu nome é Gabriel, e nos últimos meses, eu vivi uma obsessão silenciosa:</Paragraph>
+          <Paragraph>Descobri uma ferramenta de IA que gera imagens fotográficas com realismo assustador (não é freepik, não é krea e nem chatgpt).</Paragraph>
+          <Paragraph>Mas não me contentei em usar como todo mundo. Eu fucei cada configuração oculta, fiz testes, investi dinheiro, errei dezenas de vezes...</Paragraph>
+          <Paragraph>Até descobrir um conjunto de técnicas que transformam essas imagens em ensaios dignos de capa de revista — realistas, estéticos, prontos para serem vendidos.</Paragraph>
+          <Paragraph>Só que aí veio a pergunta:</Paragraph>
+          <Blockquote>
+            <p>“Se eu posso criar esses ensaios incríveis... por que não vender isso como serviço?”</p>
+          </Blockquote>
+          <Paragraph>Foi aí que nasceu o Clone Perfeito.</Paragraph>
+
+          <H2>O que é o Clone Perfeito?</H2>
+          <Paragraph>É um método completo, passo a passo, onde eu ensino você a:</Paragraph>
+          <ul>
+            <ListItem data-icon="🧬">Criar ensaios de fotos ultra-realistas com IA (sem saber nada de design, prompt, ou tecnologia);</ListItem>
+            <ListItem data-icon="⚙️">Usar configurações secretas que desbloqueiam qualidade absurda nas imagens (que a maioria nem sabe que existe);</ListItem>
+            <ListItem data-icon="🎯"><strong>Prospecção ativa:</strong> Como oferecer seus ensaios no Instagram para brasileiros, americanos e europeus — com scripts prontos;</ListItem>
+            <ListItem data-icon="📦">Como montar pacotes de ensaio (15, 30, 50 fotos) e precificar de forma inteligente;</ListItem>
+            <ListItem data-icon="💸">Como vender em reais, dólares e euros — inclusive com uma técnica para usar o argumento de <Highlight>“promoção para os 3 primeiros”</Highlight> e fechar mais rápido;</ListItem>
+            <ListItem data-icon="🚀">E principalmente: <strong>como transformar isso numa fonte de renda real.</strong></ListItem>
+          </ul>
+          <Paragraph>Você não vai sair do curso com mais “informação” — <strong>você vai sair com um plano prático para lucrar.</strong></Paragraph>
+
+          <H2>Mas dá dinheiro de verdade?</H2>
+          <Paragraph>Dá. Vamos olhar com seriedade:</Paragraph>
+          <ul>
+            <ListItem data-icon="🇧🇷">Um pacote com 15 fotos pode ser vendido por <strong>R$250 no Brasil</strong></ListItem>
+            <ListItem data-icon="🇺🇸">Ou por <strong>$39 a $59 dólares</strong> no exterior</ListItem>
+            <ListItem data-icon="🇪🇺">Ou por <strong>€39 a €69 euros</strong> na Europa</ListItem>
+          </ul>
+          <Paragraph><strong>Agora imagina:</strong></Paragraph>
+          <ul>
+            <ListItem data-icon="🔹"><strong>Vendendo 3 ensaios por semana:</strong><br/>3 x R$250 = R$750 por semana = <strong>R$3.000 por mês</strong></ListItem>
+            <ListItem data-icon="🔹"><strong>Ou 2 pacotes para gringos por $59 cada:</strong><br/>$118 ≈ R$660 por semana = <strong>R$2.640 por mês</strong></ListItem>
+          </ul>
+          <Paragraph>E você não precisa pagar fotógrafo, estúdio, nem designer. Só saber o método certo.</Paragraph>
+
+          <H2>Mas por que alguém pagaria por isso?</H2>
+          <Paragraph>Porque o resultado parece mágico. E se destaca completamente nas redes.</Paragraph>
+          <Paragraph>Você mostra 2 imagens… e a pessoa já pede:</Paragraph>
+          <Blockquote>
+            <p>“Quanto você cobra pra fazer um ensaio meu assim?”</p>
+          </Blockquote>
+          <Paragraph>E o melhor: isso funciona mesmo que você tenha 0 seguidores. Você vai aprender exatamente como:</Paragraph>
+          <ul>
+            <ListItem data-icon="✔️">Criar seu próprio ensaio</ListItem>
+            <ListItem data-icon="✔️">Postar da forma certa</ListItem>
+            <ListItem data-icon="✔️">Abordar as pessoas com mensagens prontas</ListItem>
+            <ListItem data-icon="✔️">Fechar vendas rápidas — em real, dólar ou euro</ListItem>
+          </ul>
+
+          <H2>O que você vai receber no Clone Perfeito:</H2>
+          <Paragraph style={{color: "#aaa"}}>(E aqui já entra a ancoragem de valor real👇)</Paragraph>
+
+          <ModuleCard><h3><span>🧠</span>Aula 1 – Boas-vindas e mentalidade</h3><p>O exato caminho mental que você precisa seguir para transformar o método em resultado financeiro (só isso já vale R$97)</p></ModuleCard>
+          <ModuleCard><h3><span>🧬</span>Aula 2 – Como criar seu clone com IA</h3><p>Configurações secretas, trigger phrase e otimizações que tornam seus ensaios incomparáveis (valor estimado: R$197)</p></ModuleCard>
+          <ModuleCard><h3><span>🎯</span>Aula 3 – Como gerar ensaios com qualidade absurda</h3><p>Você vai dominar cada detalhe para gerar pacotes com 15, 30 ou 50 fotos que vendem (valor de mercado: R$247)</p></ModuleCard>
+          <ModuleCard><h3><span>🎨</span>Aula 4 – Edição, variações e estilos visuais</h3><p>Estilos cinematográficos, fashion, vintage, clean, conceitual e mais para encantar o cliente</p></ModuleCard>
+          <ModuleCard><h3><span>💼</span>Aula 5 – Como montar pacotes e precificar</h3><p>Estrutura de pacotes, nomes atrativos, valores, ancoragem e margem de lucro</p></ModuleCard>
+          <ModuleCard><h3><span>📲</span>Aula 6 – Scripts prontos de prospecção</h3><p>Mensagens testadas que convertem para DMs (BR, EUA, Europa) e estratégia de promoção inicial (R$197 fácil)</p></ModuleCard>
+          <ModuleCard><h3><span>🌍</span>Aula 7 – Como vender em real, dólar e euro</h3><p>Plataformas, carteira digital, recebimento internacional, e estratégia de escassez</p></ModuleCard>
+          
+          <H2>Bônus Exclusivos</H2>
+          <ModuleCard><h3><span>🧠</span>Bônus 1 – Agente GPT de Prompts</h3><p>Gere prompts ultra detalhados com seu nome, estilo e iluminação com 1 clique</p></ModuleCard>
+          <ModuleCard><h3><span>🖼️</span>Bônus 2 – Clones com ChatGPT</h3><p>Como criar Clones e Ensaios com o ChatGPT</p></ModuleCard>
+          <ModuleCard><h3><span>💸</span>Bônus 3 – Estratégia de Renda Rápida</h3><p>Como fazer sua primeira venda em 72h com um perfil novo</p></ModuleCard>
+
+          <PriceSection>
+            <p>Valor total real do pacote: <Strikethrough>R$1.497</Strikethrough></p>
+            <Paragraph>Mas você vai acessar tudo por apenas</Paragraph>
+            <MainPrice>R$127 à vista</MainPrice>
+            <p>(ou em até 12x)</p>
+          </PriceSection>
+          
+          <Paragraph style={{textAlign: "center", fontSize: "1.2rem", fontWeight: "bold"}}>Sim: menos do que uma pizza te dá acesso a uma renda em euro.</Paragraph>
+
+          <H2>Veja o que outras pessoas estão fazendo com o método:</H2>
+          {/* Placeholder for testimonials/images */}
+          <div style={{
+            border: '2px dashed #444', 
+            borderRadius: '8px', 
+            padding: '4rem', 
+            textAlign: 'center',
+            color: '#888'
+          }}>
+            [Área para depoimentos ou imagens de ensaios]
+          </div>
+
+          <H2>Agora é com você:</H2>
+          <Paragraph>Você pode continuar scrollando por aí…</Paragraph>
+          <Paragraph>…ou clicar abaixo e aprender a criar um serviço novo, original, visualmente incrível e vendável, que paga em dólar, euro ou real — usando apenas seu notebook.</Paragraph>
+          <Blockquote>
+            <p>O Clone Perfeito é o tipo de oportunidade que daqui a 6 meses vai estar em todo lugar. Mas hoje ainda é você quem chega primeiro.</p>
+          </Blockquote>
+
+          <Paragraph style={{textAlign: "center", fontSize: "1.2rem", fontWeight: "bold", marginTop: "2rem"}}>👇 Garanta agora seu acesso ao Clone Perfeito</Paragraph>
+          <Paragraph style={{textAlign: "center", color: "#f6ad55"}}>Preço promocional de R$47 — por tempo limitado</Paragraph>
+          
+          <CtaButton id="checkout">
+            Quero Faturar em Dólar com IA 🔥
+          </CtaButton>
+
+          <Divider />
+
+          <H2>❓ FAQ – Perguntas Frequentes</H2>
+          <FaqItem>
+            <h4><span>→</span>Isso é um curso de inteligência artificial?</h4>
+            <p>Não. É um método prático de como fazer dinheiro com IA, criando ensaios de fotos e vendendo como serviço.</p>
+          </FaqItem>
+          <FaqItem>
+            <h4><span>→</span>Eu preciso saber editar ou programar?</h4>
+            <p>Não. Tudo é guiado. Você vai só seguir o passo a passo e usar as ferramentas com os templates prontos.</p>
+          </FaqItem>
+          <FaqItem>
+            <h4><span>→</span>Preciso ter seguidores?</h4>
+            <p>Não. O curso ensina como prospectar com mensagens mesmo tendo 0 seguidores.</p>
+          </FaqItem>
+          <FaqItem>
+            <h4><span>→</span>Quanto eu preciso investir depois?</h4>
+            <p>O custo para gerar o clone é de $10 dólares (você aprende como usar com lucro). Depois disso, você pode reinvestir parte das vendas.</p>
+          </FaqItem>
+          <FaqItem>
+            <h4><span>→</span>Esse método já funcionou pra outras pessoas?</h4>
+            <p>Sim. A página tem vários exemplos reais. Gente que nunca mexeu com IA faturando com os ensaios.</p>
+          </FaqItem>
+          <FaqItem>
+            <h4><span>→</span>Posso vender pra fora do Brasil?</h4>
+            <p>Sim! Você vai aprender como receber em euro, dólar e usar a escassez certa pra fechar clientes gringos.</p>
+          </FaqItem>
+
+          <Footer>
+            Copyright © {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.
+          </Footer>
+
+        </Content>
+      </PageContainer>
+    </>
   );
-}
+};
+
+export default ClonePerfeitoPage;
