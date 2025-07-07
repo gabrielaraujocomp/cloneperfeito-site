@@ -104,7 +104,8 @@ export default function ClonePerfeitoFinalPage() {
           </Link>
         </div>
 
-        <div className="pt-8">
+        {/* ===== SEÇÃO DEPOIMENTOS CORRIGIDA ===== */}
+        <div className="pt-8 mb-8 md:mb-12">
             <h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Users className="text-yellow-400"/> A prova de que o método funciona</h2>
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
                 <CarouselContent className="-ml-4">
@@ -118,7 +119,7 @@ export default function ClonePerfeitoFinalPage() {
             </Carousel>
         </div>
         
-        <Separator className="bg-neutral-700 my-8" />
+        <Separator className="bg-neutral-700" />
 
         <div className="flex items-start gap-4 p-6 rounded-lg bg-red-950/50 border border-red-800/30">
           <Flame className="w-8 h-8 md:w-6 md:h-6 text-red-500 mt-1 flex-shrink-0" />
