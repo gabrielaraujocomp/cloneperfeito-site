@@ -40,34 +40,12 @@ export default function LandingPage() {
     { quote: "Vender pra fora parecia impossível. Com os scripts do Gabriel, fechei um pacote de $50 USD na primeira semana. Surreal.", author: "Beatriz L.", role: "Freelancer" },
   ]
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8]
-
-  // Estrutura de dados dos módulos ATUALIZADA com imagens
   const modules = [
-    {
-      imageSrc: "/images/modulo-1.jpg",
-      title: "Módulo Bônus: Clone com ChatGPT (Grátis)",
-      description: "Comece com o pé direito! Neste módulo bônus, você aprende a criar seu primeiro clone e gerar um ensaio de forma 100% gratuita, usando apenas o ChatGPT. É o caminho ideal para construir seu portfólio sem nenhum custo inicial."
-    },
-    {
-      imageSrc: "/images/modulo-2.jpg",
-      title: "Módulo 1: Início da Jornada",
-      description: "Aqui preparamos o terreno para o seu sucesso. Você vai entender a mentalidade correta, o potencial de mercado deste serviço e faremos as configurações iniciais das ferramentas, deixando tudo pronto para a ação."
-    },
-    {
-      imageSrc: "/images/modulo-3.jpg",
-      title: "Módulo 2: Preparando o seu Clone",
-      description: "O coração do método. Você aprenderá o passo a passo detalhado para selecionar as fotos ideais do seu cliente, treinar a inteligência artificial e criar o 'ativo digital': um clone hiper-realista e de alta qualidade."
-    },
-    {
-      imageSrc: "/images/modulo-4.jpg",
-      title: "Módulo 3: Criando com seu Clone",
-      description: "Hora de soltar a criatividade. Domine a arte de usar prompts para gerar ensaios incríveis em qualquer cenário. Você terá acesso ao nosso Agente GPT exclusivo para transformar qualquer imagem de referência em um prompt perfeito."
-    },
-    {
-      imageSrc: "/images/modulo-5.jpg",
-      title: "Módulo 4: Encerramento e Próximos Passos",
-      description: "Com a técnica dominada, vamos transformar sua habilidade em dinheiro. Aprenda a empacotar, precificar e vender seu serviço. Mostraremos como encontrar seus primeiros clientes e transformar o Clone Perfeito em um negócio lucrativo."
-    }
+    { imageSrc: "/images/modulo-1.jpg", title: "Módulo Bônus: Clone com ChatGPT (Grátis)", description: "Comece com o pé direito! Neste módulo bônus, você aprende a criar seu primeiro clone e gerar um ensaio de forma 100% gratuita, usando apenas o ChatGPT. É o caminho ideal para construir seu portfólio sem nenhum custo inicial." },
+    { imageSrc: "/images/modulo-2.jpg", title: "Módulo 1: Início da Jornada", description: "Aqui preparamos o terreno para o seu sucesso. Você vai entender a mentalidade correta, o potencial de mercado deste serviço e faremos as configurações iniciais das ferramentas, deixando tudo pronto para a ação." },
+    { imageSrc: "/images/modulo-3.jpg", title: "Módulo 2: Preparando o seu Clone", description: "O coração do método. Você aprenderá o passo a passo detalhado para selecionar as fotos ideais do seu cliente, treinar a inteligência artificial e criar o 'ativo digital': um clone hiper-realista e de alta qualidade." },
+    { imageSrc: "/images/modulo-4.jpg", title: "Módulo 3: Criando com seu Clone", description: "Hora de soltar a criatividade. Domine a arte de usar prompts para gerar ensaios incríveis em qualquer cenário. Você terá acesso ao nosso Agente GPT exclusivo para transformar qualquer imagem de referência em um prompt perfeito." },
+    { imageSrc: "/images/modulo-5.jpg", title: "Módulo 4: Encerramento e Próximos Passos", description: "Com a técnica dominada, vamos transformar sua habilidade em dinheiro. Aprenda a empacotar, precificar e vender seu serviço. Mostraremos como encontrar seus primeiros clientes e transformar o Clone Perfeito em um negócio lucrativo." }
   ]
   
   return (
@@ -76,16 +54,36 @@ export default function LandingPage() {
       <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
       <Script id="microsoft-clarity" strategy="afterInteractive">{`...`}</Script>
 
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[90vh] bg-cover bg-center flex items-center justify-center text-center" style={{ backgroundImage: "url('/images/bgcpdesk.jpg')" }}>
-        <div className="absolute inset-0 bg-black/75"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 w-full">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight [text-shadow:_1px_1px_20px_rgb(0_0_0_/_50%)]">
-            Crie Ensaios com IA em Menos de 1 Hora e Venda por R$300, R$600 ou Até R$1.000
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-3xl mx-auto [text-shadow:_1px_1px_10px_rgb(0_0_0_/_50%)]">
-            Com apenas selfies e um método direto, você aprende a gerar imagens profissionais com inteligência artificial e transformar isso em uma fonte de renda recorrente.
-          </p>
+      {/* Hero Section [NOVO DESIGN] */}
+      <section className="w-full bg-[#1c1a1d] py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Coluna da Esquerda: Imagem de impacto */}
+            <div className="md:col-span-1">
+              <img 
+                src="/images/bgcp.jpg" 
+                alt="Exemplos de ensaios fotográficos gerados com Inteligência Artificial"
+                className="rounded-2xl shadow-2xl shadow-black/50 w-full"
+              />
+            </div>
+            {/* Coluna da Direita: Texto e CTA */}
+            <div className="md:col-span-1 space-y-8 text-center md:text-left">
+                <h1 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                    Pessoas estão vendendo <span className="text-pink-500">Ensaios com IA</span> sem câmera, estúdio ou cliente fixo.
+                </h1>
+                <p className="text-lg text-gray-400">
+                    Aprenda em menos de 3 horas e comece a vender no mesmo dia para o mundo todo — em Reais, Dólares e Euros.
+                </p>
+                <Link href="#oferta">
+                    <Button 
+                      size="lg"
+                      className="bg-teal-300 text-black font-bold hover:bg-teal-400 rounded-full px-8 py-4 text-base transition-all transform hover:scale-105"
+                    >
+                        Aprenda a Criar Ensaios com IA
+                    </Button>
+                </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -95,7 +93,6 @@ export default function LandingPage() {
           <div className="text-center mb-16"><h2 className="text-3xl font-bold text-white">Já são dezenas de alunos faturando com o método</h2></div>
           <Carousel opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-8">
-              {/* Nomes de arquivo dos depoimentos: d1.jpg a d7.jpg */}
               {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                 <CarouselItem key={num} className="pl-8 md:basis-1/2 lg:basis-1/3">
                    <div className="bg-zinc-950 rounded-xl h-full border border-zinc-800 overflow-hidden">
@@ -164,30 +161,17 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Módulos do Curso [NOVO DESIGN] */}
+      {/* Módulos do Curso */}
       <section className="py-24 px-4 bg-[#1c1a1d]">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <BookOpen className="h-12 w-12 mx-auto text-gray-600 mb-4"/>
-            <h2 className="text-3xl font-bold text-white">A Estrutura Completa</h2>
-            <p className="text-lg text-gray-400 mt-2">Um passo a passo lógico para te levar do zero absoluto à sua primeira venda.</p>
-          </div>
+          <div className="text-center mb-16"><BookOpen className="h-12 w-12 mx-auto text-gray-600 mb-4"/><h2 className="text-3xl font-bold text-white">A Estrutura Completa</h2></div>
           <Accordion type="single" collapsible className="w-full space-y-4">
             {modules.map((module, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="bg-black/50 border border-zinc-800 rounded-lg overflow-hidden">
                 <AccordionTrigger className="text-left text-lg p-4 text-white hover:no-underline font-semibold w-full">
-                    <div className="flex items-center gap-6 w-full">
-                        <img 
-                            src={module.imageSrc} 
-                            alt={module.title}
-                            className="w-20 h-20 rounded-md object-cover flex-shrink-0"
-                        />
-                        <span className="flex-1">{module.title}</span>
-                    </div>
+                    <div className="flex items-center gap-6 w-full"><img src={module.imageSrc} alt={module.title} className="w-20 h-20 rounded-md object-cover flex-shrink-0"/><span className="flex-1">{module.title}</span></div>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 text-base p-6 pt-2 pl-28">
-                  {module.description}
-                </AccordionContent>
+                <AccordionContent className="text-gray-400 text-base p-6 pt-2 pl-28">{module.description}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -238,7 +222,7 @@ export default function LandingPage() {
             <AccordionItem value="item-1" className="bg-black/50 border border-zinc-800 rounded-lg"><AccordionTrigger className="text-left text-lg p-6 text-white hover:no-underline font-semibold">Preciso de um computador potente?</AccordionTrigger><AccordionContent className="text-gray-400 text-base p-6 pt-0 pl-8">Não. Todo o processamento é feito na nuvem. Você pode fazer todo o trabalho usando um computador básico ou até mesmo 100% pelo seu celular.</AccordionContent></AccordionItem>
             <AccordionItem value="item-2" className="bg-black/50 border border-zinc-800 rounded-lg"><AccordionTrigger className="text-left text-lg p-6 text-white hover:no-underline font-semibold">Como recebo pagamentos de clientes de fora?</AccordionTrigger><AccordionContent className="text-gray-400 text-base p-6 pt-0 pl-8">É simples. Ferramentas como PayPal ou Wise permitem que você crie um link de pagamento e receba em Dólar ou Euro, transferindo o valor para sua conta no Brasil já convertido.</AccordionContent></AccordionItem>
              <AccordionItem value="item-3" className="bg-black/50 border border-zinc-800 rounded-lg"><AccordionTrigger className="text-left text-lg p-6 text-white hover:no-underline font-semibold">Quanto eu gasto com ferramentas por cliente?</AccordionTrigger><AccordionContent className="text-gray-400 text-base p-6 pt-0 pl-8">O custo é muito baixo. O treinamento de um clone (que você faz uma vez) e a geração de dezenas de imagens custa cerca de $2 a $4 dólares. Um valor irrisório perto do que você cobra.</AccordionContent></AccordionItem>
-            <AccordionItem value="item-4" className="bg-black/50 border-zinc-800 rounded-lg"><AccordionTrigger className="text-left text-lg p-6 text-white hover:no-underline font-semibold">O acesso ao curso expira?</AccordionTrigger><AccordionContent className="text-gray-400 text-base p-6 pt-0 pl-8">Não. O acesso é vitalício. Você pode assistir às aulas no seu ritmo, quantas vezes quiser, e terá acesso a todas as futuras atualizações do método sem custo adicional.</AccordionContent></AccordionItem>
+            <AccordionItem value="item-4" className="bg-black/50 border border-zinc-800 rounded-lg"><AccordionTrigger className="text-left text-lg p-6 text-white hover:no-underline font-semibold">O acesso ao curso expira?</AccordionTrigger><AccordionContent className="text-gray-400 text-base p-6 pt-0 pl-8">Não. O acesso é vitalício. Você pode assistir às aulas no seu ritmo, quantas vezes quiser, e terá acesso a todas as futuras atualizações do método sem custo adicional.</AccordionContent></AccordionItem>
           </Accordion>
         </div>
       </section>
