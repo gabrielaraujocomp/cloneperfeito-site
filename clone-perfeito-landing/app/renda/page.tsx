@@ -39,7 +39,7 @@ export default function ClonePerfeitoFinalPage() {
     { icon: <Target />, title: "Aula 3 – Gerando ensaios com qualidade absurda", description: "Domine cada detalhe para gerar pacotes com 15, 30 ou 50 fotos que vendem (valor de mercado: R$247)." },
     { icon: <Palette />, title: "Aula 4 – Edição, variações e estilos visuais", description: "Estilos cinematográficos, fashion, vintage, e mais para encantar o cliente." },
     { icon: <Package />, title: "Aula 5 – Montando pacotes e precificando", description: "Estrutura de pacotes, nomes atrativos, valores e margem de lucro." },
-    { icon: <MessageSquare />, title: "Aula 6 – Scripts prontos de prospecção", description: "Mensagens testadas (BR, EUA, Europa), estratégia de promoção e fechamento (R$197 fácil)." },
+    { icon: <MessageSquare />, title: "Aula 6 – Scripts prontos de prospecção", description: "Mensagens testadas para DMs (BR, EUA, Europa), estratégia de promoção e fechamento (R$197 fácil)." },
     { icon: <Globe />, title: "Aula 7 – Como vender em real, dólar e euro", description: "Plataformas, carteira digital, recebimento internacional e estratégia de escassez." }
   ];
 
@@ -51,18 +51,31 @@ export default function ClonePerfeitoFinalPage() {
 
   return (
     <div className="bg-[#191919] text-neutral-300 font-sans antialiased">
-      <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-12">
-        
-        <div className="flex items-start gap-4 p-6 rounded-lg bg-yellow-950/50 border border-yellow-800/30">
-          <AlertTriangle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
-          <p className="text-lg text-yellow-100">
-            <strong>Pessoas comuns estão faturando em dólar</strong> com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA
-          </p>
-        </div>
+      
+      {/* ===== NOVA SEÇÃO HERO ===== */}
+      <section 
+        className="relative w-full min-h-[60vh] md:min-h-[70vh] bg-cover bg-center flex items-center"
+        style={{ backgroundImage: "url('/images/bg-cp.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
+        <div className="relative z-10 max-w-3xl mx-auto px-4 w-full space-y-8">
+          
+          <div className="flex items-start gap-4 p-6 rounded-lg bg-yellow-950/60 border border-yellow-800/40 backdrop-blur-sm">
+            <AlertTriangle className="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mt-1 flex-shrink-0" />
+            <h2 className="text-2xl md:text-4xl font-bold text-yellow-100 [text-shadow:_1px_1px_4px_rgb(0_0_0_/_40%)]">
+              Pessoas comuns estão faturando em dólar com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA
+            </h2>
+          </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold text-neutral-50 leading-tight">
-          E você pode ser o <span className="text-yellow-400">próximo</span>.
-        </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-neutral-50 [text-shadow:_1px_1px_4px_rgb(0_0_0_/_40%)]">
+            E você pode ser o <span className="text-yellow-400">próximo.</span>
+          </h1>
+
+        </div>
+      </section>
+      {/* ===== FIM DA SEÇÃO HERO ===== */}
+
+      <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-12">
         
         <a href="#checkout" className="inline-block text-lg bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 rounded-lg px-6 py-3 transition-colors text-neutral-100 font-medium">
           → Quero aprender a criar e vender ensaios!
