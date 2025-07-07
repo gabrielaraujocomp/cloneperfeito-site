@@ -1,17 +1,21 @@
-// app/page.tsx
 import React, { ReactNode } from 'react';
 
-// --- COMPONENTES DE ESTILO INSPIRADOS NO NOTION ---
+// --- COMPONENTES DE ESTILO REUTILIZÁVEIS (Inspirado no Notion) ---
 
-// Componente para criar um bloco de destaque com ícone (Notion Callout Style)
+/**
+ * Cria um bloco de destaque visual com um ícone à esquerda.
+ * Ótimo para "callouts", avisos ou depoimentos.
+ */
 const IconBlock = ({ icon, children }: { icon: ReactNode; children: ReactNode }) => (
-  <div className="flex items-start gap-4 rounded-lg border border-gray-700 bg-gray-800/50 p-4 md:p-5">
+  <div className="flex items-start gap-4 rounded-lg border border-gray-700 bg-gray-800/50 p-4 md:p-5 text-left">
     <div className="flex-shrink-0 mt-1 text-xl">{icon}</div>
     <div className="text-gray-300">{children}</div>
   </div>
 );
 
-// Componente para os títulos de seção
+/**
+ * Cria um título de seção padronizado com um ícone e uma linha divisória.
+ */
 const SectionTitle = ({ icon, children }: { icon: ReactNode; children: ReactNode }) => (
   <div>
     <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-white">
@@ -22,7 +26,9 @@ const SectionTitle = ({ icon, children }: { icon: ReactNode; children: ReactNode
   </div>
 );
 
-// Componente para item de lista customizado
+/**
+ * Cria um item de lista com um marcador de ponto customizado para um visual mais limpo.
+ */
 const CustomListItem = ({ children }: { children: ReactNode }) => (
     <li className="flex items-start gap-3">
         <span className="mt-[9px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-500"></span>
@@ -30,9 +36,11 @@ const CustomListItem = ({ children }: { children: ReactNode }) => (
     </li>
 );
 
-// --- PÁGINA PRINCIPAL ---
+// --- COMPONENTE PRINCIPAL DA PÁGINA ---
 
 const ClonePerfeitoPage = () => {
+  // --- DADOS DA PÁGINA (Facilita a manutenção) ---
+
   const aulas = [
     { icon: "🧠", title: "Aula 1 – Boas-vindas e mentalidade", description: "O caminho mental certo pra transformar o método em renda.", value: "R$97" },
     { icon: "🧬", title: "Aula 2 – Como criar seu clone com IA", description: "Configurações secretas, trigger phrase e detalhes que fazem toda a diferença.", value: "R$147" },
@@ -61,19 +69,33 @@ const ClonePerfeitoPage = () => {
   return (
     <div className="bg-gray-900 text-gray-300 font-sans">
       <main className="relative isolate overflow-hidden bg-gray-900">
-        {/* Fundo com gradiente e formas */}
+        {/* Efeito de fundo com gradiente */}
         <div className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
           <div className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#8000ff] to-[#3300ff] opacity-20 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]" style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }} />
         </div>
 
         {/* Seção Principal (Hero) */}
-        <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32 lg:px-8 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl leading-tight">
-                🚨 Se você busca uma forma <span className="text-cyan-400">rápida e prática</span> de fazer dinheiro com algo novo...
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-400 max-w-3xl mx-auto">
-                ...então pare tudo e leia essa página até o fim. Porque se você entender o que vou te mostrar agora, sua vida pode mudar completamente — e não estou exagerando.
-            </p>
+        <div className="mx-auto max-w-5xl px-6 pt-24 pb-12 sm:pt-32 sm:pb-16 lg:px-8">
+            <div className="mt-12 max-w-3xl mx-auto">
+                <IconBlock icon="⚠️">
+                    <div>
+                        <p>
+                           Pessoas comuns estão faturando em dólar, euro e real com um método inédito que ensina a vender ensaios fotográficos hiper-realistas com IA.
+                        </p>
+                        <p className="mt-3 font-bold text-white">
+                           E você pode ser o próximo.
+                        </p>
+                    </div>
+                </IconBlock>
+            </div>
+            <div className="text-center mt-12">
+                <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl leading-tight">
+                    🚨 Se você busca uma forma <span className="text-cyan-400">rápida e prática</span> de fazer dinheiro com algo novo...
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-gray-400 max-w-3xl mx-auto">
+                    ...então pare tudo e leia essa página até o fim. Porque se você entender o que vou te mostrar agora, sua vida pode mudar completamente — e não estou exagerando.
+                </p>
+            </div>
         </div>
         
         {/* Seção de Depoimentos */}
@@ -111,26 +133,15 @@ const ClonePerfeitoPage = () => {
             </IconBlock>
             <div className="mt-6 space-y-4 text-gray-400">
                 <CustomListItem>Lembra de quando começaram os primeiros vídeos no TikTok?</CustomListItem>
-                <CustomListItem>Ou quando as pessoas começaram a vender na Shopee e ganharam rios de dinheiro?</CustomListItem>
-                <CustomListItem>Ou quando a galera começou a usar o ChatGPT e virou referência só porque aprendeu antes?</CustomListItem>
+                <CustomListItem>Ou quando as pessoas começaram a vender na Shopee e ganharam rios de dinheiro com dropshipping?</CustomListItem>
+                <CustomListItem>Ou quando a galera começou a usar o ChatGPT antes de todo mundo e virou referência só porque aprendeu antes?</CustomListItem>
             </div>
             <p className="mt-8 text-xl text-center font-semibold text-white">
                 Pois é. <span className="text-cyan-400">Essa página aqui é exatamente esse momento.</span> A diferença? É que dessa vez você chegou a tempo.
             </p>
         </section>
 
-        {/* Apresentação do Método */}
-        <section className="mx-auto max-w-4xl px-6 lg:px-8 py-16 text-center">
-            <h2 className="text-3xl font-bold text-white">Um método que pouquíssimas pessoas conhecem…</h2>
-            <p className="mt-4 text-lg text-gray-400">
-              E que permite que qualquer pessoa — mesmo leiga — consiga criar ensaios de fotos ultra-realistas, com aparência profissional, usando Inteligência Artificial...
-            </p>
-            <p className="mt-6 text-xl font-bold text-white">
-              E mais importante: vender esses ensaios por <span className="text-green-400">R$200</span>, <span className="text-green-400">R$300</span>, ou até <span className="text-green-400">39 dólares/euros</span> para pessoas do Brasil e do mundo.
-            </p>
-        </section>
-        
-        {/* Quem Sou Eu */}
+        {/* Seção "Quem Sou Eu" */}
         <section className="mx-auto max-w-4xl px-6 lg:px-8 py-16">
           <div className="flex flex-col md:flex-row items-center gap-8 bg-gray-800/50 p-8 rounded-2xl border border-gray-700">
             <div className="flex-shrink-0">
@@ -141,29 +152,29 @@ const ClonePerfeitoPage = () => {
             <div>
               <h3 className="text-2xl font-bold text-white">Antes de mais nada: quem sou eu para te falar isso?</h3>
               <p className="mt-4 text-gray-400">
-                Meu nome é Gabriel, e nos últimos meses, eu vivi uma obsessão silenciosa... fucei cada configuração, fiz testes, errei dezenas de vezes... até descobrir um conjunto de técnicas que transformam imagens de IA em ensaios dignos de capa de revista.
+                Meu nome é Gabriel, e nos últimos meses, eu vivi uma obsessão silenciosa. Descobri uma ferramenta de IA que gera imagens fotográficas com realismo assustador. Mas não me contentei. Fucei cada configuração, testei, errei dezenas de vezes... até descobrir um conjunto de técnicas que transformam essas imagens em ensaios dignos de capa de revista.
               </p>
               <p className="mt-4 font-semibold text-white">Foi aí que nasceu o Clone Perfeito.</p>
             </div>
           </div>
         </section>
 
-        {/* O que é o Clone Perfeito */}
+        {/* Seção "O que é o Clone Perfeito" */}
         <section className="mx-auto max-w-4xl px-6 lg:px-8 py-24">
             <h2 className="text-center text-4xl font-bold text-white mb-10">O que é o <span className="bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">Clone Perfeito</span>?</h2>
             <IconBlock icon="💡">
-                É um método completo, passo a passo, onde ensino você a transformar IA numa fonte de renda real e prática.
+                É um método completo, passo a passo, onde ensino você a transformar IA numa fonte de renda real e prática — sem precisar ser designer ou expert em tecnologia.
             </IconBlock>
             <div className="mt-6 space-y-4">
-                <CustomListItem>Criar ensaios de fotos ultra-realistas com IA (sem saber nada de design).</CustomListItem>
+                <CustomListItem>Criar ensaios de fotos ultra-realistas com IA.</CustomListItem>
                 <CustomListItem>Usar configurações secretas que desbloqueiam qualidade absurda nas imagens.</CustomListItem>
                 <CustomListItem>Fazer prospecção ativa no Instagram, com scripts prontos.</CustomListItem>
                 <CustomListItem>Montar pacotes e precificar de forma inteligente.</CustomListItem>
-                <CustomListItem>Vender em reais, dólares e euros.</CustomListItem>
+                <CustomListItem>Vender em reais, dólares e euros, sem sair de casa.</CustomListItem>
             </div>
         </section>
 
-        {/* O que você recebe */}
+        {/* Seção "O que você recebe" */}
         <section className="mx-auto max-w-4xl px-6 lg:px-8 py-24">
             <SectionTitle icon="📦">O que você vai receber no Clone Perfeito</SectionTitle>
             <div className="space-y-4">
@@ -177,7 +188,7 @@ const ClonePerfeitoPage = () => {
                 ))}
             </div>
             
-            <div className="mt-12">
+            <div className="mt-16">
                 <SectionTitle icon="✨">E ainda leva 3 Bônus Especiais</SectionTitle>
                 <div className="space-y-4">
                     {bonus.map((item) => (
@@ -192,7 +203,7 @@ const ClonePerfeitoPage = () => {
             </div>
         </section>
         
-        {/* Oferta Final */}
+        {/* Seção de Oferta Final */}
         <section className="mx-auto max-w-4xl px-6 lg:px-8 py-16">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-green-500 text-center">
                 <p className="text-lg text-gray-400">Valor total real do pacote: <span className="line-through">R$627</span></p>
@@ -207,7 +218,7 @@ const ClonePerfeitoPage = () => {
             </div>
         </section>
 
-        {/* FAQ */}
+        {/* Seção de FAQ */}
         <section className="mx-auto max-w-4xl px-6 lg:px-8 py-24">
             <SectionTitle icon="❓">Perguntas Frequentes</SectionTitle>
             <div className="space-y-6">
@@ -220,6 +231,7 @@ const ClonePerfeitoPage = () => {
             </div>
         </section>
 
+        {/* Rodapé */}
         <footer className="text-center py-8 text-gray-600 text-sm">
             <p>© {new Date().getFullYear()} Clone Perfeito. Todos os direitos reservados.</p>
         </footer>
