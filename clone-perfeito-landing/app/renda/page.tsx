@@ -252,9 +252,7 @@ export default function ClonePerfeitoFinalPage() {
                   <p>Entrei no marketing digital e, nos últimos 4 anos, passei por praticamente todas as áreas: tráfego pago, copywriting, funil, design... Me encontrei mesmo na parte visual e criativa — e acabei trabalhando exclusivamente com um cliente durante esse tempo, gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas.</p>
                   <p>Foi aí que descobri o potencial da IA para criar imagens hiper-realistas.</p>
                   <p>A princípio, minha ideia era só ensinar como gerar esses clones e criar ensaios incríveis com IA. Mas resolvi testar uma coisa: comecei a oferecer esses ensaios como serviço pra pessoas de outros países.</p>
-                  <p>O resultado? <strong className="text-white">Mais de R$10.000 em menos de 1 mês.</strong></p>
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
-                  <p>Hoje, <strong className="text-yellow-400">ensino exatamente o que aplico</strong> — com método, clareza e foco total em resultado.</p>
               </div>
           </section>
           
