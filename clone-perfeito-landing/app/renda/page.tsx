@@ -193,7 +193,7 @@ export default function ClonePerfeitoFinalPage() {
           </div>
           
           {/* ====================================================================== */}
-          {/* ======================= INÍCIO DA SEÇÃO CORRIGIDA ==================== */}
+          {/* ======================= INÍCIO DA SEÇÃO ATUALIZADA =================== */}
           {/* ====================================================================== */}
           <section className="py-12">
             <div className="text-left space-y-4">
@@ -201,7 +201,7 @@ export default function ClonePerfeitoFinalPage() {
               <p className="text-lg text-neutral-400">Veja a mágica acontecer com o método Clone Perfeito.</p>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="mt-12 space-y-12">
               <div className="space-y-4">
                 <h3 className="text-left text-lg font-semibold text-neutral-400 tracking-wider">ANTES</h3>
                 <Image 
@@ -236,7 +236,7 @@ export default function ClonePerfeitoFinalPage() {
             </div>
           </section>
           {/* ====================================================================== */}
-          {/* ======================== FIM DA SEÇÃO CORRIGIDA ====================== */}
+          {/* ======================== FIM DA SEÇÃO ATUALIZADA ===================== */}
           {/* ====================================================================== */}
           
           <Separator className="bg-neutral-700" />
