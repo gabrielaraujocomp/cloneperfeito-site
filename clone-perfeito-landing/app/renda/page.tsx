@@ -193,40 +193,40 @@ export default function ClonePerfeitoFinalPage() {
           </div>
           
           {/* ====================================================================== */}
-          {/* ======================= INÍCIO DA NOVA SEÇÃO ========================= */}
+          {/* ======================= INÍCIO DA SEÇÃO CORRIGIDA ==================== */}
           {/* ====================================================================== */}
           <section className="py-12">
-            <div className="text-center space-y-4">
+            <div className="text-left space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">De Selfies Comuns a Ensaios Profissionais em Minutos</h2>
-              <p className="text-lg text-neutral-400 max-w-2xl mx-auto">Veja a mágica acontecer com o método Clone Perfeito.</p>
+              <p className="text-lg text-neutral-400">Veja a mágica acontecer com o método Clone Perfeito.</p>
             </div>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
-                <h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">ANTES</h3>
+                <h3 className="text-left text-lg font-semibold text-neutral-400 tracking-wider">ANTES</h3>
                 <Image 
-                  src="/images/antes-selfies.jpg"
+                  src="/images/antescp.jpg"
                   alt="Fotos de selfie usadas como base para o treinamento da IA"
                   width={1200}
                   height={343}
                   className="rounded-xl shadow-lg w-full h-auto"
                 />
-                <p className="text-center text-neutral-500 text-sm">Apenas algumas fotos do seu celular.</p>
+                <p className="text-left text-neutral-500 text-sm">Apenas algumas fotos do seu celular.</p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ DEPOIS ✨</h3>
+                <h3 className="text-left text-xl font-bold text-yellow-400 tracking-wider">✨ DEPOIS ✨</h3>
                  <Image 
-                  src="/images/depois-ensaios.jpg"
+                  src="/images/depoiscp.jpg"
                   alt="Ensaios fotográficos profissionais gerados por inteligência artificial"
                   width={1200}
                   height={343}
                   className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto"
                 />
-                <p className="text-center text-neutral-500 text-sm">Ensaios incríveis gerados com o seu clone.</p>
+                <p className="text-left text-neutral-500 text-sm">Ensaios incríveis gerados com o seu clone.</p>
               </div>
             </div>
 
-            <div className="max-w-3xl mx-auto mt-12 text-center space-y-6">
+            <div className="max-w-3xl mx-auto mt-12 text-left space-y-6">
                 <p className="text-lg text-neutral-300 leading-relaxed">
                   Esqueça ferramentas genéricas como Freepik ou Krea AI. Aqui você aprende a usar a <strong className="text-white">plataforma de geração de clones mais avançada do mercado</strong>, a mesma usada por profissionais e estúdios para criar visuais de altíssima qualidade.
                 </p>
@@ -236,7 +236,7 @@ export default function ClonePerfeitoFinalPage() {
             </div>
           </section>
           {/* ====================================================================== */}
-          {/* ======================== FIM DA NOVA SEÇÃO =========================== */}
+          {/* ======================== FIM DA SEÇÃO CORRIGIDA ====================== */}
           {/* ====================================================================== */}
           
           <Separator className="bg-neutral-700" />
