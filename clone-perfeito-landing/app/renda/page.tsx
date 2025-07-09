@@ -30,8 +30,8 @@ import {
   UserPlus,
   ImageIcon,
   GraduationCap,
-  ShoppingBag, // Ícone adicionado para o novo módulo
-  TrendingUp, // Ícone adicionado para a atualização
+  ShoppingBag,
+  TrendingUp,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -80,7 +80,6 @@ export default function ClonePerfeitoFinalPage() {
     { icon: <Rocket />, title: "Bônus 3 – Estratégia Express de Renda Rápida com IA", description: "Como fazer sua primeira venda em 72h com um perfil novo." }
   ];
 
-  // ===== NOVA LISTA PARA AS ATUALIZAÇÕES =====
   const upcomingUpdates = [
     { icon: <Film className="text-purple-400"/>, title: "Ensaios virando Vídeos com Qualidade Cinematográfica", description: "Você vai aprender a transformar suas fotos em vídeos emocionantes e imersivos, ideais pra reels, TikToks e anúncios. É outro nível de entrega." },
     { icon: <Sparkles className="text-purple-400"/>, title: "Conversão dos vídeos em 4K para Instagram e TikTok", description: "Chega de vídeo “meia boca”. Agora você vai aprender a entregar em altíssima qualidade, com aquele visual de estúdio de cinema direto do seu notebook." },
@@ -193,6 +192,53 @@ export default function ClonePerfeitoFinalPage() {
               </Carousel>
           </div>
           
+          {/* ====================================================================== */}
+          {/* ======================= INÍCIO DA NOVA SEÇÃO ========================= */}
+          {/* ====================================================================== */}
+          <section className="py-12">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">De Selfies Comuns a Ensaios Profissionais em Minutos</h2>
+              <p className="text-lg text-neutral-400 max-w-2xl mx-auto">Veja a mágica acontecer com o método Clone Perfeito.</p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">ANTES</h3>
+                <Image 
+                  src="/images/antes-selfies.jpg"
+                  alt="Fotos de selfie usadas como base para o treinamento da IA"
+                  width={1200}
+                  height={343}
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+                <p className="text-center text-neutral-500 text-sm">Apenas algumas fotos do seu celular.</p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ DEPOIS ✨</h3>
+                 <Image 
+                  src="/images/depois-ensaios.jpg"
+                  alt="Ensaios fotográficos profissionais gerados por inteligência artificial"
+                  width={1200}
+                  height={343}
+                  className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto"
+                />
+                <p className="text-center text-neutral-500 text-sm">Ensaios incríveis gerados com o seu clone.</p>
+              </div>
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-12 text-center space-y-6">
+                <p className="text-lg text-neutral-300 leading-relaxed">
+                  Esqueça ferramentas genéricas como Freepik ou Krea AI. Aqui você aprende a usar a <strong className="text-white">plataforma de geração de clones mais avançada do mercado</strong>, a mesma usada por profissionais e estúdios para criar visuais de altíssima qualidade.
+                </p>
+                <p className="text-xl font-medium text-yellow-400 bg-yellow-900/20 py-3 px-4 rounded-lg">
+                  O método é tão simples que você aprende o processo completo em <strong className="text-yellow-300">menos de 1 hora</strong> e, depois disso, consegue criar um ensaio do zero em <strong className="text-yellow-300">menos de 20 minutos</strong>.
+                </p>
+            </div>
+          </section>
+          {/* ====================================================================== */}
+          {/* ======================== FIM DA NOVA SEÇÃO =========================== */}
+          {/* ====================================================================== */}
+          
           <Separator className="bg-neutral-700" />
 
           <div className="flex items-start gap-4 p-6 rounded-lg bg-red-950/50 border border-red-800/30">
@@ -264,10 +310,7 @@ export default function ClonePerfeitoFinalPage() {
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
               </div>
           </section>
-
-          {/* ====================================================================== */}
-          {/* ======================= INÍCIO DA NOVA SEÇÃO ========================= */}
-          {/* ====================================================================== */}
+          
           <section className="pt-16 space-y-8">
             <div className="text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">
@@ -301,9 +344,6 @@ export default function ClonePerfeitoFinalPage() {
               </p>
             </div>
           </section>
-          {/* ====================================================================== */}
-          {/* ======================== FIM DA NOVA SEÇÃO =========================== */}
-          {/* ====================================================================== */}
 
           <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
 
