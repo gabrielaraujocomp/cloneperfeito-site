@@ -29,7 +29,9 @@ import {
   LayoutDashboard,
   UserPlus,
   ImageIcon,
-  GraduationCap
+  GraduationCap,
+  ShoppingBag, // Ícone adicionado para o novo módulo
+  TrendingUp, // Ícone adicionado para a atualização
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -76,6 +78,13 @@ export default function ClonePerfeitoFinalPage() {
     { icon: <Brain />, title: "Bônus 1 – Agente GPT de Prompts para Ensaios", description: "Gere prompts ultra detalhados com seu nome, estilo e iluminação com 1 clique." },
     { icon: <Film />, title: "Bônus 2 – Como criar Clones e Ensaios com o ChatGPT", description: "Aprenda a criar seus primeiros ensaios de forma 100% gratuita." },
     { icon: <Rocket />, title: "Bônus 3 – Estratégia Express de Renda Rápida com IA", description: "Como fazer sua primeira venda em 72h com um perfil novo." }
+  ];
+
+  // ===== NOVA LISTA PARA AS ATUALIZAÇÕES =====
+  const upcomingUpdates = [
+    { icon: <Film className="text-purple-400"/>, title: "Ensaios virando Vídeos com Qualidade Cinematográfica", description: "Você vai aprender a transformar suas fotos em vídeos emocionantes e imersivos, ideais pra reels, TikToks e anúncios. É outro nível de entrega." },
+    { icon: <Sparkles className="text-purple-400"/>, title: "Conversão dos vídeos em 4K para Instagram e TikTok", description: "Chega de vídeo “meia boca”. Agora você vai aprender a entregar em altíssima qualidade, com aquele visual de estúdio de cinema direto do seu notebook." },
+    { icon: <ShoppingBag className="text-purple-400"/>, title: "Módulo de Produtos com IA (Mockups + Vídeos Profissionais)", description: "Vamos além dos ensaios: você vai aprender a criar mockups realistas e vídeos promocionais de produtos físicos (roupas, acessórios, etc.) usando os clones de IA. É uma nova porta pra fechar com marcas, lojas e criadores." }
   ];
 
   const faqItems = [
@@ -255,7 +264,47 @@ export default function ClonePerfeitoFinalPage() {
                   <p>Percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
               </div>
           </section>
-          
+
+          {/* ====================================================================== */}
+          {/* ======================= INÍCIO DA NOVA SEÇÃO ========================= */}
+          {/* ====================================================================== */}
+          <section className="pt-16 space-y-8">
+            <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">
+                  🚨 ATUALIZAÇÕES PODEROSAS A CAMINHO 🚨
+                </h2>
+                <p className="text-lg text-neutral-400 mt-2">(E tudo incluso pra quem entrar agora na fase de lançamento)</p>
+            </div>
+
+            <p className="text-lg text-center max-w-2xl mx-auto text-neutral-300">
+              A nova fase do Clone Perfeito vai transformar de vez a forma como você cria, vende e entrega ensaios com IA. Se liga no que vem por aí:
+            </p>
+
+            <div className="space-y-4 pt-4">
+              {upcomingUpdates.map((update, index) => (
+                <Card key={index} className="bg-neutral-800/50 border-neutral-700/80 border-l-4 border-l-purple-500 overflow-hidden shadow-lg">
+                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                    <span className="text-neutral-400">{update.icon}</span>
+                    <CardTitle className="text-xl text-left text-neutral-100">{update.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-neutral-300 pl-16 text-left">{update.description}</CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 rounded-lg bg-green-950/40 border border-green-800/50 text-center">
+              <p className="text-xl text-neutral-200 leading-relaxed">
+                Todas essas atualizações serão <strong className="font-bold text-green-400">adicionadas sem nenhum custo extra</strong> para quem já é aluno.
+              </p>
+              <p className="mt-4 text-xl font-bold text-yellow-300">
+                E quem entrar agora... garante acesso a tudo isso antes que o preço do curso suba!
+              </p>
+            </div>
+          </section>
+          {/* ====================================================================== */}
+          {/* ======================== FIM DA NOVA SEÇÃO =========================== */}
+          {/* ====================================================================== */}
+
           <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">Sua Oferta Especial Hoje</h2>
 
           <div className="relative mt-8">
