@@ -1,59 +1,3 @@
-Texto base:
-
-Pessoas comuns estão criando ensaios fotográficos hiper-realistas com IA — imagens tão boas que parecem feitas por um fotógrafo profissional em estúdio.
-
-E o melhor:
-Você também pode fazer isso, mesmo sem câmera, sem estúdio, sem saber nada de edição… só com o seu computador.
-
-Se você sempre quis ter fotos incríveis, com aparência profissional, em qualquer cenário — seja no café, no escritório, em Paris ou em algo mais conceitual — então para tudo e leia essa página até o fim.
-
-    Porque o que vou te mostrar aqui pode transformar completamente a forma como você se vê nas redes. E como os outros te veem também.
-
-Deixa eu te perguntar…
-
-Quantas vezes você viu alguém com um perfil lindo no Instagram, fotos super estéticas, feed organizado…
-…e pensou:
-“Se eu tivesse fotos assim, meu perfil também chamaria atenção.”
-
-Você já percebeu como:
-
-…as pessoas com as fotos certas se destacam naturalmente?
-
-…as oportunidades, convites, colaborações, até respeito, mudam quando você parece mais profissional e estiloso online?
-
-Pois é. Esse é o poder da imagem bem feita.
-
-E agora você pode ter esse poder nas suas mãos — sem depender de fotógrafo, estúdio, câmera cara ou edição complicada.
-
-Estou falando de um método inédito, direto ao ponto, onde você vai aprender a criar seu clone digital hiper-realista e gerar ensaios completos com IA — com fotos impressionantes, em qualquer estilo e cenário que imaginar.
-
-Sim, você mesmo pode ter imagens como:
-
-    Retratos corporativos para o LinkedIn
-
-    Lifestyle no café, na praia, em cidades icônicas
-
-    Fotos estéticas para o Instagram
-
-    Ou até visuais criativos para seu projeto, marca ou portfólio
-
-Tudo com realismo surreal, feito por inteligência artificial, em poucas horas.
-
-Você vai aprender passo a passo como:
-
-✅ Treinar seu próprio clone fotográfico
-✅ Escolher estilos e referências
-✅ Usar prompts prontos e criativos com IA
-✅ E gerar dezenas de fotos com qualidade profissional sem sair de casa
-
-Não importa se você nunca mexeu com IA antes.
-Esse curso foi feito para pessoas comuns — que querem se destacar, ter um feed bonito, criar algo diferente, ou até só brincar com o visual de uma forma única e criativa.
-
-    A estética certa muda tudo.
-    E agora você pode criá-la com autonomia e originalidade.
-
-Código:
-
 'use client'; // Adiciona a diretiva para indicar que este é um Componente de Cliente
 
 import { useState, useEffect } from 'react';
@@ -501,4 +445,3 @@ export default function ClonePerfeitoFinalPage() {
     </>
   )
 }
-
