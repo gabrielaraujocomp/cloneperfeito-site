@@ -26,7 +26,10 @@ import {
   ImageUp,
   BrainCircuit,
   Download,
-  DollarSign
+  DollarSign,
+  Zap,
+  Clock,
+  Award
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -37,7 +40,7 @@ export default function ClonePerfeitoFinalPage() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const testimonials = [1, 2, 3, 4, 5, 6, 7];
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8];
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -64,6 +67,12 @@ export default function ClonePerfeitoFinalPage() {
   const bonuses = [
     { icon: <Brain />, title: "Bônus 1 – Agente GPT de Prompts Criativos", description: "Um robô que cria os comandos para você. Gere ideias de ensaios com seu nome, estilo e iluminação com 1 clique." },
     { icon: <DollarSign />, title: "Bônus 2 – Renda Extra com Ensaios (Aula Bônus)", description: "Aprenda como você pode oferecer esse serviço e fazer uma renda extra, vendendo ensaios para pessoas e empresas." },
+  ];
+
+  const upcomingUpdates = [
+    { icon: <Film className="text-purple-400"/>, title: "Ensaios virando Vídeos Cinematográficos", description: "Transforme suas fotos em vídeos emocionantes e imersivos, ideais para Reels e TikToks." },
+    { icon: <Sparkles className="text-purple-400"/>, title: "Conversão dos vídeos em 4K", description: "Entregue vídeos em altíssima qualidade, com aquele visual de cinema direto do seu notebook." },
+    { icon: <Rocket className="text-purple-400"/>, title: "Módulo de Produtos com IA (Mockups)", description: "Crie mockups realistas de produtos para marcas, lojas e criadores, abrindo uma nova fonte de renda." }
   ];
   
   const faqItems = [
@@ -94,9 +103,7 @@ export default function ClonePerfeitoFinalPage() {
           <div className="max-w-4xl mx-auto flex items-center justify-between p-3 px-4">
             <span className="text-sm font-medium text-white hidden sm:block">Garanta seu acesso antes que o preço suba.</span>
             <span className="text-sm font-medium text-white sm:hidden">Acesso com 80% OFF</span>
-            <Link href="#checkout">
-              <Button size="sm" className="bg-rose-500 hover:bg-green-600 text-white font-semibold text-xs sm:text-sm">QUERO MEU ACESSO</Button>
-            </Link>
+            <Link href="#checkout"><Button size="sm" className="bg-rose-500 hover:bg-green-600 text-white font-semibold text-xs sm:text-sm">QUERO MEU ACESSO</Button></Link>
           </div>
         </div>
 
@@ -106,27 +113,23 @@ export default function ClonePerfeitoFinalPage() {
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mt-12">Crie um clone digital seu com IA e gere ensaios profissionais sem câmera ou estúdio.</h1>
               <p className="text-xl md:text-2xl text-yellow-400 font-medium">Em menos de 1 hora, qualquer pessoa consegue — mesmo sem saber nada de tecnologia.</p>
-              <div className="w-full flex justify-center pt-4">
-                <Link href="#checkout">
-                  <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO CRIAR MINHAS FOTOS</Button>
-                </Link>
-              </div>
+              <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO CRIAR MINHAS FOTOS</Button></Link></div>
           </section>
           
           <section>
              <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-6">
                 <CardHeader className='p-0 text-center'><CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle></CardHeader>
                 <CardContent className='p-0 mt-8 space-y-8'>
-                    <div className="space-y-4">
-                        <h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3>
-                        <Image src="/images/antescp.jpg" alt="Fotos de selfie usadas como base" width={1200} height={343} className="rounded-xl shadow-lg w-full h-auto" />
-                    </div>
-                    <div className="space-y-4">
-                        <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3>
-                        <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
-                    </div>
+                    <div className="space-y-4"><h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3><Image src="/images/antescp.jpg" alt="Fotos de selfie usadas como base" width={1200} height={343} className="rounded-xl shadow-lg w-full h-auto" /></div>
+                    <div className="space-y-4"><h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3><Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" /></div>
                 </CardContent>
             </Card>
+          </section>
+
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Clock className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Rápido e Direto</h3><p className="text-neutral-400">Aprenda o método em menos de 1 hora e crie ensaios em 20 minutos.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Zap className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Fácil para Iniciantes</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros. Não precisa saber nada de tecnologia.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Award className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Qualidade Profissional</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios para criar imagens de altíssima qualidade.</p></Card>
           </section>
 
           <section>
@@ -139,6 +142,11 @@ export default function ClonePerfeitoFinalPage() {
             </div>
           </section>
 
+          <Card className="bg-neutral-800/50 border border-blue-500/30 p-8 space-y-4">
+              <p className="text-lg text-neutral-300 leading-relaxed">Esqueça ferramentas genéricas como Freepik ou Krea AI. Aqui você aprende a usar a <strong className="text-white">plataforma de geração de clones mais avançada do mercado</strong>, a mesma usada por profissionais e estúdios para criar visuais de altíssima qualidade.</p>
+              <p className="text-lg text-neutral-300 leading-relaxed">O método é tão simples que você aprende o processo completo em <strong className="text-yellow-400">menos de 1 hora</strong> e, depois disso, consegue criar um ensaio do zero em <strong className="text-yellow-400">menos de 20 minutos</strong>.</p>
+          </Card>
+
           <section>
             <Card className="bg-neutral-800 border-2 border-neutral-700 p-8">
                 <CardTitle className="text-3xl font-bold text-white text-center">Mas, e se...?</CardTitle>
@@ -150,61 +158,52 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
           
-          <div className="w-full flex justify-center">
-            <Link href="#checkout">
-              <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">EU QUERO E CONSIGO! (Ver Oferta)</Button>
-            </Link>
-          </div>
+          <div className="w-full flex justify-center"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">EU QUERO E CONSIGO! (Ver Oferta)</Button></Link></div>
           
           <Separator className="bg-neutral-800" />
           
           <section className="text-center space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white">Alunos Comuns, Resultados Extraordinários</h2>
               <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                  <CarouselContent className="-ml-4">
-                      {testimonials.map((num) => (
-                          <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
-                              <Card className="bg-neutral-800/50 border-neutral-700 overflow-hidden"><CardContent className="p-0"><Image src={`/images/d${num}.jpg`} alt={`Depoimento de aluno ${num}`} width={400} height={800} className="w-full h-auto" /></CardContent></Card>
-                          </CarouselItem>
-                      ))}
-                  </CarouselContent>
+                  <CarouselContent className="-ml-4">{testimonials.map((num) => (<CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3"><Card className="bg-neutral-800/50 border-neutral-700 overflow-hidden"><CardContent className="p-0"><Image src={`/images/d${num}.jpg`} alt={`Depoimento de aluno ${num}`} width={400} height={800} className="w-full h-auto" /></CardContent></Card></CarouselItem>))}</CarouselContent>
                   <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" /><CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
               </Carousel>
           </section>
 
           <section className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white text-center">Criações Incríveis Feitas por Alunos</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {studentCreations.map((num) => (
-                      <div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                          <Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" />
-                      </div>
-                  ))}
-              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" /></div>))}</div>
           </section>
           
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white">O que você vai aprender (o passo a passo da mágica)</h2>
-          <div className="space-y-4">
-            {modules.map((module, index) => (
-              <Card key={index} className="bg-neutral-800 border-neutral-700 border-l-4 border-l-sky-400 overflow-hidden"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><span className="text-neutral-400">{module.icon}</span><CardTitle className="text-xl text-left text-white">{module.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-20 pb-5 text-left -mt-2">{module.description}</CardContent></Card>
-            ))}
-          </div>
+          <div className="space-y-4">{modules.map((module, index) => (<Card key={index} className="bg-neutral-800 border-neutral-700 border-l-4 border-l-sky-400 overflow-hidden"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><span className="text-neutral-400">{module.icon}</span><CardTitle className="text-xl text-left text-white">{module.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-20 pb-5 text-left -mt-2">{module.description}</CardContent></Card>))}</div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white pt-8">E ainda leva 2 Bônus para acelerar seus resultados</h2>
           <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><Check className="w-6 h-6 text-green-400" /><CardTitle className="text-xl text-left text-white">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-16 pb-4 text-left">{bonus.description}</CardContent></Card>))}</div>
 
           <section>
-            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-4 shadow-2xl shadow-purple-950/50">
-                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3"><Film className="w-8 h-8 text-purple-400" /> ATUALIZAÇÃO IMPORTANTE A CAMINHO!</h3>
-                <p className="text-lg text-neutral-200 max-w-3xl mx-auto">Em breve, vamos adicionar um novo e poderoso <strong className="text-purple-300">Módulo de Criação de Vídeos com IA</strong>, onde você vai aprender a transformar suas fotos em vídeos cinematográficos.</p>
-                <div className="bg-neutral-900 p-4 rounded-lg">
-                    <p className="text-xl text-white font-semibold flex items-center justify-center gap-3">
-                        <TrendingUp className="w-6 h-6 text-yellow-400" />
-                        Quem entrar AGORA garante essa atualização <strong className="text-green-400">GRATUITAMENTE.</strong>
-                    </p>
-                    <p className="mt-2 text-neutral-400">Depois que o módulo for lançado, o preço do curso <strong className="text-yellow-400">VAI SUBIR.</strong> Esta é sua chance de travar o preço antigo e receber mais conteúdo.</p>
+            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
+                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 ATUALIZAÇÕES PODEROSAS A CAMINHO 🚨</h3>
+                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">(E tudo incluso pra quem entrar agora na fase de lançamento)</p>
+                <div className="space-y-4 pt-4 text-left">
+                  {upcomingUpdates.map((update, index) => (
+                    <div key={index} className="flex items-start gap-4"><span className="mt-1">{update.icon}</span><div><strong className="text-white">{update.title}</strong><p className="text-neutral-400">{update.description}</p></div></div>
+                  ))}
                 </div>
+                <div className="bg-neutral-900 p-4 rounded-lg mt-6"><p className="text-xl text-white font-semibold">Quem entrar AGORA garante tudo isso <strong className="text-green-400">GRATUITAMENTE</strong> antes do preço subir.</p></div>
             </Card>
+          </section>
+
+          <section className="pt-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Prazer, sou o Gabriel. E eu criei o Clone Perfeito.</h2>
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <Image src="/images/eu-gabriel.jpg" alt="Foto de Gabriel, criador do Clone Perfeito" width={800} height={500} className="w-full max-w-xs md:max-w-sm rounded-xl shadow-2xl shadow-black/40" />
+                <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
+                    <p>Comecei na faculdade de Engenharia da Computação, mas logo vi que minha paixão era o lado prático, visual e criativo da tecnologia. Nos últimos 4 anos, mergulhei no marketing digital, gerenciando mais de <strong className="text-white">R$1 milhão</strong> em campanhas visuais.</p>
+                    <p>Foi aí que descobri o potencial da IA para criar imagens hiper-realistas. A princípio, a ideia era só ensinar como gerar esses clones, mas ao testar a venda desses ensaios, percebi que isso não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível, estética e vendável.</strong></p>
+                    <p>Criei o Clone Perfeito para compartilhar esse poder e te ajudar a criar uma estética única, com total autonomia e criatividade.</p>
+                </div>
+              </div>
           </section>
 
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial (e Única)</h2>
@@ -213,25 +212,14 @@ export default function ClonePerfeitoFinalPage() {
               <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-yellow-500 rounded-2xl blur-xl opacity-20"></div>
               <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
                   <CardContent className="p-6 md:p-8 space-y-6">
-                      <div className="space-y-4 text-neutral-200">
-                        {offerItems.map((item, index) => (
-                          <div key={index} className="flex items-center justify-between">
-                            <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-base sm:text-lg text-white">{item.text}</p></div>
-                            {item.value !== "Inestimável" ? (<p className="text-neutral-400 font-normal text-sm sm:text-base whitespace-nowrap ml-2">(<span className="line-through">{item.value}</span>)</p>) : (<p className="text-green-400 font-bold text-sm sm:text-base whitespace-nowrap ml-2">INCLUSO</p>)}
-                          </div>
-                        ))}
-                      </div>
+                      <div className="space-y-4 text-neutral-200">{offerItems.map((item, index) => (<div key={index} className="flex items-center justify-between"><div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-base sm:text-lg text-white">{item.text}</p></div>{item.value !== "Inestimável" ? (<p className="text-neutral-400 font-normal text-sm sm:text-base whitespace-nowrap ml-2">(<span className="line-through">{item.value}</span>)</p>) : (<p className="text-green-400 font-bold text-sm sm:text-base whitespace-nowrap ml-2">INCLUSO</p>)}</div>))}</div>
                       <Separator className="bg-neutral-700/50"/>
                       <div className="text-center space-y-4">
                           <p className="text-lg text-neutral-400">De <span className="line-through">R$591</span> por apenas:</p>
-                          <p className="text-4xl sm:text-5xl font-bold text-white">R$ 97</p>
-                          <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
+                          <p className="text-4xl sm:text-5xl font-bold text-yellow-400">12x de R$ 9,74</p>
+                          <p className="text-xl font-medium text-white">ou R$ 97 à vista</p>
                       </div>
-                      <div className="pt-4">
-                          <Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10">
-                              <Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button>
-                          </Link>
-                      </div>
+                      <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
                           <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Garantia de 7 dias</span></div>
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
@@ -255,12 +243,7 @@ export default function ClonePerfeitoFinalPage() {
               <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Ainda tem alguma dúvida?</h3>
                   <p className="text-neutral-300 text-lg leading-relaxed mb-4">Se você precisa de mais alguma informação, clique no botão abaixo e fale diretamente com nossa equipe no WhatsApp. Estamos aqui para ajudar!</p>
-                  <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300">
-                          <MessageSquare className="w-4 h-4 mr-2" />
-                          Chamar no WhatsApp
-                      </Button>
-                  </Link>
+                  <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer"><Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300"><MessageSquare className="w-4 h-4 mr-2" />Chamar no WhatsApp</Button></Link>
               </div>
           </div>
 
@@ -269,12 +252,7 @@ export default function ClonePerfeitoFinalPage() {
           <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center text-white">❓ Perguntas Frequentes</h2>
               <Accordion type="single" collapsible className="w-full text-lg">
-                {faqItems.map(item => (
-                  <AccordionItem key={item.value} value={item.value} className="border-b-neutral-800">
-                    <AccordionTrigger className="text-white hover:no-underline text-left py-6">{item.question}</AccordionTrigger>
-                    <AccordionContent className="text-neutral-300 text-base text-left leading-relaxed pb-6">{item.answer}</AccordionContent>
-                  </AccordionItem>
-                ))}
+                {faqItems.map(item => (<AccordionItem key={item.value} value={item.value} className="border-b-neutral-800"><AccordionTrigger className="text-white hover:no-underline text-left py-6">{item.question}</AccordionTrigger><AccordionContent className="text-neutral-300 text-base text-left leading-relaxed pb-6">{item.answer}</AccordionContent></AccordionItem>))}
               </Accordion>
           </div>
           
@@ -287,9 +265,7 @@ export default function ClonePerfeitoFinalPage() {
         </main>
       </div>
 
-      <noscript>
-        <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" />
-      </noscript>
+      <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
     </>
   )
 }
