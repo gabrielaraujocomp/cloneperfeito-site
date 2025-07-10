@@ -36,6 +36,7 @@ export default function ClonePerfeitoFinalPage() {
   const [isBarVisible, setIsBarVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const testimonials = [1, 2, 3, 4, 5, 6, 7];
+  const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -169,6 +170,17 @@ export default function ClonePerfeitoFinalPage() {
                   </CarouselContent>
                   <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" /><CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
               </Carousel>
+          </section>
+
+          <section className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-white text-center">Criações Incríveis Feitas por Alunos</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {studentCreations.map((num) => (
+                      <div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                          <Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" />
+                      </div>
+                  ))}
+              </div>
           </section>
           
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white">O que você vai aprender (o passo a passo da mágica)</h2>
