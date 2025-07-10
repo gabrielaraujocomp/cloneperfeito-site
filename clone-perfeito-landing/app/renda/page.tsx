@@ -155,7 +155,7 @@ export default function ClonePerfeitoFinalPage() {
                 <CardTitle className="text-3xl font-bold text-white text-center">Mas, e se...?</CardTitle>
                 <ul className="mt-8 space-y-6 text-lg">
                     <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu não entendo NADA de IA?</strong><br/><span className="text-neutral-400">Perfeito. O método é 100% guiado com passo a passo. Foi feito para iniciantes.</span></div></li>
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... meu computador é ruim?</strong><br/><span className="text-neutral-400">Não precisa de máquina potente. Todo o trabalho pesado é feito na nuvem, não no seu PC.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... meu computador é ruim?</strong><br/><span className="text-neutral-400">Não precisa de máquina potente, você consegue fazer até pelo seu celular de forma rápida e fácil. Todo o trabalho pesado é feito na nuvem, não no seu PC.</span></div></li>
                     <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu tenho medo de não conseguir?</strong><br/><span className="text-neutral-400">O método é à prova de erros e você tem nosso suporte para tirar qualquer dúvida no caminho.</span></div></li>
                 </ul>
             </Card>
