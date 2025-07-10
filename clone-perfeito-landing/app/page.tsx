@@ -109,10 +109,10 @@ export default function ClonePerfeitoFinalPage() {
 
         <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-24">
           
-          <section className="space-y-8 text-center">
+          <section className="space-y-6 md:space-y-8 text-center">
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mt-12">Aprenda a Criar um clone seu (ou de qualquer pessoa) com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.</h1>
-              <p className="text-xl md:text-2xl text-yellow-400 font-medium">Em menos de 1 hora, qualquer pessoa consegue — mesmo sem saber nada de Inteligência Artificial.</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mt-8">Crie Ensaios Fotográficos Profissionais com IA.</h1>
+              <p className="text-lg sm:text-xl md:text-2xl text-yellow-400 font-medium">Sem câmera ou estúdio. Em menos de 1 hora, qualquer pessoa consegue.</p>
               <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO CRIAR MINHAS FOTOS</Button></Link></div>
           </section>
           
