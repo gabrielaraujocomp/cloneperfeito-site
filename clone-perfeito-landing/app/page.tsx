@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Separator } from "@/components/ui/separator"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import {
   Brain,
   Wand2,
@@ -18,21 +19,14 @@ import {
   LayoutDashboard,
   UserPlus,
   ImageIcon,
-  Camera,
-  Briefcase,
-  Instagram,
-  Star,
-  Gift,
-  Heart,
-  MousePointerClick,
-  Users,
+  MessageSquare,
+  CheckCircle2,
+  Film,
+  TrendingUp,
   ImageUp,
   BrainCircuit,
   Download,
-  DollarSign,
-  Film,
-  TrendingUp,
-  CheckCircle2
+  DollarSign
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -41,6 +35,7 @@ import Script from "next/script"
 export default function ClonePerfeitoFinalPage() {
   const [isBarVisible, setIsBarVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const testimonials = [1, 2, 3, 4, 5, 6, 7];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,7 +82,6 @@ export default function ClonePerfeitoFinalPage() {
     { text: "Acesso Vitalício e Suporte", value: "Inestimável" }
   ];
 
-
   return (
     <>
       <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
@@ -108,16 +102,19 @@ export default function ClonePerfeitoFinalPage() {
         <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-24">
           
           <section className="space-y-8 text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">Crie um clone digital seu com IA e gere ensaios profissionais sem câmera ou estúdio.</h1>
+              <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mt-12">Crie um clone digital seu com IA e gere ensaios profissionais sem câmera ou estúdio.</h1>
               <p className="text-xl md:text-2xl text-yellow-400 font-medium">Em menos de 1 hora, qualquer pessoa consegue — mesmo sem saber nada de tecnologia.</p>
-              <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30 pt-4" priority />
+              <div className="w-full flex justify-center pt-4">
+                <Link href="#checkout">
+                  <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO CRIAR MINHAS FOTOS</Button>
+                </Link>
+              </div>
           </section>
           
           <section>
              <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-6">
-                <CardHeader className='p-0 text-center'>
-                    <CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle>
-                </CardHeader>
+                <CardHeader className='p-0 text-center'><CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle></CardHeader>
                 <CardContent className='p-0 mt-8 space-y-8'>
                     <div className="space-y-4">
                         <h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3>
@@ -128,9 +125,6 @@ export default function ClonePerfeitoFinalPage() {
                         <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
                     </div>
                 </CardContent>
-                <div className="text-center pt-4">
-                    <p className="text-lg text-neutral-300 max-w-2xl mx-auto">Essa é a Ana. Ela queria fotos melhores para o Instagram, mas nunca gostou de se expor em estúdio. Treinou seu clone com IA e... essas foram as primeiras fotos. <strong className="text-white">Hoje ela já vende ensaios para outras pessoas também.</strong></p>
-                </div>
             </Card>
           </section>
 
@@ -164,11 +158,17 @@ export default function ClonePerfeitoFinalPage() {
           <Separator className="bg-neutral-800" />
           
           <section className="text-center space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">Não é só sobre fotos... É sobre se ver de um jeito novo.</h2>
-            <div className="space-y-6 max-w-2xl mx-auto">
-                <blockquote className="border-l-4 border-yellow-400 pl-6 text-xl text-left italic text-neutral-300">“Nunca me imaginei assim, me senti bonita de verdade pela primeira vez.”<span className="block text-base not-italic text-neutral-500 mt-1">- Depoimento de aluna</span></blockquote>
-                <blockquote className="border-l-4 border-yellow-400 pl-6 text-xl text-left italic text-neutral-300">“Só a foto nova no LinkedIn já me trouxe mais respostas de recrutadores.”<span className="block text-base not-italic text-neutral-500 mt-1">- Depoimento de aluno</span></blockquote>
-            </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Alunos Comuns, Resultados Extraordinários</h2>
+              <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                  <CarouselContent className="-ml-4">
+                      {testimonials.map((num) => (
+                          <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
+                              <Card className="bg-neutral-800/50 border-neutral-700 overflow-hidden"><CardContent className="p-0"><Image src={`/images/d${num}.jpg`} alt={`Depoimento de aluno ${num}`} width={400} height={800} className="w-full h-auto" /></CardContent></Card>
+                          </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" /><CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
+              </Carousel>
           </section>
           
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white">O que você vai aprender (o passo a passo da mágica)</h2>
@@ -211,7 +211,7 @@ export default function ClonePerfeitoFinalPage() {
                       </div>
                       <Separator className="bg-neutral-700/50"/>
                       <div className="text-center space-y-4">
-                          <p className="text-lg text-neutral-400">De <span className="line-through">R$491</span> por apenas:</p>
+                          <p className="text-lg text-neutral-400">De <span className="line-through">R$591</span> por apenas:</p>
                           <p className="text-4xl sm:text-5xl font-bold text-white">R$ 97</p>
                           <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
                       </div>
@@ -238,6 +238,20 @@ export default function ClonePerfeitoFinalPage() {
               </div>
           </div>
           
+          <div className="flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
+              <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
+              <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Ainda tem alguma dúvida?</h3>
+                  <p className="text-neutral-300 text-lg leading-relaxed mb-4">Se você precisa de mais alguma informação, clique no botão abaixo e fale diretamente com nossa equipe no WhatsApp. Estamos aqui para ajudar!</p>
+                  <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300">
+                          <MessageSquare className="w-4 h-4 mr-2" />
+                          Chamar no WhatsApp
+                      </Button>
+                  </Link>
+              </div>
+          </div>
+
           <Separator className="bg-neutral-800 my-12" />
 
           <div className="space-y-8">
