@@ -12,32 +12,29 @@ import {
   Rocket,
   Check,
   Cpu,
-  Palette,
   MessageSquare,
   Sparkles,
-  Users,
-  Film,
   Shield,
   Smartphone,
   Lock,
   LayoutDashboard,
   UserPlus,
   ImageIcon,
-  GraduationCap,
   ShoppingBag,
-  TrendingUp,
-  Lightbulb,
   Camera,
   Briefcase,
   Instagram,
-  Star
+  Star,
+  Gift,
+  Heart,
+  MousePointerClick,
+  Users
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
 
 export default function ClonePerfeitoFinalPage() {
-  const testimonials = [1, 2, 3, 4, 5, 6, 7];
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8];
 
   // ===== LÓGICA PARA A BARRA DE CHECKOUT FLUTUANTE =====
@@ -47,7 +44,6 @@ export default function ClonePerfeitoFinalPage() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Aparece ao rolar pra cima, e se não estiver no topo
       if (currentScrollY < lastScrollY && currentScrollY > 200) {
         setIsBarVisible(true);
       } else {
@@ -63,40 +59,32 @@ export default function ClonePerfeitoFinalPage() {
 
 
   const modules = [
-    { icon: <Rocket className="text-sky-400"/>, title: "Módulo 1: A Preparação", description: "Boas-vindas, a mentalidade certa e como preparar seu ambiente para a criação." },
-    { icon: <UserPlus className="text-sky-400"/>, title: "Módulo 2: A Seleção Perfeita", description: "Como escolher e preparar suas melhores fotos para treinar a IA com perfeição." },
-    { icon: <Cpu className="text-sky-400"/>, title: "Módulo 3: Treinando seu Clone Digital", description: "O passo a passo para treinar seu clone, entendendo as configurações para um resultado hiper-realista." },
-    { icon: <Wand2 className="text-sky-400"/>, title: "Módulo 4: A Mágica dos Prompts", description: "Como usar nossos prompts prontos e criar os seus para gerar qualquer estilo de imagem que você sonhar." },
-    { icon: <ImageIcon className="text-sky-400"/>, title: "Módulo 5: Gerando seus Ensaios", description: "Dando vida às suas ideias: gerando dezenas de fotos em cenários e estilos incríveis." },
-    { icon: <Sparkles className="text-sky-400"/>, title: "Módulo 6: Toques Finais e Qualidade Máxima", description: "Como aprimorar e exportar suas imagens com qualidade profissional para as redes sociais." }
+    { icon: <LayoutDashboard className="text-sky-400"/>, title: "Módulo 1: Comece Aqui", description: "Boas-vindas e o guia inicial para preparar seu ambiente de criação em poucos minutos." },
+    { icon: <UserPlus className="text-sky-400"/>, title: "Módulo 2: A Escolha das Fotos", description: "O segredo para escolher as fotos certas que garantirão um resultado hiper-realista e impressionante." },
+    { icon: <Cpu className="text-sky-400"/>, title: "Módulo 3: Treinando a Inteligência Artificial", description: "O passo a passo para ensinar a IA a criar sua versão digital, com configurações simples e otimizadas." },
+    { icon: <Wand2 className="text-sky-400"/>, title: "Módulo 4: A Mágica Acontece", description: "Como usar nossos comandos prontos (prompts) para gerar dezenas de fotos em qualquer estilo que você sonhar." },
+    { icon: <ImageIcon className="text-sky-400"/>, title: "Módulo 5: Seu Primeiro Ensaio", description: "Dando vida às suas ideias: gerando suas primeiras imagens e aplicando os toques finais para um resultado profissional." },
   ];
 
   const bonuses = [
-    { icon: <Brain />, title: "Bônus 1 – Agente GPT de Prompts Criativos", description: "Gere prompts ultra detalhados com seu nome, estilo e iluminação com 1 clique, mesmo sem ter ideias." },
-    { icon: <Film />, title: "Bônus 2 – Crie Ensaios Gratuitamente com o ChatGPT", description: "Aprenda a criar seus primeiros ensaios de forma 100% gratuita para começar a experimentar." },
+    { icon: <Brain />, title: "Bônus 1 – Agente GPT de Prompts Criativos", description: "Um robô que cria os comandos para você. Gere ideias de ensaios com seu nome, estilo e iluminação com 1 clique." },
+    { icon: <Gift />, title: "Bônus 2 – Acesso Vitalício e Atualizações Futuras", description: "Receba todas as novas aulas e melhorias do método para sempre, sem pagar nada a mais por isso." },
   ];
 
-  const upcomingUpdates = [
-    { icon: <Film className="text-purple-400"/>, title: "Ensaios virando Vídeos com Qualidade Cinematográfica", description: "Você vai aprender a transformar suas fotos em vídeos emocionantes e imersivos, ideais pra reels, TikToks e anúncios. É outro nível de conteúdo." },
-    { icon: <Sparkles className="text-purple-400"/>, title: "Conversão dos vídeos em 4K para Instagram e TikTok", description: "Chega de vídeo “meia boca”. Agora você vai aprender a entregar em altíssima qualidade, com aquele visual de estúdio de cinema direto do seu notebook." },
-    { icon: <ShoppingBag className="text-purple-400"/>, title: "Módulo de Produtos com IA (Mockups + Vídeos Profissionais)", description: "Vamos além dos ensaios: você vai aprender a criar mockups realistas e vídeos promocionais para seus projetos, marca pessoal ou loja." }
-  ];
-  
   const faqItems = [
-    { value: "item-1", question: "Isso é só um curso de inteligência artificial?", answer: "Não apenas. É um método prático focado em uma única coisa: te ensinar a criar seus próprios ensaios fotográficos incríveis, passo a passo, mesmo que você nunca tenha usado IA antes." },
-    { value: "item-2", question: "Preciso saber editar fotos ou programar?", answer: "De forma alguma. O método é todo guiado, com passo a passo e templates prontos. Você não precisa de nenhuma experiência técnica." },
-    { value: "item-3", question: "Preciso ter um computador muito potente?", answer: "Não! Todo o processamento pesado é feito na nuvem, não no seu computador. Se você consegue assistir a vídeos no YouTube, consegue criar seus ensaios." },
-    { value: "item-4", question: "Quanto eu preciso investir além do curso?", answer: "O custo para treinar seu clone digital é de $10 dólares (cerca de R$50). Esse clone é seu para sempre e você pode gerar milhares de fotos com ele. O curso te mostra como aproveitar esse investimento ao máximo." },
-    { value: "item-5", question: "Em quanto tempo consigo criar minhas primeiras fotos?", answer: "Depois de assistir às aulas (que são rápidas e diretas), o processo de treinar o clone leva algumas horas. Feito isso, você consegue gerar um ensaio completo em menos de 20 minutos!" },
-    { value: "item-6", question: "Posso usar no celular?", answer: "O ideal é usar um computador para o treinamento e a geração das imagens, pois as plataformas são otimizadas para desktop, o que torna o processo muito mais fácil e rápido." }
+    { value: "item-1", question: "É difícil de fazer? Preciso entender de tecnologia?", answer: "De forma alguma! O método é 100% guiado, passo a passo, feito para iniciantes. Se você sabe seguir uma receita de bolo, você consegue criar suas fotos. É tudo visual e com cliques." },
+    { value: "item-2", question: "Preciso de um computador potente?", answer: "Não! Todo o trabalho pesado é feito na nuvem pelas ferramentas. Seu computador será usado apenas para acessar os sites. Se ele roda vídeos no YouTube, ele é perfeito para o curso." },
+    { value: "item-3", question: "Quanto tempo leva para aprender e criar as fotos?", answer: "Você aprende o método completo em menos de 1 hora. Depois disso, o processo de treinar a IA com suas fotos leva algumas horas (ela trabalha sozinha). Uma vez treinado, você cria um ensaio inteiro em menos de 20 minutos." },
+    { value: "item-4", question: "Terei que pagar algo além do curso?", answer: "Sim. Há um custo de $10 (cerca de R$50) para treinar sua 'versão digital' na plataforma que usamos. Esse pagamento único cria seu modelo para sempre, e com ele você pode gerar milhares de fotos. É um investimento com um retorno visual gigantesco." },
+    { value: "item-5", question: "As fotos ficam parecidas comigo de verdade?", answer: "Sim, o realismo é o ponto alto do método. Ao seguir nosso passo a passo na escolha das fotos e no treinamento, o resultado são imagens que as pessoas juram que foram feitas por um fotógrafo profissional." },
+    { value: "item-6", question: "E se eu tiver alguma dúvida durante o processo?", answer: "Você terá acesso ao nosso suporte exclusivo para alunos. Qualquer dúvida que surgir, nossa equipe estará pronta para te ajudar a ter os melhores resultados." }
   ];
 
   const offerItems = [
-    { text: "Curso Clone Perfeito Completo", value: "R$197" },
-    { text: "Acesso Vitalício e Suporte", value: "R$97" },
+    { text: "Curso Clone Perfeito (5 Módulos)", value: "R$197" },
+    { text: "Suporte Individual para Alunos", value: "R$97" },
     { text: "Bônus 1 - Agente GPT de Prompts", value: "R$47" },
-    { text: "Bônus 2 - Ensaios com ChatGPT", value: "R$29" },
-    { text: "Futuras Atualizações Garantidas", value: "Inestimável" }
+    { text: "Bônus 2 - Acesso Vitalício e Atualizações", value: "Inestimável" }
   ];
 
 
@@ -129,7 +117,6 @@ export default function ClonePerfeitoFinalPage() {
 
       <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
 
-        {/* ===== BARRA DE CHECKOUT FLUTUANTE ===== */}
         <div className={`fixed top-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-700/50 transition-transform duration-300 ${isBarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
           <div className="max-w-3xl mx-auto flex items-center justify-between p-3 px-4">
             <span className="text-sm font-medium text-neutral-200 hidden sm:block">A estética que você sempre quis, com 80% OFF.</span>
@@ -142,87 +129,92 @@ export default function ClonePerfeitoFinalPage() {
           </div>
         </div>
 
-        <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-12 md:space-y-16">
-
-          <section className="text-center space-y-6">
-            <h1 className="text-3xl md:text-5xl font-bold text-neutral-100 leading-tight">
-              Crie ensaios fotográficos seus que parecem feitos por um profissional.
-            </h1>
-            <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto">
-              Mesmo sem câmera, sem estúdio e sem saber nada de edição. Só com o seu computador e nossa ajuda.
-            </p>
+        <main className="max-w-3xl mx-auto px-4 py-16 md:py-24 space-y-16 md:space-y-20">
+          
+          <section className="space-y-8">
+              <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
+              <div className="text-center space-y-4">
+                <h1 className="text-3xl md:text-5xl font-bold text-neutral-100 leading-tight">
+                  Crie fotos suas que parecem de um ensaio profissional...
+                </h1>
+                <p className="text-lg md:text-xl text-yellow-400 font-medium">
+                  sem câmera, sem estúdio e sem sair de casa.
+                </p>
+              </div>
+              <div className="text-lg text-neutral-400 max-w-2xl mx-auto text-center leading-relaxed">
+                  <p>Com o <strong className="text-white">Clone Perfeito</strong>, você aprende em <strong className="text-white">menos de 1 hora</strong> a usar inteligência artificial para gerar fotos lindas e profissionais, em qualquer estilo ou lugar do mundo.</p>
+              </div>
           </section>
 
-          <div className="w-full flex justify-center">
+          <section className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-4 text-center">
+            <h2 className="text-2xl font-bold text-white">É sério, qualquer um consegue.</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 text-neutral-300">
+              <div className="flex flex-col items-center gap-2">
+                <Heart className="w-8 h-8 text-rose-400"/>
+                <p>Mesmo que <strong className="text-white">nunca tenha mexido</strong> com IA.</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <MousePointerClick className="w-8 h-8 text-rose-400"/>
+                <p>Mesmo que <strong className="text-white">não entenda nada</strong> de tecnologia.</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Users className="w-8 h-8 text-rose-400"/>
+                <p>O método é <strong className="text-white">guiado, simples e direto</strong> ao ponto.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 text-center mb-10">Veja o que você vai conseguir fazer:</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Briefcase className="w-10 h-10 text-sky-400 flex-shrink-0"/><p className='text-lg'>Fotos de nível profissional para seu LinkedIn ou marca.</p></CardContent></Card>
+              <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Instagram className="w-10 h-10 text-sky-400 flex-shrink-0"/><p className='text-lg'>Um feed de Instagram com uma estética impecável.</p></CardContent></Card>
+              <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Camera className="w-10 h-10 text-sky-400 flex-shrink-0"/><p className='text-lg'>Ensaios em Paris, NY ou num café estiloso, sem sair do lugar.</p></CardContent></Card>
+              <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Sparkles className="w-10 h-10 text-sky-400 flex-shrink-0"/><p className='text-lg'>Imagens criativas com o seu rosto para qualquer projeto.</p></CardContent></Card>
+            </div>
+          </section>
+
+          <div className="w-full flex justify-center pt-4">
             <Link href="#checkout">
-              <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-8 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
-                QUERO CRIAR MINHAS FOTOS
+              <Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
+                QUERO TER FOTOS ASSIM
               </Button>
             </Link>
           </div>
 
-          <section className="py-8">
-            <div className="text-left space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">De selfies comuns a um perfil de capa de revista.</h2>
-              <p className="text-lg text-neutral-400">Veja a mágica acontecer com o método Clone Perfeito.</p>
-            </div>
-            <div className="mt-12 space-y-12">
-              <div className="space-y-4">
-                <h3 className="text-left text-lg font-semibold text-neutral-400 tracking-wider">ANTES</h3>
-                <Image src="/images/antescp.jpg" alt="Fotos de selfie usadas como base para o treinamento da IA" width={1200} height={343} className="rounded-xl shadow-lg w-full h-auto" />
-                <p className="text-left text-neutral-500 text-sm">Apenas algumas fotos comuns do seu celular.</p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-left text-xl font-bold text-yellow-400 tracking-wider">✨ DEPOIS ✨</h3>
-                <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados por inteligência artificial" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
-                <p className="text-left text-neutral-500 text-sm">Ensaios incríveis gerados com o seu clone.</p>
-              </div>
-            </div>
-          </section>
-          
           <Separator className="bg-neutral-700" />
-          
-          <section className="space-y-8 text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">Deixa eu te perguntar…</h2>
-            <p className="text-lg leading-relaxed">Quantas vezes você viu alguém com um perfil lindo no Instagram, fotos super estéticas, feed organizado… e pensou:</p>
-            <blockquote className="border-l-4 border-neutral-700 pl-6 my-4 text-xl italic text-neutral-400">
-              “Se eu tivesse fotos assim, meu perfil também chamaria mais atenção.”
+
+          <section className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 text-center">Para quem é o Clone Perfeito?</h2>
+            <p className="text-lg text-center text-neutral-400 max-w-2xl mx-auto">Se você se identifica com algum destes pontos, este método foi desenhado para você:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+              <Card className="bg-neutral-800 border-neutral-700/80">
+                <CardHeader><CardTitle className="flex items-center gap-3"><Star className="text-yellow-400"/>Para quem quer se destacar</CardTitle></CardHeader>
+                <CardContent><p className="text-neutral-300">Você quer um perfil mais bonito e profissional, que chame a atenção e gere uma primeira impressão incrível.</p></CardContent>
+              </Card>
+              <Card className="bg-neutral-800 border-neutral-700/80">
+                <CardHeader><CardTitle className="flex items-center gap-3"><Briefcase className="text-yellow-400"/>Para o profissional ambicioso</CardTitle></CardHeader>
+                <CardContent><p className="text-neutral-300">Você precisa de fotos corporativas de alta qualidade para o LinkedIn e para sua marca pessoal, mas sem o custo de um fotógrafo.</p></CardContent>
+              </Card>
+              <Card className="bg-neutral-800 border-neutral-700/80">
+                <CardHeader><CardTitle className="flex items-center gap-3"><Heart className="text-yellow-400"/>Para quem valoriza a estética</CardTitle></CardHeader>
+                <CardContent><p className="text-neutral-300">Você ama um feed organizado e fotos estilosas, mas não tem tempo ou paciência para produções fotográficas complexas.</p></CardContent>
+              </Card>
+              <Card className="bg-neutral-800 border-neutral-700/80">
+                <CardHeader><CardTitle className="flex items-center gap-3"><Rocket className="text-yellow-400"/>Para o criativo e curioso</CardTitle></CardHeader>
+                <CardContent><p className="text-neutral-300">Você adora tecnologia, inovação e quer explorar o poder da IA para criar algo único e se divertir com sua própria imagem.</p></CardContent>
+              </Card>
+            </div>
+            <blockquote className="border-l-4 border-yellow-400 pl-6 mt-8 text-xl text-center italic text-neutral-300 max-w-2xl mx-auto">
+              É uma porta de entrada para uma nova estética pessoal. Uma nova forma de se ver. <strong className="text-white not-italic">E de ser visto.</strong>
             </blockquote>
-            
-            <Card className="bg-neutral-800/50 border-neutral-700 my-8">
-                <CardHeader><CardTitle className="text-neutral-200 text-xl">Você já percebeu como...</CardTitle></CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="flex items-start gap-4"><Star className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" /><p className="text-neutral-300 text-lg">...as pessoas com as fotos certas se destacam <strong className="font-medium text-white">naturalmente?</strong></p></div>
-                    <div className="flex items-start gap-4"><TrendingUp className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" /><p className="text-neutral-300 text-lg">...as oportunidades, convites e até o respeito mudam quando você parece mais <strong className="font-medium text-white">profissional e estiloso</strong> online?</p></div>
-                </CardContent>
-            </Card>
-
-            <div className="space-y-4">
-              <p className="text-xl leading-relaxed"><strong className="text-yellow-400">Pois é.</strong> Esse é o poder da imagem bem feita.</p>
-              <p className="text-xl leading-relaxed">E agora você pode ter esse poder nas suas mãos — sem depender de fotógrafo, estúdio, ou edições complicadas.</p>
-            </div>
           </section>
 
-          <section className="space-y-8 text-left">
-            <p className="text-xl font-medium text-neutral-100 bg-neutral-800 p-6 rounded-lg">
-             Estou falando de um método inédito, direto ao ponto, onde você vai aprender a criar seu <strong className='text-yellow-300'>clone digital hiper-realista</strong> e gerar ensaios completos com IA — com fotos impressionantes, em <strong className='text-yellow-300'>qualquer estilo e cenário que imaginar.</strong>
-            </p>
-            
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 pt-8">Sim, você mesmo pode ter imagens como estas:</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Briefcase className="w-8 h-8 text-sky-400 flex-shrink-0"/><p className='text-lg'>Retratos corporativos para o LinkedIn</p></CardContent></Card>
-                <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Camera className="w-8 h-8 text-sky-400 flex-shrink-0"/><p className='text-lg'>Lifestyle no café, na praia ou em Paris</p></CardContent></Card>
-                <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Instagram className="w-8 h-8 text-sky-400 flex-shrink-0"/><p className='text-lg'>Fotos estéticas para um feed incrível</p></CardContent></Card>
-                <Card className="bg-neutral-800 border-neutral-700"><CardContent className="p-4 flex items-center gap-4"><Lightbulb className="w-8 h-8 text-sky-400 flex-shrink-0"/><p className='text-lg'>Visuais criativos para seu projeto ou marca</p></CardContent></Card>
-            </div>
-            <p className='text-lg text-center text-neutral-400 pt-4'>Tudo com realismo surreal, feito por IA em poucas horas.</p>
-          </section>
+          <div className="pt-8"><h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações de Alunos Comuns Como Você</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
 
-          <div className="pt-8"><h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Sparkles className="text-yellow-400"/> Criações dos Nossos Alunos</h2><div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover transition-transform hover:scale-105" /></div>))}</div></div>
-          
           <Separator className="bg-neutral-700" />
           
-          <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100">O que você vai aprender passo a passo</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100">O que você vai aprender (o passo a passo da mágica)</h2>
           <div className="space-y-4">
             {modules.map((module, index) => (
               <Card key={index} className="bg-neutral-800 border-neutral-700 border-l-4 border-l-sky-400 overflow-hidden">
@@ -235,71 +227,12 @@ export default function ClonePerfeitoFinalPage() {
             ))}
           </div>
 
-          <blockquote className="border-l-4 border-yellow-400 pl-6 italic text-neutral-300 text-lg">
-            Não importa se você nunca mexeu com IA antes. <strong className="text-white not-italic">O curso foi feito para pessoas comuns</strong> — que querem se destacar, ter um feed bonito ou só brincar com o visual de uma forma única e criativa.
-          </blockquote>
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-8 border-b border-neutral-800 pb-4">E ainda leva 2 Bônus Especiais</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-8">E ainda leva 2 Bônus para acelerar seus resultados</h2>
           <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-4"><Check className="w-6 h-6 text-green-400" /><CardTitle className="text-xl text-left text-neutral-100">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-16 pb-4 text-left">{bonus.description}</CardContent></Card>))}</div>
-          
-          <section className="pt-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-100 mb-8 text-left">
-                  Prazer, sou o Gabriel. E eu criei o Clone Perfeito.
-              </h2>
-              <Image src="/images/eu-gabriel.jpg" alt="Foto de Gabriel, criador do Clone Perfeito" width={800} height={500} className="w-full max-w-lg rounded-xl shadow-2xl shadow-black/40 mb-8" />
-              <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
-                  <p>Comecei na faculdade de Engenharia da Computação, mas logo vi que minha paixão era outra: o lado prático, visual e criativo da tecnologia.</p>
-                  <p>Nos últimos 4 anos, mergulhei no marketing digital, explorando design, copy e tráfego. Foi nessa jornada que me apaixonei pelo poder da imagem e me especializei em campanhas visuais.</p>
-                  <p>Quando descobri a IA para criar imagens hiper-realistas, tudo mudou. Vi que não era só uma ferramenta de trabalho, mas algo que podia <strong className="text-yellow-400">transformar completamente a forma como as pessoas se veem e se apresentam online.</strong></p>
-                  <p>Por isso, criei o Clone Perfeito: para compartilhar esse poder e te ajudar a criar uma estética única, com total autonomia e criatividade.</p>
-              </div>
-          </section>
 
-          <div className="pt-8 mb-8 md:mb-12">
-              <h2 className="text-2xl font-bold text-left md:text-center text-neutral-100 mb-8 flex items-center justify-start md:justify-center gap-3"><Users className="text-yellow-400"/> A prova de que o método funciona para todos</h2>
-              <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                  <CarouselContent className="-ml-4">
-                      {testimonials.map((num) => (
-                          <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
-                              <Card className="bg-neutral-800/50 border-neutral-700 overflow-hidden"><CardContent className="p-0"><Image src={`/images/d${num}.jpg`} alt={`Depoimento de aluno ${num}`} width={400} height={800} className="w-full h-auto" /></CardContent></Card>
-                          </CarouselItem>
-                      ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" /><CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
-              </Carousel>
-          </div>
-          
-          <section className="pt-16 space-y-8">
-            <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-100">
-                  🚨 ATUALIZAÇÕES PODEROSAS A CAMINHO 🚨
-                </h2>
-                <p className="text-lg text-neutral-400 mt-2">(E tudo incluso pra quem entrar agora)</p>
-            </div>
-            <p className="text-lg text-center max-w-2xl mx-auto text-neutral-300">
-              O Clone Perfeito está sempre evoluindo. Se liga no que vem por aí para expandir ainda mais seu potencial criativo:
-            </p>
-            <div className="space-y-4 pt-4">
-              {upcomingUpdates.map((update, index) => (
-                <Card key={index} className="bg-neutral-800/50 border-neutral-700/80 border-l-4 border-l-purple-500 overflow-hidden shadow-lg">
-                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 p-4">
-                    <span className="text-neutral-400">{update.icon}</span>
-                    <CardTitle className="text-xl text-left text-neutral-100">{update.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-neutral-300 pl-16 pb-4 text-left">{update.description}</CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-8 p-6 rounded-lg bg-green-950/40 border border-green-800/50 text-center">
-              <p className="text-xl text-neutral-200 leading-relaxed">
-                Todas essas atualizações serão <strong className="font-bold text-green-400">adicionadas sem nenhum custo extra</strong> para quem já é aluno.
-              </p>
-            </div>
-          </section>
+          <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-center text-neutral-100 pt-12">Sua vez de ter uma imagem impactante</h2>
 
-          <h2 id="checkout" className="text-3xl md:text-4xl font-bold text-left text-neutral-100 pt-12 border-b border-neutral-800 pb-4">A estética certa muda tudo.</h2>
-
-          <div className="relative mt-8">
+          <div className="relative mt-2">
               <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-blue-600 rounded-2xl blur-xl opacity-15"></div>
               <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
                   <CardContent className="p-6 md:p-8 space-y-6">
@@ -313,7 +246,7 @@ export default function ClonePerfeitoFinalPage() {
                             {item.value !== "Inestimável" ? (
                               <p className="text-neutral-400 font-normal text-sm sm:text-base whitespace-nowrap ml-2">(vale {item.value})</p>
                             ) : (
-                              <p className="text-neutral-400 font-normal text-sm sm:text-base whitespace-nowrap ml-2">({item.value})</p>
+                              <p className="text-green-400 font-bold text-sm sm:text-base whitespace-nowrap ml-2">INCLUSO</p>
                             )}
                           </div>
                         ))}
@@ -322,8 +255,8 @@ export default function ClonePerfeitoFinalPage() {
                       <Separator className="bg-neutral-700/50"/>
                       
                       <div className="text-center space-y-4">
-                          <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">DESCONTO DE 80%</div>
-                          <p className="text-lg text-neutral-400">De <span className="line-through">R$370</span> por apenas:</p>
+                          <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">DESCONTO DE 80% HOJE</div>
+                          <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
                           <p className="text-4xl sm:text-5xl font-bold text-white">R$ 97</p>
                           <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
                       </div>
@@ -331,13 +264,13 @@ export default function ClonePerfeitoFinalPage() {
                       <div className="pt-4">
                           <Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10">
                               <Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 focus-visible:bg-green-600">
-                                  Quero criar minhas fotos com desconto
+                                  QUERO CRIAR MINHAS FOTOS COM DESCONTO
                               </Button>
                           </Link>
                       </div>
 
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
-                          <div className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Garantia sem risco</span></div>
+                          <div className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Garantia de 7 dias</span></div>
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Assista de qualquer lugar</span></div>
                           <div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso imediato</span></div>
                           <div className="flex items-center gap-2"><Lock className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Pagamento 100% seguro</span></div>
@@ -350,26 +283,10 @@ export default function ClonePerfeitoFinalPage() {
               <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
               <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
-                  <p className="text-neutral-300 text-lg leading-relaxed">Seu resultado garantido ou seu dinheiro de volta. Se, por qualquer motivo, você não ficar maravilhado com o que é possível criar, basta enviar um e-mail e nós devolveremos todo o seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong></p>
+                  <p className="text-neutral-300 text-lg leading-relaxed">Você totalmente maravilhado ou seu dinheiro de volta. Se, por qualquer motivo, você achar que o método não é para você, basta enviar um e-mail e devolveremos 100% do seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong></p>
               </div>
           </div>
           
-          <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
-              <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
-              <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Ainda tem alguma dúvida?</h3>
-                  <p className="text-neutral-300 text-lg leading-relaxed mb-4">
-                      Se você precisa de mais alguma informação, clique no botão abaixo e fale diretamente com nossa equipe no WhatsApp. Estamos aqui para ajudar!
-                  </p>
-                  <Link href="https://api.whatsapp.com/send?phone=5511978610717" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300">
-                          <MessageSquare className="w-4 h-4 mr-2" />
-                          Chamar no WhatsApp
-                      </Button>
-                  </Link>
-              </div>
-          </div>
-
           <Separator className="bg-neutral-700 my-12" />
 
           <div className="space-y-8">
