@@ -1,11 +1,11 @@
 'use client'; // Adiciona a diretiva para indicar que este é um Componente de Cliente
 
 import { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Separator } from "@/components/ui/separator"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import {
   Brain,
   Wand2,
@@ -30,10 +30,10 @@ import {
   Zap,
   Clock,
   Award
-} from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import Script from "next/script"
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
 
 export default function ClonePerfeitoFinalPage() {
   const [isBarVisible, setIsBarVisible] = useState(false);
@@ -94,8 +94,39 @@ export default function ClonePerfeitoFinalPage() {
 
   return (
     <>
-      <Script id="meta-pixel" strategy="afterInteractive">{`...`}</Script>
-      <Script id="microsoft-clarity" strategy="afterInteractive">{`...`}</Script>
+      {/* --- CÓDIGOS DE TRACKING CORRIGIDOS --- */}
+      <Script
+        id="meta-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1198526755291146');
+            fbq('track', 'PageView');
+          `,
+        }}
+      />
+      <Script
+        id="microsoft-clarity"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "sb2ap4cj31");
+          `,
+        }}
+      />
+      {/* --- FIM DOS CÓDIGOS DE TRACKING --- */}
 
       <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
 
@@ -271,4 +302,4 @@ export default function ClonePerfeitoFinalPage() {
       <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
     </>
   )
-}
+}```
