@@ -250,10 +250,10 @@ export default function ClonePerfeitoFinalPage() {
                       <Separator className="bg-neutral-700/50"/>
                       <div className="text-center space-y-4">
                           <p className="text-lg text-neutral-400">De <span className="line-through">R$591</span> por apenas:</p>
-                          <p className="text-4xl sm:text-5xl font-bold text-yellow-400">12x de R$ 9,74</p>
-                          <p className="text-xl font-medium text-white">ou R$ 97 à vista</p>
+                          <p className="text-4xl sm:text-5xl font-bold text-yellow-400">9x de R$ 8,80</p>
+                          <p className="text-xl font-medium text-white">ou R$ 67 à vista</p>
                       </div>
-                      <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
+                      <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
                           <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Garantia de 7 dias</span></div>
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
