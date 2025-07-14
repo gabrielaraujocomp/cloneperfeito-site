@@ -89,7 +89,7 @@ export default function ClonePerfeitoFinalPage() {
     { text: "Bônus 1 - Agente GPT de Prompts", value: "R$47" },
     { text: "Bônus 2 - Aula de Renda Extra", value: "R$97" },
     { text: "Futura Atualização de Vídeos", value: "R$150" },
-    { text: "Acesso Vitalício e Suporte", value: "Inestimável" }
+    { text: "Suporte Individual", value: "Inestimável" }
   ];
 
   return (
@@ -256,7 +256,7 @@ export default function ClonePerfeitoFinalPage() {
                       <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
-                          <div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso imediato e vitalício</span></div>
+                          <div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso imediato</span></div>
                           <div className="flex items-center gap-2"><Lock className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Pagamento 100% seguro</span></div>
                       </div>
                   </CardContent>
