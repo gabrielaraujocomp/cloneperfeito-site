@@ -255,7 +255,6 @@ export default function ClonePerfeitoFinalPage() {
                       </div>
                       <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
-                          <div className="flex items-center gap-2"><Shield className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Garantia de 7 dias</span></div>
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
                           <div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso imediato e vitalício</span></div>
                           <div className="flex items-center gap-2"><Lock className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Pagamento 100% seguro</span></div>
@@ -264,13 +263,6 @@ export default function ClonePerfeitoFinalPage() {
               </Card>
           </div>
 
-          <div className="mt-12 flex flex-col md:flex-row items-center gap-8 text-left p-8 rounded-lg bg-sky-950/30 border border-sky-800/40">
-              <Shield className="w-20 h-20 text-sky-400 flex-shrink-0" />
-              <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Sua Satisfação ou seu Dinheiro de Volta</h3>
-                  <p className="text-neutral-300 text-lg leading-relaxed">Você tem 7 dias de garantia incondicional. Entre, assista às aulas, explore o método e, se por qualquer motivo, você não ficar absolutamente maravilhado com o que é possível criar, basta enviar um e-mail. Devolveremos 100% do seu investimento, sem perguntas. <strong className="text-yellow-400">O risco é todo nosso.</strong></p>
-              </div>
-          </div>
           
           <div className="flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
               <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
