@@ -421,8 +421,8 @@ export default function ClonePerfeitoFinalPage() {
                 <div className="text-center space-y-4">
                   <div className="inline-block bg-green-500/10 text-green-400 font-bold py-1 px-3 rounded-full text-sm">DESCONTO DE 80%</div>
                   <p className="text-lg text-neutral-400">De <span className="line-through">R$494</span> por apenas:</p>
-                  <p className="text-4xl sm:text-5xl font-bold text-white">R$ 97</p>
-                  <p className="text-2xl font-bold text-yellow-400">ou 12x de R$ 9,74</p>
+                  <p className="text-4xl sm:text-5xl font-bold text-white">R$67</p>
+                  <p className="text-2xl font-bold text-yellow-400">ou 9x de R$8,80</p>
                 </div>
 
                 <div className="pt-4">
@@ -441,16 +441,6 @@ export default function ClonePerfeitoFinalPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-sky-950/30 border border-sky-800/40">
-            <Shield className="w-16 h-16 text-sky-400 flex-shrink-0" />
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-2">Garantia Incondicional de 7 Dias</h3>
-              <p className="text-neutral-300 text-lg leading-relaxed">
-                Você totalmente satisfeito ou seu dinheiro de volta na hora. Se, por qualquer motivo, você não estiver 100% satisfeito, basta enviar um e-mail e nós devolveremos todo o seu investimento. <strong className="text-yellow-400">O risco é todo nosso.</strong>
-              </p>
-            </div>
           </div>
 
           <div className="mt-12 flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
