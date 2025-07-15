@@ -1,32 +1,41 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-// Local: /app/layout.js
+// Arquivo: app/layout.js
 
-// Supondo que você tenha imports de fontes ou CSS aqui...
-// Ex: import { Inter } from 'next/font/google'
-// Ex: import './globals.css'
-
-// AQUI ESTÁ A ADIÇÃO IMPORTANTE
+// Por favor, substitua todo o seu objeto 'metadata' por este para garantir a estrutura correta.
 export const metadata = {
-  // Você pode adicionar outros metadados aqui se quiser
+  // Metadados básicos
   title: 'Clone Perfeito',
   description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
   
-  // Esta é a chave específica para verificação de domínio
+  // A seção de verificação DEVE ser exatamente assim:
   verification: {
-    // O Next.js sabe que 'facebook' deve ser renderizado como <meta name="facebook-domain-verification" ...>
     facebook: '10nf38xc0ux482u2qa1a51e5m3ay6q',
-    
-    // Se você tiver outras verificações no futuro (ex: Google), pode adicionar aqui
-    // google: 'sua-outra-chave-de-verificacao', 
+  },
+
+  // As tags Open Graph para um bom compartilhamento em redes sociais
+  openGraph: {
+    title: 'Clone Perfeito',
+    description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
+    url: 'https://www.cloneperfeito.com',
+    siteName: 'Clone Perfeito',
+    images: [
+      {
+        url: 'https://www.cloneperfeito.com/images/bg-cp.jpg',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'pt_BR',
+    type: 'website',
   },
 };
 
+// O resto do seu arquivo layout.js continua igual
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      {/* O Next.js irá inserir a tag <head> com os metadados automaticamente aqui */}
       <body>{children}</body>
     </html>
   );
