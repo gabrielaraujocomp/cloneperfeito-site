@@ -12,7 +12,8 @@ export const metadata = {
   // Você pode adicionar outros metadados aqui se quiser
   title: 'Clone Perfeito',
   description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
-  
+
+  <meta name="facebook-domain-verification" content="10nf38xc0ux482u2qa1a51e5m3ay6q" />
   // Esta é a chave específica para verificação de domínio
   verification: {
     // O Next.js sabe que 'facebook' deve ser renderizado como <meta name="facebook-domain-verification" ...>
