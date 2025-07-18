@@ -3,14 +3,17 @@ import './globals.css'
 
 // Arquivo: app/layout.js
 
-// Substitua seu objeto metadata por este.
-// Esta versão injeta a tag de verificação manualmente para garantir que ela seja renderizada.
-export const metadata = {
+export const metadata: Metadata = {
   // Metadados básicos
   title: 'Clone Perfeito',
   description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
   
-  // AQUI ESTÁ A CORREÇÃO PRINCIPAL: Injetando a tag manualmente
+  // ✅ FAVICON PARA O NAVEGADOR VAI AQUI
+  icons: {
+    icon: '/fav-clone.png', // Caminho para sua imagem na pasta /public
+  },
+
+  // Injetando a tag de verificação do Facebook manualmente
   other: {
     'facebook-domain-verification': '10nf38xc0ux482u2qa1a51e5m3ay6q',
   },
@@ -21,7 +24,6 @@ export const metadata = {
     description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
     url: 'https://www.cloneperfeito.com',
     siteName: 'Clone Perfeito',
-    icon: '/fav-clone.png', // Caminho para sua imagem na pasta /public
     images: [
       {
         url: 'https://www.cloneperfeito.com/images/bg-cp.jpg',
@@ -29,16 +31,14 @@ export const metadata = {
         height: 630, // Proporção padrão para compartilhamento
         alt: 'Galeria de retratos hiper-realistas gerados por Inteligência Artificial',
       },
-      
     ],
     locale: 'pt_BR',
     type: 'website',
   },
 };
 
-
 // O resto do seu arquivo layout.js continua igual
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
       <body>{children}</body>
