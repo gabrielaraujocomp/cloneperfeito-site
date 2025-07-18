@@ -114,6 +114,7 @@ export default function ClonePerfeitoFinalPage() {
           
           {/* 1. O GANCHO */}
           <section className="space-y-6 md:space-y-8 text-center">
+              <Image src="/cplogowhite.png" alt="Logo Clone Perfeito" width={180} height={40} className="mx-auto mb-8 h-auto"/>
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mt-8">
                   Transforme selfies comuns em ensaios fotográficos profissionais com IA — <br className="hidden md:block" />
@@ -175,7 +176,7 @@ export default function ClonePerfeitoFinalPage() {
                                 {afterImages.map(num => (
                                     <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
                                         <div className="aspect-[3/4] rounded-lg overflow-hidden">
-                                            <Image src={`/images/depois-${num}.jpg`} alt={`Resultado profissional gerado ${num}`} width={300} height={400} className="w-full h-full object-cover" />
+                                            <Image src={`/images/depois-${num}.${num === 4 ? 'png' : 'jpg'}`} alt={`Resultado profissional gerado ${num}`} width={300} height={400} className="w-full h-full object-cover" />
                                         </div>
                                     </CarouselItem>
                                 ))}
@@ -229,7 +230,7 @@ export default function ClonePerfeitoFinalPage() {
           {/* 8. SEÇÃO DE COMPARAÇÃO */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Por que o Clone Perfeito é Diferente?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300">
               <Card className="bg-neutral-800/40 border border-neutral-700/80 p-6">
                 <CardHeader className="p-0 text-center mb-4">
                   <h3 className="text-2xl font-bold text-rose-400 flex items-center justify-center gap-2"><XCircle/> Outros Cursos de IA</h3>
@@ -350,7 +351,7 @@ export default function ClonePerfeitoFinalPage() {
           {/* 15. FRASE FINAL */}
           <div className="text-center pt-16 space-y-4">
             <Separator className="bg-neutral-800" />
-            <p className="text-2xl italic text-neutral-400 max-w-3xl mx-auto pt-12">"A tecnologia não é nada. O importante é que você tenha fé nas pessoas, que elas sejam basicamente boas e inteligentes, e se você lhes der ferramentas, elas farão coisas maravilhosas com elas."</p>
+            <p className="text-2xl italic text-neutral-400 max-w-3xl mx-auto pt-12">"A tecnologia não é nada. O importante é que você tenha fé nas pessoas... se você lhes der ferramentas, elas farão coisas maravilhosas com elas."</p>
             <p className="text-lg text-neutral-500">- Steve Jobs</p>
           </div>
 
