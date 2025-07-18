@@ -69,17 +69,15 @@ export default function ClonePerfeitoFinalPage() {
   // NOVA LISTA DE MÓDULOS
   const courseModules = [
     { title: "[1] Fundamentos do Clone Perfeito", description: "Boas-vindas, visão geral do método e a preparação do ambiente para você criar seu clone em minutos." },
-    { title: "[2] Treinamento da IA e Criação do Clone", description: "O segredo para escolher as fotos certas e o passo a passo para treinar a IA com seu rosto." },
+    { title: "[2] Preparando Seu Clone Perfeito", description: "O segredo para escolher as fotos certas e o passo a passo para treinar a IA com seu rosto." },
     { title: "[3] Gerando Ensaios Fotográficos Incríveis", description: "Como usar nossos Agentes GPT e prompts prontos para criar imagens de nível profissional em qualquer estilo." },
-    { title: "[4] Renda Extra: Vendendo seus Ensaios", description: "Aprenda a encontrar clientes, precificar seu trabalho e transformar essa habilidade em uma fonte de renda." },
-    { title: "[EM BREVE] Módulo de Vídeos com IA", description: "Transforme suas melhores fotos em vídeos cinematográficos e dinâmicos para Reels e TikTok.", status: "soon" },
-    { title: "[EM BREVE] Finalização e Qualidade 4K", description: "Aprenda a dar o toque final nos seus vídeos, aumentando a qualidade para um impressionante 4K.", status: "soon" },
+    { title: "[4] Módulo de Vídeos com IA", description: "Transforme suas melhores fotos em vídeos cinematográficos e dinâmicos para Reels e TikTok.", status: "soon" },
+    { title: "[5] Finalização e Qualidade 4K", description: "Aprenda a dar o toque final nos seus vídeos, aumentando a qualidade para um impressionante 4K.", status: "soon" },
   ];
 
   const bonuses = [
     { text: "Agente GPT Gerador de Prompts", value: "R$47" },
     { text: "Agente GPT Extrator de Prompts", value: "R$47" },
-    { text: "Aula de Renda Extra com Ensaios", value: "R$97" },
   ];
 
   const faqItems = [
