@@ -230,12 +230,12 @@ export default function ClonePerfeitoFinalPage() {
           {/* 8. SEÇÃO DE COMPARAÇÃO */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Por que o Clone Perfeito é Diferente?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card className="bg-neutral-800/40 border border-neutral-700/80 p-6">
                 <CardHeader className="p-0 text-center mb-4">
                   <h3 className="text-2xl font-bold text-rose-400 flex items-center justify-center gap-2"><XCircle/> Outros Cursos de IA</h3>
                 </CardHeader>
-                <CardContent className="p-0 space-y-3 text-lg">
+                <CardContent className="p-0 space-y-3 text-lg text-neutral-300">
                   <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Ensinam ferramentas caras e complexas.</span></p>
                   <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Prendem você em <strong className="text-rose-400">mensalidades.</strong></span></p>
                   <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Suporte genérico ou inexistente.</span></p>
@@ -246,7 +246,7 @@ export default function ClonePerfeitoFinalPage() {
                 <CardHeader className="p-0 text-center mb-4">
                   <h3 className="text-2xl font-bold text-sky-400 flex items-center justify-center gap-2"><CheckCircle2/> Clone Perfeito</h3>
                 </CardHeader>
-                <CardContent className="p-0 space-y-3 text-lg">
+                <CardContent className="p-0 space-y-3 text-lg text-neutral-300">
                   <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Usa a melhor ferramenta com custo-benefício.</span></p>
                   <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Acesso com <strong className="text-yellow-400">pagamento único.</strong></span></p>
                   <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span><strong className="text-yellow-400">Suporte pessoal</strong> e direto comigo no WhatsApp.</span></p>
