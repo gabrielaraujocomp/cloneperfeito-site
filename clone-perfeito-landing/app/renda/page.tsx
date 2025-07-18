@@ -140,39 +140,49 @@ export default function ClonePerfeitoFinalPage() {
 
         <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-24">
           
+          {/* 🔥 1. Above the fold (primeira dobra) - ALTERADO */}
           <section className="space-y-6 md:space-y-8 text-center">
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mt-8">
-                Aprenda a criar um Clone seu (ou de qualquer pessoa) com IA e <br className="hidden md:block" />
-                <span className="text-yellow-400">gere ensaios profissionais sem câmera, fotógrafo ou estúdio.</span>
+                  Transforme selfies comuns em ensaios fotográficos profissionais com IA — <br className="hidden md:block" />
+                  <span className="text-yellow-400">sem precisar de câmera, fotógrafo ou estúdio.</span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-neutral-300">Em menos de 1 hora, qualquer pessoa consegue.</p>
-              <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO CRIAR MINHAS FOTOS</Button></Link></div>
+              <p className="text-lg sm:text-xl md:text-2xl text-neutral-300">
+                  Em menos de 1 hora, você aprende o passo a passo para criar retratos hiper-realistas que impressionam — usando apenas seu celular e a IA.
+              </p>
+              <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">Quero aprender a criar ensaios com IA agora</Button></Link></div>
           </section>
           
+          {/* 📸 2. Bloco “Veja a transformação” - ALTERADO */}
           <section>
              <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-6">
                 <CardHeader className='p-0 text-center'><CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle></CardHeader>
                 <CardContent className='p-0 mt-8 space-y-8'>
                     <div className="space-y-4"><h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3><Image src="/images/antescp.jpg" alt="Fotos de selfie usadas como base" width={1200} height={343} className="rounded-xl shadow-lg w-full h-auto" /></div>
-                    <div className="space-y-4"><h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3><Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" /></div>
+                    <div className="space-y-4">
+                        <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3>
+                        <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
+                        <p className="text-center text-neutral-400 pt-2">Esses resultados foram criados a partir de selfies comuns, usando o método ensinado no curso.</p>
+                    </div>
                 </CardContent>
             </Card>
           </section>
 
+          {/* ✅ 3. Benefícios rápidos (ícones) - ALTERADO */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Clock className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Rápido e Direto</h3><p className="text-neutral-400">Aprenda o método em menos de 1 hora e crie ensaios em 20 minutos.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Zap className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Fácil para Iniciantes</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros. Não precisa saber nada de tecnologia.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Award className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Qualidade Profissional</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios para criar imagens de altíssima qualidade.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Clock className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Crie retratos com IA em menos de 1 hora</h3><p className="text-neutral-400">Aprenda o método e crie ensaios completos em poucos minutos.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Zap className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Não precisa saber nada de tecnologia</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros, feito para iniciantes.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Award className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Qualidade de estúdio com 10-15 selfies</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios para imagens de altíssima qualidade.</p></Card>
           </section>
 
+          {/* 🧠 4. Bloco “Veja exatamente o que você vai fazer” - ALTERADO */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Veja exatamente o que você vai fazer:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><ImageUp className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">1. Você envia suas fotos</h3><p className="text-neutral-400">Escolhe de 10 a 15 fotos suas e faz o upload na plataforma.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><BrainCircuit className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">2. A IA aprende seu rosto</h3><p className="text-neutral-400">Com um clique, você manda a IA estudar suas fotos e criar seu clone.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Wand2 className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">3. Você descreve o estilo</h3><p className="text-neutral-400">Usa nossos modelos prontos para pedir o que quiser (em Paris, no escritório, etc).</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Download className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">4. Você recebe o ensaio</h3><p className="text-neutral-400">Em minutos, a IA te entrega dezenas de fotos profissionais e realistas.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><ImageUp className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">01. Envie suas fotos: selfies comuns funcionam!</h3><p className="text-neutral-400">Escolhe de 10 a 15 fotos suas e faz o upload na plataforma.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><BrainCircuit className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">02. Crie seu Clone com nosso modelo testado</h3><p className="text-neutral-400">Com um clique, você manda a IA estudar suas fotos e criar seu clone.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Wand2 className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">03. Gere retratos com IA realistas e impressionantes</h3><p className="text-neutral-400">Usa nossos modelos prontos para pedir o que quiser (em Paris, no escritório, etc).</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Download className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">04. Faça vários ensaios com os estilos que você quiser</h3><p className="text-neutral-400">Em minutos, a IA te entrega dezenas de fotos profissionais e realistas.</p></Card>
             </div>
           </section>
 
@@ -181,13 +191,14 @@ export default function ClonePerfeitoFinalPage() {
               <p className="text-lg text-neutral-300 leading-relaxed">O método é tão simples que você aprende o processo completo em <strong className="text-yellow-400">menos de 1 hora</strong> e, depois disso, consegue criar um ensaio do zero em <strong className="text-yellow-400">menos de 20 minutos</strong>.</p>
           </Card>
 
+          {/* 🛑 5. Bloco “Mas e se…” - ALTERADO */}
           <section>
             <Card className="bg-neutral-800 border-2 border-neutral-700 p-8">
                 <CardTitle className="text-3xl font-bold text-white text-center">Mas, e se...?</CardTitle>
                 <ul className="mt-8 space-y-6 text-lg">
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu não entendo NADA de IA?</strong><br/><span className="text-neutral-400">Perfeito. O método é 100% guiado com passo a passo. Foi feito para iniciantes.</span></div></li>
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... meu computador é ruim?</strong><br/><span className="text-neutral-400">Não precisa de máquina potente. Todo o trabalho pesado é feito na nuvem, não no seu PC.</span></div></li>
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu tenho medo de não conseguir?</strong><br/><span className="text-neutral-400">O método é à prova de erros e você tem nosso suporte para tirar qualquer dúvida no caminho.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu nunca usei IA, vou conseguir?</strong><br/><span className="text-neutral-400">Perfeito. O método é 100% guiado com passo a passo e foi feito para iniciantes. Se você sabe seguir instruções visuais, está pronto.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... esse método funciona para quem não sabe nada de edição?</strong><br/><span className="text-neutral-400">Sim! Você não precisa saber editar. A IA faz todo o trabalho de criação, e o curso te mostra exatamente como pedir os estilos que você quer.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu tenho medo de não conseguir?</strong><br/><span className="text-neutral-400">O método é à prova de erros e você tem nosso suporte individual para tirar qualquer dúvida no caminho. É impossível ficar travado.</span></div></li>
                 </ul>
             </Card>
           </section>
@@ -215,6 +226,7 @@ export default function ClonePerfeitoFinalPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white pt-8">E ainda leva 2 Bônus para acelerar seus resultados</h2>
           <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><Check className="w-6 h-6 text-green-400" /><CardTitle className="text-xl text-left text-white">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-16 pb-4 text-left">{bonus.description}</CardContent></Card>))}</div>
 
+          {/* 🎁 8. Bônus + Atualizações - ALTERADO */}
           <section>
             <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
                 <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 ATUALIZAÇÕES PODEROSAS A CAMINHO 🚨</h3>
@@ -224,7 +236,10 @@ export default function ClonePerfeitoFinalPage() {
                     <div key={index} className="flex items-start gap-4"><span className="mt-1">{update.icon}</span><div><strong className="text-white">{update.title}</strong><p className="text-neutral-400">{update.description}</p></div></div>
                   ))}
                 </div>
-                <div className="bg-neutral-900 p-4 rounded-lg mt-6"><p className="text-xl text-white font-semibold">Quem entrar AGORA garante tudo isso <strong className="text-green-400">GRATUITAMENTE</strong> antes do preço subir.</p></div>
+                <div className="bg-neutral-900 p-4 rounded-lg mt-6 space-y-2">
+                    <p className="text-xl text-white font-semibold">Quem entrar AGORA garante tudo isso <strong className="text-green-400">GRATUITAMENTE</strong> antes do preço subir.</p>
+                    <p className="text-neutral-400">Disponível apenas nesta oferta. Depois, será vendido separadamente.</p>
+                </div>
             </Card>
           </section>
 
@@ -241,7 +256,8 @@ export default function ClonePerfeitoFinalPage() {
           </section>
 
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial (e Única)</h2>
-
+          
+          {/* 💰 10. Oferta Especial - ALTERADO */}
           <div className="relative mt-2">
               <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-yellow-500 rounded-2xl blur-xl opacity-20"></div>
               <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
@@ -253,6 +269,7 @@ export default function ClonePerfeitoFinalPage() {
                           <p className="text-4xl sm:text-5xl font-bold text-yellow-400">9x de R$ 8,80</p>
                           <p className="text-xl font-medium text-white">ou R$ 67 à vista</p>
                       </div>
+                      <p className="text-center text-yellow-200/90 text-md md:text-lg !-mb-2 !mt-6">Você está a 1 hora de distância de fotos que podem mudar sua imagem online para sempre.</p>
                       <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
                       <div className="grid grid-cols-2 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
