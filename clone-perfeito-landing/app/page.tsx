@@ -33,7 +33,9 @@ import {
   HelpCircle,
   Folder,
   UploadCloud,
-  MessagesSquare
+  MessagesSquare,
+  UserCheck,
+  XCircle
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +69,7 @@ export default function ClonePerfeitoFinalPage() {
     { number: "1", icon: <Folder className="w-10 h-10 text-yellow-400"/>, title: "Seleciona suas fotos", subtitle: "Sem se preocupar com ângulo ou luz profissional." },
     { number: "2", icon: <Cpu className="w-10 h-10 text-yellow-400"/>, title: "Cria seu clone com 1 clique", subtitle: "Usando as configurações otimizadas que eu passo." },
     { number: "3", icon: <MessagesSquare className="w-10 h-10 text-yellow-400"/>, title: "Usa nossos Agentes de IA", subtitle: "Para gerar os comandos (prompts) perfeitos para você." },
-    { number: "4", icon: <Sparkles className="w-10 h-10 text-yellow-400"/>, title: "Gera ensaios ultra-realistas", subtitle: "Em minutos, a IA entrega suas fotos profissionais." },
+    { number: "4", icon: <Sparkles className="w-10 h-10 text-yellow-400"/>, title: "Gera ensaios ultra-realistas", subtitle: "Com as melhores configurações para fotos profissionais." },
   ];
 
   const bonuses = [
@@ -93,9 +95,10 @@ export default function ClonePerfeitoFinalPage() {
       
       <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
 
-        {/* --- ÍCONE FLUTUANTE DO WHATSAPP --- */}
-        <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110">
-          <MessageSquare className="w-8 h-8" />
+        {/* --- ÍCONE FLUTUANTE DO WHATSAPP (NOVO ESTILO) --- */}
+        <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer" className="fixed bottom-5 right-5 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-105 flex items-center gap-2">
+          <MessageSquare className="w-6 h-6" />
+          <span className="hidden sm:block text-sm font-semibold pr-2">Precisa de ajuda?</span>
         </Link>
         
         <div className={`fixed top-0 left-0 right-0 z-40 bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-700/50 transition-transform duration-300 ${isBarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -176,8 +179,7 @@ export default function ClonePerfeitoFinalPage() {
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
-                            <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
-                            <CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
+                            <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" /><CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
                         </Carousel>
                     </div>
                 </CardContent>
@@ -242,16 +244,17 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 9. MENTOR */}
-          <section className="pt-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Seu Mentor Nessa Jornada</h2>
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <Image src="/images/eu-gabriel.jpg" alt="Foto de Gabriel, criador do Clone Perfeito" width={800} height={500} className="w-full max-w-xs md:max-w-sm rounded-xl shadow-2xl shadow-black/40" />
-                <div className="max-w-2xl space-y-4 text-lg text-neutral-300 leading-relaxed text-left">
-                    <p>Prazer, sou o Gabriel. Comecei na Engenharia da Computação, mas minha paixão sempre foi o lado prático e criativo da tecnologia. Nos últimos 4 anos, gerenciei mais de <strong className="text-white">R$1 milhão</strong> em campanhas visuais e mergulhei de cabeça na IA.</p>
-                    <p>Descobri que o poder de criar clones não era só uma ferramenta legal. Era uma <strong className="text-yellow-400">nova fonte de renda, acessível e vendável.</strong> Criei o Clone Perfeito para te dar esse mesmo poder.</p>
+          {/* 9. SUPORTE PERSONALIZADO */}
+          <section>
+            <Card className="bg-gradient-to-br from-neutral-800 to-neutral-900 border-2 border-neutral-700 p-8">
+                <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+                    <UserCheck className="w-24 h-24 text-sky-400 flex-shrink-0"/>
+                    <div>
+                        <h2 className="text-3xl font-bold text-white mb-3">Você nunca estará sozinho</h2>
+                        <p className="text-lg text-neutral-300 leading-relaxed">Eu, Gabriel, estarei pessoalmente disponível para te ajudar. Qualquer dificuldade ou dúvida sobre o método, você terá meu <strong className="text-white">contato direto no WhatsApp</strong> para garantir que você tenha os melhores resultados possíveis. Aqui o suporte é de verdade.</p>
+                    </div>
                 </div>
-              </div>
+            </Card>
           </section>
 
           {/* 10. A OFERTA */}
@@ -281,8 +284,49 @@ export default function ClonePerfeitoFinalPage() {
                   </CardContent>
               </Card>
           </div>
-          
-          {/* 11. FAQ */}
+
+          {/* 11. SEÇÃO DE COMPARAÇÃO */}
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Por que o Clone Perfeito é Diferente?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card className="bg-neutral-800/40 border border-neutral-700/80 p-6">
+                <CardHeader className="p-0 text-center mb-4">
+                  <h3 className="text-2xl font-bold text-rose-400 flex items-center justify-center gap-2"><XCircle/> Outros Cursos de IA</h3>
+                </CardHeader>
+                <CardContent className="p-0 space-y-3 text-lg">
+                  <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Ensinam ferramentas caras e complexas.</span></p>
+                  <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Prendem você em <strong className="text-neutral-400">mensalidades.</strong></span></p>
+                  <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Suporte genérico ou inexistente.</span></p>
+                  <p className="flex items-start gap-2"><XCircle className="w-5 h-5 text-rose-500 mt-1.5 flex-shrink-0"/> <span>Conteúdo que fica desatualizado.</span></p>
+                </CardContent>
+              </Card>
+              <Card className="bg-sky-950/30 border-2 border-sky-500 p-6">
+                <CardHeader className="p-0 text-center mb-4">
+                  <h3 className="text-2xl font-bold text-sky-400 flex items-center justify-center gap-2"><CheckCircle2/> Clone Perfeito</h3>
+                </CardHeader>
+                <CardContent className="p-0 space-y-3 text-lg">
+                  <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Usa a melhor ferramenta com custo-benefício.</span></p>
+                  <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Acesso com <strong className="text-white">pagamento único.</strong></span></p>
+                  <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Suporte pessoal e direto comigo no WhatsApp.</span></p>
+                  <p className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-sky-400 mt-1.5 flex-shrink-0"/> <span>Atualizações constantes e gratuitas para alunos.</span></p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* 12. WHATSAPP SECUNDÁRIO */}
+          <div className="flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
+              <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
+              <div>
+                  <h3 className="text-2xl font-bold text-white mb-2">Ainda tem alguma dúvida?</h3>
+                  <p className="text-neutral-300 text-lg leading-relaxed mb-4">Se você precisa de mais alguma informação, clique no botão e fale diretamente com nossa equipe no WhatsApp. Estamos aqui para ajudar!</p>
+                  <Link href="https://api.whatsapp.com/send?phone=5511978610717&text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Clone%20Perfeito,%20pode%20me%20ajudar?" target="_blank" rel="noopener noreferrer"><Button variant="outline" className="bg-transparent border-green-400 text-green-400 hover:bg-green-400/10 hover:text-green-300"><MessageSquare className="w-4 h-4 mr-2" />Chamar no WhatsApp</Button></Link>
+              </div>
+          </div>
+
+          <Separator className="bg-neutral-800 my-12" />
+
+          {/* 13. FAQ */}
           <div className="space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-left md:text-center text-white">❓ Perguntas Frequentes</h2>
               <Accordion type="single" collapsible className="w-full text-lg">
@@ -290,7 +334,14 @@ export default function ClonePerfeitoFinalPage() {
               </Accordion>
           </div>
           
-          {/* 12. FOOTER */}
+          {/* 14. FRASE FINAL */}
+          <div className="text-center pt-16 space-y-4">
+            <Separator className="bg-neutral-800" />
+            <p className="text-2xl italic text-neutral-400 max-w-2xl mx-auto pt-12">"No futuro, todos serão famosos mundialmente por 15 minutos."</p>
+            <p className="text-lg text-neutral-500">- Andy Warhol</p>
+          </div>
+
+          {/* 15. FOOTER */}
           <footer className="text-center text-neutral-500 pt-16 border-t border-neutral-800 space-y-4">
               <p>© {new Date().getFullYear()} Clone Perfeito</p>
               <p className="text-sm">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
