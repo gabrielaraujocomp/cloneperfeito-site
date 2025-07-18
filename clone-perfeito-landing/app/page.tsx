@@ -114,7 +114,7 @@ export default function ClonePerfeitoFinalPage() {
           
           {/* 1. O GANCHO */}
           <section className="space-y-6 md:space-y-8 text-center">
-              <Image src="/cplogowhite.png" alt="Logo Clone Perfeito" width={180} height={40} className="mx-auto mb-8 h-auto"/>
+              <Image src="/images/cplogowhite.png" alt="Logo Clone Perfeito" width={180} height={40} className="mx-auto mb-8 h-auto"/>
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mt-8">
                   Transforme selfies comuns em ensaios fotográficos profissionais com IA — <br className="hidden md:block" />
