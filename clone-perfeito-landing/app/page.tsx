@@ -35,7 +35,8 @@ import {
   UploadCloud,
   MessagesSquare,
   UserCheck,
-  XCircle
+  XCircle,
+  Video
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,11 +66,14 @@ export default function ClonePerfeitoFinalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const simpleSteps = [
-    { number: "1", icon: <Folder className="w-10 h-10 text-yellow-400"/>, title: "Seleciona suas fotos", subtitle: "Sem se preocupar com ângulo ou luz profissional." },
-    { number: "2", icon: <Cpu className="w-10 h-10 text-yellow-400"/>, title: "Cria seu clone com 1 clique", subtitle: "Usando as configurações otimizadas que eu passo." },
-    { number: "3", icon: <MessagesSquare className="w-10 h-10 text-yellow-400"/>, title: "Usa nossos Agentes de IA", subtitle: "Para gerar os comandos (prompts) perfeitos para você." },
-    { number: "4", icon: <Sparkles className="w-10 h-10 text-yellow-400"/>, title: "Gera ensaios ultra-realistas", subtitle: "Com as melhores configurações para fotos profissionais." },
+  const courseModules = [
+    { title: "[BÔNUS] Como Criar Clones no ChatGPT", description: "Um guia rápido e prático para usar a ferramenta mais famosa de IA a seu favor.", status: "bonus" },
+    { title: "[1] Início da Jornada", description: "Boas-vindas, visão geral do método e a preparação do ambiente para começar a criar." },
+    { title: "[2] Preparando o seu Clone", description: "Aprenda a técnica secreta para selecionar as fotos certas que garantem um resultado perfeito." },
+    { title: "[3] Criando com seu Clone", description: "O passo a passo para treinar a IA e usar nossos prompts para gerar seus primeiros ensaios." },
+    { title: "[4] Prospecção e Fechamento", description: "Como encontrar clientes, apresentar seu trabalho e fechar seus primeiros projetos.", status: "soon" },
+    { title: "[5] Vendas Internacionais", description: "Aprenda a precificar em dólar e vender seus ensaios para clientes de fora do Brasil.", status: "soon" },
+    { title: "[6] Encerramento e próximos passos", description: "Resumo do aprendizado e como continuar evoluindo suas criações e suas vendas." },
   ];
 
   const bonuses = [
@@ -188,23 +192,30 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 5. COMO FUNCIONA */}
+          {/* 5. O QUE VOCÊ VAI APRENDER (MÓDULOS) */}
           <section>
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">O Processo é Simples Assim:</h2>
-            <div className="max-w-2xl mx-auto space-y-12">
-              {simpleSteps.map((step) => (
-                <div key={step.number} className="flex items-center gap-6 md:gap-8">
-                  <span className="text-6xl md:text-7xl font-bold text-neutral-700/80">{step.number}</span>
-                  <div className="bg-yellow-400/10 p-4 rounded-lg border border-yellow-400/20">{step.icon}</div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">{step.title}</h3>
-                    <p className="text-lg text-neutral-400">{step.subtitle}</p>
-                  </div>
-                </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">O Que Você Vai Aprender Módulo a Módulo</h2>
+            <div className="space-y-4">
+              {courseModules.map((module, index) => (
+                <Card key={index} className={`bg-neutral-800/50 border-neutral-700 
+                  ${module.status === 'bonus' ? 'border-l-4 border-l-green-400' : ''}
+                  ${module.status === 'soon' ? 'border-dashed border-purple-400/50' : 'border-l-4 border-l-sky-400'}
+                `}>
+                  <CardHeader className="flex flex-row items-center justify-between p-5">
+                    <div className="flex items-center gap-4">
+                      <Video className={`w-6 h-6 flex-shrink-0 ${module.status === 'bonus' ? 'text-green-400' : 'text-sky-400'}`} />
+                      <CardTitle className="text-xl text-white">{module.title}</CardTitle>
+                    </div>
+                    {module.status === 'soon' && <span className="text-xs font-bold uppercase text-purple-400 bg-purple-950/80 px-2 py-1 rounded">Em Breve</span>}
+                  </CardHeader>
+                  <CardContent className="pl-16 pb-5 -mt-2">
+                    <p className="text-neutral-400">{module.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </section>
-          
+
           {/* 6. PROVA SOCIAL (DEPOIMENTOS) */}
           <section className="text-center space-y-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white">Alunos Comuns, Resultados Extraordinários</h2>
@@ -230,7 +241,7 @@ export default function ClonePerfeitoFinalPage() {
           {/* 8. SEÇÃO DE COMPARAÇÃO */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">Por que o Clone Perfeito é Diferente?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300">
               <Card className="bg-neutral-800/40 border border-neutral-700/80 p-6">
                 <CardHeader className="p-0 text-center mb-4">
                   <h3 className="text-2xl font-bold text-rose-400 flex items-center justify-center gap-2"><XCircle/> Outros Cursos de IA</h3>
@@ -347,6 +358,7 @@ export default function ClonePerfeitoFinalPage() {
                 {faqItems.map(item => (<AccordionItem key={item.value} value={item.value} className="border-b-neutral-800"><AccordionTrigger className="text-white hover:no-underline text-left py-6">{item.question}</AccordionTrigger><AccordionContent className="text-neutral-300 text-base text-left leading-relaxed pb-6">{item.answer}</AccordionContent></AccordionItem>))}
               </Accordion>
           </div>
+          
           
           {/* 15. FRASE FINAL */}
           <div className="text-center pt-16 space-y-4">
