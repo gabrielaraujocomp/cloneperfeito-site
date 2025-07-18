@@ -28,11 +28,16 @@ export const metadata = {
         height: 630, // Proporção padrão para compartilhamento
         alt: 'Galeria de retratos hiper-realistas gerados por Inteligência Artificial',
       },
+    icons: {
+    icon: '/fav-clone.png', // Caminho para sua imagem na pasta /public
+  },
+      
     ],
     locale: 'pt_BR',
     type: 'website',
   },
 };
+
 
 // O resto do seu arquivo layout.js continua igual
 export default function RootLayout({ children }) {
