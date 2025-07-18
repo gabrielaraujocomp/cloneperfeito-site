@@ -29,7 +29,8 @@ import {
   DollarSign,
   Zap,
   Clock,
-  Award
+  Award,
+  HelpCircle
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,11 +58,11 @@ export default function ClonePerfeitoFinalPage() {
   }, [lastScrollY]);
 
   const modules = [
-    { icon: <LayoutDashboard className="w-7 h-7 text-sky-400"/>, title: "Comece Aqui", description: "Boas-vindas e o guia inicial para preparar seu ambiente de criação em poucos minutos." },
-    { icon: <UserPlus className="w-7 h-7 text-sky-400"/>, title: "A Escolha das Fotos", description: "O segredo para escolher as fotos certas que garantirão um resultado hiper-realista e impressionante." },
-    { icon: <Cpu className="w-7 h-7 text-sky-400"/>, title: "Treinando a Inteligência Artificial", description: "O passo a passo para ensinar a IA a criar sua versão digital, com configurações simples e otimizadas." },
-    { icon: <Wand2 className="w-7 h-7 text-sky-400"/>, title: "A Mágica Acontece", description: "Como usar nossos comandos prontos (prompts) para gerar dezenas de fotos em qualquer estilo que você sonhar." },
-    { icon: <ImageIcon className="w-7 h-7 text-sky-400"/>, title: "Seu Primeiro Ensaio", description: "Dando vida às suas ideias: gerando suas primeiras imagens e aplicando os toques finais para um resultado profissional." },
+    { icon: <LayoutDashboard className="w-6 h-6 text-sky-300"/>, title: "Comece Aqui", description: "O guia inicial para preparar seu ambiente de criação e dar os primeiros passos em poucos minutos." },
+    { icon: <UserPlus className="w-6 h-6 text-sky-300"/>, title: "A Escolha das Fotos", description: "O segredo para selecionar as imagens que garantirão um clone hiper-realista e impressionante." },
+    { icon: <Cpu className="w-6 h-6 text-sky-300"/>, title: "Treinando a Inteligência Artificial", description: "O passo a passo para ensinar a IA a criar sua versão digital, com configurações simples e otimizadas." },
+    { icon: <Wand2 className="w-6 h-6 text-sky-300"/>, title: "A Mágica Acontece", description: "Como usar nossos comandos prontos (prompts) para gerar dezenas de fotos em qualquer estilo que você sonhar." },
+    { icon: <ImageIcon className="w-6 h-6 text-sky-300"/>, title: "Seu Primeiro Ensaio", description: "Dando vida às suas ideias, gerando suas primeiras imagens e aplicando os toques finais para um resultado profissional." },
   ];
 
   const bonuses = [
@@ -95,39 +96,9 @@ export default function ClonePerfeitoFinalPage() {
   return (
     <>
       {/* --- CÓDIGOS DE TRACKING --- */}
-      <Script
-        id="meta-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1198526755291146');
-            fbq('track', 'PageView');
-          `,
-        }}
-      />
-      <Script
-        id="microsoft-clarity"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "sb2ap4cj31");
-          `,
-        }}
-      />
-      {/* --- FIM DOS CÓDIGOS DE TRACKING --- */}
-
+      <Script id="meta-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1198526755291146');fbq('track', 'PageView');` }} />
+      <Script id="microsoft-clarity" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "sb2ap4cj31");` }} />
+      
       <div className="bg-[#191919] text-neutral-300 font-sans antialiased overflow-x-hidden">
 
         <div className={`fixed top-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-700/50 transition-transform duration-300 ${isBarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
@@ -138,7 +109,7 @@ export default function ClonePerfeitoFinalPage() {
           </div>
         </div>
 
-        <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-24">
+        <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-24 md:space-y-32">
           
           <section className="space-y-6 md:space-y-8 text-center">
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
@@ -160,40 +131,46 @@ export default function ClonePerfeitoFinalPage() {
                     <div className="space-y-4">
                         <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3>
                         <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
-                        <p className="text-center text-neutral-400 pt-2">Esses resultados foram criados a partir de selfies comuns, usando o método ensinado no curso.</p>
+                        <p className="text-center text-neutral-400 pt-2">Resultados criados a partir de selfies comuns, usando o método ensinado no curso.</p>
                     </div>
                 </CardContent>
             </Card>
           </section>
 
+          {/* ✅ SEÇÃO DE BENEFÍCIOS - MELHORADA */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Clock className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Crie retratos com IA em menos de 1 hora</h3><p className="text-neutral-400">Aprenda o método e crie ensaios completos em poucos minutos.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Zap className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Não precisa saber nada de tecnologia</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros, feito para iniciantes.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Award className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Qualidade de estúdio com 10-15 selfies</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios para imagens de altíssima qualidade.</p></Card>
+              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+                <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Clock className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
+                <h3 className="text-xl font-bold text-white">Crie retratos em 1 hora</h3><p className="text-neutral-400">Aprenda o método e crie ensaios completos em poucos minutos.</p>
+              </Card>
+              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+                <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Zap className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
+                <h3 className="text-xl font-bold text-white">Fácil para Iniciantes</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros, feito para quem nunca usou IA.</p>
+              </Card>
+              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+                <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Award className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
+                <h3 className="text-xl font-bold text-white">Qualidade de Estúdio</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios com apenas 10 a 15 selfies.</p>
+              </Card>
           </section>
 
           <section>
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Veja exatamente o que você vai fazer:</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Como a mágica funciona:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><ImageUp className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">01. Envie suas fotos: selfies comuns funcionam!</h3><p className="text-neutral-400">Escolhe de 10 a 15 fotos suas e faz o upload na plataforma.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><BrainCircuit className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">02. Crie seu Clone com nosso modelo testado</h3><p className="text-neutral-400">Com um clique, você manda a IA estudar suas fotos e criar seu clone.</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Wand2 className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">03. Gere retratos com IA realistas e impressionantes</h3><p className="text-neutral-400">Usa nossos modelos prontos para pedir o que quiser (em Paris, no escritório, etc).</p></Card>
-              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Download className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">04. Faça vários ensaios com os estilos que você quiser</h3><p className="text-neutral-400">Em minutos, a IA te entrega dezenas de fotos profissionais e realistas.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><ImageUp className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">1. Envie suas fotos</h3><p className="text-neutral-400">Escolha de 10 a 15 fotos suas (selfies funcionam!) e faça o upload na plataforma.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><BrainCircuit className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">2. Crie seu Clone</h3><p className="text-neutral-400">Com um clique, a IA estuda suas fotos e cria seu "clone digital" em poucas horas.</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Wand2 className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">3. Descreva o estilo</h3><p className="text-neutral-400">Use nossos modelos prontos para pedir o que quiser (em Paris, no escritório, etc).</p></Card>
+              <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center"><div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-900/50 border border-sky-700 mb-4"><Download className="w-8 h-8 text-sky-400"/></div><h3 className="text-xl font-bold text-white mb-2">4. Receba o ensaio</h3><p className="text-neutral-400">Em minutos, a IA entrega dezenas de fotos profissionais, prontas para usar.</p></Card>
             </div>
           </section>
 
-          <Card className="bg-neutral-800/50 border border-blue-500/30 p-8 space-y-4">
-              <p className="text-lg text-neutral-300 leading-relaxed">Esqueça ferramentas genéricas como Freepik ou Krea AI. Aqui você aprende a usar a <strong className="text-white">plataforma de geração de clones mais avançada do mercado</strong>, a mesma usada por profissionais e estúdios para criar visuais de altíssima qualidade.</p>
-              <p className="text-lg text-neutral-300 leading-relaxed">O método é tão simples que você aprende o processo completo em <strong className="text-yellow-400">menos de 1 hora</strong> e, depois disso, consegue criar um ensaio do zero em <strong className="text-yellow-400">menos de 20 minutos</strong>.</p>
-          </Card>
-
+          {/* 🛑 SEÇÃO DE OBJEÇÕES - MELHORADA */}
           <section>
-            <Card className="bg-neutral-800 border-2 border-neutral-700 p-8">
-                <CardTitle className="text-3xl font-bold text-white text-center">Mas, e se...?</CardTitle>
-                <ul className="mt-8 space-y-6 text-lg">
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu nunca usei IA, vou conseguir?</strong><br/><span className="text-neutral-400">Perfeito. O método é 100% guiado com passo a passo e foi feito para iniciantes. Se você sabe seguir instruções visuais, está pronto.</span></div></li>
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... esse método funciona para quem não sabe nada de edição?</strong><br/><span className="text-neutral-400">Sim! Você não precisa saber editar. A IA faz todo o trabalho de criação, e o curso te mostra exatamente como pedir os estilos que você quer.</span></div></li>
-                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu tenho medo de não conseguir?</strong><br/><span className="text-neutral-400">O método é à prova de erros e você tem nosso suporte individual para tirar qualquer dúvida no caminho. É impossível ficar travado.</span></div></li>
+            <Card className="bg-gradient-to-br from-neutral-800 to-neutral-900 border-2 border-neutral-700 p-8">
+                <CardTitle className="text-3xl font-bold text-white text-center flex items-center justify-center gap-3 border-b border-neutral-700 pb-6 mb-8"><HelpCircle className="w-8 h-8 text-sky-400"/> Mas, e se...?</CardTitle>
+                <ul className="space-y-6 text-lg">
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu nunca usei IA, vou conseguir?</strong><br/><span className="text-neutral-400">Perfeito. O método é 100% guiado, passo a passo, e foi feito para iniciantes. Se você sabe seguir instruções visuais, está pronto.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... meu computador é fraco?</strong><br/><span className="text-neutral-400">Não importa. Todo o trabalho pesado é feito na nuvem, não no seu PC. Se ele abre o YouTube, ele serve para o curso.</span></div></li>
+                    <li className="flex items-start gap-4"><CheckCircle2 className="w-7 h-7 text-green-400 flex-shrink-0 mt-1" /><div><strong className="text-white">... eu tiver medo de não conseguir?</strong><br/><span className="text-neutral-400">O método é à prova de erros e você tem nosso suporte individual para tirar qualquer dúvida. É impossível ficar travado.</span></div></li>
                 </ul>
             </Card>
           </section>
@@ -215,28 +192,28 @@ export default function ClonePerfeitoFinalPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" /></div>))}</div>
           </section>
           
-          {/* SEÇÃO DE MÓDULOS - ALTERADO */}
+          {/* 🚀 SEÇÃO DE MÓDULOS - TOTALMENTE REFEITA E RESPONSIVA */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">O passo a passo da mágica que você vai aprender</h2>
-            <div className="relative flex flex-col items-start md:items-center">
-                {/* Linha da timeline */}
-                <div className="absolute left-7 md:left-1/2 -translate-x-1/2 w-0.5 h-full bg-neutral-800"></div>
-
+            <div className="relative max-w-2xl mx-auto">
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-0.5 h-full bg-neutral-800"></div>
                 {modules.map((module, index) => (
-                    <div key={index} className="relative w-full mb-12">
-                        <div className="flex items-center w-full">
-                            {/* Conteúdo do Módulo (Esquerda no Desktop) */}
-                            <div className={`w-full md:w-1/2 flex justify-start ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
-                                <div className={`w-full md:w-10/12 p-6 rounded-lg bg-neutral-800/50 border border-neutral-700/80 shadow-lg ${index % 2 === 0 ? 'md:mr-14' : 'md:ml-14'}`}>
-                                    <p className="text-sm font-semibold text-sky-400 mb-2">MÓDULO {index + 1}</p>
-                                    <h3 className="text-2xl font-bold text-white mb-3">{module.title}</h3>
-                                    <p className="text-neutral-400 leading-relaxed">{module.description}</p>
-                                </div>
+                    <div key={index} className="relative pl-16 md:pl-0 mb-12">
+                        <div className={`flex flex-col md:flex-row items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                            <div className="md:w-1/2">
+                                <Card className="bg-neutral-800/70 border border-neutral-700 shadow-lg md:mx-6">
+                                    <CardHeader>
+                                        <CardTitle className="text-sm font-semibold text-sky-400 tracking-wider">MÓDULO {index + 1}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <h3 className="text-xl font-bold text-white mb-2">{module.title}</h3>
+                                        <p className="text-neutral-400 leading-relaxed">{module.description}</p>
+                                    </CardContent>
+                                </Card>
                             </div>
+                            <div className="md:w-1/2"></div>
                         </div>
-
-                        {/* Ícone na timeline */}
-                        <div className="absolute left-7 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-sky-900/80 border-2 border-sky-500 shadow-xl">
+                        <div className="absolute left-6 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-sky-500 border-4 border-neutral-900 shadow-xl">
                             {module.icon}
                         </div>
                     </div>
@@ -244,8 +221,21 @@ export default function ClonePerfeitoFinalPage() {
             </div>
           </section>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-left text-white pt-8">E ainda leva 2 Bônus para acelerar seus resultados</h2>
-          <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><Check className="w-6 h-6 text-green-400" /><CardTitle className="text-xl text-left text-white">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-16 pb-4 text-left">{bonus.description}</CardContent></Card>))}</div>
+          {/* 🎁 SEÇÃO DE BÔNUS - MELHORADA */}
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">E ainda leva 2 Bônus para acelerar seus resultados:</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {bonuses.map((bonus, index) => (
+                <Card key={index} className="bg-neutral-800/50 border border-green-500/30">
+                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5">
+                    <Check className="w-6 h-6 text-green-400 flex-shrink-0" />
+                    <CardTitle className="text-xl text-left text-white">{bonus.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-neutral-300 pl-16 pb-5 text-left">{bonus.description}</CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
 
           <section>
             <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
