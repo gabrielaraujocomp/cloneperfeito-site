@@ -41,7 +41,9 @@ export default function ClonePerfeitoFinalPage() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const testimonials = [1, 2, 3, 4, 5, 6, 7];
   const studentCreations = [1, 2, 3, 4, 5, 6, 7, 8];
-  
+  const beforeImages = [1, 2, 3, 4, 5];
+  const afterImages = [1, 2, 3, 4, 5, 6, 7];
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -123,31 +125,55 @@ export default function ClonePerfeitoFinalPage() {
               <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">Quero aprender a criar ensaios com IA agora</Button></Link></div>
           </section>
           
+          {/* 🔥 SEÇÃO DE TRANSFORMAÇÃO - REFEITA COM IMAGENS INDIVIDUAIS */}
           <section>
-             <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-6">
+             <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-10">
                 <CardHeader className='p-0 text-center'><CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle></CardHeader>
-                <CardContent className='p-0 mt-8 space-y-8'>
-                    <div className="space-y-4"><h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3><Image src="/images/antescp.jpg" alt="Fotos de selfie usadas como base" width={1200} height={343} className="rounded-xl shadow-lg w-full h-auto" /></div>
+                <CardContent className='p-0 space-y-10'>
+                    <div className="space-y-4">
+                        <h3 className="text-center text-lg font-semibold text-neutral-400 tracking-wider">VOCÊ MANDA FOTOS ASSIM...</h3>
+                        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                            {beforeImages.map(num => (
+                                <Image key={num} src={`/images/antes-${num}.jpg`} alt={`Exemplo de foto de treino ${num}`} width={200} height={200} className="rounded-lg object-cover w-full aspect-square" />
+                            ))}
+                        </div>
+                    </div>
+                    
                     <div className="space-y-4">
                         <h3 className="text-center text-xl font-bold text-yellow-400 tracking-wider">✨ E A IA TE ENTREGA ENSAIOS ASSIM ✨</h3>
-                        <Image src="/images/depoiscp.jpg" alt="Ensaios fotográficos profissionais gerados" width={1200} height={343} className="rounded-xl shadow-2xl shadow-yellow-500/10 w-full h-auto" />
-                        <p className="text-center text-neutral-400 pt-2">Resultados criados a partir de selfies comuns, usando o método ensinado no curso.</p>
+                        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                            <CarouselContent className="-ml-4">
+                                {afterImages.map(num => (
+                                    <CarouselItem key={num} className="pl-4 basis-4/5 sm:basis-1/2 md:basis-1/3">
+                                        <div className="aspect-[3/4] rounded-lg overflow-hidden">
+                                            <Image src={`/images/depois-${num}.jpg`} alt={`Resultado profissional gerado ${num}`} width={300} height={400} className="w-full h-full object-cover" />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
+                            <CarouselNext className="hidden sm:flex bg-neutral-800 border-neutral-700 text-neutral-300 hover:bg-neutral-700 hover:text-white" />
+                        </Carousel>
                     </div>
+
+                    <p className="text-center text-neutral-300 text-lg leading-relaxed pt-4 max-w-2xl mx-auto">
+                        Com este método, em minutos você será capaz de colocar <strong className="text-white">seu próprio rosto</strong> em qualquer <strong className="text-yellow-400">cenário, roupa ou iluminação</strong> que imaginar — com um realismo impressionante.
+                    </p>
                 </CardContent>
             </Card>
           </section>
 
           {/* ✅ SEÇÃO DE BENEFÍCIOS - MELHORADA */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+              <Card className="group bg-neutral-800/40 border-neutral-700/80 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
                 <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Clock className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
                 <h3 className="text-xl font-bold text-white">Crie retratos em 1 hora</h3><p className="text-neutral-400">Aprenda o método e crie ensaios completos em poucos minutos.</p>
               </Card>
-              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+              <Card className="group bg-neutral-800/40 border-neutral-700/80 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
                 <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Zap className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
                 <h3 className="text-xl font-bold text-white">Fácil para Iniciantes</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros, feito para quem nunca usou IA.</p>
               </Card>
-              <Card className="group bg-gradient-to-br from-neutral-800 to-neutral-800/60 border-neutral-700 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
+              <Card className="group bg-neutral-800/40 border-neutral-700/80 p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-sky-500/50 hover:shadow-2xl hover:shadow-sky-900/50">
                 <div className="bg-neutral-900/50 rounded-full p-3 border border-neutral-700"><Award className="w-10 h-10 text-sky-400 transition-transform duration-300 group-hover:scale-110"/></div>
                 <h3 className="text-xl font-bold text-white">Qualidade de Estúdio</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios com apenas 10 a 15 selfies.</p>
               </Card>
@@ -192,16 +218,16 @@ export default function ClonePerfeitoFinalPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" /></div>))}</div>
           </section>
           
-          {/* 🚀 SEÇÃO DE MÓDULOS - TOTALMENTE REFEITA E RESPONSIVA */}
+          {/* 🚀 SEÇÃO DE MÓDULOS - RESPONSIVA */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">O passo a passo da mágica que você vai aprender</h2>
-            <div className="relative max-w-2xl mx-auto">
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-0.5 h-full bg-neutral-800"></div>
+            <div className="relative max-w-3xl mx-auto px-4">
+                <div className="absolute left-4 md:left-1/2 w-0.5 h-full bg-neutral-700/70 -translate-x-1/2"></div>
                 {modules.map((module, index) => (
-                    <div key={index} className="relative pl-16 md:pl-0 mb-12">
-                        <div className={`flex flex-col md:flex-row items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                            <div className="md:w-1/2">
-                                <Card className="bg-neutral-800/70 border border-neutral-700 shadow-lg md:mx-6">
+                    <div key={index} className="relative pl-12 md:pl-0 mb-16 last:mb-0">
+                        <div className={`flex items-center md:grid md:grid-cols-2 ${index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''}`}>
+                            <div className={`${index % 2 !== 0 ? 'md:col-start-2' : ''}`}>
+                                <Card className="bg-neutral-800/80 border border-neutral-700 shadow-lg backdrop-blur-sm">
                                     <CardHeader>
                                         <CardTitle className="text-sm font-semibold text-sky-400 tracking-wider">MÓDULO {index + 1}</CardTitle>
                                     </CardHeader>
@@ -211,9 +237,8 @@ export default function ClonePerfeitoFinalPage() {
                                     </CardContent>
                                 </Card>
                             </div>
-                            <div className="md:w-1/2"></div>
                         </div>
-                        <div className="absolute left-6 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-sky-500 border-4 border-neutral-900 shadow-xl">
+                        <div className="absolute left-4 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-sky-500 border-4 border-neutral-900 shadow-xl">
                             {module.icon}
                         </div>
                     </div>
