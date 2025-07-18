@@ -65,15 +65,15 @@ export default function ClonePerfeitoFinalPage() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
-
+  
+  // NOVA LISTA DE MÓDULOS
   const courseModules = [
-    { title: "[BÔNUS] Como Criar Clones no ChatGPT", description: "Um guia rápido e prático para usar a ferramenta mais famosa de IA a seu favor.", status: "bonus" },
-    { title: "[1] Início da Jornada", description: "Boas-vindas, visão geral do método e a preparação do ambiente para começar a criar." },
-    { title: "[2] Preparando o seu Clone", description: "Aprenda a técnica secreta para selecionar as fotos certas que garantem um resultado perfeito." },
-    { title: "[3] Criando com seu Clone", description: "O passo a passo para treinar a IA e usar nossos prompts para gerar seus primeiros ensaios." },
-    { title: "[4] Prospecção e Fechamento", description: "Como encontrar clientes, apresentar seu trabalho e fechar seus primeiros projetos.", status: "soon" },
-    { title: "[5] Vendas Internacionais", description: "Aprenda a precificar em dólar e vender seus ensaios para clientes de fora do Brasil.", status: "soon" },
-    { title: "[6] Encerramento e próximos passos", description: "Resumo do aprendizado e como continuar evoluindo suas criações e suas vendas." },
+    { title: "[1] Fundamentos do Clone Perfeito", description: "Boas-vindas, visão geral do método e a preparação do ambiente para você criar seu clone em minutos." },
+    { title: "[2] Treinamento da IA e Criação do Clone", description: "O segredo para escolher as fotos certas e o passo a passo para treinar a IA com seu rosto." },
+    { title: "[3] Gerando Ensaios Fotográficos Incríveis", description: "Como usar nossos Agentes GPT e prompts prontos para criar imagens de nível profissional em qualquer estilo." },
+    { title: "[4] Renda Extra: Vendendo seus Ensaios", description: "Aprenda a encontrar clientes, precificar seu trabalho e transformar essa habilidade em uma fonte de renda." },
+    { title: "[EM BREVE] Módulo de Vídeos com IA", description: "Transforme suas melhores fotos em vídeos cinematográficos e dinâmicos para Reels e TikTok.", status: "soon" },
+    { title: "[EM BREVE] Finalização e Qualidade 4K", description: "Aprenda a dar o toque final nos seus vídeos, aumentando a qualidade para um impressionante 4K.", status: "soon" },
   ];
 
   const bonuses = [
@@ -198,12 +198,11 @@ export default function ClonePerfeitoFinalPage() {
             <div className="space-y-4">
               {courseModules.map((module, index) => (
                 <Card key={index} className={`bg-neutral-800/50 border-neutral-700 
-                  ${module.status === 'bonus' ? 'border-l-4 border-l-green-400' : ''}
                   ${module.status === 'soon' ? 'border-dashed border-purple-400/50' : 'border-l-4 border-l-sky-400'}
                 `}>
                   <CardHeader className="flex flex-row items-center justify-between p-5">
                     <div className="flex items-center gap-4">
-                      <Video className={`w-6 h-6 flex-shrink-0 ${module.status === 'bonus' ? 'text-green-400' : 'text-sky-400'}`} />
+                      <Video className={`w-6 h-6 flex-shrink-0 text-sky-400`} />
                       <CardTitle className="text-xl text-white">{module.title}</CardTitle>
                     </div>
                     {module.status === 'soon' && <span className="text-xs font-bold uppercase text-purple-400 bg-purple-950/80 px-2 py-1 rounded">Em Breve</span>}
@@ -358,7 +357,6 @@ export default function ClonePerfeitoFinalPage() {
                 {faqItems.map(item => (<AccordionItem key={item.value} value={item.value} className="border-b-neutral-800"><AccordionTrigger className="text-white hover:no-underline text-left py-6">{item.question}</AccordionTrigger><AccordionContent className="text-neutral-300 text-base text-left leading-relaxed pb-6">{item.answer}</AccordionContent></AccordionItem>))}
               </Accordion>
           </div>
-          
           
           {/* 15. FRASE FINAL */}
           <div className="text-center pt-16 space-y-4">
