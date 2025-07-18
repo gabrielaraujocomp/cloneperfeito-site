@@ -21,6 +21,7 @@ export const metadata = {
     description: 'Aprenda a criar um Clone seu com IA e gere ensaios profissionais sem câmera, fotógrafo ou estúdio.',
     url: 'https://www.cloneperfeito.com',
     siteName: 'Clone Perfeito',
+    icon: '/fav-clone.png', // Caminho para sua imagem na pasta /public
     images: [
       {
         url: 'https://www.cloneperfeito.com/images/bg-cp.jpg',
@@ -28,9 +29,6 @@ export const metadata = {
         height: 630, // Proporção padrão para compartilhamento
         alt: 'Galeria de retratos hiper-realistas gerados por Inteligência Artificial',
       },
-    icons: {
-    icon: '/fav-clone.png', // Caminho para sua imagem na pasta /public
-  },
       
     ],
     locale: 'pt_BR',
