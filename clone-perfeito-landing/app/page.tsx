@@ -57,11 +57,11 @@ export default function ClonePerfeitoFinalPage() {
   }, [lastScrollY]);
 
   const modules = [
-    { icon: <LayoutDashboard className="text-sky-400"/>, title: "Módulo 1: Comece Aqui", description: "Boas-vindas e o guia inicial para preparar seu ambiente de criação em poucos minutos." },
-    { icon: <UserPlus className="text-sky-400"/>, title: "Módulo 2: A Escolha das Fotos", description: "O segredo para escolher as fotos certas que garantirão um resultado hiper-realista e impressionante." },
-    { icon: <Cpu className="text-sky-400"/>, title: "Módulo 3: Treinando a Inteligência Artificial", description: "O passo a passo para ensinar a IA a criar sua versão digital, com configurações simples e otimizadas." },
-    { icon: <Wand2 className="text-sky-400"/>, title: "Módulo 4: A Mágica Acontece", description: "Como usar nossos comandos prontos (prompts) para gerar dezenas de fotos em qualquer estilo que você sonhar." },
-    { icon: <ImageIcon className="text-sky-400"/>, title: "Módulo 5: Seu Primeiro Ensaio", description: "Dando vida às suas ideias: gerando suas primeiras imagens e aplicando os toques finais para um resultado profissional." },
+    { icon: <LayoutDashboard className="w-7 h-7 text-sky-400"/>, title: "Comece Aqui", description: "Boas-vindas e o guia inicial para preparar seu ambiente de criação em poucos minutos." },
+    { icon: <UserPlus className="w-7 h-7 text-sky-400"/>, title: "A Escolha das Fotos", description: "O segredo para escolher as fotos certas que garantirão um resultado hiper-realista e impressionante." },
+    { icon: <Cpu className="w-7 h-7 text-sky-400"/>, title: "Treinando a Inteligência Artificial", description: "O passo a passo para ensinar a IA a criar sua versão digital, com configurações simples e otimizadas." },
+    { icon: <Wand2 className="w-7 h-7 text-sky-400"/>, title: "A Mágica Acontece", description: "Como usar nossos comandos prontos (prompts) para gerar dezenas de fotos em qualquer estilo que você sonhar." },
+    { icon: <ImageIcon className="w-7 h-7 text-sky-400"/>, title: "Seu Primeiro Ensaio", description: "Dando vida às suas ideias: gerando suas primeiras imagens e aplicando os toques finais para um resultado profissional." },
   ];
 
   const bonuses = [
@@ -94,7 +94,7 @@ export default function ClonePerfeitoFinalPage() {
 
   return (
     <>
-      {/* --- CÓDIGOS DE TRACKING CORRIGIDOS --- */}
+      {/* --- CÓDIGOS DE TRACKING --- */}
       <Script
         id="meta-pixel"
         strategy="afterInteractive"
@@ -140,7 +140,6 @@ export default function ClonePerfeitoFinalPage() {
 
         <main className="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20 md:space-y-24">
           
-          {/* 🔥 1. Above the fold (primeira dobra) - ALTERADO */}
           <section className="space-y-6 md:space-y-8 text-center">
               <Image src="/images/bg-cp.jpg" alt="Galeria de retratos hiper-realistas gerados por Inteligência Artificial" width={1200} height={500} className="w-full h-auto object-cover rounded-xl shadow-2xl shadow-black/30" priority />
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mt-8">
@@ -153,7 +152,6 @@ export default function ClonePerfeitoFinalPage() {
               <div className="w-full flex justify-center pt-4"><Link href="#checkout"><Button size="lg" className="w-full md:w-auto text-lg font-semibold px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">Quero aprender a criar ensaios com IA agora</Button></Link></div>
           </section>
           
-          {/* 📸 2. Bloco “Veja a transformação” - ALTERADO */}
           <section>
              <Card className="bg-neutral-800/50 border border-neutral-700 rounded-xl p-6 md:p-8 space-y-6">
                 <CardHeader className='p-0 text-center'><CardTitle className="text-3xl font-bold text-white">Essa é a transformação que o Clone Perfeito oferece:</CardTitle></CardHeader>
@@ -168,14 +166,12 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* ✅ 3. Benefícios rápidos (ícones) - ALTERADO */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Clock className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Crie retratos com IA em menos de 1 hora</h3><p className="text-neutral-400">Aprenda o método e crie ensaios completos em poucos minutos.</p></Card>
               <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Zap className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Não precisa saber nada de tecnologia</h3><p className="text-neutral-400">Passo a passo visual, à prova de erros, feito para iniciantes.</p></Card>
               <Card className="bg-neutral-800/50 border-neutral-700 p-6 flex flex-col items-center gap-3"><Award className="w-10 h-10 text-sky-400"/><h3 className="text-xl font-bold text-white">Qualidade de estúdio com 10-15 selfies</h3><p className="text-neutral-400">Use a mesma tecnologia de estúdios para imagens de altíssima qualidade.</p></Card>
           </section>
 
-          {/* 🧠 4. Bloco “Veja exatamente o que você vai fazer” - ALTERADO */}
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Veja exatamente o que você vai fazer:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
@@ -191,7 +187,6 @@ export default function ClonePerfeitoFinalPage() {
               <p className="text-lg text-neutral-300 leading-relaxed">O método é tão simples que você aprende o processo completo em <strong className="text-yellow-400">menos de 1 hora</strong> e, depois disso, consegue criar um ensaio do zero em <strong className="text-yellow-400">menos de 20 minutos</strong>.</p>
           </Card>
 
-          {/* 🛑 5. Bloco “Mas e se…” - ALTERADO */}
           <section>
             <Card className="bg-neutral-800 border-2 border-neutral-700 p-8">
                 <CardTitle className="text-3xl font-bold text-white text-center">Mas, e se...?</CardTitle>
@@ -220,13 +215,38 @@ export default function ClonePerfeitoFinalPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">{studentCreations.map((num) => (<div key={num} className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"><Image src={`/images/gerada-${num}.jpg`} alt={`Ensaio fotográfico gerado por aluno ${num}`} width={300} height={400} className="w-full h-full object-cover" /></div>))}</div>
           </section>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-left text-white">O que você vai aprender (o passo a passo da mágica)</h2>
-          <div className="space-y-4">{modules.map((module, index) => (<Card key={index} className="bg-neutral-800 border-neutral-700 border-l-4 border-l-sky-400 overflow-hidden"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><span className="text-neutral-400">{module.icon}</span><CardTitle className="text-xl text-left text-white">{module.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-20 pb-5 text-left -mt-2">{module.description}</CardContent></Card>))}</div>
+          {/* SEÇÃO DE MÓDULOS - ALTERADO */}
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">O passo a passo da mágica que você vai aprender</h2>
+            <div className="relative flex flex-col items-start md:items-center">
+                {/* Linha da timeline */}
+                <div className="absolute left-7 md:left-1/2 -translate-x-1/2 w-0.5 h-full bg-neutral-800"></div>
+
+                {modules.map((module, index) => (
+                    <div key={index} className="relative w-full mb-12">
+                        <div className="flex items-center w-full">
+                            {/* Conteúdo do Módulo (Esquerda no Desktop) */}
+                            <div className={`w-full md:w-1/2 flex justify-start ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+                                <div className={`w-full md:w-10/12 p-6 rounded-lg bg-neutral-800/50 border border-neutral-700/80 shadow-lg ${index % 2 === 0 ? 'md:mr-14' : 'md:ml-14'}`}>
+                                    <p className="text-sm font-semibold text-sky-400 mb-2">MÓDULO {index + 1}</p>
+                                    <h3 className="text-2xl font-bold text-white mb-3">{module.title}</h3>
+                                    <p className="text-neutral-400 leading-relaxed">{module.description}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Ícone na timeline */}
+                        <div className="absolute left-7 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-sky-900/80 border-2 border-sky-500 shadow-xl">
+                            {module.icon}
+                        </div>
+                    </div>
+                ))}
+            </div>
+          </section>
           
           <h2 className="text-3xl md:text-4xl font-bold text-left text-white pt-8">E ainda leva 2 Bônus para acelerar seus resultados</h2>
           <div className="space-y-4">{bonuses.map((bonus, index) => (<Card key={index} className="bg-neutral-800/50 border-neutral-700"><CardHeader className="flex flex-row items-center gap-4 space-y-0 p-5"><Check className="w-6 h-6 text-green-400" /><CardTitle className="text-xl text-left text-white">{bonus.title}</CardTitle></CardHeader><CardContent className="text-neutral-300 pl-16 pb-4 text-left">{bonus.description}</CardContent></Card>))}</div>
 
-          {/* 🎁 8. Bônus + Atualizações - ALTERADO */}
           <section>
             <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
                 <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 ATUALIZAÇÕES PODEROSAS A CAMINHO 🚨</h3>
@@ -257,7 +277,6 @@ export default function ClonePerfeitoFinalPage() {
 
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial (e Única)</h2>
           
-          {/* 💰 10. Oferta Especial - ALTERADO */}
           <div className="relative mt-2">
               <div className="absolute -inset-2 bg-gradient-to-r from-rose-500 to-yellow-500 rounded-2xl blur-xl opacity-20"></div>
               <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
@@ -279,7 +298,6 @@ export default function ClonePerfeitoFinalPage() {
                   </CardContent>
               </Card>
           </div>
-
           
           <div className="flex flex-col md:flex-row items-center gap-6 text-left p-6 rounded-lg bg-green-950/30 border border-green-800/40">
               <MessageSquare className="w-16 h-16 text-green-400 flex-shrink-0" />
@@ -308,7 +326,7 @@ export default function ClonePerfeitoFinalPage() {
         </main>
       </div>
 
-      <noscript><img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
+      <noscript><img height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
     </>
   )
 }
