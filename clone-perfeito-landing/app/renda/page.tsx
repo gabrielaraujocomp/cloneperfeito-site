@@ -7,36 +7,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Separator } from "@/components/ui/separator";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import {
-  Brain,
-  Wand2,
-  Rocket,
-  Check,
-  Cpu,
   Sparkles,
-  Shield,
   Smartphone,
   Lock,
-  LayoutDashboard,
   UserPlus,
-  ImageIcon,
   MessageSquare,
   CheckCircle2,
-  Film,
-  TrendingUp,
-  ImageUp,
-  BrainCircuit,
-  Download,
-  DollarSign,
+  Video,
   Zap,
-  Clock,
-  Award,
-  HelpCircle,
-  Folder,
-  UploadCloud,
-  MessagesSquare,
+  Rocket,
+  Check,
   UserCheck,
-  XCircle,
-  Video
+  XCircle
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -66,7 +48,6 @@ export default function ClonePerfeitoFinalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
   
-  // NOVA LISTA DE MÓDULOS
   const courseModules = [
     { title: "[1] Fundamentos do Clone Perfeito", description: "Boas-vindas, visão geral do método e a preparação do ambiente para você criar seu clone em minutos." },
     { title: "[2] Preparando Seu Clone Perfeito", description: "O segredo para escolher as fotos certas e o passo a passo para treinar a IA com seu rosto." },
