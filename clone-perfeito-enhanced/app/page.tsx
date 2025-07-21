@@ -770,12 +770,13 @@ export default function ClonePerfeitoEnhanced() {
                               style={{ borderColor: "rgba(71, 85, 105, 0.5)", borderWidth: "1px" }}
                             >
                               <Image
-                                src={`/images/depois-${num}.${num === 4 ? "png" : "jpg"}`}
-                                alt={`Resultado profissional gerado ${num}`}
-                                width={300}
-                                height={400}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                              />
+  src={`/images/depois-${num}.jpg`}
+  alt={`Resultado profissional gerado ${num}`}
+  width={300}
+  height={400}
+  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+
                             </div>
                           </CarouselItem>
                         ))}
@@ -1574,10 +1575,10 @@ export default function ClonePerfeitoEnhanced() {
               <p className="text-xs sm:text-sm">CNPJ: 50.243.188/2023-04 - GABRIEL MKT LTDA</p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-xs sm:text-sm">
-              <Link href="/politica-de-privacidade" className="hover:text-white transition-colors hover:underline">
+              <Link href="https://www.notion.so/Pol-tica-de-Privacidade-2239d41a264b80bc9e7ed941f22fc4a5?pvs=25" className="hover:text-white transition-colors hover:underline">
                 Política de Privacidade
               </Link>
-              <Link href="/termos-de-uso" className="hover:text-white transition-colors hover:underline">
+              <Link href="https://www.notion.so/Termos-de-Uso-2239d41a264b80069db5f927a86d1657?pvs=25" className="hover:text-white transition-colors hover:underline">
                 Termos de Uso
               </Link>
             </div>
