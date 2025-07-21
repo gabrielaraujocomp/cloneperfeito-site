@@ -131,9 +131,9 @@ export default function ClonePerfeitoEnhanced() {
   ]
 
   const stats = [
-    { number: "1000+", label: "Alunos Satisfeitos", icon: Users },
+    { number: "150+", label: "Alunos Satisfeitos", icon: Users },
     { number: "4.9/5", label: "Avaliação Média", icon: Star },
-    { number: "24h", label: "Suporte Rápido", icon: Timer },
+    { number: "1h", label: "Suporte Rápido", icon: Timer },
   ]
 
   const faqItems = [
@@ -278,7 +278,7 @@ export default function ClonePerfeitoEnhanced() {
                 Transforme selfies comuns em ensaios fotográficos profissionais com IA
                 <br className="hidden sm:block" />
                 <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                  sem precisar de câmera, fotógrafo ou estúdio.
+                   sem precisar de câmera, fotógrafo ou estúdio.
                 </span>
               </h1>
 
