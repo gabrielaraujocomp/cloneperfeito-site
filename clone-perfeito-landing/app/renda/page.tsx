@@ -285,30 +285,13 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 10. GATILHO DE URGÊNCIA (SEÇÃO MODIFICADA) */}
+          {/* 10. GATILHO DE URGÊNCIA */}
           <section>
             <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
-                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
-                  🚨 COMPRE AGORA E GARANTA AS FUTURAS ATUALIZAÇÕES 🚨
-                </h3>
-                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-                  Comprando agora, você já garante que receberá estas e todas as futuras atualizações <strong className="text-white">sem nenhum custo adicional</strong>.
-                </p>
-                
-                <div className="!mt-8 text-center">
-                  <p className="text-xl font-bold text-neutral-100 mb-4">Pra ter uma ideia do que será adicionado ao curso:</p>
-                  <div className="max-w-xl mx-auto text-left space-y-2">
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios profissionais de produto físico</p>
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Conteúdo viral utilizando VEO 3</p>
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos teaser para lançamentos/eventos</p>
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios em vídeo para venda de cursos</p>
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos de delivery & negócios locais</p>
-                    <p className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Como deixar os vídeos em 4K</p>
-                  </div>
-                </div>
-
-                <div className="bg-neutral-900 p-4 rounded-lg !mt-8">
-                    <p className="text-xl text-white font-semibold">Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>.</p>
+                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 NOVA ATUALIZAÇÃO CHEGANDO 🚨</h3>
+                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">Em breve, lançaremos a atualização que transforma suas fotos em <strong className="text-white">Vídeos Cinematográficos</strong> para Reels e TikTok.</p>
+                <div className="bg-neutral-900 p-4 rounded-lg mt-6">
+                    <p className="text-xl text-white font-semibold">Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante essa atualização <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.</p>
                 </div>
             </Card>
           </section>
