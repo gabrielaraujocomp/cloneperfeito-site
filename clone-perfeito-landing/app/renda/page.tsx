@@ -18,7 +18,7 @@ import {
   Rocket,
   Check,
   UserCheck,
-  XCircle
+  XCircle,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -281,14 +281,14 @@ export default function ClonePerfeitoFinalPage() {
               
               <div className="bg-neutral-900/60 border border-neutral-700 rounded-lg p-6 max-w-3xl mx-auto space-y-4">
                   <h4 className="text-xl font-semibold text-white">Pra ter uma ideia do que será adicionado ao curso:</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-left">
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios profissionais de produto físico</span></div>
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Conteúdo viral utilizando VEO 3</span></div>
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos teaser para lançamentos/eventos</span></div>
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios em vídeo para venda de cursos</span></div>
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos de delivery & negócios locais</span></div>
-                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Como deixar os vídeos em 4K</span></div>
-                  </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-left list-none p-0">
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios de produto físico</span></li>
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Conteúdo viral com VEO 3</span></li>
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos teaser para eventos</span></li>
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios para venda de cursos</span></li>
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos para delivery e locais</span></li>
+                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Como deixar vídeos em 4K</span></li>
+                  </ul>
               </div>
 
               <div className="bg-green-950/50 border border-green-700 p-4 rounded-lg mt-6">
@@ -378,5 +378,5 @@ export default function ClonePerfeitoFinalPage() {
 
       <noscript><img height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
     </>
-  )
+  );
 }
