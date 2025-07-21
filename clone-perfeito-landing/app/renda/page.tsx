@@ -285,16 +285,44 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 10. GATILHO DE URGÊNCIA */}
-          <section>
-            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
-                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 NOVA ATUALIZAÇÃO CHEGANDO 🚨</h3>
-                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">Em breve, lançaremos a atualização que transforma suas fotos em <strong className="text-white">Vídeos Cinematográficos</strong> para Reels e TikTok.</p>
-                <div className="bg-neutral-900 p-4 rounded-lg mt-6">
-                    <p className="text-xl text-white font-semibold">Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante essa atualização <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.</p>
-                </div>
-            </Card>
-          </section>
+       {/* 10. GATILHO DE URGÊNCIA */}
+<section>
+    <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
+        <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
+            🚨 COMPRE AGORA E GARANTA AS PRÓXIMAS ATUALIZAÇÕES 🚨
+        </h3>
+        <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
+            O curso está em constante evolução! Ao garantir seu acesso hoje, você receberá todas as futuras atualizações sem nenhum custo adicional. Confira o que está por vir:
+        </p>
+        
+        <div className="text-left max-w-2xl mx-auto space-y-3 mt-6">
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Anúncios profissionais de produto físico
+            </p>
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Conteúdo viral utilizando VEO 3
+            </p>
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Vídeos teaser para lançamentos/eventos
+            </p>
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Anúncios em vídeo para venda de cursos
+            </p>
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Vídeos de delivery & negócios locais
+            </p>
+            <p className="text-lg text-white font-semibold flex items-center gap-2">
+                <span className="text-green-400">✅</span> Como deixar os vídeos em 4K
+            </p>
+        </div>
+
+        <div className="bg-neutral-900 p-4 rounded-lg mt-8">
+            <p className="text-xl text-white font-semibold">
+                Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante todas essas atualizações <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional no futuro.
+            </p>
+        </div>
+    </Card>
+</section>
 
           {/* 11. A OFERTA */}
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial de Lançamento</h2>
