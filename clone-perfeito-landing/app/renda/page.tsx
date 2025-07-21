@@ -285,36 +285,67 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 10. GATILHO DE URGÊNCIA */}
+          {/* 10. GATILHO DE URGÊNCIA (SEÇÃO MODIFICADA) */}
           <section>
-            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
-                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">🚨 NOVA ATUALIZAÇÃO CHEGANDO 🚨</h3>
-                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">Em breve, lançaremos a atualização que transforma suas fotos em <strong className="text-white">Vídeos Cinematográficos</strong> para Reels e TikTok.</p>
-                <div className="bg-neutral-900 p-4 rounded-lg mt-6">
-                    <p className="text-xl text-white font-semibold">Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante essa atualização <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.</p>
+            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-8 shadow-2xl shadow-purple-950/50">
+                <div className="space-y-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
+                    <Sparkles className="w-8 h-8 text-yellow-400"/>
+                    COMPRE AGORA E GARANTA AS FUTURAS ATUALIZAÇÕES
+                  </h3>
+                  <p className="text-lg text-neutral-200 max-w-3xl mx-auto">
+                    O curso está sempre evoluindo. Ao garantir seu acesso hoje, você assegura <strong className="text-yellow-400">acesso gratuito a todas as novas aulas e módulos</strong> que serão adicionados, como:
+                  </p>
+                </div>
+                
+                <div className="bg-neutral-900/50 border border-neutral-700/80 rounded-xl p-6 max-w-2xl mx-auto text-left space-y-3">
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios profissionais de produto físico</p>
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Conteúdo viral utilizando VEO 3</p>
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos teaser para lançamentos/eventos</p>
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios em vídeo para venda de cursos</p>
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos de delivery & negócios locais</p>
+                    <p className="flex items-center gap-3 text-neutral-100"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Como deixar os vídeos em 4K</p>
+                </div>
+
+                <div className="bg-neutral-900 p-4 rounded-lg">
+                    <p className="text-xl text-white font-semibold">
+                      Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.
+                    </p>
                 </div>
             </Card>
           </section>
 
-          {/* 11. A OFERTA */}
+          {/* 11. A OFERTA (SEÇÃO MODIFICADA) */}
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial de Lançamento</h2>
           <div className="relative mt-2">
               <div className="absolute -inset-2 bg-gradient-to-r from-green-500 to-sky-500 rounded-2xl blur-xl opacity-20"></div>
               <Card className="relative bg-neutral-800/60 backdrop-blur-md border border-neutral-700/50 shadow-2xl shadow-black/30 rounded-xl">
                   <CardContent className="p-6 md:p-8 space-y-6">
-                      <p className="text-xl font-bold text-white text-center">Acesso completo ao ecossistema Clone Perfeito:</p>
-                      <div className="space-y-3 text-neutral-200">
-                          <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-lg text-white">Curso Completo Clone Perfeito (<span className="line-through text-neutral-400">R$197</span>)</p></div>
-                          <p className="text-lg font-bold text-white mt-4">E você ainda leva de presente:</p>
-                          {bonuses.map((item, index) => (<div key={index} className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-white">{item.text} (<span className="line-through text-neutral-400">{item.value}</span>)</p></div>))}
+                      
+                      <div className="bg-neutral-900/40 border border-neutral-700/70 rounded-lg p-6 space-y-4">
+                        <p className="text-xl font-bold text-white text-center">Acesso completo ao ecossistema Clone Perfeito:</p>
+                        <div className="space-y-3 text-neutral-200">
+                            <div className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-lg text-white">Curso Completo Clone Perfeito</p></div>
+                            <p className="text-lg font-bold text-white mt-4 border-t border-neutral-700 pt-4">E você ainda leva de presente:</p>
+                            {bonuses.map((item, index) => (<div key={index} className="flex items-center gap-3"><Check className="w-5 h-5 text-green-400 flex-shrink-0" /><p className="text-white">{item.text}</p></div>))}
+                        </div>
                       </div>
-                      <Separator className="bg-neutral-700/50"/>
-                      <div className="text-center space-y-4">
-                          <p className="text-lg text-neutral-400">De <span className="line-through">R$388+</span> por apenas:</p>
-                          <p className="text-4xl sm:text-5xl font-bold text-yellow-400 animate-pulse">9x de R$ 8,80</p>
-                          <p className="text-xl font-medium text-white">ou R$ 67 à vista</p>
+
+                      <div className="text-center space-y-4 bg-gradient-to-tr from-neutral-800 to-neutral-900 border border-neutral-700 rounded-lg p-6">
+                          <p className="text-lg text-neutral-400">De <span className="line-through">R$388</span> por apenas:</p>
+                          <p className="text-5xl sm:text-6xl font-bold text-yellow-400 animate-pulse">9x de R$ 8,80</p>
+                          <p className="font-medium text-white text-lg">ou <span className="bg-yellow-400/10 text-yellow-300 px-3 py-1 rounded-md font-bold">R$ 67 à vista</span></p>
                       </div>
-                      <div className="pt-4"><Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10"><Button size="lg" className="w-full text-base sm:text-lg font-semibold px-4 sm:px-10 py-7 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300">QUERO GARANTIR MEU ACESSO COM DESCONTO</Button></Link></div>
+
+                      <div className="pt-4">
+                        <Link href="https://pay.hotmart.com/P100679254E?off=82l7lflg&checkoutMode=10">
+                          <Button size="lg" className="w-full text-lg font-bold px-10 py-8 bg-rose-500 hover:bg-green-600 text-white shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                            QUERO GARANTIR MEU ACESSO COM DESCONTO
+                            <Rocket className="w-5 h-5"/>
+                          </Button>
+                        </Link>
+                      </div>
+                      
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-4 pt-6 text-sm text-neutral-400">
                           <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso em qualquer dispositivo</span></div>
                           <div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-green-400 flex-shrink-0" /><span>Acesso imediato</span></div>
