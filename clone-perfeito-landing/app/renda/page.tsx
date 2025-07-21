@@ -285,28 +285,28 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 10. GATILHO DE URGÊNCIA (SEÇÃO MODIFICADA) */}
+          {/* 10. GATILHO DE URGÊNCIA (SEÇÃO MODIFICADA E CORRIGIDA) */}
           <section>
-            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-8 shadow-2xl shadow-purple-950/50">
+            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
                 <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
                   🚨 COMPRE AGORA E GARANTA AS FUTURAS ATUALIZAÇÕES 🚨
                 </h3>
                 <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-                  Ao garantir seu acesso hoje, você assegura que receberá <strong className="text-yellow-400">todas as futuras atualizações gratuitamente</strong>. Confira o que já está programado para ser adicionado ao curso:
+                  Ao garantir seu acesso hoje, você assegura que receberá <strong className="text-white">todas as futuras atualizações gratuitamente</strong>. Confira o que já está programado para ser adicionado ao curso:
                 </p>
                 
-                <div className="bg-neutral-900/50 border border-neutral-700 rounded-lg p-6 max-w-2xl mx-auto text-left space-y-3">
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios profissionais de produto físico</p>
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Conteúdo viral utilizando VEO 3</p>
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos teaser para lançamentos/eventos</p>
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios em vídeo para venda de cursos</p>
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos de delivery & negócios locais</p>
-                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Como deixar os vídeos em 4K</p>
+                <div className="max-w-xl mx-auto text-left space-y-2 !mt-8">
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios profissionais de produto físico</p>
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Conteúdo viral utilizando VEO 3</p>
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos teaser para lançamentos/eventos</p>
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios em vídeo para venda de cursos</p>
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos de delivery & negócios locais</p>
+                    <p className="flex items-center gap-3 text-neutral-200"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Como deixar os vídeos em 4K</p>
                 </div>
 
-                <div className="bg-neutral-900 p-4 rounded-lg mt-6">
+                <div className="bg-neutral-900 p-4 rounded-lg !mt-8">
                     <p className="text-xl text-white font-semibold">
-                      Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.
+                        Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional no futuro.
                     </p>
                 </div>
             </Card>
