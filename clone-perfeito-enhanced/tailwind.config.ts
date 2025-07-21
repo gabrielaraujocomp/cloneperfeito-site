@@ -2,6 +2,19 @@ import type { Config } from "tailwindcss";
 
 // all in fixtures is set to tailwind v3 as interims solutions
 
+safelist: [
+  'bg-opacity-70',
+  'bg-opacity-50',
+  'backdrop-blur',
+  'backdrop-blur-sm',
+  'backdrop-blur-md',
+  'backdrop-blur-lg',
+  'backdrop-blur-xl',
+  'bg-[rgba(255,255,255,0.05)]',
+  'bg-[rgba(0,0,0,0.3)]'
+],
+
+
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -14,7 +27,6 @@ const config: Config = {
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
-            'background-70': 'hsla(var(--background), 0.7)',
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
