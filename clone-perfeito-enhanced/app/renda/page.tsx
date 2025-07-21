@@ -770,12 +770,13 @@ export default function ClonePerfeitoEnhanced() {
                               style={{ borderColor: "rgba(71, 85, 105, 0.5)", borderWidth: "1px" }}
                             >
                               <Image
-                                src={`/images/depois-${num}.${num === 4 ? "png" : "jpg"}`}
-                                alt={`Resultado profissional gerado ${num}`}
-                                width={300}
-                                height={400}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                              />
+  src={`/images/depois-${num}.jpg`}
+  alt={`Resultado profissional gerado ${num}`}
+  width={300}
+  height={400}
+  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+
                             </div>
                           </CarouselItem>
                         ))}
