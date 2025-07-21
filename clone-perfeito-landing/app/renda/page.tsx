@@ -285,44 +285,38 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-       {/* 10. GATILHO DE URGÊNCIA */}
-<section>
-    <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-6 shadow-2xl shadow-purple-950/50">
-        <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
-            🚨 COMPRE AGORA E GARANTA AS PRÓXIMAS ATUALIZAÇÕES 🚨
-        </h3>
-        <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-            O curso está em constante evolução! Ao garantir seu acesso hoje, você receberá todas as futuras atualizações sem nenhum custo adicional. Confira o que está por vir:
-        </p>
-        
-        <div className="text-left max-w-2xl mx-auto space-y-3 mt-6">
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Anúncios profissionais de produto físico
-            </p>
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Conteúdo viral utilizando VEO 3
-            </p>
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Vídeos teaser para lançamentos/eventos
-            </p>
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Anúncios em vídeo para venda de cursos
-            </p>
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Vídeos de delivery & negócios locais
-            </p>
-            <p className="text-lg text-white font-semibold flex items-center gap-2">
-                <span className="text-green-400">✅</span> Como deixar os vídeos em 4K
-            </p>
-        </div>
+          {/* 10. GATILHO DE URGÊNCIA E ATUALIZAÇÕES FUTURAS */}
+          <section>
+            <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-8 shadow-2xl shadow-purple-950/50">
+              <div className="flex flex-col items-center gap-3">
+                  <Sparkles className="w-12 h-12 text-yellow-400" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      COMPRE UMA VEZ, RECEBA ATUALIZAÇÕES PARA SEMPRE
+                  </h3>
+              </div>
+              <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
+                  O Clone Perfeito está em constante evolução. Ao garantir seu acesso <strong className="text-white">agora</strong>, você não só compra o curso atual, mas também <strong className="text-yellow-400">assegura acesso gratuito a todas as novas aulas e módulos</strong> que serão adicionados no futuro.
+              </p>
+              
+              <div className="bg-neutral-900/60 border border-neutral-700 rounded-lg p-6 max-w-3xl mx-auto space-y-4">
+                  <h4 className="text-xl font-semibold text-white">Pra ter uma ideia do que será adicionado ao curso:</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-left">
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios profissionais de produto físico</span></div>
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Conteúdo viral utilizando VEO 3</span></div>
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos teaser para lançamentos/eventos</span></div>
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios em vídeo para venda de cursos</span></div>
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos de delivery & negócios locais</span></div>
+                      <div className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Como deixar os vídeos em 4K</span></div>
+                  </div>
+              </div>
 
-        <div className="bg-neutral-900 p-4 rounded-lg mt-8">
-            <p className="text-xl text-white font-semibold">
-                Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante todas essas atualizações <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional no futuro.
-            </p>
-        </div>
-    </Card>
-</section>
+              <div className="bg-green-950/50 border border-green-700 p-4 rounded-lg mt-6">
+                  <p className="text-xl text-white font-semibold">
+                      Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.
+                  </p>
+              </div>
+            </Card>
+          </section>
 
           {/* 11. A OFERTA */}
           <h2 id="checkout" className="text-4xl md:text-5xl font-bold text-center text-white pt-12">Sua Oferta Especial de Lançamento</h2>
