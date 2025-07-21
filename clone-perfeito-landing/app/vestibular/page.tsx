@@ -1,8 +1,9 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { FiCheck, FiArrowRight, FiInstagram, FiTwitter, FiLinkedin, FiBarChart2, FiCpu, FiEdit, FiClipboard, FiZap, FiBookOpen } from 'react-icons/fi';
+'use client'; // Diretiva ESSENCIAL para o Next.js App Router
 
-// --- Componente: Card de Preço ---
+import Head from 'next/head';
+import { FiCheck, FiArrowRight, FiInstagram, FiTwitter, FiLinkedin, FiCpu, FiClipboard } from 'react-icons/fi';
+
+// --- Componente: Card de Preço (Boas práticas sem React.FC) ---
 interface PricingCardProps {
   planName: string;
   price: string;
@@ -12,16 +13,17 @@ interface PricingCardProps {
   ctaText: string;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ planName, price, description, features, isHighlighted, ctaText }) => (
-  <div className={`p-8 border rounded-xl flex flex-col ${isHighlighted ? 'bg-gray-800 text-white border-purple-400' : 'bg-white border-gray-200'}`}>
-    {isHighlighted && <span className="text-xs font-bold text-center bg-purple-500 text-white rounded-full px-3 py-1 self-center mb-4">MAIS POPULAR</span>}
+// Nota: Cores 'mint' foram substituídas por 'emerald' do Tailwind padrão para evitar erros de configuração.
+const PricingCard = ({ planName, price, description, features, isHighlighted, ctaText }: PricingCardProps) => (
+  <div className={`p-8 border rounded-xl flex flex-col ${isHighlighted ? 'bg-gray-800 text-white border-purple-400 transform scale-105' : 'bg-white border-gray-200'}`}>
+    {isHighlighted && <span className="text-xs font-bold text-center bg-purple-500 text-white rounded-full px-3 py-1 self-center mb-4">DESTAQUE</span>}
     <h3 className="text-xl font-bold">{planName}</h3>
     <p className={`mt-2 text-4xl font-extrabold ${isHighlighted ? 'text-white' : 'text-gray-900'}`}>{price}</p>
     <p className={`mt-4 text-sm ${isHighlighted ? 'text-gray-300' : 'text-gray-500'}`}>{description}</p>
     <ul className="mt-6 space-y-3 flex-grow">
       {features.map((feature, index) => (
         <li key={index} className="flex items-center">
-          <FiCheck className={`mr-3 ${isHighlighted ? 'text-green-400' : 'text-purple-600'}`} />
+          <FiCheck className={`mr-3 flex-shrink-0 ${isHighlighted ? 'text-emerald-400' : 'text-purple-600'}`} />
           <span>{feature}</span>
         </li>
       ))}
@@ -33,13 +35,13 @@ const PricingCard: React.FC<PricingCardProps> = ({ planName, price, description,
 );
 
 // --- Componente Principal da Página ---
-const SimuladoAILandingPage: NextPage = () => {
+export default function SimuladoAIPage() {
   return (
     <div className="bg-white font-sans text-gray-800">
+      {/* O Head do Next.js 13+ pode ser gerenciado no arquivo layout.tsx */}
       <Head>
         <title>Simulado IA | Simulados personalizados para o ENEM</title>
-        <meta name="description" content="O Simulado IA cria simulados inéditos com base nas questões que mais caem no ENEM — personalizados de acordo com o seu nível e suas dificuldades." />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Gere simulados de forma inteligente com IA, focando no que mais cai no ENEM." />
       </Head>
 
       {/* --- Header Fixo --- */}
@@ -57,15 +59,14 @@ const SimuladoAILandingPage: NextPage = () => {
             <button className="font-bold bg-purple-600 text-white py-2 px-5 rounded-lg hover:bg-purple-700 transition-colors">Criar simulado</button>
           </div>
           <div className="lg:hidden">
-            {/* Ícone de Menu para mobile */}
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </div>
         </div>
       </header>
 
-      <main className="pt-20"> {/* Padding top para compensar o header fixo */}
+      <main className="pt-20">
         
         {/* --- Hero Section --- */}
         <section className="relative text-white overflow-hidden">
@@ -80,7 +81,7 @@ const SimuladoAILandingPage: NextPage = () => {
                 O Simulado IA cria simulados inéditos com base nas questões que mais caem no ENEM — personalizados de acordo com o seu nível e suas dificuldades.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <button className="w-full sm:w-auto font-bold bg-mint-400 text-purple-900 py-3 px-8 rounded-lg hover:bg-mint-300 transition-colors text-lg">
+                <button className="w-full sm:w-auto font-bold bg-emerald-400 text-purple-900 py-3 px-8 rounded-lg hover:bg-emerald-300 transition-colors text-lg">
                   Criar meu simulado
                 </button>
                 <button className="w-full sm:w-auto font-bold bg-transparent border-2 border-white text-white py-3 px-8 rounded-lg hover:bg-white/10 transition-colors text-lg">
@@ -88,7 +89,7 @@ const SimuladoAILandingPage: NextPage = () => {
                 </button>
               </div>
             </div>
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 mt-8 lg:mt-0">
               <div className="w-full h-80 lg:h-96 bg-black/20 rounded-lg flex items-center justify-center border border-white/20">
                 <span className="text-purple-300">[Mockup de celular com simulado]</span>
               </div>
@@ -172,16 +173,16 @@ const SimuladoAILandingPage: NextPage = () => {
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Crie simulados sem esforço</h2>
                     <p className="mt-4 text-lg text-gray-500">Tudo direto no seu navegador, em poucos cliques.</p>
                     <ul className="mt-8 space-y-4 text-left">
-                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-mint-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Escolha a matéria e dificuldade</strong> e deixe a IA fazer o resto.</span></li>
-                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-mint-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Responda um quiz rápido</strong> para personalizar ainda mais sua experiência.</span></li>
-                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-mint-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Receba tudo por e-mail</strong>, pronto para imprimir ou usar no tablet.</span></li>
-                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-mint-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Estude com direcionamento</strong> e saiba exatamente onde precisa melhorar.</span></li>
+                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-emerald-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Escolha a matéria e dificuldade</strong> e deixe a IA fazer o resto.</span></li>
+                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-emerald-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Responda um quiz rápido</strong> para personalizar ainda mais sua experiência.</span></li>
+                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-emerald-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Receba tudo por e-mail</strong>, pronto para imprimir ou usar no tablet.</span></li>
+                        <li className="flex items-start"><FiArrowRight className="w-6 h-6 text-emerald-500 mt-1 mr-3 flex-shrink-0" /><span><strong className="text-gray-800">Estude com direcionamento</strong> e saiba exatamente onde precisa melhorar.</span></li>
                     </ul>
                      <button className="mt-8 font-bold text-purple-600 border border-purple-600 py-3 px-8 rounded-lg hover:bg-purple-50 transition-colors">
                         Ver exemplo
                     </button>
                 </div>
-                 <div className="lg:w-1/2">
+                 <div className="lg:w-1/2 mt-8 lg:mt-0">
                     <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
                         <span>[Tela mostrando o quiz de entrada]</span>
                     </div>
@@ -198,24 +199,24 @@ const SimuladoAILandingPage: NextPage = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <PricingCard 
-                planName="Gratuito"
+                planName="Gratuito (starter)"
                 price="R$0"
-                description="Perfeito para começar."
+                description=""
                 features={["1 simulado por mês", "5 questões", "Gabarito incluso", "Sem plano de estudos"]}
                 ctaText="Começar grátis"
               />
               <PricingCard 
                 planName="Simulado PRO"
                 price="R$14,90"
-                description="O mais popular para quem quer ir além."
+                description=""
                 features={["Simulado com até 15 questões", "Gabarito + plano de estudos", "PDF completo", "Correção automática (em breve)"]}
                 ctaText="Quero esse"
                 isHighlighted
               />
                <PricingCard 
-                planName="Plano Mensal"
+                planName="Plano mensal"
                 price="R$29,90/mês"
-                description="Para um estudo contínuo e aprofundado."
+                description=""
                 features={["4 simulados por mês", "Histórico de desempenho", "Desafios semanais", "Suporte e novidades"]}
                 ctaText="Assinar plano"
               />
@@ -245,7 +246,7 @@ const SimuladoAILandingPage: NextPage = () => {
                     </div>
                     <div className="flex flex-col items-center">
                         <div className="w-20 h-20 flex items-center justify-center bg-purple-100 text-purple-600 rounded-full text-3xl font-bold">4</div>
-                        <h3 className="mt-4 font-bold">Corrige, analisa e estuda</h3>
+                        <h3 className="mt-4 font-bold">Corrige e estuda</h3>
                         <p className="mt-1 text-gray-500">Com foco e direção.</p>
                     </div>
                 </div>
@@ -261,7 +262,7 @@ const SimuladoAILandingPage: NextPage = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg shadow-sm overflow-hidden group">
-                <div className="w-full h-48 bg-gray-200">[Imagem do Post]</div>
+                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">[Imagem do Post]</div>
                 <div className="p-6">
                   <h3 className="font-bold text-lg group-hover:text-purple-600 transition-colors">Os temas que mais caem no ENEM</h3>
                   <p className="mt-2 text-sm text-gray-500">Analisamos os últimos 10 anos de provas para você.</p>
@@ -269,7 +270,7 @@ const SimuladoAILandingPage: NextPage = () => {
                 </div>
               </div>
               <div className="bg-white rounded-lg shadow-sm overflow-hidden group">
-                <div className="w-full h-48 bg-gray-200">[Imagem do Post]</div>
+                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">[Imagem do Post]</div>
                 <div className="p-6">
                   <h3 className="font-bold text-lg group-hover:text-purple-600 transition-colors">Como simular o dia da prova em casa</h3>
                   <p className="mt-2 text-sm text-gray-500">Dicas práticas para um ensaio realista e eficaz.</p>
@@ -277,7 +278,7 @@ const SimuladoAILandingPage: NextPage = () => {
                 </div>
               </div>
                <div className="bg-white rounded-lg shadow-sm overflow-hidden group">
-                <div className="w-full h-48 bg-gray-200">[Imagem do Post]</div>
+                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">[Imagem do Post]</div>
                 <div className="p-6">
                   <h3 className="font-bold text-lg group-hover:text-purple-600 transition-colors">Técnica Pomodoro para vestibulandos</h3>
                   <p className="mt-2 text-sm text-gray-500">Aumente seu foco e produtividade nos estudos.</p>
@@ -294,7 +295,7 @@ const SimuladoAILandingPage: NextPage = () => {
            <div className="container mx-auto px-6 relative z-10 text-center">
              <h2 className="text-3xl lg:text-4xl font-extrabold">Bora começar com seu primeiro simulado?</h2>
              <p className="mt-4 text-lg text-purple-200">Em até 24h, ele estará na sua caixa de entrada. Comece agora, é gratuito.</p>
-             <button className="mt-8 font-bold bg-mint-400 text-purple-900 py-4 px-10 rounded-lg hover:bg-mint-300 transition-colors text-lg">
+             <button className="mt-8 font-bold bg-emerald-400 text-purple-900 py-4 px-10 rounded-lg hover:bg-emerald-300 transition-colors text-lg">
                 Criar meu simulado com IA
             </button>
            </div>
@@ -305,16 +306,16 @@ const SimuladoAILandingPage: NextPage = () => {
       {/* --- Rodapé --- */}
       <footer className="bg-gray-800 text-gray-400">
         <div className="container mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-xl font-bold text-white">Simulado IA</div>
-            <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div className="text-xl font-bold text-white mb-4 md:mb-0">Simulado IA</div>
+            <div className="flex gap-6 my-4 md:my-0 text-sm">
               <a href="#" className="hover:text-white">Política de Privacidade</a>
               <a href="#" className="hover:text-white">Termos de uso</a>
             </div>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white"><FiInstagram /></a>
-              <a href="#" className="hover:text-white"><FiTwitter /></a>
-              <a href="#" className="hover:text-white"><FiLinkedin /></a>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-white text-xl"><FiInstagram /></a>
+              <a href="#" className="hover:text-white text-xl"><FiTwitter /></a>
+              <a href="#" className="hover:text-white text-xl"><FiLinkedin /></a>
             </div>
           </div>
           <div className="mt-8 border-t border-gray-700 pt-6 text-center text-sm">
@@ -324,6 +325,4 @@ const SimuladoAILandingPage: NextPage = () => {
       </footer>
     </div>
   );
-};
-
-export default SimuladoAILandingPage;
+}
