@@ -7,18 +7,36 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Separator } from "@/components/ui/separator";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import {
-  Sparkles,
-  Smartphone,
-  Lock,
-  UserPlus,
-  MessageSquare,
-  CheckCircle2,
-  Video,
-  Zap,
+  Brain,
+  Wand2,
   Rocket,
   Check,
+  Cpu,
+  Sparkles,
+  Shield,
+  Smartphone,
+  Lock,
+  LayoutDashboard,
+  UserPlus,
+  ImageIcon,
+  MessageSquare,
+  CheckCircle2,
+  Film,
+  TrendingUp,
+  ImageUp,
+  BrainCircuit,
+  Download,
+  DollarSign,
+  Zap,
+  Clock,
+  Award,
+  HelpCircle,
+  Folder,
+  UploadCloud,
+  MessagesSquare,
   UserCheck,
   XCircle,
+  Video
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,6 +66,7 @@ export default function ClonePerfeitoFinalPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
   
+  // NOVA LISTA DE MÓDULOS
   const courseModules = [
     { title: "[1] Fundamentos do Clone Perfeito", description: "Boas-vindas, visão geral do método e a preparação do ambiente para você criar seu clone em minutos." },
     { title: "[2] Preparando Seu Clone Perfeito", description: "O segredo para escolher as fotos certas e o passo a passo para treinar a IA com seu rosto." },
@@ -266,36 +285,30 @@ export default function ClonePerfeitoFinalPage() {
             </Card>
           </section>
 
-          {/* 10. GATILHO DE URGÊNCIA E ATUALIZAÇÕES FUTURAS */}
+          {/* 10. GATILHO DE URGÊNCIA (SEÇÃO MODIFICADA) */}
           <section>
             <Card className="bg-purple-950/40 border-2 border-purple-700 rounded-xl p-8 text-center space-y-8 shadow-2xl shadow-purple-950/50">
-              <div className="flex flex-col items-center gap-3">
-                  <Sparkles className="w-12 h-12 text-yellow-400" />
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">
-                      COMPRE UMA VEZ, RECEBA ATUALIZAÇÕES PARA SEMPRE
-                  </h3>
-              </div>
-              <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
-                  O Clone Perfeito está em constante evolução. Ao garantir seu acesso <strong className="text-white">agora</strong>, você não só compra o curso atual, mas também <strong className="text-yellow-400">assegura acesso gratuito a todas as novas aulas e módulos</strong> que serão adicionados no futuro.
-              </p>
-              
-              <div className="bg-neutral-900/60 border border-neutral-700 rounded-lg p-6 max-w-3xl mx-auto space-y-4">
-                  <h4 className="text-xl font-semibold text-white">Pra ter uma ideia do que será adicionado ao curso:</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-left list-none p-0">
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios de produto físico</span></li>
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Conteúdo viral com VEO 3</span></li>
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos teaser para eventos</span></li>
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Anúncios para venda de cursos</span></li>
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Vídeos para delivery e locais</span></li>
-                      <li className="flex items-center gap-3 text-lg"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" /><span>Como deixar vídeos em 4K</span></li>
-                  </ul>
-              </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white flex items-center justify-center gap-3">
+                  🚨 COMPRE AGORA E GARANTA AS FUTURAS ATUALIZAÇÕES 🚨
+                </h3>
+                <p className="text-lg text-neutral-300 max-w-3xl mx-auto">
+                  Ao garantir seu acesso hoje, você assegura que receberá <strong className="text-yellow-400">todas as futuras atualizações gratuitamente</strong>. Confira o que já está programado para ser adicionado ao curso:
+                </p>
+                
+                <div className="bg-neutral-900/50 border border-neutral-700 rounded-lg p-6 max-w-2xl mx-auto text-left space-y-3">
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios profissionais de produto físico</p>
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Conteúdo viral utilizando VEO 3</p>
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos teaser para lançamentos/eventos</p>
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Anúncios em vídeo para venda de cursos</p>
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Vídeos de delivery & negócios locais</p>
+                    <p className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0"/>Como deixar os vídeos em 4K</p>
+                </div>
 
-              <div className="bg-green-950/50 border border-green-700 p-4 rounded-lg mt-6">
-                  <p className="text-xl text-white font-semibold">
+                <div className="bg-neutral-900 p-4 rounded-lg mt-6">
+                    <p className="text-xl text-white font-semibold">
                       Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.
-                  </p>
-              </div>
+                    </p>
+                </div>
             </Card>
           </section>
 
@@ -378,5 +391,5 @@ export default function ClonePerfeitoFinalPage() {
 
       <noscript><img height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=1198526755291146&ev=PageView&noscript=1" /></noscript>
     </>
-  );
+  )
 }
