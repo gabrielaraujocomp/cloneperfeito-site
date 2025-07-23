@@ -881,7 +881,7 @@ export default function ClonePerfeitoEnhanced() {
           <section className="space-y-6 sm:space-y-8">
             <div className="text-center space-y-3 sm:space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Alunos Comuns, Resultados Extraordinários
+                Alunos Ganhando em DOLÁR, REAL e EURO!
               </h2>
               <p className="text-base sm:text-xl text-slate-400">Veja o que nossos alunos estão conseguindo</p>
             </div>
