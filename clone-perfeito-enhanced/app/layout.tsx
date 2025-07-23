@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Aprenda a criar ensaios hiper-realistas com IA em minutos.',
   generator: 'v0.dev',
   icons: {
-    icon: '/images/fav-clone.png', // ✅ Caminho correto relativo à pasta public
+    icon: 'public/images/fav-clone.png', // ✅ Caminho correto relativo à pasta public
   },
 }
 
