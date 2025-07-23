@@ -276,13 +276,16 @@ export default function ClonePerfeitoEnhanced() {
             </div>
 
             <div className="space-y-4 sm:space-y-6 max-w-4xl mx-auto px-2">
-              <h1 className="text-center font-bold text-white leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl space-y-3 flex flex-col items-center">
-  <span>Aprenda a transformar fotos comuns</span>
-  <span>em ensaios fotográficos profissionais com&nbsp;IA</span>
-  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+             <h1 className="text-center font-bold text-white leading-tight text-[1.9rem] sm:text-4xl md:text-5xl lg:text-6xl space-y-1 sm:space-y-2 flex flex-col items-center">
+  <span>Aprenda a transformar fotos</span>
+  <span>comuns</span>
+  <span>em ensaios fotográficos</span>
+  <span>profissionais com IA</span>
+  <span className="mt-3 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent font-extrabold">
     sem precisar de câmera, fotógrafo ou estúdio.
   </span>
 </h1>
+
 
 
 
