@@ -4,9 +4,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Clone Perfeito',
   description: 'Aprenda a criar ensaios hiper-realistas com IA em minutos.',
-  generator: 'v0.dev',
+  generator: 'Clone Perfeito',
   icons: {
-    icon: '/fav-clone.png',
+    icon: 'images/fav-clone.png',
   },
 }
 
