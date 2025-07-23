@@ -1301,7 +1301,7 @@ export default function ClonePerfeitoEnhanced() {
                       <div className="flex items-center gap-3">
                         <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 flex-shrink-0" />
                         <span className="text-sm sm:text-base text-white font-semibold">
-                          Curso Completo Clone Perfeito
+                          Curso Completo Clone Perfeito (R$190)
                         </span>
                       </div>
                       <div
@@ -1364,7 +1364,7 @@ export default function ClonePerfeitoEnhanced() {
 
                     <div className="flex items-center justify-center gap-2 text-green-400">
                       <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span className="font-semibold text-sm sm:text-base">Economia de 83%</span>
+                      <span className="font-semibold text-sm sm:text-base">Economia de 75%</span>
                     </div>
                   </div>
 
