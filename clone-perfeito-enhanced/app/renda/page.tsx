@@ -225,7 +225,7 @@ export default function ClonePerfeitoEnhanced() {
                 style={{ backgroundColor: "rgba(239, 68, 68, 0.2)", borderColor: "rgba(239, 68, 68, 0.3)" }}
               >
                 <Clock className="w-3 h-3 mr-1" />
-                <span className="hidden xs:inline">Oferta </span>Limitada
+                <span className="hidden xs:inline">Oferta </span>Desconto Temporário!
               </Badge>
               <span className="text-xs sm:text-sm font-medium text-white hidden md:block truncate">
                 Garanta seu acesso antes que o preço suba.
