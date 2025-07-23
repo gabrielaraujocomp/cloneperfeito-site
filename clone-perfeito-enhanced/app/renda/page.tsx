@@ -236,7 +236,7 @@ export default function ClonePerfeitoEnhanced() {
                 size="sm"
                 className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold text-xs px-3 py-2 sm:px-4 sm:py-2 shadow-lg whitespace-nowrap"
               >
-                <span className="hidden sm:inline">QUERO MEU </span>ACESSO
+                <span className="hidden sm:inline">QUERO MEU ACESSO
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1" />
               </Button>
             </Link>
@@ -317,7 +317,7 @@ export default function ClonePerfeitoEnhanced() {
                   ></div>
                   <Rocket className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:animate-bounce flex-shrink-0" />
                   <span className="relative z-10 text-center leading-tight">
-                    <span className="block sm:inline">Quero Criar Ensaios</span>
+                    <span className="block sm:inline">Quero Aprender a Criar Ensaios</span>
                     <span className="block sm:inline sm:ml-1">Profissionais</span>
                   </span>
                   <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
