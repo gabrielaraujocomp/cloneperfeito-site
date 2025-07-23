@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Aprenda a criar ensaios hiper-realistas com IA em minutos.',
   generator: 'v0.dev',
   icons: {
-    icon: '/images/fav-clone.png', // ✅ Caminho correto, sem "public"
+    icon: '/fav-clone.png',
   },
 }
 
@@ -17,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head>
-        {/* ✅ Garantia que o favicon será carregado corretamente */}
-        <link rel="icon" href="/images/fav-clone.png" type="image/png" />
-      </head>
+      <head />
       <body>{children}</body>
     </html>
   )
