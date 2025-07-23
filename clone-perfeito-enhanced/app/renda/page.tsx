@@ -285,8 +285,7 @@ export default function ClonePerfeitoEnhanced() {
               </h1>
 
               <p className="text-base sm:text-xl md:text-2xl text-slate-300 leading-relaxed px-2">
-                Em menos de 1 hora, você aprende o passo a passo para criar retratos hiper-realistas que impressionam —
-                usando apenas seu celular e a IA.
+                Em menos de 2 horas você aprende a criar ensaios de fotos hiper-realistas com Inteligência Artificial usando só o celular ou computador. Já tem aluno cobrando 39 euros por pacote (e vendendo também em dólar e real).
               </p>
 
               {/* Stats - Mobile Optimized */}
