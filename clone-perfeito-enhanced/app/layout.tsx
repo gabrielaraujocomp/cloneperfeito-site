@@ -3,10 +3,10 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Clone Perfeito',
-  description: 'Aprenda a criar ensaios de fotos hiper-realistas com IA em minutos.',
+  description: 'Aprenda a criar ensaios hiper-realistas com IA em minutos.',
   generator: 'v0.dev',
   icons: {
-    icon: '/images/fav-clone.png',
+    icon: '/images/fav-clone.png', // ✅ Caminho correto relativo à pasta public
   },
 }
 
@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <head />
+      <head>
+        <link rel="icon" href="/images/fav-clone.png" />
+      </head>
       <body>{children}</body>
     </html>
   )
