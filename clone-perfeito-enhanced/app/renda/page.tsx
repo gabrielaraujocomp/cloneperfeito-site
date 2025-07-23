@@ -108,6 +108,8 @@ export default function ClonePerfeitoEnhanced() {
   ]
 
   const bonuses = [
+    { text: "WorkShop Ensaio Grátis com ChatGPT", value: "R$57", icon: Brain },
+    { text: "Suporte Individual", value: "R$47", icon: Lightbulb },
     { text: "Agente GPT Gerador de Prompts", value: "R$47", icon: Brain },
     { text: "Agente GPT Extrator de Prompts", value: "R$47", icon: Lightbulb },
   ]
