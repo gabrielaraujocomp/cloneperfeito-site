@@ -1350,7 +1350,7 @@ export default function ClonePerfeitoEnhanced() {
                       </p>
                       <div className="space-y-2">
                         <p className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                          12x de R$ 10,03
+                          9x de R$ 8
                         </p>
                         <p className="text-lg sm:text-xl text-white my-0 py-3">
                           ou{" "}
@@ -1358,7 +1358,7 @@ export default function ClonePerfeitoEnhanced() {
                             className="text-black px-3 sm:px-4 py-1 sm:py-2 rounded-lg font-bold"
                             style={{ background: "linear-gradient(to right, rgb(251, 191, 36), rgb(251, 146, 60))" }}
                           >
-                            R$ 97 à vista
+                            R$ 63 à vista
                           </span>
                         </p>
                       </div>
@@ -1366,7 +1366,7 @@ export default function ClonePerfeitoEnhanced() {
 
                     <div className="flex items-center justify-center gap-2 text-green-400">
                       <Award className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span className="font-semibold text-sm sm:text-base">Economia de 75%</span>
+                      <span className="font-semibold text-sm sm:text-base">Economia de 83%</span>
                     </div>
                   </div>
 
