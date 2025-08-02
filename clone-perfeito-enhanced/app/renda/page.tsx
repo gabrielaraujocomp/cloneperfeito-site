@@ -1253,7 +1253,7 @@ export default function ClonePerfeitoEnhanced() {
                   }}
                 >
                   <p className="text-lg sm:text-xl text-white font-semibold">
-                    Quem entrar <strong className="text-green-400">até o final de Julho</strong> garante tudo isso{" "}
+                    Quem entrar <strong className="text-green-400">até o final de Agosto</strong> garante tudo isso{" "}
                     <strong className="text-green-400">gratuitamente</strong>, sem nenhum custo adicional.
                   </p>
                 </div>
