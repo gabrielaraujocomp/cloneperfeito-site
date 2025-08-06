@@ -37,11 +37,11 @@ export default function LandingPage() {
         <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
           {/* Desktop Video */}
           <video autoPlay loop muted playsInline className="hidden sm:block w-full h-full object-cover">
-            <source src="/bg-desk-video.mp4" type="video/mp4" />
+            <source src="videos/bg-desk-video.mp4" type="video/mp4" />
           </video>
           {/* Mobile Video */}
           <video autoPlay loop muted playsInline className="block sm:hidden w-full h-full object-cover">
-            <source src="/bg-mobile-video.mp4" type="video/mp4" />
+            <source src="videos/bg-mobile-video.mp4" type="video/mp4" />
           </video>
         </div>
 
