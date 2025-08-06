@@ -140,12 +140,10 @@ export default function LandingPage() {
         )}
       </header>
 
-     <main>
+    <main>
   {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
   <section
-    // MUDANÇA: Diminuí o padding inferior para o texto descer mais.
-    // Antes estava pb-24 sm:pb-32, agora está pb-16 sm:pb-20.
-    className="relative h-screen flex flex-col justify-end pb-16 sm:pb-20 overflow-hidden" 
+    className="relative h-screen flex flex-col justify-end pb-16 sm:pb-20 overflow-hidden"
   >
     {/* Contêiner para o vídeo de fundo */}
     <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -176,24 +174,25 @@ export default function LandingPage() {
 
     {/* Conteúdo da Hero Section */}
     <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
+      {/* ===== MUDANÇA AQUI ===== */}
+      {/* A headline foi simplificada para ter um estilo de fonte consistente. */}
       <h1 
         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} // Sombra para legibilidade
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} 
       >
-        <span className="font-serif italic text-gray-300">Crie</span>{" "}
-        <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
-        <span className="text-yellow-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-mono tracking-wider">
+        Crie fotos, vídeos e criativos{' '}
+        <span className="text-yellow-400">
           ultra realistas
-        </span>{" "}
-        <span className="block sm:inline font-serif italic text-gray-300">com</span>{" "}
-        <span className="text-blue-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-sans tracking-tight">
+        </span>{' '}
+        com{' '}
+        <span className="text-blue-400">
           Inteligência Artificial
         </span>
       </h1>
 
       <p 
         className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }} // Sombra para legibilidade
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
       >
         Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
         por você, sem câmera, estúdio ou equipe — apenas com IA.
