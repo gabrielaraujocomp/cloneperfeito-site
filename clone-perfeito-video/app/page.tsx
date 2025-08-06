@@ -163,7 +163,8 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-gray-100 hover:shadow-lg transition-all duration-300 px-6 sm:px-8 py-3 w-full sm:w-auto text-base sm:text-lg"
+              className="bg-white text-black hover:bg-neutral-100 transition-colors duration-200 border border-gray-200 px-6 sm:px-8 py-3 w-full sm:w-auto text-base sm:text-lg shadow-none hover:shadow-sm"
+
               onClick={() => scrollToSection("valor")}
             >
               Começar Agora
@@ -172,7 +173,8 @@ export default function LandingPage() {
             <Button
               variant="outline"
               size="lg"
-              className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:shadow-lg transition-all duration-300 px-6 sm:px-8 py-3 bg-transparent w-full sm:w-auto text-base sm:text-lg"
+              className="border-gray-500 text-gray-300 hover:border-gray-400 hover:text-white transition-colors duration-200 px-6 sm:px-8 py-3 bg-transparent w-full sm:w-auto text-base sm:text-lg shadow-none hover:shadow-sm"
+
               onClick={() => scrollToSection("sobre")}
             >
               Ver Como Funciona
