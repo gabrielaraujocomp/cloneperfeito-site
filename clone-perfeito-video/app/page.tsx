@@ -140,10 +140,12 @@ export default function LandingPage() {
         )}
       </header>
 
-      <main>
+     <main>
   {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
   <section
-    className="relative h-screen flex flex-col justify-end pb-24 sm:pb-32 overflow-hidden" // MUDANÇA: trocado "items-center justify-center" por "justify-end" e adicionado padding inferior (pb-24 sm:pb-32)
+    // MUDANÇA: Diminuí o padding inferior para o texto descer mais.
+    // Antes estava pb-24 sm:pb-32, agora está pb-16 sm:pb-20.
+    className="relative h-screen flex flex-col justify-end pb-16 sm:pb-20 overflow-hidden" 
   >
     {/* Contêiner para o vídeo de fundo */}
     <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -170,19 +172,13 @@ export default function LandingPage() {
         <source src="/videos/bg-mobile-video.mp4" type="video/mp4" />
         Seu navegador não suporta o elemento de vídeo.
       </video>
-
-      {/* 
-        A LINHA ABAIXO FOI REMOVIDA PARA TIRAR O ESCURECIMENTO 
-        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div> 
-      */}
     </div>
 
     {/* Conteúdo da Hero Section */}
     <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
-      {/* DICA: Adicionar uma sombra no texto para garantir a legibilidade sobre qualquer vídeo */}
       <h1 
         className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} // Sombra no texto
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} // Sombra para legibilidade
       >
         <span className="font-serif italic text-gray-300">Crie</span>{" "}
         <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
@@ -197,7 +193,7 @@ export default function LandingPage() {
 
       <p 
         className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }} // Sombra no texto
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }} // Sombra para legibilidade
       >
         Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
         por você, sem câmera, estúdio ou equipe — apenas com IA.
