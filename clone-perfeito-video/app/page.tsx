@@ -141,61 +141,77 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Video Background Wrapper */}
-          <div className="absolute top-0 left-0 w-full h-full -z-10">
-            {/* Desktop Video */}
-            <video autoPlay loop muted playsInline className="hidden sm:block w-full h-full object-cover">
-              <source src="/videos/bg-desk-video.mp4" type="video/mp4" />
-            </video>
-            {/* Mobile Video */}
-            <video autoPlay loop muted playsInline className="block sm:hidden w-full h-full object-cover">
-              <source src="/videos/bg-mobile-video.mp4" type="video/mp4" />
-            </video>
-            {/* Dark Overlay for better contrast */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
-          </div>
+  {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
+  <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+    {/* Contêiner para o vídeo de fundo e o overlay */}
+    <div className="absolute top-0 left-0 w-full h-full z-0">
+      {/* Vídeo para Desktop - visível em telas 'sm' e maiores */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hidden sm:block w-full h-full object-cover"
+      >
+        <source src="/videos/bg-desk-video.mp4" type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
 
-          {/* Hero Content */}
-          <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-              <span className="font-serif italic text-gray-300">Crie</span>{" "}
-              <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
-              <span className="text-yellow-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-mono tracking-wider">
-                ultra realistas
-              </span>{" "}
-              <span className="block sm:inline font-serif italic text-gray-300">com</span>{" "}
-              <span className="text-blue-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-sans tracking-tight">
-                Inteligência Artificial
-              </span>
-            </h1>
+      {/* Vídeo para Mobile - visível apenas em telas menores que 'sm' */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="block sm:hidden w-full h-full object-cover"
+      >
+        <source src="/videos/bg-mobile-video.mp4" type="video/mp4" />
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
 
-            <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
-              Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
-              por você, sem câmera, estúdio ou equipe — apenas com IA.
-            </p>
+      {/* Overlay escuro para melhorar o contraste do texto */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+    </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
-              <Button
-                size="lg"
-                className="cursor-pointer bg-white text-black border border-white/10 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
-                onClick={() => scrollToSection("valor")}
-              >
-                Começar Agora
-                <ChevronRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
-                onClick={() => scrollToSection("sobre")}
-              >
-                Ver Como Funciona
-              </Button>
-            </div>
-          </div>
-        </section>
+    {/* Conteúdo da Hero Section */}
+    <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+        <span className="font-serif italic text-gray-300">Crie</span>{" "}
+        <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
+        <span className="text-yellow-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-mono tracking-wider">
+          ultra realistas
+        </span>{" "}
+        <span className="block sm:inline font-serif italic text-gray-300">com</span>{" "}
+        <span className="text-blue-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-sans tracking-tight">
+          Inteligência Artificial
+        </span>
+      </h1>
+
+      <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
+        Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
+        por você, sem câmera, estúdio ou equipe — apenas com IA.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
+        <Button
+          size="lg"
+          className="cursor-pointer bg-white text-black border border-white/10 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+          onClick={() => scrollToSection("valor")}
+        >
+          Começar Agora
+          <ChevronRight className="w-4 h-4 ml-2" />
+        </Button>
+        <Button
+          variant="outline"
+          size="lg"
+          className="cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+          onClick={() => scrollToSection("sobre")}
+        >
+          Ver Como Funciona
+        </Button>
+      </div>
+    </div>
+  </section>
 
         {/* About Section */}
         <section id="sobre" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 border-t border-gray-800">
