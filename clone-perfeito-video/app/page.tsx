@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -23,11 +23,6 @@ import {
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
@@ -145,39 +140,9 @@ export default function LandingPage() {
         )}
       </header>
 
-      {/* Hero Section with Video Background */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {isClient && (
-          <>
-            {/* Desktop Video */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute z-0 w-full h-full object-cover hidden md:block"
-            >
-              <source src="/videos/bg-desk-video.mp4" type="video/mp4" />
-              Seu navegador não suporta o vídeo.
-            </video>
-            {/* Mobile Video */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute z-0 w-full h-full object-cover md:hidden"
-            >
-              <source src="/videos/bg-mobile-video.mp4" type="video/mp4" />
-              Seu navegador não suporta o vídeo.
-            </video>
-          </>
-        )}
-        {/* Overlay */}
-        <div className="absolute z-10 w-full h-full bg-black/50"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-20 max-w-4xl mx-auto text-center px-4 sm:px-6">
+      {/* Hero Section */}
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             <span className="font-serif italic text-gray-300">Crie</span>{" "}
             <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
@@ -190,7 +155,7 @@ export default function LandingPage() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto px-2">
+          <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto px-2">
             Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
             por você, sem câmera, estúdio ou equipe — apenas com IA.
           </p>
@@ -1095,5 +1060,6 @@ export default function LandingPage() {
             </Button>
           </div>
         </div>
-      )
-    }
+      </div>
+    )
+  }
