@@ -142,10 +142,12 @@ export default function LandingPage() {
 
       <main>
   {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
-  <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
-    {/* Contêiner para o vídeo de fundo e o overlay */}
+  <section
+    className="relative h-screen flex flex-col justify-end pb-24 sm:pb-32 overflow-hidden" // MUDANÇA: trocado "items-center justify-center" por "justify-end" e adicionado padding inferior (pb-24 sm:pb-32)
+  >
+    {/* Contêiner para o vídeo de fundo */}
     <div className="absolute top-0 left-0 w-full h-full z-0">
-      {/* Vídeo para Desktop - visível em telas 'sm' e maiores */}
+      {/* Vídeo para Desktop */}
       <video
         autoPlay
         loop
@@ -157,7 +159,7 @@ export default function LandingPage() {
         Seu navegador não suporta o elemento de vídeo.
       </video>
 
-      {/* Vídeo para Mobile - visível apenas em telas menores que 'sm' */}
+      {/* Vídeo para Mobile */}
       <video
         autoPlay
         loop
@@ -169,13 +171,19 @@ export default function LandingPage() {
         Seu navegador não suporta o elemento de vídeo.
       </video>
 
-      {/* Overlay escuro para melhorar o contraste do texto */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+      {/* 
+        A LINHA ABAIXO FOI REMOVIDA PARA TIRAR O ESCURECIMENTO 
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div> 
+      */}
     </div>
 
     {/* Conteúdo da Hero Section */}
     <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+      {/* DICA: Adicionar uma sombra no texto para garantir a legibilidade sobre qualquer vídeo */}
+      <h1 
+        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight"
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} // Sombra no texto
+      >
         <span className="font-serif italic text-gray-300">Crie</span>{" "}
         <span className="font-sans font-black">fotos, vídeos e criativos</span>{" "}
         <span className="text-yellow-400 font-extrabold inline-block transition-transform duration-300 cursor-default font-mono tracking-wider">
@@ -187,7 +195,10 @@ export default function LandingPage() {
         </span>
       </h1>
 
-      <p className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto">
+      <p 
+        className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }} // Sombra no texto
+      >
         Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
         por você, sem câmera, estúdio ou equipe — apenas com IA.
       </p>
