@@ -512,7 +512,7 @@ export default function LandingPage() {
                   </div>
                   <div className="flex justify-between items-center py-2">
                     <span className="text-gray-300 text-sm sm:text-base">Mentoria individual (3 meses)</span>
-                    <span className="text-red-400 font-semibold text-sm:text-base">R$ 2.000</span>
+                    <span className="text-red-400 font-semibold text-sm sm:text-base">R$ 2.000</span>
                   </div>
                   <div className="flex justify-between items-center py-2 font-bold text-lg pt-3 border-t border-gray-600">
                     <span className="text-white">Total:</span>
@@ -750,7 +750,7 @@ export default function LandingPage() {
                     Hoje, uso isso pra criar imagens que parecem saídas de um set profissional — e ensino você a fazer o
                     mesmo, sem enrolação.
                   </p>
-                  <p className="text-gray-400 leading-relaxed text-sm:text-base">
+                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
                     Esse projeto é meu xodó. E eu estou dentro dele com você: atualizando, melhorando e respondendo suas
                     dúvidas de verdade.
                   </p>
@@ -1061,5 +1061,5 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-    )\
-  }
+  )
+}
