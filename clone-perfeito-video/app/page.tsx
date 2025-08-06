@@ -31,113 +31,128 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-[#191919] text-white">
-      {/* Fixed Header */}
-      <header className="fixed top-0 w-full z-50 bg-[#191919]/95 backdrop-blur-sm border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer hover:scale-105 transition-transform duration-300">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white rounded-sm flex items-center justify-center">
-              <span className="text-black font-semibold text-xs sm:text-sm">C</span>
-            </div>
-            <span className="text-base sm:text-lg font-medium">Clone Perfeito</span>
-          </div>
-
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <button
-              onClick={() => scrollToSection("sobre")}
-              className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
-            >
-              O que é
-            </button>
-            <button
-              onClick={() => scrollToSection("criar")}
-              className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
-            >
-              O que você vai criar
-            </button>
-            <button
-              onClick={() => scrollToSection("resultados")}
-              className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
-            >
-              Resultados
-            </button>
-            <button
-              onClick={() => scrollToSection("depoimentos")}
-              className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
-            >
-              Depoimentos
-            </button>
-            <button
-              onClick={() => scrollToSection("valor")}
-              className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
-            >
-              Investimento
-            </button>
-          </nav>
-
-          <Button
-            size="sm"
-            className="hidden lg:flex bg-green-600 hover:bg-green-700 transition-all duration-300 text-white text-sm px-3 py-2"
-            onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
-          >
-            <MessageCircle className="w-4 h-4 mr-2" />
-            WhatsApp
-          </Button>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-white p-1 transition-transform duration-300"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+      {/* Fixed Header with Video Background */}
+      <header className="fixed top-0 w-full z-50 border-b border-gray-800 relative overflow-hidden">
+        {/* Video Background Wrapper */}
+        <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+          {/* Desktop Video */}
+          <video autoPlay loop muted playsInline className="hidden sm:block w-full h-full object-cover">
+            <source src="/bg-desk-video.mp4" type="video/mp4" />
+          </video>
+          {/* Mobile Video */}
+          <video autoPlay loop muted playsInline className="block sm:hidden w-full h-full object-cover">
+            <source src="/bg-mobile-video.mp4" type="video/mp4" />
+          </video>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-[#191919] border-t border-gray-800">
-            <nav className="flex flex-col p-4 space-y-3">
+        {/* Content Wrapper with Overlay */}
+        <div className="relative z-10 bg-[#191919]/95 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+            <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer hover:scale-105 transition-transform duration-300">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-white rounded-sm flex items-center justify-center">
+                <span className="text-black font-semibold text-xs sm:text-sm">C</span>
+              </div>
+              <span className="text-base sm:text-lg font-medium">Clone Perfeito</span>
+            </div>
+
+            {/* Desktop Menu */}
+            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
               >
                 O que é
               </button>
               <button
                 onClick={() => scrollToSection("criar")}
-                className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
               >
                 O que você vai criar
               </button>
               <button
                 onClick={() => scrollToSection("resultados")}
-                className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
               >
                 Resultados
               </button>
               <button
                 onClick={() => scrollToSection("depoimentos")}
-                className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
               >
                 Depoimentos
               </button>
               <button
                 onClick={() => scrollToSection("valor")}
-                className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                className="text-gray-400 hover:text-white transition-all duration-300 text-sm"
               >
                 Investimento
               </button>
-              <Button
-                size="sm"
-                className="bg-green-600 hover:bg-green-700 transition-all duration-300 text-white w-full mt-3"
-                onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                WhatsApp
-              </Button>
             </nav>
+
+            <Button
+              size="sm"
+              className="hidden lg:flex bg-green-600 hover:bg-green-700 transition-all duration-300 text-white text-sm px-3 py-2"
+              onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
+            >
+              <MessageCircle className="w-4 h-4 mr-2" />
+              WhatsApp
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-white p-1 transition-transform duration-300"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
-        )}
+
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden bg-[#191919] border-t border-gray-800">
+              <nav className="flex flex-col p-4 space-y-3">
+                <button
+                  onClick={() => scrollToSection("sobre")}
+                  className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                >
+                  O que é
+                </button>
+                <button
+                  onClick={() => scrollToSection("criar")}
+                  className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                >
+                  O que você vai criar
+                </button>
+                <button
+                  onClick={() => scrollToSection("resultados")}
+                  className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                >
+                  Resultados
+                </button>
+                <button
+                  onClick={() => scrollToSection("depoimentos")}
+                  className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                >
+                  Depoimentos
+                </button>
+                <button
+                  onClick={() => scrollToSection("valor")}
+                  className="text-left text-gray-400 hover:text-white hover:translate-x-2 transition-all duration-300 text-sm py-2"
+                >
+                  Investimento
+                </button>
+                <Button
+                  size="sm"
+                  className="bg-green-600 hover:bg-green-700 transition-all duration-300 text-white w-full mt-3"
+                  onClick={() => window.open("https://wa.me/5511999999999", "_blank")}
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp
+                </Button>
+              </nav>
+            </div>
+          )}
+        </div>
       </header>
 
       {/* Hero Section */}
@@ -161,28 +176,22 @@ export default function LandingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
-<Button
-  size="lg"
-  className="cursor-pointer bg-white text-black border border-white/10 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
-  onClick={() => scrollToSection("valor")}
->
-  Começar Agora
-  <ChevronRight className="w-4 h-4 ml-2" />
-</Button>
-
-
-
-          <Button
-  variant="outline"
-  size="lg"
-  className="cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
-  onClick={() => scrollToSection("sobre")}
->
-  Ver Como Funciona
-</Button>
-
-
-
+            <Button
+              size="lg"
+              className="cursor-pointer bg-white text-black border border-white/10 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+              onClick={() => scrollToSection("valor")}
+            >
+              Começar Agora
+              <ChevronRight className="w-4 h-4 ml-2" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+              onClick={() => scrollToSection("sobre")}
+            >
+              Ver Como Funciona
+            </Button>
           </div>
         </div>
       </section>
@@ -1065,8 +1074,7 @@ export default function LandingPage() {
               <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
             </Button>
           </div>
-     </div>
-      </section>
+        </div>
     </div>
   );
 }
