@@ -140,10 +140,10 @@ export default function LandingPage() {
         )}
       </header>
 
-    <main>
-  {/* ===== HERO SECTION - Com o vídeo de fundo ===== */}
+   <main>
+  {/* ===== HERO SECTION ATUALIZADA - Com ajustes de layout e botões ===== */}
   <section
-    className="relative h-screen flex flex-col justify-end pb-16 sm:pb-20 overflow-hidden"
+    className="relative h-screen flex flex-col justify-end pb-12 sm:pb-16 md:pb-20 overflow-hidden"
   >
     {/* Contêiner para o vídeo de fundo */}
     <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -173,30 +173,32 @@ export default function LandingPage() {
     </div>
 
     {/* Conteúdo da Hero Section */}
-    <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
-  {/* ===== HEADLINE ATUALIZADA E COM AS FONTES CORRETAS ===== */}
-<h1 
-  className="font-clash text-yellow-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 sm:mb-8 leading-none"
-  style={{ textShadow: '0px 2px 5px rgba(0, 0, 0, 0.7)' }} 
->
-  Crie imagens e vídeos ultra realistas com IA,{' '}
-  <span className="font-sans italic font-light text-gray-300">
-    como se tivesse um estúdio no bolso
-  </span>
-</h1>
+    <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
+      {/* Headline (sem alterações) */}
+      <h1 
+        className="font-clash text-yellow-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 sm:mb-8 leading-none"
+        style={{ textShadow: '0px 2px 5px rgba(0, 0, 0, 0.7)' }} 
+      >
+        Crie imagens e vídeos ultra realistas com IA,{' '}
+        <span className="font-sans italic font-light text-gray-300">
+          como se tivesse um estúdio no bolso
+        </span>
+      </h1>
 
-  <p 
-    className="font-sans text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
-    style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-  >
-    Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
-    por você, sem câmera, estúdio ou equipe — apenas com IA.
-  </p>
+      {/* ===== SUBHEADLINE AUMENTADA ===== */}
+      <p 
+        className="font-sans text-xl sm:text-2xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
+        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+      >
+        Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
+        por você, sem câmera, estúdio ou equipe — apenas com IA.
+      </p>
 
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
+      {/* ===== BOTÕES MAIORES E MAIS CLICÁVEIS ===== */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
         <Button
           size="lg"
-          className="cursor-pointer bg-white text-black border border-white/10 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+          className="w-full sm:w-auto cursor-pointer bg-white text-black border border-white/10 rounded-lg px-10 sm:px-12 py-4 text-lg font-medium shadow-sm hover:bg-gray-100 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
           onClick={() => scrollToSection("valor")}
         >
           Começar Agora
@@ -205,7 +207,7 @@ export default function LandingPage() {
         <Button
           variant="outline"
           size="lg"
-          className="cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-6 sm:px-8 py-3 text-base sm:text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
+          className="w-full sm:w-auto cursor-pointer bg-white/10 text-white border border-white/20 rounded-lg px-10 sm:px-12 py-4 text-lg font-medium shadow-sm hover:bg-white/20 hover:shadow-md hover:-translate-y-[1px] transition-all duration-200"
           onClick={() => scrollToSection("sobre")}
         >
           Ver Como Funciona
