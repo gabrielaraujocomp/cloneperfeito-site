@@ -175,15 +175,15 @@ export default function LandingPage() {
     {/* Conteúdo da Hero Section */}
     <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
   {/* ===== HEADLINE ATUALIZADA E COM AS FONTES CORRETAS ===== */}
-  <h1 
-    className="font-clash text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 sm:mb-8 leading-tight"
-    style={{ textShadow: '0px 2px 5px rgba(0, 0, 0, 0.7)' }} 
-  >
-    Crie imagens e vídeos ultra realistas com IA,{' '}
-    <span className="font-sans italic font-light text-gray-300">
-      como se tivesse um estúdio no bolso
-    </span>
-  </h1>
+<h1 
+  className="font-clash text-yellow-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 sm:mb-8 leading-none"
+  style={{ textShadow: '0px 2px 5px rgba(0, 0, 0, 0.7)' }} 
+>
+  Crie imagens e vídeos ultra realistas com IA,{' '}
+  <span className="font-sans italic font-light text-gray-300">
+    como se tivesse um estúdio no bolso
+  </span>
+</h1>
 
   <p 
     className="font-sans text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
