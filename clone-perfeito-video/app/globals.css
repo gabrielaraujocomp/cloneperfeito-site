@@ -1,3 +1,23 @@
+/* ======================================================================== */
+/* ===== INÍCIO DA ADIÇÃO: Importe e declare suas fontes aqui ===== */
+/* ======================================================================== */
+
+/* 1. Importa a fonte Inter (para o itálico) do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* 2. Declara a fonte local Clash Display que está na pasta /public/fonts */
+@font-face {
+  font-family: 'ClashDisplay'; /* Este é o nome que vamos usar no Tailwind */
+  src: url('/fonts/ClashDisplay-Semibold.woff2') format('woff2'); /* Caminho para o arquivo */
+  font-weight: 600; /* Corresponde ao peso 'Semibold' */
+  font-style: normal;
+  font-display: swap; /* Melhora a performance de carregamento */
+}
+
+/* ======================================================================== */
+/* ===== FIM DA ADIÇÃO: O resto do seu arquivo continua abaixo ===== */
+/* ======================================================================== */
+
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
