@@ -173,30 +173,25 @@ export default function LandingPage() {
     </div>
 
     {/* Conteúdo da Hero Section */}
-    <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6">
-      {/* ===== MUDANÇA AQUI ===== */}
-      {/* A headline foi simplificada para ter um estilo de fonte consistente. */}
-      <h1 
-        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.7)' }} 
-      >
-        Crie fotos, vídeos e criativos{' '}
-        <span className="text-yellow-400">
-          ultra realistas
-        </span>{' '}
-        com{' '}
-        <span className="text-blue-400">
-          Inteligência Artificial
-        </span>
-      </h1>
+    <div className="relative z-10 max-w-5xl mx-auto text-center px-4 sm:px-6">
+  {/* ===== HEADLINE ATUALIZADA E COM AS FONTES CORRETAS ===== */}
+  <h1 
+    className="font-clash text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 sm:mb-8 leading-tight"
+    style={{ textShadow: '0px 2px 5px rgba(0, 0, 0, 0.7)' }} 
+  >
+    Crie imagens e vídeos ultra realistas com IA,{' '}
+    <span className="font-sans italic font-light text-gray-300">
+      como se tivesse um estúdio no bolso
+    </span>
+  </h1>
 
-      <p 
-        className="text-lg sm:text-xl text-gray-400 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
-        style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
-      >
-        Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
-        por você, sem câmera, estúdio ou equipe — apenas com IA.
-      </p>
+  <p 
+    className="font-sans text-lg sm:text-xl text-gray-300 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto"
+    style={{ textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)' }}
+  >
+    Ensaios, comerciais, thumbnails, estampas e composições visuais com aparência profissional. Tudo isso criado
+    por você, sem câmera, estúdio ou equipe — apenas com IA.
+  </p>
 
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center max-w-md sm:max-w-none mx-auto">
         <Button
